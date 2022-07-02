@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.app__navbar {
+    position: sticky;
+    width: 100%;
+    display: flex;
+    top: 0px;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    height: 50px;
+    padding: 2rem 0.7rem;
+    transition: 0.5s;
+    z-index: 1000 !important;
+}
+
+.nav-social {
+    padding: 1%;
+    margin-top: 5%;
+    justify-content: left;
+    font-size: 2.3em;
+    flex-direction: row;
+
+}
+
+.nav-social a {
+    margin: 2%;
+    background-color: transparent;
+    border-radius: 100%;
+}
+
+.app__navbar-logo {
+    font-family: 'Great Vibes', cursive;
+    display: flex;
+    margin-right: 30px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.app__navbar-links {
+    flex: 1;
+   
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+
+.app__navbar-links li {
+    margin: 0 1rem;
+    cursor: pointer;
+}
+
+.app__navbar-links li:hover , .app__navbar-logo:hover{
+    border-bottom: 1px solid goldenrod;
+    color: rgb(224, 223, 223);
+    transition: 0.5s ease-in-out;
+}
+
+
+
+.app__navbar-smallscreen {
+    display: none;
+}
+
+.app__navbar-smallscreen_overlay {
+    position: fixed;
+    text-align: left;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    background:#0d1117;
+    flex-direction: row;
+    z-index: 5;
+}
+
+.app__navbar-smallscreen_overlay .overlay__close {
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.app__navbar-smallscreen_links {
+    margin-top: 30% !important;
+    line-height: 20rem;
+    margin-left: 5%;
+    font-family: 'Bebas Neue', cursive;
+    list-style: none;
+}
+
+.app__navbar-smallscreen_links li {
+    margin-bottom: 50px !important;
+    margin-bottom: 3px;
+    cursor: pointer;
+    color: white;
+    font-size: 3rem;
+}
+
+.app__navbar-smallscreen_links li:active {
+    /*For phone clicked :)*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+}
+
+
+@media screen and (max-width: 1150px) {
+    .app__navbar-links {
+        display: none;
+
+    }
+
+    .app__navbar-smallscreen {
+        display: flex;
+    }
+
+    .app__navbar {
+        position: absolute;
+    }
+    .app__navbar {
+        padding: 1rem;
+        position: sticky !important;
+        top: 0;
+        z-index: 100;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .app__navbar {
+        padding: 1rem;
+        position: sticky !important;
+        top: 0;
+        z-index: 100;
+    }
+
+}
