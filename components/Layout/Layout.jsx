@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from "../Footer/Footer"
 import Navbar from "../Navbar/Navbar"
-import StickySocialMediaBar from "../Sticky/StickySocialMediaBar"
+import StickySocialMediaBar from "../Sticky/stickySocialMediaBar"
 
 const Layout = ({children}) => {
   return (
