@@ -7,7 +7,7 @@ const StickySocialMediaBar = () => {
     <div className="icon-bar">
     <a href="https://www.facebook.com/canis.lupus.33/" className="facebook"><SiFacebook /></a> 
     <a href="https://github.com/GLTdotNS" className="github"><SiGithub/></a> 
-    <a href="maillto:georgitonkow@gmail.com" className="google"><SiGmail/></a> 
+    <a href="mailto:georgitonkow@gmail.com" className="google"><SiGmail/></a> 
   </div>
   )
 }
