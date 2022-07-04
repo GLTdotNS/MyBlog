@@ -34,15 +34,8 @@ const MainBlogPage = ({ posts, category }) => {
 
       <div className="leftcolumn">
 
-        <div className="box">
-          <form>
-            <input type="text"
-             onChange={(e) => setValueToSearch(e.target.value)} 
-             onClicl={() => serachFunction}
-            className="input" name="txt" />
-          </form>
-          <i className="fas fa-search"><AiOutlineSearch size={15} /></i>
-        </div>
+   
+     
 
         <Categories category={category} />
         <GitHub github={github} />
