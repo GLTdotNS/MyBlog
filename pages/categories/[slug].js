@@ -8,7 +8,7 @@ import PostsComponent from "../../components/Blog/BlogPageComponents/PostsCompon
 import { AiOutlineSearch } from "react-icons/ai"
 import LoadingSpin from 'react-loading-spin'
 import { useEffect, useState } from 'react'
-
+import router from "next/router"
 
 
 const CategoriesPage = ({ posts, category }) => {

@@ -17,7 +17,7 @@ const Categories = ({ category }) => {
              <span  onClick={() => {
               setTimeout(() => {
                 window.location.reload();
-              }, 500);
+              }, 1000);
              }} 
              > <Link  href={"/categories/[slug]" } as={`/categories/${category.slug.current}`}
               key={index} >
