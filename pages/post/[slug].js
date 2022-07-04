@@ -5,20 +5,22 @@ import MostLikedPosts from "../../components/Blog/BlogPageComponents/MostLikedPo
 import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts"
 import dynamic from 'next/dynamic'
 import LoadingSpin from 'react-loading-spin'
+import Categories from '../../components/Blog/BlogPageComponents/Categories'
 
 
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
-  { ssr: false,
+  {
+    ssr: false,
   }
-  
+
 )
 
 
 
 let BlockContent = block;
 
-const Post = ({ post , posts}) => {
+const Post = ({ post, posts, category }) => {
 
   if (!post || !post.mainImage) {
 
@@ -47,16 +49,9 @@ const Post = ({ post , posts}) => {
 
 
         <aside className="leftcolumn">
-          <div className="box">
-            <form name="search">
-              <input type="text" className="input" name="txt" />
-            </form>
-
-
-          </div>
-
-
+            <Categories category={category} />
         </aside>
+        
         <div className="midcolumn">
           <div className='header'>
             <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} />
@@ -77,7 +72,7 @@ const Post = ({ post , posts}) => {
             <hr />
 
           </div>
-          <BlockContent post={post}/>
+          <BlockContent post={post} />
 
           <div style={{ float: "right" }}>
             <h3>Share</h3>
@@ -161,12 +156,28 @@ export async function getStaticProps(context) {
     }
 
 }`
-const posts = await client.fetch(queryPosts)
+  const posts = await client.fetch(queryPosts)
+  const category = await client
+  .fetch(
+      groq`*[_type == "category"]{
+_id,
+title,
+image{
+   asset->{
+      _id,
+      url
+      }
+  },
+slug,
+
+}`
+  );
 
   return {
     props: {
       post,
-      posts
+      posts,
+      category
     }
   }
 }

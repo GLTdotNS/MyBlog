@@ -19,8 +19,8 @@ const CategoriesPage = ({ posts, category }) => {
 
         let index = window.location.href.lastIndexOf("/") + 1;
         let url = window.location.href;
-      
         setLocation(url.slice(index, url.length))
+        document.title = `Категории`;
 
     }, [])
 
@@ -51,14 +51,7 @@ const CategoriesPage = ({ posts, category }) => {
 
 
             <div className="leftcolumn">
-                <div className="box">
-                    <form name="search">
-
-                        <input type="text" className="input" name="txt"/>
-                    </form>
-                    <i className="fas fa-search"><AiOutlineSearch size={15} /></i>
-
-                </div>
+        
                 <Categories category={category} />
             </div>
 

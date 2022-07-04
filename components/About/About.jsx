@@ -12,7 +12,7 @@ import { downloadPdf } from '../../scripts/download'
 const About = () => {
   const [banner, setBanner] = useState(null);
 
-
+  
 
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const About = () => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
+    document.title = "Автобиография - Георги Тонков";
   }, [])
 
 

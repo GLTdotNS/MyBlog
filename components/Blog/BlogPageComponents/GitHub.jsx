@@ -22,7 +22,6 @@ const GitHub = ({github }) => {
   
 <img width={90} height={90} style={{borderRadius: "100%" , borderColor: "red !important" ,float:"right"}}
       src={github.avatar_url} alt="" />
-    <h5>Username: {github.login}</h5>
     <p>Repositories: {github.public_repos}</p>
     <p>Followers: {github.followers}</p>
     {/* {contributions ? <p>Contributions: {contributions}</p> : ""} */}

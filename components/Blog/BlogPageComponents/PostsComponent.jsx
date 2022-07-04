@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import moment from "moment";
 import { MdReadMore } from "react-icons/md"
 import { urlForImg } from "../../../lib/sanityClient.js";
@@ -8,7 +8,6 @@ import ReactPaginate from 'react-paginate';
 
 const PostsComponent = ({ posts }) => {
 
- 
   const [pageNumber, setPageNumber] = useState(0)
 
   const postPerPage = 3;
@@ -24,10 +23,7 @@ const PostsComponent = ({ posts }) => {
 
 
       <div className="card initial-post" key={index}>
-
         <h3>{post.title}</h3>
-
-
         <h5>{post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD , HH:MM")
           : "YYYY-MM-DD hh:mm"}</h5>
 
@@ -46,7 +42,7 @@ const PostsComponent = ({ posts }) => {
         </div>
 
         <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
-                  <a><button className="btn">Readmore</button></a>
+                  <a><button className="btn">Read more <MdReadMore/></button></a>
                 </Link>{' '}
       </div>
 
@@ -59,7 +55,7 @@ const PostsComponent = ({ posts }) => {
 
   const handleChange = ({ selected }) => {
     setPageNumber(selected);
-
+    
   }
 
   return (
