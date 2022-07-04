@@ -122,7 +122,7 @@ a {
 
 
 .app__navbar {
-    position: relative;
+    position: fixed;
     width: 100%; 
     top:0;
     display: flex;
@@ -131,7 +131,6 @@ a {
     color: white;
     height: 50px;
     padding: 2rem 0.7rem;
-    transition: 0.5s;
     z-index: 1000 !important;
 }
 
@@ -499,6 +498,7 @@ hr {
 .initial-post {
   box-shadow: 1px 1px 18px -9px #000000;
   width: 90%;
+  padding: 2%;
   margin: auto;
   margin-top: 20px;
 
@@ -651,6 +651,7 @@ hr {
   width: 120px;
   font-size: 15px;
   border-radius: 12px;
+  margin-top: 2%;
   border-color: transparent;
   background-color: #333;
   color: white;
@@ -1191,4 +1192,115 @@ ol {
 .Education,
 .project {
   margin-bottom: 30px;
+}
+
+/*aboutme end*/
+
+/*projects*/
+.project-container {
+  max-width: 1200px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+
+}
+
+.project-container h1 {
+  color: var(--color-black);
+}
+
+
+.project-container a {
+  text-decoration: none;
+  color: #5673C8;
+}
+
+.project-container a:hover {
+  color: lightblue;
+}
+
+.project-container p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+
+}
+
+
+.project-row {
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.project-column {
+  margin-top: 10%;
+  padding: 2%;
+ display: inline-block;
+  width: 50%;
+}
+
+.project-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* content decoration */
+.project-content {
+  border: 1px solid #333;
+  border-radius: 15px;
+  background-color: #111;
+  color: rgb(217, 216, 216);
+  padding: 5%;
+  height: 420px;
+}
+.project-content img{
+  height: 200px;
+ width: 100%;
+
+}
+.btn-container{
+ height:auto;
+
+ justify-content: center;
+ display:flex;
+}
+
+.btn-container button{
+  margin:10px;
+}
+/* window size 850 width set */
+@media screen and (max-width: 850px) {
+  .project-column {
+      width: 50%;
+  }
+  .project-content img{
+      height: 100px;
+     width: 100%;
+   
+  }
+  .project-content {
+      height: 300px;
+     width: 100%;
+   
+  }
+}
+
+/* window size 400 width set */
+@media screen and (max-width: 400px) {
+  .project-column {
+      width: 100%;
+  }
+  .project-content img{
+      height: 100px;
+     width: 100%;   
+  
+  }
+  .project-content {
+      height: 300px;
+     width: 100%;
+   
+  }
 }

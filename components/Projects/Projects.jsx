@@ -1,13 +1,13 @@
 import React ,{useEffect}from 'react'
-import "./projects.css"
+
 import { motion } from 'framer-motion'
 import {animation} from "../../animations/animation"
 import img from "./Untitled.png"
 import res from "./restaurant.jpg"
-import Footer from '../Footer/Footer'
+
 const Projects = () => {
-    document.title = "Проекти..."
     useEffect(() => {
+        document.title = "Проекти..."
         window.scrollTo(0, 0)
       }, [])
     

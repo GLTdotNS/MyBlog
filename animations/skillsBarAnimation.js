@@ -32,13 +32,6 @@ export const reveal = () => {
       }
 
 
-    } else {
-      reveals[i].classList.remove("html");
-      reveals[i].classList.remove("css");
-      reveals[i].classList.remove("js");
-      reveals[i].classList.remove("csharp");
-
     }
   }
 }
-// window.addEventListener("scroll", reveal);

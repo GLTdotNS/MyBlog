@@ -20,7 +20,7 @@ const AllPosts = () => {
   const [contributions, setContributions] = useState(null);
   const [category, setCategory] = useState(null);
 
-  document.title = "Блог - Георги Тонков";
+
 
   useEffect(() => {
 

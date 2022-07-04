@@ -12,10 +12,6 @@ const MainBlogPage = ({ posts, category }) => {
   const [github, setGithub] = useState(null);
   const [valueToSearch , setValueToSearch] = useState("");
 
-  const serachFunction = () => {
-    window.open(`http://localhost:3000/post/${valueToSearch}`)
-
-  }
 
   useEffect(() => {
     fetch(`/api/hello`)
@@ -23,6 +19,9 @@ const MainBlogPage = ({ posts, category }) => {
       .then(response => {
         setGithub(response.name)
       })
+
+      document.title = "Начална страница";
+      window.scrollTo(0, 0)
   }, [])
 
 
@@ -33,8 +32,6 @@ const MainBlogPage = ({ posts, category }) => {
     <div className="row">
 
       <div className="leftcolumn">
-
-   
      
 
         <Categories category={category} />

@@ -1,10 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { IoLogoCss3, IoLogoHtml5 } from 'react-icons/io'
 import { GrReactjs } from 'react-icons/gr'
 import { SiJavascript, SiCsharp } from 'react-icons/si'
+import { reveal } from '../../../animations/skillsBarAnimation'
 
 const Skills = () => {
 
+  window.addEventListener("scroll", reveal);
 
 
   return (
