@@ -14,13 +14,16 @@ const Categories = ({ category }) => {
         <>
           {!category ? "Something went wrong..." :
 
-            <span> <Link onClick={() => {
+            <span onClick={() => {
               setTimeout(() => {
                 window.location.reload();
               }, 500);
-            }} href={"/blog/categories/[slug]" } as={`/blog/categories/${category.slug.current}`}
+            }}> <Link  href={"/categories/[slug]" } as={`/categories/${category.slug.current}`}
               key={index} >
-             <a> {category.title}</a></Link></span>
+             <a> {category.title}</a>
+             </Link>
+             
+             </span>
           }
         
         </>

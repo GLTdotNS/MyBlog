@@ -4,13 +4,12 @@ import LoadingSpin from "react-loading-spin";
 import { motion } from "framer-motion";
 import { animation } from "../../animations/animation.js";
 import groq from 'groq'
-import "./Blog.css"
 import MostLikedPosts from "./BlogPageComponents/MostLikedPosts.jsx";
 import RecentlyPosts from "./BlogPageComponents/RecentlyPosts.jsx";
 import Categories from "./BlogPageComponents/Categories.jsx";
 import PostsComponent from "./BlogPageComponents/PostsComponent.jsx";
 import { AiOutlineSearch } from "react-icons/ai"
-import Footer from "../Footer/Footer"
+
 
 const FilteredByCategory = () => {
     const [category, setCategory] = useState(null);
