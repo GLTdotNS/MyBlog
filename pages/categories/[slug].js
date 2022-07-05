@@ -8,8 +8,7 @@ import PostsComponent from "../../components/Blog/BlogPageComponents/PostsCompon
 import { AiOutlineSearch } from "react-icons/ai"
 import LoadingSpin from 'react-loading-spin'
 import { useEffect, useState } from 'react'
-import router from "next/router"
-
+import { motion } from 'framer-motion';
 
 const CategoriesPage = ({ posts, category }) => {
 
@@ -51,13 +50,18 @@ const CategoriesPage = ({ posts, category }) => {
 
 
             <div className="leftcolumn">
-        
+
                 <Categories category={category} />
             </div>
 
             <div className="midcolumn">
                 <div className="header">
-                    <img src={urlForImg(category.filter(x => x.slug.current === location)[0].image).url()}
+                    <motion.img
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 1 }}
+                        src={urlForImg(category.filter(x => x.slug.current === location)[0].image).url()}
                         alt="" />
                 </div>
 
@@ -69,7 +73,8 @@ const CategoriesPage = ({ posts, category }) => {
             <div className="rightcolumn">
 
                 {/* <MostLikedPosts posts={posts} /> */}
-                <RecentlyPosts posts={posts} />
+                <RecentlyPosts posts={posts.filter(x => x.categories._ref ===
+                    `${category.filter(x => x.slug.current === location)[0]._id}`)} />
 
             </div>
 

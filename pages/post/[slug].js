@@ -6,8 +6,9 @@ import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPost
 import dynamic from 'next/dynamic'
 import LoadingSpin from 'react-loading-spin'
 import Categories from '../../components/Blog/BlogPageComponents/Categories'
-
-
+import moment from 'moment'
+import {MdDateRange} from "react-icons/md"
+import {BsPencilSquare} from "react-icons/bs"
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
   {
@@ -18,9 +19,36 @@ const block = dynamic(
 
 
 
+
 let BlockContent = block;
 
 const Post = ({ post, posts, category }) => {
+
+
+  console.log(post)
+  const onSubmit = async () => {
+    setId(post._id)
+    setNewData({
+        name,
+        comment,
+        id
+      })
+      console.log(id)
+        
+  try {
+    await fetch('/api/createComment', {
+      method: 'POST',
+     body: JSON.stringify(newData),
+     type: 'application/json'
+    }).then(() => {
+     
+    })
+    
+  } catch (err) {
+
+  }
+}
+
 
   if (!post || !post.mainImage) {
 
@@ -49,9 +77,8 @@ const Post = ({ post, posts, category }) => {
 
 
         <aside className="leftcolumn">
-            <Categories category={category} />
+          <Categories category={category} />
         </aside>
-        
         <div className="midcolumn">
           <div className='header'>
             <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} />
@@ -66,9 +93,9 @@ const Post = ({ post, posts, category }) => {
               style={{ borderRadius: "100%", float: "right" }}
 
             />
-            <h4>: {post.name}</h4>
-            <h4>: {post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
-              : "YYYY-MM-DD hh:mm"}</h4>
+             <h4> <BsPencilSquare/>: {post.name}</h4>
+            <h4><MdDateRange/>: {post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm") 
+          : "YYYY-MM-DD hh:mm"}</h4>
             <hr />
 
           </div>
@@ -81,11 +108,10 @@ const Post = ({ post, posts, category }) => {
           <div style={{ marginTop: "90px", borderTop: "1px solid #333" }}></div>
 
 
-
-          <div className="card comment_card">
-
-          </div>
-
+{/* 
+          <div className="create_comment_card ">
+            <CreateComment post={post} />
+          </div> */}
 
 
         </div>
@@ -105,9 +131,18 @@ const Post = ({ post, posts, category }) => {
 
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
+  _id,
+  publishedAt,
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
+  'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
+              _id, 
+              name, 
+              email, 
+              comment, 
+              _createdAt
+          },
   mainImage{
     asset->{
     _id,
@@ -119,7 +154,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 }`
 export async function getStaticPaths() {
   const paths = await client.fetch(
-    groq`*[_type == "post" && defined(slug.current)][].slug.current`
+    groq`*[_type == "post" && defined(slug.current)].slug.current`
   )
 
   return {
@@ -158,7 +193,7 @@ export async function getStaticProps(context) {
 }`
   const posts = await client.fetch(queryPosts)
   const category = await client
-  .fetch(
+    .fetch(
       groq`*[_type == "category"]{
 _id,
 title,
@@ -171,7 +206,7 @@ image{
 slug,
 
 }`
-  );
+    );
 
   return {
     props: {
