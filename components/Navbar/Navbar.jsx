@@ -30,6 +30,7 @@ const Navbar = () => {
 
 
   const variants = {
+    
     visible: { opacity: 1, y: 0, backgroundColor: "#0d1117", },
     hidden: { opacity: 0, y: -25 }
   };

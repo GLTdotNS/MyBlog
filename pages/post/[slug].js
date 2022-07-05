@@ -7,8 +7,10 @@ import dynamic from 'next/dynamic'
 import LoadingSpin from 'react-loading-spin'
 import Categories from '../../components/Blog/BlogPageComponents/Categories'
 import moment from 'moment'
-import {MdDateRange} from "react-icons/md"
-import {BsPencilSquare} from "react-icons/bs"
+import { MdDateRange } from "react-icons/md"
+import { BsPencilSquare , BsFillShareFill} from "react-icons/bs"
+import { useEffect } from 'react'
+
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
   {
@@ -25,29 +27,28 @@ let BlockContent = block;
 const Post = ({ post, posts, category }) => {
 
 
-  console.log(post)
   const onSubmit = async () => {
     setId(post._id)
     setNewData({
-        name,
-        comment,
-        id
-      })
-      console.log(id)
-        
-  try {
-    await fetch('/api/createComment', {
-      method: 'POST',
-     body: JSON.stringify(newData),
-     type: 'application/json'
-    }).then(() => {
-     
+      name,
+      comment,
+      id
     })
-    
-  } catch (err) {
+    console.log(id)
 
+    try {
+      await fetch('/api/createComment', {
+        method: 'POST',
+        body: JSON.stringify(newData),
+        type: 'application/json'
+      }).then(() => {
+
+      })
+
+    } catch (err) {
+
+    }
   }
-}
 
 
   if (!post || !post.mainImage) {
@@ -93,22 +94,22 @@ const Post = ({ post, posts, category }) => {
               style={{ borderRadius: "100%", float: "right" }}
 
             />
-             <h4> <BsPencilSquare/>: {post.name}</h4>
-            <h4><MdDateRange/>: {post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm") 
-          : "YYYY-MM-DD hh:mm"}</h4>
+            <h4> <BsPencilSquare />: {post.name}</h4>
+            <h4><MdDateRange />: {post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
+              : "YYYY-MM-DD hh:mm"}</h4>
             <hr />
 
           </div>
           <BlockContent post={post} />
 
-          <div style={{ float: "right" }}>
-            <h3>Share</h3>
+          <div>
+           <BsFillShareFill/>
 
           </div>
-          <div style={{ marginTop: "90px", borderTop: "1px solid #333" }}></div>
 
 
-{/* 
+
+          {/* 
           <div className="create_comment_card ">
             <CreateComment post={post} />
           </div> */}

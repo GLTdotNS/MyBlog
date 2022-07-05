@@ -1,5 +1,5 @@
 /*global*/
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
@@ -7,6 +7,8 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  margin:0;
+  padding:0
 }
 
 body {
@@ -58,8 +60,9 @@ body {
 }
 
 .p__opensans {
-  font-family: 'Bebas Neue', cursive;
-  font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  font-weight: 900;
+  font-size: 15px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 28px;
@@ -335,16 +338,15 @@ a {
 
 .aboutme {
   font-family: 'Oswald', sans-serif;
-  border-radius: 15px;
   box-shadow: 1px 1px 18px -9px #000000;
-  margin: auto;
+  margin-left: auto;
+  border-left: 1px solid #333;
+  border-top: 1px solid #333;
   margin-top: 5% !important;
-  width: 60%;
+  width: 85%;
   padding: 20px;
   background-color: black;
-  border: 1px solid #333;
-  margin-top: 1%;
-  margin-bottom: 1%;
+
 }
 
 .main {
@@ -453,7 +455,6 @@ hr {
 }
 
 .leftcolumn {
-  border-right: 1px solid #333;
   float: left;
   position: sticky;
   top: 0px;
@@ -476,11 +477,16 @@ hr {
   position: absolute;
   bottom: 0;
   top: 0;
-  left: 1px;
+  left: 0px;
+  border-radius: 2px;
   width: 3px;
 }
 
+.rightcolumn li::content {
 
+  color: red !important;
+  font-size: 100px !important;
+}
 
 .post_text {
   width: 90%;
@@ -498,9 +504,11 @@ hr {
   transition: 0.1s ease;
   float: right;
   width: 15%;
+  height: 100vh;
+  border: 3px;
+  box-sizing: border-box;
   padding: 2%;
   background-color: black;
-  overflow: auto;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
@@ -840,6 +848,13 @@ div.social {
 @media screen and (max-width: 850px) {
   .footer_div{
     width: 100% !important;
+    border: none !important;
+  }
+  .project-container{
+    width: 100% !important;
+  }
+  .midcolumn{
+    border: none !important;
   }
   .social {
     display: flex !important;
@@ -928,7 +943,7 @@ div.social {
   padding: 2%;
   margin: auto;
   margin-top: 2%;
-  font-size: 20px;
+  font-size: 15px;
   color: rgb(217, 216, 216);
 
 }
@@ -957,7 +972,6 @@ div.social {
 
 h2 {
 
-  font-family: 'Bebas Neue', cursive;
   margin-bottom: 50px;
   letter-spacing: 2px;
   text-align: center;
@@ -1177,6 +1191,7 @@ h2 {
 .full {
   display: grid;
   grid-template-columns: 2fr 3fr;
+
 }
 
 ol {
@@ -1243,9 +1258,7 @@ ol {
 
 /*projects*/
 .project-container {
-  max-width: 1200px;
-  margin-bottom: 2%;
-  margin-top: 2%;
+  width: 85%;
 
 }
 

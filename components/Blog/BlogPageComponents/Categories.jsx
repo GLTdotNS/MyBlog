@@ -2,6 +2,7 @@ import React from 'react'
 import Link from "next/link"
 const Categories = ({ category }) => {
 
+
   if (! category) {
     return <p>loading</p>
   }
