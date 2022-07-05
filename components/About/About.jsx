@@ -7,12 +7,13 @@ import { client } from '../../lib/sanityClient'
 import Skills from './Hero/Skills'
 import { urlForImg } from '../../lib/sanityClient'
 import { downloadPdf } from '../../scripts/download'
+import { animation } from '../../animations/animation'
 
 
 const About = () => {
   const [banner, setBanner] = useState(null);
 
-  
+
 
 
   useEffect(() => {
@@ -70,7 +71,9 @@ const About = () => {
 
 
   return (
-    <motion.div >
+    <motion.div
+      {...animation}
+    >
       <div className='aboutme'>
         <div className="full">
           <div className="left">
@@ -84,9 +87,9 @@ const About = () => {
             <div className="name">
               <h3>{banner.firstName}</h3>
               <h1>{banner.lastName}</h1>
-              <hr style={{backgroundColor: 'black'}}/>
+              <hr style={{ backgroundColor: 'black' }} />
               <br />
-              <div className="title"> 
+              <div className="title">
                 <p>Web Developer</p>
               </div>
               <div className="Contact">
@@ -114,7 +117,12 @@ const About = () => {
 
 
 
-          <div className="right">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+            className="right">
 
 
             <div className="Experience">
@@ -214,10 +222,10 @@ const About = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
-    </motion.div>
+    </motion.div >
   )
 }
 

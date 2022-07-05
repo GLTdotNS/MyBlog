@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { client } from '../../../lib/sanityClient';
-import { useParams } from "react-router-dom";
+
 import { motion } from 'framer-motion';
 import { animation } from '../../../animations/animation';
 import { BsFillPencilFill } from "react-icons/bs"
@@ -12,120 +12,19 @@ import toast from 'react-hot-toast';
 const CreateComment = ({ post }) => {
 
     const [comment, setComment] = useState(null);
-    const [commentData, setComData] = useState([]);
-    const [name, setName] = useState(null);
-    const { slug } = useParams();
+    const [commentData, setComData] = useState(post.comments);
+    const [name, setName] = useState("");
+    const [id , setId] = useState(post._id)
+    const [newData , setNewData] = useState({})
 
 
+    
     useEffect(() => {
         window.scrollTo(0, 0)
       }, [])
-    const onSubmit = (e) => {
-        e.preventDefault()
-        client.create({
-            _type: 'comment',
-            post: {
-                _type: 'reference',
-                _ref: postData._id,
-            },
-            approved: true,
-            name,
-            comment
-
-        }).then(() => {
-     
-            handleSumbitComment();
-        });
 
 
-    }
-    useEffect(() => {
-        client
-            .fetch(
-                `*[slug.current == $slug]{
-              _id,
-              title,
-              slug,
-              publishedAt,
-              mainImage{
-                asset->{
-                  _id,
-                  url
-                 }
-               },
-             body[]{
-               ...,
-              asset->{
-              _id,
-              url
-            }
-          },
-            "name": author->name,
-            "authorImage": author->image,
-            'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
-              _id, 
-              name, 
-              email, 
-              comment, 
-              _createdAt
-          }
-           }`,
-                { slug }
-            )
-            .then((data) => {
-                const newData = data[0];
-                setComData(newData.comments);
-            })
-            .catch(console.error);
-            // eslint-disable-next-line 
-    }, []);
-
-    const handleSumbitComment = () => {
-        client
-            .fetch(
-                `*[slug.current == $slug]{
-            _id,
-            title,
-            slug,
-            publishedAt,
-            mainImage{
-              asset->{
-                _id,
-                url
-               }
-             },
-           body[]{
-             ...,
-            asset->{
-            _id,
-            url
-          }
-        },
-          "name": author->name,
-          "authorImage": author->image,
-          'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
-            _id, 
-            name, 
-            email, 
-            comment, 
-            _createdAt
-        }
-         }`,
-                { slug }
-            )
-            .then((data) => {
-                const newData = data[0];
-                toast.success("Published");
-                setComData(newData.comments);
-            }).then(() => {
-                const input = document.getElementById("input");
-                const textarea = document.getElementById("textarea");
-                input.value = "";
-                textarea.value = "";
-                setComment(textarea.value)
-            })
-            .catch(console.error);
-    }
+ 
 
     return (
         <div>

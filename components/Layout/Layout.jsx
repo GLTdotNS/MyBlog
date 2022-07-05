@@ -12,14 +12,15 @@ const Layout = ({children}) => {
         <Navbar/>
       </header>
       <StickySocialMediaBar/>
-      <main className='main-container'
+      <main className='main-container row'
       >
        
        {children}
+ 
+      <Footer/> 
+
       </main>
-      <footer>
-        <Footer/>
-      </footer>
+ 
     </div>
   )
 }

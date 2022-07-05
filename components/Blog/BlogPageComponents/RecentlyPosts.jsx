@@ -9,19 +9,17 @@ const RecentlyPosts = ({ posts }) => {
 
       <h3 className="p__opensans title">Recently Posts</h3>
       <hr />
-      {posts && posts.slice(0, 3).map((post, index) =>
+      <ol className="section" >
+        {posts && posts.slice(0, 3).map((post, index) =>
 
-        <ul className="section" key={post._id} >
-          <li>
+          <li key={post._id}>
             {moment(post.publishedAt).format("MMM DD")}
-            <Link href="/post/[slug]"  as={`/post/${post.slug.current}`}
-              ><a>{post.title}</a></Link>
+            <Link href="/post/[slug]" as={`/post/${post.slug.current}`}
+            ><a>{post.title}</a></Link>
+            <hr />
           </li>
-          <hr />
-        </ul>
-
-
-      )}
+        )}
+      </ol>
     </div>
   )
 }

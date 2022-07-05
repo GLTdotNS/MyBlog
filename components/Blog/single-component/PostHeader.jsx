@@ -9,9 +9,7 @@ const PostHeader = ({post}) => {
 
   return (
     <div>
-        {/* <div className='header'>
-        <img src={urlForImg(postData.mainImage)} alt="" width={"20%"} height={"20%"} />
-        </div> */}
+       
         <h2>{postData.title}</h2>
         <div className="author">
           <img
