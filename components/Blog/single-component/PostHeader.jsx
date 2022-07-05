@@ -7,6 +7,8 @@ import { urlForImg } from '../../../lib/sanityClient';
 
 const PostHeader = ({post}) => {
 
+
+
   return (
     <div>
        

@@ -34,8 +34,10 @@ const PostsComponent = ({ posts }) => {
 
 
         <motion.div
+          
           initial={{ width: 100 }}
           animate={{ minWidth: "100%" }}
+
           className='inner_post_text'>
 
           {post.mainImage ? <motion.img

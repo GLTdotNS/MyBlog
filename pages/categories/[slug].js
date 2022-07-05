@@ -19,7 +19,7 @@ const CategoriesPage = ({ posts, category }) => {
         let index = window.location.href.lastIndexOf("/") + 1;
         let url = window.location.href;
         setLocation(url.slice(index, url.length))
-        document.title = `Категории`;
+        document.title = `Категории` + location;
 
     }, [])
 

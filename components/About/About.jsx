@@ -16,7 +16,7 @@ const About = () => {
 
 
 
-  useEffect(() => {
+  useEffect(() => { 
     client
       .fetch(
         groq`*[_type == "banner"]{
@@ -72,8 +72,9 @@ const About = () => {
 
   return (
     <motion.div
-      {...animation}
+    {...animation}
     >
+      <div className='leftcolumn'> asd</div>
       <div className='aboutme'>
         <div className="full">
           <div className="left">
