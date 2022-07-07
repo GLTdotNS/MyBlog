@@ -415,7 +415,7 @@ hr {
   margin-top: 30%;
   background-color: #111;
   color: white;
-  padding: 5px;
+  padding: 5=25px;
   text-align: left;
   width: 100%;
   display: block;
@@ -456,6 +456,7 @@ hr {
 
 .leftcolumn {
   float: left;
+  padding: 1rem;
   position: sticky;
   top: 0px;
   width: 15%;

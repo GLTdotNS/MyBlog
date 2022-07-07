@@ -31,7 +31,7 @@ const MainBlogPage = ({ posts, category }) => {
   return (
 
     <motion.div className="row"
-      {...animation}
+    {...animation}
     >
 
       <div className="leftcolumn">
@@ -46,7 +46,10 @@ const MainBlogPage = ({ posts, category }) => {
       <div
 
         className="midcolumn">
-
+          <>
+          <button className='btn'> asd</button>
+          </>
+          <hr/>
         <PostsComponent posts={posts} />
 
       </div>

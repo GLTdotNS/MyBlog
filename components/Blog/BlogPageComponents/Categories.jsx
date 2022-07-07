@@ -24,7 +24,6 @@ const Categories = ({ category }) => {
               key={index} >
              <a> {category.title}</a>
              </Link>
-             
              </span>
           }
         
