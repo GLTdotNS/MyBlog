@@ -34,9 +34,6 @@ const PostsComponent = ({ posts }) => {
 
 
         <motion.div
-          
-          initial={{ width: 100 }}
-          animate={{ minWidth: "100%" }}
 
           className='inner_post_text'>
 
@@ -57,7 +54,7 @@ const PostsComponent = ({ posts }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 1 }}
 
           >{post.description.slice(0, 300)}...</motion.span>
 

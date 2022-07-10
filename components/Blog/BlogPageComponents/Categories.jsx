@@ -1,6 +1,12 @@
 import React from 'react'
 import Link from "next/link"
+import { useRouter } from 'next/router'
+
 const Categories = ({ category }) => {
+  const handleClick = (e) => {
+    e.preventDefault()
+    router.push(href)
+  }
 
 
   if (! category) {
@@ -15,11 +21,7 @@ const Categories = ({ category }) => {
         <>
           {!category ? "Something went wrong..." :
 
-             <span  onClick={() => {
-              setTimeout(() => {
-                window.location.reload();
-              }, 1000);
-             }} 
+             <span  
              > <Link  href={"/categories/[slug]" } as={`/categories/${category.slug.current}`}
               key={index} >
              <a> {category.title}</a>
