@@ -8,7 +8,7 @@ html {
   behavior: smooth;
   font-family: 'Roboto', sans-serif;
   margin:0;
-  padding:0
+  padding: 0;
 }
 
 body {
@@ -447,6 +447,7 @@ hr {
 .midcolumn {
   display: inline-block;
   margin: 0 auto  ;
+  padding: 100px !important;
   text-align: left;
   border-left: 1px solid #333;
   padding: 5%;
@@ -534,7 +535,8 @@ hr {
 .initial-post {
   box-shadow: 1px 1px 18px -9px #000000;
   width: 90%;
-  padding: 2%;
+  border: 1px solid #333;
+  padding: 5%;
   margin: auto;
   margin-top: 20px;
 
