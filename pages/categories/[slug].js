@@ -147,6 +147,7 @@ export async function getServerSideProps(context) {
 
     return {
         props: {
+            key: slug,
             post,
             posts,
             category

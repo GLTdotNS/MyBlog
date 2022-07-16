@@ -10,22 +10,20 @@ const Categories = ({ category }) => {
   if (!category) {
     return <p>loading</p>
   }
-  const handleClick = (e) => {
-    e.preventDefault()
-    
-  }
+ 
   return (
     <div className="categories columns" style={{ backgroundColor: "#333", borderRadius: "1px" }}>
       <h3 className="p__opensans title">Categories</h3>
       <hr />
-      {category && category.map((category, index) =>
+      {category && category.map((category) =>
 
         <>
           {!category ? "Something went wrong..." :
-            <Link href={"/categories/[slug]"} as={`/categories/${category.slug.current}`}
-              key={index} >
-              <a onClick={() => router.push(`/categories/${category.slug.current}`)}> {category.title}</a>
+            <span  key={category._id} >
+              <Link href={"/categories/[slug]"} as={`/categories/${category.slug.current}`}>
+              <a> {category.title}</a>
             </Link>
+            </span>
 
           }
 
