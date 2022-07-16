@@ -19,7 +19,7 @@ const Navbar = () => {
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-    } else if (scrollY?.current > 100 && scrollY?.current > scrollY?.prev) {
+    } else if (scrollY?.current > 1  && scrollY?.current > scrollY?.prev) {
       setHidden(true);
     }
   }
@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const variants = {
     
-    visible: { opacity: 1, y: 0, backgroundColor: "#0d1117", },
+    visible: { opacity: 1, top: 0, backgroundColor: "#161b22", },
     hidden: { opacity: 0, y: -25 }
   };
 

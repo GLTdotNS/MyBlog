@@ -7,7 +7,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   behavior: smooth;
   font-family: 'Roboto', sans-serif;
-  margin:0;
+  margin: 0;
   padding: 0px;
 }
 
@@ -71,7 +71,10 @@ body {
 
 
 @media screen and (min-width: 2000px) {
+  .leftcolumn .title{
+    margin-top: 10% !important;
 
+  }
   .p__opensans {
     font-size: 30px;
     line-height: 50px;
@@ -127,6 +130,7 @@ a {
 
 .app__navbar {
   position: fixed;
+  background-color: #161b22;
   width: 100%;
   top: 0;
   display: flex;
@@ -239,7 +243,17 @@ a {
     display: none;
 
   }
+  .leftcolumn .title{
+    margin-top: 10% !important;
 
+  }
+  body{
+    background-color: black;
+  }
+  .footer_div{
+    margin-top:50%;
+    width: 100% !important;
+  }
   .app__navbar-smallscreen {
     display: flex;
   }
@@ -388,6 +402,7 @@ a {
   transition: 0.5s ease;
   color: blue;
 }
+
 .section li {
   list-style: none;
 }
@@ -445,7 +460,7 @@ hr {
 
 .midcolumn {
   display: inline-block;
-  margin: 0 auto  ;
+  margin: 0 auto;
   text-align: left;
   border-left: 1px solid #333;
   padding: 5%;
@@ -460,6 +475,7 @@ hr {
   top: 0px;
   width: 15%;
 }
+
 .rightcolumn ol {
   list-style-type: none;
 }
@@ -471,8 +487,11 @@ hr {
   padding-left: 20px;
 }
 
+
 .rightcolumn li:before {
-  content: '•';
+  content:" ";
+  background-image:  url("./punto.svg") ;
+  background-repeat: no-repeat;
   background-color: #333;
   position: absolute;
   bottom: 0;
@@ -504,11 +523,11 @@ hr {
   transition: 0.1s ease;
   float: right;
   width: 15%;
+  background-color: black;
   height: 100vh;
   border: 3px;
   box-sizing: border-box;
   padding: 2%;
-  background-color: black;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
@@ -714,7 +733,6 @@ hr {
   font-size: 1px;
   background-color: black;
   width: 85%
-  
 }
 
 footer {
@@ -837,25 +855,34 @@ div.social {
 .footer-menu a:hover {
   color: #27bcda;
 }
-.copyright{
+
+.copyright {
   background-color: transparent;
 }
+
 .copyright p {
   font-size: 0.9em;
   text-align: right;
 }
 
 @media screen and (max-width: 850px) {
-  .footer_div{
+  .leftcolumn .title{
+    margin-top: 10% !important;
+
+  }
+  .footer_div {
     width: 100% !important;
     border: none !important;
   }
-  .project-container{
+
+  .project-container {
     width: 100% !important;
   }
-  .midcolumn{
+
+  .midcolumn {
     border: none !important;
   }
+
   .social {
     display: flex !important;
   }
@@ -1079,7 +1106,10 @@ h2 {
 }
 
 @media screen and (max-width:800px) {
+  .leftcolumn .title{
+    margin-top: 10% !important;
 
+  }
   .full {
     grid-template-columns: auto !important;
     /* display: none !important; */
@@ -1123,7 +1153,10 @@ h2 {
 
 
 @media screen and (max-width:820px) {
+  .leftcolumn .title{
+    margin-top: 10% !important;
 
+  }
   .skills-section,
   .aboutme,
   .main {
@@ -1337,7 +1370,10 @@ ol {
   .project-column {
     width: 50%;
   }
+  .leftcolumn .title{
+    margin-top: 10% !important;
 
+  }
   .project-content img {
     height: 100px;
     width: 100%;
@@ -1355,6 +1391,10 @@ ol {
 @media screen and (max-width: 400px) {
   .project-column {
     width: 100%;
+  }
+  .leftcolumn .title{
+    margin-top: 10% !important;
+
   }
 
   .project-content img {

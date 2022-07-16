@@ -60,6 +60,7 @@ const Post = ({ post, posts, category }) => {
   let url;
 
   useEffect(() => {
+
     url = window.location.href
   }, [])
 
@@ -113,11 +114,7 @@ const Post = ({ post, posts, category }) => {
           </div>
           <BlockContent post={post} />
           <FacebookShareButton
-            url={`${url}`}
-            quote={"フェイスブックはタイトルが付けれるようです"}
-            hashtag={"#hashtag"}
-            description={"aiueo"}
-            className="Demo__some-network__share-button"
+            url={url}
           >
             <BsFillShareFill onMouseEnter={hover} />
           </FacebookShareButton>
