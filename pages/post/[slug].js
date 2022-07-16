@@ -8,8 +8,11 @@ import LoadingSpin from 'react-loading-spin'
 import Categories from '../../components/Blog/BlogPageComponents/Categories'
 import moment from 'moment'
 import { MdDateRange } from "react-icons/md"
-import { BsPencilSquare , BsFillShareFill} from "react-icons/bs"
+import { BsPencilSquare, BsFillShareFill } from "react-icons/bs"
+import { FacebookShareButton } from "react-share"
 import { useEffect } from 'react'
+
+
 
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
@@ -50,6 +53,16 @@ const Post = ({ post, posts, category }) => {
     }
   }
 
+  const hover = (e) => {
+    e.target.style.cursor = "pointer";
+  }
+  
+  let url;
+
+  useEffect(() => {
+    url = window.location.href
+  }, [])
+
 
   if (!post || !post.mainImage) {
 
@@ -73,10 +86,8 @@ const Post = ({ post, posts, category }) => {
 
 
   return (
-    <div className="main"  >
+    <div className="main">
       <div className="row">
-
-
         <aside className="leftcolumn">
           <Categories category={category} />
         </aside>
@@ -101,11 +112,17 @@ const Post = ({ post, posts, category }) => {
 
           </div>
           <BlockContent post={post} />
+          <FacebookShareButton
+            url={`${url}`}
+            quote={"フェイスブックはタイトルが付けれるようです"}
+            hashtag={"#hashtag"}
+            description={"aiueo"}
+            className="Demo__some-network__share-button"
+          >
+            <BsFillShareFill onMouseEnter={hover} />
+          </FacebookShareButton>
 
-          <div>
-           <BsFillShareFill/>
 
-          </div>
 
 
 

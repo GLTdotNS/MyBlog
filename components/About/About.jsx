@@ -74,8 +74,8 @@ const About = () => {
     <motion.div
     {...animation}
     >
-      <div className='leftcolumn'> asd</div>
       <div className='aboutme'>
+     
         <div className="full">
           <div className="left">
             <div className="image">

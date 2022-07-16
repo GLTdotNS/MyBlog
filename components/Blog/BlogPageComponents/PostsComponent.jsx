@@ -6,8 +6,8 @@ import Link from "next/link"
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { motion } from 'framer-motion';
-import LoadingSpin from 'react-loading-spin';
-
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 
 const PostsComponent = ({ posts }) => {
 
@@ -19,7 +19,26 @@ const PostsComponent = ({ posts }) => {
   const displayPost = posts && posts.slice(pageVisited, pageVisited + postPerPage).map((post, index) => {
 
     if (!post) {
-      return <LoadingSpin/>
+      return (
+
+        <SkeletonTheme baseColor="#202020" highlightColor="#444">
+
+          <div className='card initial-post'>
+            
+            <h3><Skeleton width={50} /></h3>
+            <h5><Skeleton width={80} /></h5>
+
+            <div className='inner_post_text'>
+              <span>
+                <Skeleton height={100} />
+              </span>
+            </div>
+
+          </div>
+
+        </SkeletonTheme>
+
+      )
     }
 
     return (
