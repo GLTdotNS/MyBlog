@@ -286,7 +286,7 @@ a {
 
 
 .search {
-  width: 20%;
+  width: 80%;
   position: relative;
   display: flex;
   padding: 3px;
@@ -301,7 +301,7 @@ a {
 
 .input {
   padding: 10px;
-  width: 50%;
+  width: 30%;
   height: 10px;
   margin-left: 50px;
   background: none;
@@ -315,7 +315,7 @@ a {
 }
 
 .box input:hover {
-  width: 80%;
+  width: 50%;
   background: #0d1117;
   border-radius: 10px;
 }

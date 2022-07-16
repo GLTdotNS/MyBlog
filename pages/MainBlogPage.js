@@ -48,11 +48,13 @@ const MainBlogPage = ({ posts, category }) => {
         className="midcolumn">
 
         <div className='box'>
-          <div className='search'>
 
-            <input className='input' type="text" placeholder="Search.." />
+          <div className='search'>
             
+              <input className='input' type="text" placeholder="Search.." />
+           
           </div>
+
         </div>
 
         <hr />
