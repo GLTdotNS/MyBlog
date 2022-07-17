@@ -61,7 +61,7 @@ body {
 
 .p__opensans {
   font-family: 'Oswald', sans-serif;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -294,7 +294,7 @@ a {
   display: block;
   width: 100%;
   height: 20vw;
-  object-fit: cover;
+  object-fit: contain;
 
 }
 
@@ -363,12 +363,14 @@ a {
 }
 
 .main {
-  font-family: 'Oswald', sans-serif;
   margin: auto;
   width: 100%;
   text-align: center;
   justify-content: center;
 
+}
+.main a{
+  text-decoration: none;
 }
 
 .categories a {

@@ -75,7 +75,7 @@ const PostsComponent = ({ posts }) => {
             exit={{ opacity: 0 }}
             transition={{ duration: 1 }}
 
-          >{post.description.slice(0, 300)}...</motion.span>
+          >{post?.description.slice(0, 300)}...</motion.span>
 
 
 
