@@ -25,9 +25,11 @@ import { copyToClipboard } from "../scripts/copyFunction.js"
             }
 
             if (style === "blockquote") {
-                return <blockquote>- {props.children}</blockquote>;
+                return <blockquote style={{borderLeft: "3px solid white" , padding: "1%" ,
+                marginLeft: "5%" , marginTop: "2%" , marginBottom: "2%", backgroundColor: "#333",
+                 fontSize: "20px"}}> {props.children}</blockquote>;
             }
-
+          
 
             return BlockContent.defaultSerializers.types.block(props);
         },
@@ -66,7 +68,7 @@ import { copyToClipboard } from "../scripts/copyFunction.js"
     marks: {
 
         strong: (props) =>
-            <strong>{props.children}</strong>,
+            <strong style={{marginTop: "5% !important"}}>{props.children}</strong>,
         em: (props) => <em>{props.children}</em>,
         code: (props) => {
 

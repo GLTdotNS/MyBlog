@@ -56,16 +56,11 @@ const Post = ({ post, posts, category }) => {
   const hover = (e) => {
     e.target.style.cursor = "pointer";
   }
+
   
-  let url;
-
-  useEffect(() => {
-
-    url = window.location.href
-  }, [])
 
 
-  if (!post || !post.mainImage) {
+  if (!post || !post.mainImage || !post.body) {
 
     return (
       <div className="spinner">
@@ -83,7 +78,6 @@ const Post = ({ post, posts, category }) => {
       </div>
     )
   };
-
 
 
   return (
@@ -112,16 +106,17 @@ const Post = ({ post, posts, category }) => {
             <hr />
 
           </div>
-          <BlockContent post={post} />
-          <FacebookShareButton
-            url={url}
-          >
-            <BsFillShareFill onMouseEnter={hover} />
-          </FacebookShareButton>
+          <BlockContent  post={post} />
 
+          <div style={{ backgroundColor: "#161b22" , padding: "20px" }}>
 
+            <FacebookShareButton url={`https://glt-resume.vercel.app/${post.slug}`}  >
 
+              <BsFillShareFill onMouseEnter={hover} />
 
+            </FacebookShareButton>
+
+          </div>
 
           {/* 
           <div className="create_comment_card ">
