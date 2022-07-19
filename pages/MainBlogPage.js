@@ -22,7 +22,7 @@ const MainBlogPage = ({ posts, category }) => {
     window.scrollTo(0, 0)
   }, [])
 
-  if (!post) {
+  if (!posts) {
     return (
 
       <SkeletonTheme baseColor="#202020" highlightColor="#444">
