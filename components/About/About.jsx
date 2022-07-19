@@ -2,48 +2,55 @@ import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 // import { animation } from '../../animations/animation'
 import LoadingSpin from 'react-loading-spin'
-import groq from 'groq'
-import { client } from '../../lib/sanityClient'
 import Skills from './Hero/Skills'
 import { urlForImg } from '../../lib/sanityClient'
 import { downloadPdf } from '../../scripts/download'
 import { animation } from '../../animations/animation'
+import GitHub from '../Blog/BlogPageComponents/GitHub'
 
-
-const About = () => {
-  const [banner, setBanner] = useState(null);
-
-
-
-
-  useEffect(() => { 
-    client
-      .fetch(
-        groq`*[_type == "banner"]{
-      about,
-      firstName,
-      lastName,
-      years,
-      phone,
-      city,
-      image{
-        asset->{
-          _id,
-          url
-         }
-       },
-   
-  }`
-      )
-      .then((data) => {
-
-        setBanner(data[0])
-
-      })
-      .catch(console.error);
-  }, []);
+const About = ({banner}) => {
+  
+  const [github, setGithub] = useState(null);
 
   useEffect(() => {
+    fetch(`/api/hello`)
+      .then(response => response.json())
+      .then(response => {
+        setGithub(response.name)
+      })
+
+  }, [])
+
+
+  // useEffect(() => {
+  //   client
+  //     .fetch(
+  //       groq`*[_type == "banner"]{
+  //     about,
+  //     firstName,
+  //     lastName,
+  //     years,
+  //     phone,
+  //     city,
+  //     image{
+  //       asset->{
+  //         _id,
+  //         url
+  //        }
+  //      },
+   
+  // }`
+  //     )
+  //     .then((data) => {
+
+  //       setBanner(data[0])
+
+  //     })
+  //     .catch(console.error);
+  // }, []);
+
+  useEffect(() => {
+    console.log(banner)
     window.scrollTo(0, 0)
     document.title = "Автобиография - Георги Тонков";
   }, [])
@@ -72,30 +79,33 @@ const About = () => {
 
   return (
     <motion.div
-    {...animation}
+      {...animation}
     >
+      <div className='leftcolumn'>
+        <GitHub github={github}/>
+      </div>
       <div className='aboutme'>
-     
+
         <div className="full">
           <div className="left">
             <div className="image">
               <img
                 id='mypic'
                 className='mypic'
-                src={urlForImg(banner.image).url()}
+                src={urlForImg(banner[0].image).url()}
               />
             </div>
             <div className="name">
-              <h3>{banner.firstName}</h3>
-              <h1>{banner.lastName}</h1>
+              <h3>{banner[0].firstName}</h3>
+              <h1>{banner[0].lastName}</h1>
               <hr style={{ backgroundColor: 'black' }} />
               <br />
               <div className="title">
-                <p>Web Developer</p>
+                <p>Senior Developer</p>
               </div>
               <div className="Contact">
-                <a href='mailto:georgitonkow@gmail.com'><b>Email:</b>georgitonkow@gmail.com</a>
-                <p id='phone'><b>Mobile :</b>{banner.phone}</p>
+                <a href='mailto:georgitonkow@gmail.com'><b>Email: </b>georgitonkow@gmail.com</a>
+                <p id='phone'><b>Mobile : </b>{banner[0].phone}</p>
                 <button type='button' className='btn' style={{ float: "right" }}
                   onClick={() => downloadPdf("./cv.pdf", "cv.pdf")}>
                   Download CV
@@ -106,7 +116,7 @@ const About = () => {
               <div className="Summary">
 
                 <h2>Summary</h2>
-                <p> {banner.about}</p>
+                <p> {banner[0].about}</p>
 
               </div>
             </div>

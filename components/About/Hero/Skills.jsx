@@ -6,7 +6,10 @@ import { reveal } from '../../../animations/skillsBarAnimation'
 
 const Skills = () => {
 
-  window.addEventListener("scroll", reveal);
+  useEffect(() => {
+
+    window.addEventListener("scroll", reveal);
+  },[])
 
 
   return (
