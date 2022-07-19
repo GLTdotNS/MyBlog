@@ -1,10 +1,44 @@
 import About from "../components/About/About"
-const aboutme = () => {
+import { client } from "../lib/sanityClient"
+import groq from "groq"
+
+const aboutme = ({banner}) => {
   return (
     <div>
-      <About/>
+      <About banner={banner}/>
     </div>
   )
 }
 
 export default aboutme
+
+export const getServerSideProps = async () => {
+
+ 
+
+  const banner =   await client
+  .fetch(
+    groq`*[_type == "banner"]{
+  about,
+  firstName,
+  lastName,
+  years,
+  phone,
+  city,
+  image{
+    asset->{
+      _id,
+      url
+     }
+   },
+
+}`
+  )
+
+
+
+  return {
+    props: {  banner }
+  }
+
+}

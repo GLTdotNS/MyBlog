@@ -842,8 +842,10 @@ div.social {
 }
 
 #sanity {
+  font-size: 25px;
+  color: white;
   width: 100px;
-  font-family: 'Righteous', cursive;
+  font-family: 'Great Vibes', cursive;
   cursor: pointer;
 }
 
