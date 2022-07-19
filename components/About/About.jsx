@@ -50,7 +50,6 @@ const About = ({banner}) => {
   // }, []);
 
   useEffect(() => {
-    console.log(banner)
     window.scrollTo(0, 0)
     document.title = "Автобиография - Георги Тонков";
   }, [])
