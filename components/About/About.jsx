@@ -79,6 +79,7 @@ const About = ({banner}) => {
   return (
     <motion.div
       {...animation}
+      className="aboutMePage"
     >
       <div className='leftcolumn'>
         <GitHub github={github}/>

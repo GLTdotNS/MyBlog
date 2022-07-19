@@ -97,13 +97,18 @@ body {
   .p__opensans {
     font-size: 14px;
   }
+  .aboutMePage .leftcolumn {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 450px) {
   .p__opensans {
     font-size: 12px;
   }
-
+  .aboutMePage .leftcolumn {
+    display: none;
+  }
 }
 
 
@@ -246,6 +251,9 @@ a {
   .leftcolumn .title{
     margin-top: 10% !important;
 
+  }
+  .aboutMePage .leftcolumn {
+    display: none;
   }
   body{
     background-color: black;
@@ -1222,7 +1230,9 @@ h2 {
   .app__navbar {
     position: relative !important;
   }
-
+  .aboutMePage .leftcolumn {
+    display: none;
+  }
 }
 
 .full {
