@@ -2,7 +2,7 @@ import About from "../components/About/About"
 import { client } from "../lib/sanityClient"
 import groq from "groq"
 
-const aboutme = ({banner}) => {
+const AboutMe = ({banner}) => {
   return (
     <div>
       <About banner={banner}/>
@@ -10,7 +10,7 @@ const aboutme = ({banner}) => {
   )
 }
 
-export default aboutme
+export default AboutMe
 
 export const getServerSideProps = async () => {
 

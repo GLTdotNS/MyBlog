@@ -1,8 +1,8 @@
-import Projects from "../components/Projects/Projects"
+
 import GitHub from "../components/Blog/BlogPageComponents/GitHub"
 import { useState, useEffect } from "react";
 
-const projects = () => {
+const Projects = () => {
 
     const [github, setGithub] = useState(null);
     const [contributions, setContributions] = useState(null);
@@ -40,4 +40,4 @@ const projects = () => {
 }
 
 
-export default projects
+export default Projects
