@@ -31,7 +31,7 @@ const Navbar = () => {
 
   const variants = {
     
-    visible: { opacity: 1, top: 0, backgroundColor: "#161b22", },
+    visible: { opacity: 1, x: 0, backgroundColor: "#161b22", },
     hidden: { opacity: 0, y: -25 }
   };
 
@@ -82,7 +82,7 @@ const Navbar = () => {
 
       <ul className="app__navbar-links">
 
-        <li className="p__opensans">
+        <li  className="p__opensans">
           <Link href="/">
             <a>Blog</a>
           </Link>

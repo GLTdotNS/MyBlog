@@ -12,14 +12,18 @@ import { motion } from 'framer-motion';
 
 const CategoriesPage = ({ posts, category }) => {
 
+
+
     const [location, setLocation] = useState("");
 
     useEffect(() => {
-
         let index = window.location.href.lastIndexOf("/") + 1;
         let url = window.location.href;
-        setLocation(url.slice(index, url.length))
-        document.title = `Категории` + location;
+        let string = url.slice(index, url.length)
+        setLocation(string)
+        setTimeout(() => {
+            document.title = `Категория - ` + location;
+        }, 1000)
 
     }, [])
 
