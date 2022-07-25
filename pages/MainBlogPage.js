@@ -9,8 +9,8 @@ import { motion, transform } from "framer-motion"
 import { animation } from '../animations/animation';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-
-
+import notFoundImage from "../styles/monkey.png"
+import Image from "next/image"
 const MainBlogPage = ({ posts, category }) => {
 
   const [valueToSearch, setValueToSearch] = useState("");
@@ -74,8 +74,15 @@ const MainBlogPage = ({ posts, category }) => {
         {
           posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase())).length > 0 ? 
           <PostsComponent posts={posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))} /> 
-          : <div  style={{minHeight: "100vh"}}>
-            <h2 style={{marginTop: "20%"}}>Not found</h2>
+          : <div  style={{minHeight: "100vh" , textAlign: "center" }}>
+            <h2 style={{marginTop: "20%"}}>Oooops!...</h2>
+            <Image
+             src={notFoundImage}
+             alt="Picture of the author"
+             width="350px"
+             height="300px"
+             />
+            <p>I'm probably working on something that has blown up.</p>
             </div>
         }
      

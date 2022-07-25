@@ -8,19 +8,31 @@ import { downloadPdf } from '../../scripts/download'
 import { animation } from '../../animations/animation'
 import GitHub from '../Blog/BlogPageComponents/GitHub'
 
-const About = ({banner}) => {
-  
+const About = ({ banner }) => {
+
   const [github, setGithub] = useState(null);
+  const [contributions, setContributions] = useState(null);
 
   useEffect(() => {
-    fetch(`/api/hello`)
+    fetch(`/api/getGitHubInfo`)
       .then(response => response.json())
       .then(response => {
         setGithub(response.name)
       })
 
   }, [])
+  useEffect(() => {
 
+    const url = `/api/getContributions`
+
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response.data.data)
+        setContributions(response.data.data.viewer.contributionsCollection
+          .contributionCalendar.totalContributions)
+      })
+  }, [])
 
   // useEffect(() => {
   //   client
@@ -38,7 +50,7 @@ const About = ({banner}) => {
   //         url
   //        }
   //      },
-   
+
   // }`
   //     )
   //     .then((data) => {
@@ -82,7 +94,8 @@ const About = ({banner}) => {
       className="aboutMePage"
     >
       <div className='leftcolumn'>
-        <GitHub github={github}/>
+        <GitHub github={github} contributions={contributions} />
+
       </div>
       <div className='aboutme'>
 
@@ -101,11 +114,11 @@ const About = ({banner}) => {
               <hr style={{ backgroundColor: 'black' }} />
               <br />
               <div className="title">
-                <p>Senior Developer</p>
+                <p id='position'>Senior Developer</p>
               </div>
               <div className="Contact">
-                <a href='mailto:georgitonkow@gmail.com'><b>Email: </b>georgitonkow@gmail.com</a>
-                <p id='phone'><b>Mobile : </b>{banner[0].phone}</p>
+                <a href='mailto:georgitonkow@gmail.com'><span>Email: </span>georgitonkow@gmail.com</a>
+                <p id='phone'><span>Mobile : </span>{banner[0].phone}</p>
                 <button type='button' className='btn' style={{ float: "right" }}
                   onClick={() => downloadPdf("./cv.pdf", "cv.pdf")}>
                   Download CV
