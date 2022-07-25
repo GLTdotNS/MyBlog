@@ -15,7 +15,8 @@ const GitHub = ({ github, contributions }) => {
         <div className='me_on_github' style={{ padding: "0.3rem", backgroundColor: "#333" }}>
 
           <SkeletonTheme baseColor="#202020" highlightColor="#444" >
-            <p style={{ float: "left" }}><Skeleton width={90} height={90} borderRadius={100} /></p>
+            <p style={{ float: "left", marginLeft: "50%" }}>
+              <Skeleton width={90} height={90} borderRadius={100} /></p>
             <p><Skeleton /></p>
             <br />
             <p><Skeleton /></p>
@@ -39,7 +40,7 @@ const GitHub = ({ github, contributions }) => {
 
       <div className='me_on_github' style={{ padding: "0.3rem", backgroundColor: "#333" }}>
 
-        <img width={90} height={90} style={{ borderRadius: "100%" , marginLeft: "50%" }}
+        <img width={90} height={90} style={{ borderRadius: "100%", marginLeft: "50%" }}
           src={github.avatar_url} alt="" />
         <p>Repositories: <span>{github.public_repos}</span></p>
         <br />
