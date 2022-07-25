@@ -82,7 +82,7 @@ const MainBlogPage = ({ posts, category }) => {
              width="350px"
              height="300px"
              />
-            <p>I'm probably working on something that has blown up.</p>
+            <p>I am probably working on something that has blown up.</p>
             </div>
         }
      
