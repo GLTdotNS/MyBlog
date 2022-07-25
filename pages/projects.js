@@ -1,4 +1,4 @@
-
+import ProjectsComponent from "../components/Projects/ProjectsComponent"
 import GitHub from "../components/Blog/BlogPageComponents/GitHub"
 import { useState, useEffect } from "react";
 
@@ -34,7 +34,7 @@ const Projects = () => {
             <div className="leftcolumn">
                 <GitHub github={github} contributions={contributions} />
             </div>
-            <Projects />
+            <ProjectsComponent />
         </div>
     )
 }
