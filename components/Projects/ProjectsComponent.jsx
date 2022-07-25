@@ -5,7 +5,7 @@ import {animation} from "../../animations/animation"
 import img from "./Untitled.png"
 import res from "./restaurant.jpg"
 
-const Projects = () => {
+const ProjectsComponent = () => {
     useEffect(() => {
         document.title = "Проекти..."
         window.scrollTo(0, 0)
@@ -105,4 +105,4 @@ const Projects = () => {
   )
 }
 
-export default Projects
+export default ProjectsComponent
