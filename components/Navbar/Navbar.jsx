@@ -14,12 +14,15 @@ const Navbar = () => {
   const { scrollY } = useViewportScroll();
 
   const [hidden, setHidden] = useState(false);
-
+const [toggleMenu, setToggleMenu] = useState(false);
 
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-    } else if (scrollY?.current > 1  && scrollY?.current > scrollY?.prev) {
+    } else if (scrollY?.current > 1 && scrollY?.current > scrollY?.prev) {
+      if(setToggleMenu){
+        return
+      }
       setHidden(true);
     }
   }
@@ -30,7 +33,7 @@ const Navbar = () => {
 
 
   const variants = {
-    
+
     visible: { opacity: 1, x: 0, backgroundColor: "#161b22", },
     hidden: { opacity: 0, y: -25 }
   };
@@ -62,7 +65,7 @@ const Navbar = () => {
 
 
 
-  const [toggleMenu, setToggleMenu] = useState(false);
+  
 
   return (
 
@@ -82,7 +85,7 @@ const Navbar = () => {
 
       <ul className="app__navbar-links">
 
-        <li  className="p__opensans">
+        <li className="p__opensans">
           <Link href="/">
             <a>Blog</a>
           </Link>
