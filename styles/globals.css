@@ -71,10 +71,11 @@ body {
 
 
 @media screen and (min-width: 2000px) {
-  .leftcolumn .title{
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .p__opensans {
     font-size: 30px;
     line-height: 50px;
@@ -97,6 +98,7 @@ body {
   .p__opensans {
     font-size: 14px;
   }
+
   .aboutMePage .leftcolumn {
     display: none;
   }
@@ -106,6 +108,7 @@ body {
   .p__opensans {
     font-size: 12px;
   }
+
   .aboutMePage .leftcolumn {
     display: none;
   }
@@ -189,7 +192,7 @@ a {
 
 .app__navbar-links li:hover,
 .app__navbar-logo:hover {
-  
+
   color: rgb(224, 223, 223);
   opacity: 0.7;
   transition: 0.5s ease-in-out;
@@ -207,7 +210,8 @@ a {
   top: 0;
   left: 0;
   height: 100vh;
-  background: #0d1117;
+  background-color: transparent;
+  backdrop-filter: blur(18px);
   flex-direction: row;
   z-index: 5;
 }
@@ -249,20 +253,25 @@ a {
     display: none;
 
   }
-  .leftcolumn .title{
+
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .aboutMePage .leftcolumn {
     display: none;
   }
-  body{
+
+  body {
     background-color: black;
   }
-  .footer_div{
-    margin-top:50%;
+
+  .footer_div {
+    margin-top: 50%;
     width: 100% !important;
   }
+
   .app__navbar-smallscreen {
     display: flex;
   }
@@ -378,7 +387,8 @@ a {
   justify-content: center;
 
 }
-.main a{
+
+.main a {
   text-decoration: none;
 }
 
@@ -487,13 +497,16 @@ hr {
   top: 0px;
   width: 15%;
 }
-.me_on_github p{
+
+.me_on_github p {
   font-size: 13px;
 }
-.me_on_github span{
+
+.me_on_github span {
   margin-left: 0.5%;
   color: green;
 }
+
 .rightcolumn ol {
   list-style-type: none;
 }
@@ -507,8 +520,8 @@ hr {
 
 
 .rightcolumn li:before {
-  content:" ";
-  background-image:  url("./punto.svg") ;
+  content: " ";
+  background-image: url("./punto.svg");
   background-repeat: no-repeat;
   background-color: #333;
   position: absolute;
@@ -886,10 +899,11 @@ div.social {
 }
 
 @media screen and (max-width: 850px) {
-  .leftcolumn .title{
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .footer_div {
     width: 100% !important;
     border: none !important;
@@ -979,19 +993,24 @@ div.social {
   width: 8rem;
   height: 8rem;
 }
-.Contact{
+
+.Contact {
   line-height: 30px;
 }
-#position{
+
+#position {
   color: red;
   border-bottom: 1px solid olivedrab;
   width: 20%;
   margin-bottom: 2%;
 }
+
 .Summary {
   margin-top: 20%;
 }
-.name h3 , h1{
+
+.name h3,
+h1 {
   text-transform: uppercase !important;
 }
 
@@ -1136,10 +1155,11 @@ h2 {
 }
 
 @media screen and (max-width:800px) {
-  .leftcolumn .title{
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .full {
     grid-template-columns: auto !important;
     /* display: none !important; */
@@ -1183,10 +1203,11 @@ h2 {
 
 
 @media screen and (max-width:820px) {
-  .leftcolumn .title{
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .skills-section,
   .aboutme,
   .main {
@@ -1248,6 +1269,7 @@ h2 {
   .app__navbar {
     position: relative !important;
   }
+
   .aboutMePage .leftcolumn {
     display: none;
   }
@@ -1402,10 +1424,12 @@ ol {
   .project-column {
     width: 50%;
   }
-  .leftcolumn .title{
+
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
+
   .project-content img {
     height: 100px;
     width: 100%;
@@ -1424,7 +1448,8 @@ ol {
   .project-column {
     width: 100%;
   }
-  .leftcolumn .title{
+
+  .leftcolumn .title {
     margin-top: 10% !important;
 
   }
