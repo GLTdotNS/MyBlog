@@ -40,7 +40,7 @@ const About = ({ banner }) => {
       })
   }, [])
 
-  const onSubmit = (e) => {
+  const onSubmit =   (e) => {
 
     e.preventDefault()
     let data = {
@@ -58,7 +58,7 @@ const About = ({ banner }) => {
       body: JSON.stringify(data)
 
     }).then((res) => {
-
+      
       if (res.status === 200) {
         toast.success("Message has been sent successfully", {
           position: "top-center",

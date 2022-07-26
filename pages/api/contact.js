@@ -28,9 +28,9 @@ export default async function (req, res) {
         console.log(err)
       else
         console.log(info)
-        
+        res.status(200).json({data: res.status});
     })
 });
  
-  return res.status(200).json({data: res.status});
+ 
 }

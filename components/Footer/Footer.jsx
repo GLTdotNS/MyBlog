@@ -26,13 +26,13 @@ const Footer = () => {
 
           </div>
 
-          <div className="column links">
+          <div className="column ">
             <h3>Privacy and Policy</h3>
 
             <ul>
 
               <li>
-                <a id='open_source' >Open source system <SiGithub size={10} /></a>
+                <a id='open_source' href='https://github.com/GLTdotNS/nextjs'>Open source system <SiGithub size={10} /></a>
               </li>
               <li>
                 <a href="mailto:georgitonkow@gmail.com">Report bug</a>
