@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-// import { animation } from '../../animations/animation'
+import { useForm } from "react-hook-form"
 import LoadingSpin from 'react-loading-spin'
 import Skills from './Hero/Skills'
 import { urlForImg } from '../../lib/sanityClient'
 import { downloadPdf } from '../../scripts/download'
 import { animation } from '../../animations/animation'
 import GitHub from '../Blog/BlogPageComponents/GitHub'
+import toast from 'react-hot-toast'
 
 const About = ({ banner }) => {
 
   const [github, setGithub] = useState(null);
   const [contributions, setContributions] = useState(null);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+  const [company, setCompany] = useState('')
+  const { register, handleSubmit, errors, reset } = useForm()
 
   useEffect(() => {
     fetch(`/api/getGitHubInfo`)
@@ -34,6 +40,58 @@ const About = ({ banner }) => {
       })
   }, [])
 
+  const onSubmit = (e) => {
+
+    e.preventDefault()
+    let data = {
+      name,
+      email,
+      message
+    }
+
+    fetch('/api/contact', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json, text/plain, */*',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+
+    }).then((res) => {
+
+      if (res.status === 200) {
+        toast.success("Message has been sent successfully", {
+          position: "top-center",
+          style: {
+            border: '1px solid #333',
+            padding: '5px',
+            color: '#713200',
+          }, iconTheme: {
+            primary: '#713200',
+            secondary: '#FFFAEE',
+          },
+        });
+        setTimeout(() => {
+          e.target.reset();
+          window.scrollTo(0, 0)
+        }, 2000);
+      }
+    }).catch((e) => {
+      toast.success("Failed , try again ", {
+        position: "top-center",
+        style: {
+          border: '1px solid #333',
+          padding: '5px',
+          color: '#713200',
+        }, iconTheme: {
+          primary: '#713200',
+          secondary: '#FFFAEE',
+        },
+      });
+    })
+
+
+  }
   // useEffect(() => {
   //   client
   //     .fetch(
@@ -127,15 +185,40 @@ const About = ({ banner }) => {
 
 
               <div className="Summary">
-
                 <h2>Summary</h2>
                 <p> {banner[0].about}</p>
-
               </div>
             </div>
+
             <div className="Skills">
               <Skills />
             </div>
+
+            <h2>Contacts </h2>
+            <div className="contactFormContainer">
+              <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
+
+                <label htmlFor="fname">Name</label>
+                <input type="text" id="fname" name="firstname" placeholder="Your name.."
+                  required onChange={(e) => setName(e.target.value)} />
+
+                <label htmlFor="lname">Email</label>
+                <input type="text" id="mail" name="mail" placeholder="Your email.."
+                  required onChange={(e) => setEmail(e.target.value)} />
+
+                <label htmlFor="lname">Company</label>
+                <input type="text" id="company" name="company" placeholder="Your company.."
+                  required onChange={(e) => setCompany(e.target.value)} />
+
+                <label htmlFor="subject">Message</label>
+                <textarea id="subject" name="subject"
+                  placeholder="Write something.." style={{ height: "200px" }}
+                  required onChange={(e) => setMessage(e.target.value)}></textarea>
+
+                <button className='btn'>Send</button>
+              </form>
+            </div>
+
 
           </div>
 

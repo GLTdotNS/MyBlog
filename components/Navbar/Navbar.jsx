@@ -14,13 +14,14 @@ const Navbar = () => {
   const { scrollY } = useViewportScroll();
 
   const [hidden, setHidden] = useState(false);
-const [toggleMenu, setToggleMenu] = useState(false);
+  const [toggleMenu, setToggleMenu] = useState(false);
 
   function update() {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
     } else if (scrollY?.current > 1 && scrollY?.current > scrollY?.prev) {
-      if(setToggleMenu){
+      if (toggleMenu) {
+        
         return
       }
       setHidden(true);
@@ -65,7 +66,7 @@ const [toggleMenu, setToggleMenu] = useState(false);
 
 
 
-  
+
 
   return (
 
