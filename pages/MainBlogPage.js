@@ -62,7 +62,15 @@ const MainBlogPage = ({ posts, category }) => {
       </div>
 
       <div className="midcolumn">
-        
+
+        <div className='box'>
+          <div className='search'>
+            <input className='input' onSubmit={() => window.location.reload()} type="text" placeholder="Search.."
+              onChange={(e) => setValueToSearch(e.target.value)} />
+            {/* <FaSearch/> */}
+          </div>
+
+        </div>
         <div style={{ backgroundColor: "#333" }}>
           <Image
             src={bannerImage}
@@ -71,14 +79,6 @@ const MainBlogPage = ({ posts, category }) => {
             height="300px"
           />
 
-          <div className='box'>
-            <div className='search'>
-              <input className='input' type="text" placeholder="Search.."
-               onChange={(e) => setValueToSearch(e.target.value)} />
-              {/* <FaSearch/> */}
-            </div>
-
-          </div>
         </div>
 
 
@@ -87,10 +87,10 @@ const MainBlogPage = ({ posts, category }) => {
           posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase())).length > 0 ?
             <PostsComponent posts={posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))} />
             : <div style={{ minHeight: "100vh", textAlign: "center" }}>
-              <h2 style={{ marginTop: "20%" }}>Oooops!...</h2>
+              
+              <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
               <Image
                 src={notFoundImage}
-                alt="Picture of the author"
                 width="350px"
                 height="300px"
               />
