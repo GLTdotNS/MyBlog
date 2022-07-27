@@ -11,11 +11,13 @@ import 'react-loading-skeleton/dist/skeleton.css'
 import Image from "next/image"
 import notFoundImage from "../styles/monkey.png"
 import bannerImage from "../styles/code.png"
+import { useRouter } from 'next/router'
 
 const MainBlogPage = ({ posts, category }) => {
 
   const [valueToSearch, setValueToSearch] = useState("");
-
+  const [href, setHref] = useState("");
+  const router = useRouter()
 
   useEffect(() => {
 
@@ -46,7 +48,12 @@ const MainBlogPage = ({ posts, category }) => {
     )
   }
 
-
+  const onFormSubmit = e => {
+    e.preventDefault();
+    router.push(window.location.href + "/" + "post/" +
+    posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0].slug.current)
+  }
+  
   return (
 
     <motion.div className="row"
@@ -62,15 +69,29 @@ const MainBlogPage = ({ posts, category }) => {
       </div>
 
       <div className="midcolumn">
-      
-        <div className='box'>
+
+        <form onSubmit={onFormSubmit} className='box'>
           <div className='search'>
-            <input className='input' onSubmit={() => window.location.reload()} type="text" placeholder="Search.."
+            <input className='input' type="text" placeholder="Search.." autoComplete="off" list="suggestions"
               onChange={(e) => setValueToSearch(e.target.value)} />
+
+            <datalist id="suggestions">
+              {posts.map((p, index) => (
+
+                <option key={index} >
+                  {p.title}
+
+                </option>
+
+
+
+              ))}
+            </datalist>
+
             {/* <FaSearch/> */}
           </div>
 
-        </div>
+        </form>
         <div style={{ backgroundColor: "#333" }}>
           <Image
             src={bannerImage}
@@ -87,7 +108,7 @@ const MainBlogPage = ({ posts, category }) => {
           posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase())).length > 0 ?
             <PostsComponent posts={posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))} />
             : <div style={{ minHeight: "100vh", textAlign: "center" }}>
-              
+
               <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
               <Image
                 src={notFoundImage}
