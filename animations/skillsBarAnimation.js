@@ -38,8 +38,8 @@ export const reveal = () => {
 
   for (let i = 0; i < merquee.length; i++) {
     const windowHeight = window.innerHeight;
-    const elementTop = window.pageYOffset + merquee[i].getBoundingClientRect().top;
-    const elementVisible = 10;
+    const elementTop = merquee[i].getBoundingClientRect().top;
+    const elementVisible = 0;
 
     if (elementTop < windowHeight - elementVisible) {
 
