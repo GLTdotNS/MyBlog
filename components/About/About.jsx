@@ -312,8 +312,8 @@ const About = ({ banner, references }) => {
           </motion.div>
 
         </div>
-
-        <div className='marquee'>
+<hr />
+        <div className='marquee' >
         <h2>References</h2>
           {references.map((ref , index) => (
             <div className='card initial-post forMarquee' style={{ width: "40%" }} key={index}>
@@ -331,6 +331,7 @@ const About = ({ banner, references }) => {
             </div>
           ))}
         </div>
+        <hr />
         <div className="contactFormContainer aboutme">
           <h2>Contacts </h2>
           <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
