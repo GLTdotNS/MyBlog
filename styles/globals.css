@@ -193,8 +193,8 @@ a {
 
 .app__navbar-links li:hover {
 
-  background-color: rgba(255,255,255,0.3);
-  color:white;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
   border-radius: 10px;
 }
 
@@ -1469,7 +1469,9 @@ ol {
 
 
 
-.contactFormContainer input[type=text], select, textarea {
+.contactFormContainer input[type=text],
+select,
+textarea {
   width: 100%;
   padding: 12px;
   border: none;
@@ -1487,6 +1489,36 @@ ol {
 
 .contactFormContainer {
   border-radius: 5px;
-  background-color: rgb(41, 41, 41);
+  border-top: 20px solid #333;
+  color: black;
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+  background-color: white;
   padding: 20px;
 }
+
+.marquee {
+  height: 100% !important;
+  width: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.marquee  {
+  margin-top: 10%;
+  display: block;
+  width: 100%;
+  height: 30px;
+  animation: marquee 1s linear ;
+}
+.marquee:hover {
+  animation-play-state: paused !important;
+}
+
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-10%); }
+}
+

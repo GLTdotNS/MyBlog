@@ -9,7 +9,7 @@ import { animation } from '../../animations/animation'
 import GitHub from '../Blog/BlogPageComponents/GitHub'
 import toast from 'react-hot-toast'
 
-const About = ({ banner }) => {
+const About = ({ banner, references }) => {
 
   const [github, setGithub] = useState(null);
   const [contributions, setContributions] = useState(null);
@@ -18,6 +18,8 @@ const About = ({ banner }) => {
   const [message, setMessage] = useState('')
   const [company, setCompany] = useState('')
   const { register, handleSubmit, errors, reset } = useForm()
+
+  console.log(references)
 
   useEffect(() => {
     fetch(`/api/getGitHubInfo`)
@@ -40,13 +42,14 @@ const About = ({ banner }) => {
       })
   }, [])
 
-  const onSubmit =   (e) => {
+  const onSubmit = (e) => {
 
     e.preventDefault()
     let data = {
       name,
       email,
-      message
+      message,
+      company,
     }
 
     fetch('/api/contact', {
@@ -58,7 +61,7 @@ const About = ({ banner }) => {
       body: JSON.stringify(data)
 
     }).then((res) => {
-      
+
       if (res.status === 200) {
         toast.success("Message has been sent successfully", {
           position: "top-center",
@@ -194,30 +197,7 @@ const About = ({ banner }) => {
               <Skills />
             </div>
 
-            <h2>Contacts </h2>
-            <div className="contactFormContainer">
-              <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
 
-                <label htmlFor="fname">Name</label>
-                <input type="text" id="fname" name="firstname" placeholder="Your name.."
-                  required onChange={(e) => setName(e.target.value)} />
-
-                <label htmlFor="lname">Email</label>
-                <input type="text" id="mail" name="mail" placeholder="Your email.."
-                  required onChange={(e) => setEmail(e.target.value)} />
-
-                <label htmlFor="lname">Company</label>
-                <input type="text" id="company" name="company" placeholder="Your company.."
-                  required onChange={(e) => setCompany(e.target.value)} />
-
-                <label htmlFor="subject">Message</label>
-                <textarea id="subject" name="subject"
-                  placeholder="Write something.." style={{ height: "200px" }}
-                  required onChange={(e) => setMessage(e.target.value)}></textarea>
-
-                <button className='btn'>Send</button>
-              </form>
-            </div>
 
 
           </div>
@@ -330,8 +310,53 @@ const About = ({ banner }) => {
               </ul>
             </div>
           </motion.div>
+
+        </div>
+
+        <div className='marquee'>
+        <h2>References</h2>
+          {references.map((ref) => (
+            <div className='card initial-post' style={{ width: "40%" }}>
+
+              <img
+                className='mypic'
+                width={100}
+                src={urlForImg(ref.image).url()}
+              />
+              <h2>{ref.name}</h2>
+
+              <span>{ref.description}</span>
+
+
+            </div>
+          ))}
+        </div>
+        <div className="contactFormContainer aboutme">
+          <h2>Contacts </h2>
+          <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
+
+            <label htmlFor="fname">Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="Your name.."
+              required onChange={(e) => setName(e.target.value)} />
+
+            <label htmlFor="lname">Email</label>
+            <input type="text" id="mail" name="mail" placeholder="Your email.."
+              required onChange={(e) => setEmail(e.target.value)} />
+
+            <label htmlFor="lname">Company</label>
+            <input type="text" id="company" name="company" placeholder="Your company.."
+              required onChange={(e) => setCompany(e.target.value)} />
+
+            <label htmlFor="subject">Message</label>
+            <textarea id="subject" name="subject"
+              placeholder="Write something.." style={{ height: "100px" }}
+              required onChange={(e) => setMessage(e.target.value)}></textarea>
+
+            <button className='btn'>Send</button>
+          </form>
         </div>
       </div>
+
     </motion.div >
   )
 }

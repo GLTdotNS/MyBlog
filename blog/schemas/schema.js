@@ -9,6 +9,7 @@ import post from './post'
 import author from './author'
 import comment from './comment'
 import banner from './banner'
+import references from './references'
 
 export default createSchema({
 
@@ -20,5 +21,6 @@ export default createSchema({
     comment,
     blockContent,
     banner,
+    references,
   ]),
 })
