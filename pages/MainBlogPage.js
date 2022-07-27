@@ -62,7 +62,7 @@ const MainBlogPage = ({ posts, category }) => {
       </div>
 
       <div className="midcolumn">
-
+      
         <div className='box'>
           <div className='search'>
             <input className='input' onSubmit={() => window.location.reload()} type="text" placeholder="Search.."

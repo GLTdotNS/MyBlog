@@ -2,10 +2,10 @@ import About from "../components/About/About"
 import { client } from "../lib/sanityClient"
 import groq from "groq"
 
-const AboutMe = ({banner}) => {
+const AboutMe = ({ banner , references }) => {
   return (
     <div>
-      <About banner={banner}/>
+      <About banner={banner} references={references} />
     </div>
   )
 }
@@ -14,11 +14,11 @@ export default AboutMe
 
 export const getServerSideProps = async () => {
 
- 
 
-  const banner =   await client
-  .fetch(
-    groq`*[_type == "banner"]{
+
+  const banner = await client
+    .fetch(
+      groq`*[_type == "banner"]{
   about,
   firstName,
   lastName,
@@ -33,12 +33,28 @@ export const getServerSideProps = async () => {
    },
 
 }`
-  )
+    )
+  const references = await client
+    .fetch(
+      groq`*[_type == "references"]{
+  name,
+  description,
+  image{
+    asset->{
+      _id,
+      url
+     }
+   },
 
+}`
+    )
 
 
   return {
-    props: {  banner }
+    props: { 
+      banner,
+      references
+    }
   }
 
 }
