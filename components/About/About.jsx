@@ -316,7 +316,7 @@ const About = ({ banner, references }) => {
         <div className='marquee'>
         <h2>References</h2>
           {references.map((ref , index) => (
-            <div className='card initial-post' style={{ width: "40%" }} key={index}>
+            <div className='card initial-post forMarquee' style={{ width: "40%" }} key={index}>
 
               <img
                 className='mypic'

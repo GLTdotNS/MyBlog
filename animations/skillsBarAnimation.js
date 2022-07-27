@@ -2,6 +2,8 @@
 export const reveal = () => {
   
   const reveals = document.querySelectorAll(".skills");
+  const merquee = document.querySelectorAll(".forMarquee");
+
   for (let i = 0; i < reveals.length; i++) {
     const windowHeight = window.innerHeight;
     const elementTop = reveals[i].getBoundingClientRect().top;
@@ -30,8 +32,20 @@ export const reveal = () => {
           break;
 
       }
+    }
+  } 
 
 
+  for (let i = 0; i < merquee.length; i++) {
+    const windowHeight = window.innerHeight;
+    const elementTop = window.pageYOffset + merquee[i].getBoundingClientRect().top;
+    const elementVisible = 10;
+
+    if (elementTop < windowHeight - elementVisible) {
+
+      merquee[i].classList.add("slide");
     }
   }
+
+
 }
