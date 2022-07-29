@@ -16,7 +16,6 @@ import { useRouter } from 'next/router'
 const MainBlogPage = ({ posts, category }) => {
 
   const [valueToSearch, setValueToSearch] = useState("");
-  const [href, setHref] = useState("");
   const router = useRouter()
 
   useEffect(() => {
@@ -78,7 +77,7 @@ const MainBlogPage = ({ posts, category }) => {
             <datalist id="suggestions">
               {posts.map((p, index) => (
 
-                <option key={index} >
+                <option className='option' key={index} >
                   {p.title}
 
                 </option>

@@ -8,6 +8,7 @@ import { downloadPdf } from '../../scripts/download'
 import { animation } from '../../animations/animation'
 import GitHub from '../Blog/BlogPageComponents/GitHub'
 import toast from 'react-hot-toast'
+import { BsStackOverflow } from "react-icons/bs"
 
 const About = ({ banner, references }) => {
 
@@ -19,7 +20,6 @@ const About = ({ banner, references }) => {
   const [company, setCompany] = useState('')
   const { register, handleSubmit, errors, reset } = useForm()
 
-  console.log(references)
 
   useEffect(() => {
     fetch(`/api/getGitHubInfo`)
@@ -63,7 +63,7 @@ const About = ({ banner, references }) => {
     }).then((res) => {
 
       if (res.status === 200) {
-        toast.success("Message has been sent successfully", {
+        toast.success("Message has been sent successfully. Thanks ! :)", {
           position: "top-center",
           style: {
             border: '1px solid #333',
@@ -77,7 +77,7 @@ const About = ({ banner, references }) => {
         setTimeout(() => {
           e.target.reset();
           window.scrollTo(0, 0)
-        }, 2000);
+        }, 1000);
       }
     }).catch((e) => {
       toast.success("Failed , try again ", {
@@ -175,11 +175,11 @@ const About = ({ banner, references }) => {
               <hr style={{ backgroundColor: 'black' }} />
               <br />
               <div className="title">
-                <p id='position'>Senior Developer</p>
+                <p id='position'>Full <BsStackOverflow color='#F47F24' /> devolper</p>
               </div>
               <div className="Contact">
                 <a href='mailto:georgitonkow@gmail.com'><span>Email: </span>georgitonkow@gmail.com</a>
-                <p id='phone'><span>Mobile : </span>{banner[0].phone}</p>
+                <p id='phone'><a href='tel:+359889891905 '>Mobile : {banner[0].phone} </a></p>
                 <button type='button' className='btn' style={{ float: "right" }}
                   onClick={() => downloadPdf("./cv.pdf", "cv.pdf")}>
                   Download CV
@@ -312,10 +312,10 @@ const About = ({ banner, references }) => {
           </motion.div>
 
         </div>
-<hr />
+        <hr />
         <div className='marquee' >
-        <h2>References</h2>
-          {references.map((ref , index) => (
+          <h2>References</h2>
+          {references.map((ref, index) => (
             <div className='card initial-post forMarquee' style={{ width: "40%" }} key={index}>
 
               <img
