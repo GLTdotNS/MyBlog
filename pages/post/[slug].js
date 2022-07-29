@@ -8,8 +8,8 @@ import LoadingSpin from 'react-loading-spin'
 import Categories from '../../components/Blog/BlogPageComponents/Categories'
 import moment from 'moment'
 import { MdDateRange } from "react-icons/md"
-import { BsPencilSquare, BsFillShareFill } from "react-icons/bs"
-import { FacebookShareButton } from "react-share"
+import { BsPencilSquare, BsFillShareFill, BsFacebook, BsTwitter } from "react-icons/bs"
+import { FacebookShareButton, TwitterShareButton } from "react-share"
 import { useEffect } from 'react'
 
 
@@ -28,7 +28,7 @@ const block = dynamic(
 let BlockContent = block;
 
 const Post = ({ post, posts, category }) => {
-
+  console.log(post)
 
   const onSubmit = async () => {
     setId(post._id)
@@ -55,9 +55,12 @@ const Post = ({ post, posts, category }) => {
 
   const hover = (e) => {
     e.target.style.cursor = "pointer";
+    const share = document.getElementById("r");
+    share.style.display = "block"
+
   }
 
-  
+
 
 
   if (!post || !post.mainImage || !post.body) {
@@ -106,16 +109,21 @@ const Post = ({ post, posts, category }) => {
             <hr />
 
           </div>
-          <BlockContent  post={post} />
+          <BlockContent post={post} />
 
-          <div style={{ backgroundColor: "#161b22" , padding: "20px" }}>
+          <div className='a' style={{ backgroundColor: "#161b22", padding: "20px" }}>
+            <BsFillShareFill onMouseEnter={hover} />
 
-            <FacebookShareButton url={`https://glt-resume.vercel.app/${post.slug}`}  >
+            <div id='r' className='r'>
+              <FacebookShareButton url={`https://glt-blog.vercel.app/post/${post.slug.current}`}  >
+                <BsFacebook style={{ marginLeft: "10px" }} color='white' size={20} />
 
-              <BsFillShareFill onMouseEnter={hover} />
+              </FacebookShareButton>
+              <TwitterShareButton url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                <BsTwitter style={{ marginLeft: "10px" }} color='white' size={20} />
+              </TwitterShareButton>
 
-            </FacebookShareButton>
-
+            </div>
           </div>
 
           {/* 
@@ -143,6 +151,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   _id,
   publishedAt,
+  slug,
   "name": author->name,
   "categories": categories[]->title,
   "authorImage": author->image,
@@ -162,16 +171,6 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   },
   body
 }`
-// export async function getStaticPaths() {
-//   const paths = await client.fetch(
-//     groq`*[_type == "post" && defined(slug.current)].slug.current`
-//   )
-
-//   return {
-//     paths: paths.map((slug) => ({ params: { slug } })),
-//     fallback: false,
-//   }
-// }
 
 export async function getServerSideProps(context) {
   // It's important to default the slug so that it doesn't return "undefined"
