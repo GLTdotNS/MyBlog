@@ -1553,46 +1553,91 @@ textarea {
   display: none !important;
 }
 
-datalist {
-  position: absolute;
-  background-color: white;
-  border: 1px solid blue;
-  border-radius: 0 0 5px 5px;
-  border-top: none;
-  font-family: sans-serif;
-  width: 350px;
-  padding: 5px;
-  max-height: 10rem;
-  overflow-y: auto
+
+
+
+
+/*sharebutton logic*/
+.shareContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 240px;
+  height: 64px;
+  border-radius: 80px;
 }
 
-.option {
-  background-color: white;
-  padding: 4px;
-  color: blue;
-  margin-bottom: 1px;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-
-.a {
-  padding: 30px !important;
-  max-height: 0;
-  
-  transition: max-height 1s ease-out;
- 
+.btn_wrap {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   overflow: hidden;
-  background: #d5d5d5;
+  cursor: pointer;
+  width: 150px;
+  height: 50px;
+  margin-top: 20%;
+  border-radius: 80px;
+  padding: 0 18px;
+  will-change: transform;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 
-.a:hover {
-  max-height: 100px;
-  transition: max-height 1s ease-in;
-
+.btn_wrap:hover {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1)
 }
 
-.r {
-  display: inline-block;
-  margin-top: 2%;
+.i {
+  opacity: 0;
+  background-color: white !important;
+  border-radius: 10%;
+  padding: 2px !important;
+  will-change: transform;
+  -webkit-transform: scale(.1);
+  transform: scale(.1);
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
 }
+
+.btn_wrap:hover span {
+  -webkit-transition-delay: .25s;
+  transition-delay: .25s;
+  -webkit-transform: translateX(-280px);
+  transform: translateX(-280px)
+}
+
+.btn_wrap:hover .i {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.shareSpan {
+  position: absolute;
+  z-index: 99;
+  height: 72px;
+  border-radius: 80px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 70px;
+  color: #EEEEED;
+  background-color: #333;
+  width: 100%;
+  padding: 0 18px;
+  -webkit-transition: all 1.2s ease;
+  transition: all 1.2s ease;
+}
+
