@@ -8,9 +8,10 @@ import LoadingSpin from 'react-loading-spin'
 import Categories from '../../components/Blog/BlogPageComponents/Categories'
 import moment from 'moment'
 import { MdDateRange } from "react-icons/md"
-import { BsPencilSquare, BsFillShareFill, BsFacebook, BsTwitter } from "react-icons/bs"
-import { FacebookShareButton, TwitterShareButton,FacebookMessengerShareButton,FacebookMessengerIcon } from "react-share"
-import { useEffect } from 'react'
+import { BsPencilSquare, BsFillShareFill } from "react-icons/bs"
+import { FacebookShareButton, TwitterShareButton, FacebookMessengerShareButton, ViberShareButton } from "react-share"
+import { FacebookMessengerIcon, FacebookIcon, TwitterIcon, ViberIcon } from "react-share"
+
 
 
 
@@ -85,26 +86,32 @@ const Post = ({ post, posts, category }) => {
           </div>
           <BlockContent post={post} />
 
-          <div >
+          <div style={{ backgroundColor: "#161b22" }}>
 
             <div className="btn_wrap">
               <span className='shareSpan'><BsFillShareFill /></span>
               <div className="shareContainer">
 
-              <FacebookShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}  >
-                <BsFacebook  size={30} color="blue"  />
-              </FacebookShareButton>
+                <FacebookShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}  >
+                  <FacebookIcon size={30} color="blue" />
+                </FacebookShareButton>
 
-              <TwitterShareButton className='i'   url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
-                <BsTwitter size={30} color="blue" />
-              </TwitterShareButton>
-              
-              <FacebookMessengerShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
-                <FacebookMessengerIcon size={30}/>
-              </FacebookMessengerShareButton>
+
+                <FacebookMessengerShareButton onShareWindowClose={() => window.close()} className='i' appId='585823522989597' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                  <FacebookMessengerIcon size={30} />
+                </FacebookMessengerShareButton>
+
+                <TwitterShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                  <TwitterIcon size={30} color="blue" />
+                </TwitterShareButton>
+
+
+                <ViberShareButton onShareWindowClose={() => window.close()} className='i' appId='585823522989597' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                  <ViberIcon size={30} />
+                </ViberShareButton>
               </div>
             </div>
-            
+
           </div>
 
           {/* 

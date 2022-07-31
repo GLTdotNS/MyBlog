@@ -69,8 +69,8 @@ const MainBlogPage = ({ posts, category }) => {
 
       <div className="midcolumn">
 
-        <form onSubmit={onFormSubmit} className='box'>
-          <div className='search'>
+        <form onSubmit={onFormSubmit} className='box aboutme'>
+          <div className='search '>
             <input className='input' type="text" placeholder="Search.." autoComplete="off" list="suggestions"
               onChange={(e) => setValueToSearch(e.target.value)} />
 
@@ -91,6 +91,7 @@ const MainBlogPage = ({ posts, category }) => {
           </div>
 
         </form>
+        <hr/>
         <div style={{ backgroundColor: "#333" }}>
           <Image
             src={bannerImage}

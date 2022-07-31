@@ -318,24 +318,24 @@ a {
 
 
 .search {
-  width: 80%;
   position: relative;
   display: flex;
-  padding: 3px;
+  padding: 15px;
   margin-bottom: 5px;
 }
 
 
 .box {
+
   position: relative;
+  width: 100% !important;
 
 }
 
 .input {
-  padding: 10px;
+  padding: 12px;
   width: 30%;
   height: 10px;
-  margin-left: 50px;
   background: none;
   border: 1px solid #238636;
   border-radius: 50px;
@@ -346,11 +346,11 @@ a {
   transition: .5s;
 }
 
-.box input:hover {
+/* .box input:hover {
   width: 50%;
   background: #0d1117;
   border-radius: 10px;
-}
+} */
 
 .box i {
   position: absolute;
@@ -463,11 +463,22 @@ hr {
   margin: 0.4rem 0;
 }
 
-.post_text img {
-  width: 50%;
+figure img {
+  display: block;
+  width: 100%;
   margin: auto;
+  margin-left: auto !important;
   border: 1px solid #333;
 }
+
+.post_text figure {
+  width: 100%;
+  margin: auto;
+  padding: 3%;
+  border-radius: 20px;
+  background-color: #333;
+}
+
 
 .posts img {
   width: 100px;
@@ -930,6 +941,9 @@ div.social {
 
     grid-template-columns: 1fr;
   }
+  .input{
+    width: 100%;
+  }
 
 }
 
@@ -1193,10 +1207,7 @@ h2 {
     position: relative;
   }
 
-  #phone {
-    text-decoration: underline;
 
-  }
 }
 
 
@@ -1255,12 +1266,13 @@ h2 {
   }
 
   .rightcolumn,
-  .leftcolumn,
   .midcolumn {
     position: relative !important;
     width: 100% !important;
   }
-
+  .leftcolumn{
+    width: 50%;
+  }
   .me_on_github {
     display: none;
   }
@@ -1567,9 +1579,6 @@ textarea {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  width: 240px;
-  height: 64px;
-  border-radius: 80px;
 }
 
 .btn_wrap {
@@ -1585,10 +1594,9 @@ textarea {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 150px;
+  width: 200px;
   height: 50px;
-  margin-top: 20%;
-  border-radius: 80px;
+  margin-top: 10%;
   padding: 0 18px;
   will-change: transform;
   -webkit-transition: all .2s ease-in-out;
@@ -1597,30 +1605,32 @@ textarea {
 
 .btn_wrap:hover {
   -webkit-transform: scale(1.1);
-  transform: scale(1.1)
+  transform: scale(1.1);
+ 
 }
 
 .i {
   opacity: 0;
-  background-color: white !important;
-  border-radius: 10%;
   padding: 2px !important;
+  margin-left: 10px;
   will-change: transform;
   -webkit-transform: scale(.1);
   transform: scale(.1);
-  -webkit-transition: all .3s ease;
-  transition: all .3s ease;
+  -webkit-transition: all .9s ease;
+  transition: all .9s ease;
 }
 
 .btn_wrap:hover span {
-  -webkit-transition-delay: .25s;
-  transition-delay: .25s;
+  -webkit-transition-delay: .1s;
+  transition-delay: .1s;
   -webkit-transform: translateX(-280px);
-  transform: translateX(-280px)
+  transform: translateX(-280px);
 }
 
 .btn_wrap:hover .i {
   opacity: 1;
+  -webkit-transition-delay: .3s;
+  transition-delay: .3s;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
@@ -1629,15 +1639,12 @@ textarea {
   position: absolute;
   z-index: 99;
   height: 72px;
-  border-radius: 80px;
   font-size: 20px;
   text-align: center;
   line-height: 70px;
   color: #EEEEED;
-  background-color: #333;
-  width: 100%;
-  padding: 0 18px;
-  -webkit-transition: all 1.2s ease;
-  transition: all 1.2s ease;
+  background-color: #161b22;
+  width: 100px;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
 }
-
