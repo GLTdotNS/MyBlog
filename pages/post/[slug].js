@@ -9,7 +9,7 @@ import Categories from '../../components/Blog/BlogPageComponents/Categories'
 import moment from 'moment'
 import { MdDateRange } from "react-icons/md"
 import { BsPencilSquare, BsFillShareFill, BsFacebook, BsTwitter } from "react-icons/bs"
-import { FacebookShareButton, TwitterShareButton } from "react-share"
+import { FacebookShareButton, TwitterShareButton,FacebookMessengerShareButton,FacebookMessengerIcon } from "react-share"
 import { useEffect } from 'react'
 
 
@@ -28,37 +28,10 @@ const block = dynamic(
 let BlockContent = block;
 
 const Post = ({ post, posts, category }) => {
-  console.log(post)
 
-  const onSubmit = async () => {
-    setId(post._id)
-    setNewData({
-      name,
-      comment,
-      id
-    })
-    console.log(id)
 
-    try {
-      await fetch('/api/createComment', {
-        method: 'POST',
-        body: JSON.stringify(newData),
-        type: 'application/json'
-      }).then(() => {
 
-      })
 
-    } catch (err) {
-
-    }
-  }
-
-  const hover = (e) => {
-    e.target.style.cursor = "pointer";
-    const share = document.getElementById("r");
-    share.style.display = "block"
-
-  }
 
 
 
@@ -91,11 +64,12 @@ const Post = ({ post, posts, category }) => {
         </aside>
         <div className="midcolumn">
           <div className='header'>
-            <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} />
+            <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} id="mypic" />
           </div>
           <h2>{post.title}</h2>
           <div className="author">
             <img
+
               src={urlForImg(post.authorImage).url()}
               className="mypic"
               width={100}
@@ -111,19 +85,26 @@ const Post = ({ post, posts, category }) => {
           </div>
           <BlockContent post={post} />
 
-          <div className='a' style={{ backgroundColor: "#161b22", padding: "20px" }}>
-            <BsFillShareFill onMouseEnter={hover} />
+          <div >
 
-            <div id='r' className='r'>
-              <FacebookShareButton url={`https://glt-blog.vercel.app/post/${post.slug.current}`}  >
-                <BsFacebook style={{ marginLeft: "10px" }} color='white' size={20} />
+            <div className="btn_wrap">
+              <span className='shareSpan'><BsFillShareFill /></span>
+              <div className="shareContainer">
 
+              <FacebookShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}  >
+                <BsFacebook  size={30} color="blue"  />
               </FacebookShareButton>
-              <TwitterShareButton url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
-                <BsTwitter style={{ marginLeft: "10px" }} color='white' size={20} />
-              </TwitterShareButton>
 
+              <TwitterShareButton className='i'   url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                <BsTwitter size={30} color="blue" />
+              </TwitterShareButton>
+              
+              <FacebookMessengerShareButton className='i' url={`https://glt-blog.vercel.app/post/${post.slug.current}`}>
+                <FacebookMessengerIcon size={30}/>
+              </FacebookMessengerShareButton>
+              </div>
             </div>
+            
           </div>
 
           {/* 

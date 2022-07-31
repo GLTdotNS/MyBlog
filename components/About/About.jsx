@@ -20,6 +20,20 @@ const About = ({ banner, references }) => {
   const [company, setCompany] = useState('')
   const { register, handleSubmit, errors, reset } = useForm()
 
+  const zoom = () => {
+
+    const pic = document.getElementById("mypic");
+  
+
+    if (pic.classList.contains("v")) {
+      pic.classList.remove("v");
+    
+      
+    }else{
+      pic.classList.add("v");
+       
+    }
+  }
 
   useEffect(() => {
     fetch(`/api/getGitHubInfo`)
@@ -162,8 +176,9 @@ const About = ({ banner, references }) => {
 
         <div className="full">
           <div className="left">
-            <div className="image">
+            <div id="imageDiv" className="image">
               <img
+             
                 id='mypic'
                 className='mypic'
                 src={urlForImg(banner[0].image).url()}
