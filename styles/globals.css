@@ -346,11 +346,11 @@ a {
   transition: .5s;
 }
 
-/* .box input:hover {
+.box input:hover {
   width: 50%;
   background: #0d1117;
   border-radius: 10px;
-} */
+}
 
 .box i {
   position: absolute;

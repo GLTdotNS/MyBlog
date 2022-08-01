@@ -47,12 +47,17 @@ const MainBlogPage = ({ posts, category }) => {
     )
   }
 
+
   const onFormSubmit = e => {
     e.preventDefault();
-    router.push(window.location.href + "/" + "post/" +
-    posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0].slug.current)
+    const currentSlug =   posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0]?.slug.current;
+
+    currentSlug === undefined 
+
+    ? router.push(window.location.href + "/" + "notfound") 
+    : router.push(window.location.href + "/" + "post/" + currentSlug)
+
   }
-  
   return (
 
     <motion.div className="row"
@@ -86,12 +91,10 @@ const MainBlogPage = ({ posts, category }) => {
 
               ))}
             </datalist>
-
-            {/* <FaSearch/> */}
           </div>
 
         </form>
-        <hr/>
+        <hr />
         <div style={{ backgroundColor: "#333" }}>
           <Image
             src={bannerImage}
