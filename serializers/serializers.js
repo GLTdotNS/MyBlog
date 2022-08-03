@@ -8,7 +8,7 @@ import { copyToClipboard } from "../scripts/copyFunction.js"
 
 
 
- export const serializers = {
+export const serializers = {
 
 
     types: {
@@ -25,11 +25,17 @@ import { copyToClipboard } from "../scripts/copyFunction.js"
             }
 
             if (style === "blockquote") {
-                return <blockquote style={{borderLeft: "3px solid white" , padding: "1%" ,
-                marginLeft: "5%" , marginTop: "2%" , marginBottom: "2%", backgroundColor: "#333",
-                 fontSize: "20px"}}> {props.children}</blockquote>;
+                return <blockquote style={{
+                    borderLeft: "1px solid white", padding: "1%",
+                    width: "100%",
+                    margin: "auto",
+                    padding: "5%",
+                    marginTop: "30%", marginBottom: "10%", backgroundColor: "#333",
+                    fontSize: "20px",
+                    textAlign: "center"
+                }}> {props.children}</blockquote>;
             }
-          
+
 
             return BlockContent.defaultSerializers.types.block(props);
         },
@@ -68,7 +74,7 @@ import { copyToClipboard } from "../scripts/copyFunction.js"
     marks: {
 
         strong: (props) =>
-            <strong style={{marginTop: "5% !important"}}>{props.children}</strong>,
+            <strong style={{ marginTop: "5% !important" }}>{props.children}</strong>,
         em: (props) => <em>{props.children}</em>,
         code: (props) => {
 

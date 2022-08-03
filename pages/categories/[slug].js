@@ -21,9 +21,9 @@ const CategoriesPage = ({ posts, category }) => {
         let url = window.location.href;
         let string = url.slice(index, url.length)
         setLocation(string)
-        setTimeout(() => {
-            document.title = `Категория - ` + location;
-        }, 1000)
+
+        document.title = `Категория - ` + string;
+
 
     }, [])
 
@@ -46,8 +46,7 @@ const CategoriesPage = ({ posts, category }) => {
             </div>
         )
     };
-
-
+    
     return (
 
         <div className="row">
@@ -106,7 +105,7 @@ export async function getServerSideProps(context) {
     // It's important to default the slug so that it doesn't return "undefined"
     const { slug = "" } = context.params
     const post = await client.fetch(query, { slug })
-    const queryPosts = groq`*[_type == "post" && category._ref == ^._id]
+    const queryPosts = groq`*[_type == "post" ]
     {
     title,
     slug,
