@@ -47,9 +47,9 @@ const PostsComponent = ({ posts }) => {
       <div className="card initial-post" key={index}
 
       >
-        <h3>{post.title}</h3>
-        <h5>{post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD , HH:MM")
-          : "YYYY-MM-DD hh:mm"}</h5>
+        <h3 style={{marginBottom: "4px"}}>{post.title}</h3>
+        <p>{post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD , HH:MM")
+          : "YYYY-MM-DD hh:mm"}</p>
 
 
         <motion.div

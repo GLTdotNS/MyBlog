@@ -347,7 +347,7 @@ a {
 }
 
 .box input:hover {
-  width: 50%;
+  width: 50%; 
   background: #0d1117;
   border-radius: 10px;
 }
@@ -594,7 +594,7 @@ figure img {
 .initial-post {
   border: 1px solid #333;
   width: 90%;
-  padding: 2%;
+  padding: 3%;
   margin: auto;
   margin-top: 20px;
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { SiGmail, SiFacebook, SiGithub } from "react-icons/si"
 import { BsHeartFill } from 'react-icons/bs'
-import { FaReact } from "react-icons/fa"
+import { SiNextdotjs } from "react-icons/si"
 
 const Footer = () => {
 
@@ -45,7 +45,7 @@ const Footer = () => {
             <h3>Made with <BsHeartFill size={20} color={"red"} /></h3>
             <ul>
 
-              <h3> Courtesy of <FaReact size={20} color={"blue"} /> and </h3>
+              <h3> Courtesy of <SiNextdotjs size={20} color={"white"} /> and </h3>
               <a href='https://www.sanity.io/' id="sanity">Sanity.io</a>
 
 
