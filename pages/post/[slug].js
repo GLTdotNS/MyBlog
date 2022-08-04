@@ -18,7 +18,7 @@ import { FacebookMessengerIcon, FacebookIcon, TwitterIcon, ViberIcon } from "rea
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
   {
-    ssr: false,
+    ssr: true,
   }
 
 )
