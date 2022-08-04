@@ -35,26 +35,7 @@ const About = ({ banner, references }) => {
     }
   }
 
-  useEffect(() => {
-    fetch(`/api/getGitHubInfo`)
-      .then(response => response.json())
-      .then(response => {
-        setGithub(response.name)
-      })
 
-  }, [])
-  useEffect(() => {
-
-    const url = `/api/getContributions`
-
-    fetch(url)
-      .then(response => response.json())
-      .then(response => {
-        console.log(response.data.data)
-        setContributions(response.data.data.viewer.contributionsCollection
-          .contributionCalendar.totalContributions)
-      })
-  }, [])
 
   const onSubmit = (e) => {
 
@@ -168,10 +149,6 @@ const About = ({ banner, references }) => {
       {...animation}
       className="aboutMePage"
     >
-      <div className='leftcolumn'>
-        <GitHub github={github} contributions={contributions} />
-
-      </div>
       <div className='aboutme'>
 
         <div className="full">

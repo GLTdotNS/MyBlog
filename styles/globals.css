@@ -372,10 +372,9 @@ a {
   box-shadow: 1px 1px 18px -9px #000000;
   margin-left: auto;
   border-left: 1px solid #333;
-  border-top: 1px solid #333;
-  margin-top: 5% !important;
+  margin-top: 3.5% !important;
   width: 85%;
-  padding: 20px;
+  padding: 40px;
   background-color: black;
 
 }
@@ -505,7 +504,7 @@ figure img {
   float: left;
   padding: 1rem;
   position: sticky;
-  top: 0px;
+  top: 80px;
   width: 15%;
 }
 
@@ -600,9 +599,7 @@ figure img {
 
 }
 
-/* .row{
-  background-color: red;
-} */
+
 /* Clear floats after the columns */
 .row:after {
   content: "";

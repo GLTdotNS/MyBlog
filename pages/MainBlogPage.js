@@ -50,12 +50,12 @@ const MainBlogPage = ({ posts, category }) => {
 
   const onFormSubmit = e => {
     e.preventDefault();
-    const currentSlug =   posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0]?.slug.current;
+    const currentSlug = posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0]?.slug.current;
 
-    currentSlug === undefined 
+    currentSlug === undefined
 
-    ? router.push(window.location.href + "/" + "notfound") 
-    : router.push(window.location.href + "/" + "post/" + currentSlug)
+      ? router.push(window.location.href + "/" + "notfound")
+      : router.push(window.location.href + "/" + "post/" + currentSlug)
 
   }
   return (
@@ -64,13 +64,6 @@ const MainBlogPage = ({ posts, category }) => {
       {...animation}
     >
 
-      <div className="leftcolumn">
-
-        <motion.div>
-          <Categories category={category} />
-        </motion.div>
-
-      </div>
 
       <div className="midcolumn">
 
@@ -130,9 +123,11 @@ const MainBlogPage = ({ posts, category }) => {
 
       <div className="rightcolumn">
 
-        <MostLikedPosts posts={posts} />
+        <Categories category={category} />
 
         <RecentlyPosts posts={posts} />
+
+
       </div>
     </motion.div>
   )

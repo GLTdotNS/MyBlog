@@ -30,7 +30,9 @@ export const serializers = {
                     width: "100%",
                     margin: "auto",
                     padding: "5%",
-                    marginTop: "30%", marginBottom: "10%", backgroundColor: "#333",
+                    marginTop: "30%", 
+                    marginBottom: "10%", 
+                    backgroundColor: "#333",
                     fontSize: "20px",
                     textAlign: "center"
                 }}> {props.children}</blockquote>;
