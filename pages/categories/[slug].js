@@ -52,10 +52,6 @@ const CategoriesPage = ({ posts, category }) => {
         <div className="row">
 
 
-            <div className="leftcolumn">
-
-                <Categories category={category} />
-            </div>
 
             <div className="midcolumn">
                 <div className="header">
@@ -75,11 +71,13 @@ const CategoriesPage = ({ posts, category }) => {
 
             <div className="rightcolumn">
 
-                {/* <MostLikedPosts posts={posts} /> */}
+                <Categories category={category} />
                 <RecentlyPosts posts={posts.filter(x => x.categories._ref ===
-                    `${category.filter(x => x.slug.current === location)[0]._id}`)} />
+                    `${category.filter(x => x.slug.current === location)[0]?._id}`)} />
 
             </div>
+            
+         
 
         </div>
     )

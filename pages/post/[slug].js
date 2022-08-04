@@ -18,7 +18,7 @@ import { FacebookMessengerIcon, FacebookIcon, TwitterIcon, ViberIcon } from "rea
 const block = dynamic(
   () => import('../../components/Blog/single-component/BlockContentComponent'),
   {
-    ssr: true,
+    ssr: false,
   }
 
 )
@@ -60,9 +60,7 @@ const Post = ({ post, posts, category }) => {
   return (
     <div className="main">
       <div className="row">
-        <aside className="leftcolumn">
-          <Categories category={category} />
-        </aside>
+
         <div className="midcolumn">
           <div className='header'>
             <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} id="mypic" />
@@ -114,16 +112,12 @@ const Post = ({ post, posts, category }) => {
 
           </div>
 
-          {/* 
-          <div className="create_comment_card ">
-            <CreateComment post={post} />
-          </div> */}
 
 
         </div>
 
         <div className="rightcolumn">
-          <MostLikedPosts posts={posts} />
+          <Categories category={category} />
 
           <RecentlyPosts posts={posts} />
         </div>

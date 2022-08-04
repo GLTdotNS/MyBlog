@@ -8,7 +8,7 @@ const Categories = ({ category }) => {
   }
  
   return (
-    <div className="categories columns" style={{ backgroundColor: "#333", borderRadius: "1px" }}>
+    <div className="categories columns" style={{ backgroundColor: "#333", borderRadius: "10px"   }}>
       <h3 className="p__opensans title">Categories</h3>
       <hr />
       {category && category.map((category) =>
