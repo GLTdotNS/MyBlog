@@ -99,8 +99,8 @@ body {
     font-size: 14px;
   }
 
-  .aboutMePage .leftcolumn {
-    display: none;
+   .leftcolumn {
+    display: none !important;
   }
 }
 
@@ -941,6 +941,9 @@ div.social {
   .input{
     width: 100%;
   }
+  .leftcolumn{
+    display: none!important;
+  }
 
 }
 
@@ -1190,7 +1193,6 @@ h2 {
   }
 
   .rightcolumn,
-  .leftcolumn,
   .initial-post {
 
     width: 100% !important;
@@ -1241,12 +1243,13 @@ h2 {
   }
 
   .rightcolumn,
-  .leftcolumn,
   .initial-post {
 
     width: 100% !important;
   }
-
+  .leftcolumn{
+    display: none !important;
+  }
   .app__navbar {
     position: relative !important;
   }
@@ -1268,7 +1271,7 @@ h2 {
     width: 100% !important;
   }
   .leftcolumn{
-    width: 50%;
+    display: none !important;
   }
   .me_on_github {
     display: none;
