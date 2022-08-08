@@ -16,11 +16,10 @@ const Navbar = () => {
 
   const update = () => {
 
-    const arrow = document.getElementById("scrollButton");
-
+ 
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
-      arrow.style.display = "none"
+ 
 
     } else if (scrollY?.current > 1 && scrollY?.current > scrollY?.prev) {
 
@@ -30,10 +29,6 @@ const Navbar = () => {
       }
       setHidden(true);
 
-      if (navigator.userAgent.match(/Mobi/)) {
-        arrow.classList.add("addScrollButton");
-        arrow.style.display = "block";
-      }
 
     }
   }

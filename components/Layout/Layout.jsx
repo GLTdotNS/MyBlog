@@ -6,7 +6,7 @@ import StickySocialMediaBar from "../Sticky/stickySocialMediaBar"
 import GitHub from "../Blog/BlogPageComponents/GitHub"
 import { useEffect, useState } from 'react'
 import { motion, useViewportScroll } from "framer-motion";
-import { AiOutlineArrowUp } from "react-icons/ai"
+
 
 const Layout = ({ children }) => {
 
@@ -17,10 +17,6 @@ const Layout = ({ children }) => {
 
 
 
-  const scroll = () => {
-    window.scrollTo(0, 0)
-
-  }
 
 
 
@@ -59,7 +55,7 @@ const Layout = ({ children }) => {
         <GitHub github={github} contributions={contributions} />
       </div>
 
-      <AiOutlineArrowUp size={60} id='scrollButton' onClick={scroll} />
+      
 
       <main className='main-container row' >
 

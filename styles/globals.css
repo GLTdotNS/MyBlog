@@ -338,7 +338,7 @@ a {
   height: 10px;
   background: none;
   border: 1px solid #238636;
-  border-radius: 50px;
+  border-radius: 5px;
   box-sizing: border-box;
   font-size: 16px;
   color: white;
@@ -347,9 +347,9 @@ a {
 }
 
 .box input:hover {
-  width: 50%;
-  background: #0d1117;
-  border-radius: 10px;
+  background: whitesmoke;
+  color: black;
+  border-radius: 80px !important;
 }
 
 .box i {
