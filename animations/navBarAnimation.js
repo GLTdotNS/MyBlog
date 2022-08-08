@@ -1,23 +1,21 @@
 
 export const scrollFunction = () => {
-
+  let lastScroll;
   const navbar = document.querySelector("nav");
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    if (scrollTop > lastScroll ) {
    
-      // navbar.style.position = "sticky"
-      navbar.style.top = "0px";
+    
+      navbar.style.top = "-80px";
       navbar.style.backgroundColor = "black";
 
-      if(navigator.userAgent.match(/Mobi/)){
-        navbar.style.backgroundColor = "black";
-      }
-   
     } else {
       navbar.style.position = "relative"
-      navbar.style.top = "0px";
+      navbar.style.top = "0";
       navbar.style.backgroundColor = "transparent ";
    
     }
+    lastScroll = scrollTop;
   }
 

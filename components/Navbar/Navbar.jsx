@@ -9,26 +9,37 @@ import { SiFacebook, SiGithub, SiGmail } from 'react-icons/si';
 
 const Navbar = () => {
 
-
-
   const { scrollY } = useViewportScroll();
-
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
 
-  function update() {
+
+  const update = () => {
+
+    const arrow = document.getElementById("scrollButton");
+
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
+      arrow.style.display = "none"
+
     } else if (scrollY?.current > 1 && scrollY?.current > scrollY?.prev) {
+
       if (toggleMenu) {
-        
-        return
+
+        return;
       }
       setHidden(true);
+
+      if (navigator.userAgent.match(/Mobi/)) {
+        arrow.classList.add("addScrollButton");
+        arrow.style.display = "block";
+      }
+
     }
   }
 
   useEffect(() => {
+
     return scrollY.onChange(() => update());
   });
 

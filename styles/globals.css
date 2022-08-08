@@ -99,7 +99,7 @@ body {
     font-size: 14px;
   }
 
-   .leftcolumn {
+  .leftcolumn {
     display: none !important;
   }
 }
@@ -347,7 +347,7 @@ a {
 }
 
 .box input:hover {
-  width: 50%; 
+  width: 50%;
   background: #0d1117;
   border-radius: 10px;
 }
@@ -938,11 +938,13 @@ div.social {
 
     grid-template-columns: 1fr;
   }
-  .input{
+
+  .input {
     width: 100%;
   }
-  .leftcolumn{
-    display: none!important;
+
+  .leftcolumn {
+    display: none !important;
   }
 
 }
@@ -1247,9 +1249,11 @@ h2 {
 
     width: 100% !important;
   }
-  .leftcolumn{
+
+  .leftcolumn {
     display: none !important;
   }
+
   .app__navbar {
     position: relative !important;
   }
@@ -1270,9 +1274,11 @@ h2 {
     position: relative !important;
     width: 100% !important;
   }
-  .leftcolumn{
+
+  .leftcolumn {
     display: none !important;
   }
+
   .me_on_github {
     display: none;
   }
@@ -1606,7 +1612,7 @@ textarea {
 .btn_wrap:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
- 
+
 }
 
 .i {
@@ -1648,3 +1654,41 @@ textarea {
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
 }
+
+
+code {
+  font-family: input-mono, monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+article {
+  max-width: 500px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: red;
+  transform-origin: 0%;
+}
+
+
+
+.addScrollButton {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  transition: 1.5s ease;
+}
+
