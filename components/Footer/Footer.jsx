@@ -17,9 +17,9 @@ const Footer = () => {
             <h3>Georgi Tonkov</h3>
             <ul>
               <li>
-                <p>
+              
                   A Bad Day On The Mountain Bike Always Beats A Good Day In The Office
-                </p>
+                
               </li>
             </ul>
 
@@ -27,7 +27,7 @@ const Footer = () => {
           </div>
 
           <div className="column ">
-            <h3>Privacy and Policy</h3>
+            <h3>Site map</h3>
 
             <ul>
 

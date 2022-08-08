@@ -6,34 +6,20 @@ import Skills from './Hero/Skills'
 import { urlForImg } from '../../lib/sanityClient'
 import { downloadPdf } from '../../scripts/download'
 import { animation } from '../../animations/animation'
-import GitHub from '../Blog/BlogPageComponents/GitHub'
 import toast from 'react-hot-toast'
 import { BsStackOverflow } from "react-icons/bs"
 
 const About = ({ banner, references }) => {
 
-  const [github, setGithub] = useState(null);
-  const [contributions, setContributions] = useState(null);
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-  const [company, setCompany] = useState('')
-  const { register, handleSubmit, errors, reset } = useForm()
 
-  const zoom = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+  const [company, setCompany] = useState('');
+  const [sent, setSent] = useState(true);
+  const { register, handleSubmit, errors, reset } = useForm();
 
-    const pic = document.getElementById("mypic");
-  
 
-    if (pic.classList.contains("v")) {
-      pic.classList.remove("v");
-    
-      
-    }else{
-      pic.classList.add("v");
-       
-    }
-  }
 
 
 
@@ -46,6 +32,8 @@ const About = ({ banner, references }) => {
       message,
       company,
     }
+    setSent(false)
+    const toastId =  toast.loading();
 
     fetch('/api/contact', {
       method: 'POST',
@@ -58,7 +46,7 @@ const About = ({ banner, references }) => {
     }).then((res) => {
 
       if (res.status === 200) {
-        toast.success("Message has been sent successfully. Thanks ! :)", {
+        toast.success("Thanks ! :)", {
           position: "top-center",
           style: {
             border: '1px solid #333',
@@ -69,10 +57,13 @@ const About = ({ banner, references }) => {
             secondary: '#FFFAEE',
           },
         });
+
         setTimeout(() => {
           e.target.reset();
           window.scrollTo(0, 0)
-        }, 1000);
+          setSent(true)
+          toast.remove(toastId)
+        }, 100);
       }
     }).catch((e) => {
       toast.success("Failed , try again ", {
@@ -90,7 +81,7 @@ const About = ({ banner, references }) => {
 
 
   }
-  // useEffect(() => {
+
   //   client
   //     .fetch(
   //       groq`*[_type == "banner"]{
@@ -155,7 +146,7 @@ const About = ({ banner, references }) => {
           <div className="left">
             <div id="imageDiv" className="image">
               <img
-             
+
                 id='mypic'
                 className='mypic'
                 src={urlForImg(banner[0].image).url()}
@@ -231,8 +222,8 @@ const About = ({ banner, references }) => {
             </div>
 
             <div className="Education">
-              <h2>Education</h2>
 
+              <h2>Education</h2>
               <div >
                 <br></br>
                 <hr />
@@ -279,7 +270,6 @@ const About = ({ banner, references }) => {
                     English
                   </li>
                 </ul>
-
               </div>
 
             </div>
@@ -345,7 +335,7 @@ const About = ({ banner, references }) => {
               placeholder="Write something.." style={{ height: "100px" }}
               required onChange={(e) => setMessage(e.target.value)}></textarea>
 
-            <button className='btn'>Send</button>
+            {sent === true ? <button className='btn'>Send</button> : "Sending..."}
           </form>
         </div>
       </div>
