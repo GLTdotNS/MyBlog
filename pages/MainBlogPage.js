@@ -2,15 +2,14 @@
 import { useState, useEffect } from 'react';
 import PostsComponent from "../components/Blog/BlogPageComponents/PostsComponent"
 import Categories from "../components/Blog/BlogPageComponents/Categories"
-import MostLikedPosts from "../components/Blog/BlogPageComponents/MostLikedPosts"
 import RecentlyPosts from "../components/Blog/BlogPageComponents/RecentlyPosts"
 import { motion } from "framer-motion"
 import { animation } from '../animations/animation';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Image from "next/image"
-import notFoundImage from "../styles/monkey.png"
-import bannerImage from "../styles/code.png"
+import notFoundImage from "../styles/assets/monkey.png"
+import bannerImage from "../styles/assets//code.png"
 import { useRouter } from 'next/router'
 
 const MainBlogPage = ({ posts, category }) => {

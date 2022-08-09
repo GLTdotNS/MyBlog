@@ -1,0 +1,587 @@
+/*aboutme*/
+@import url('https://fonts.googleapis.com/css2?family=Tiro+Tamil&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.aboutme {
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 1px 1px 18px -9px #000000;
+  margin-left: auto;
+  border-left: 1px solid #333;
+  margin-top: 3.5% !important;
+  width: 85%;
+  padding: 40px;
+  background-color: black;
+
+}
+
+.mypic {
+  -webkit-box-shadow: inset 0 0 20px #000000;
+  box-shadow: inset 0 0 20px #000000;
+  background-color: whitesmoke;
+  float: right;
+  border-radius: 100%;
+  width: 8rem;
+  height: 8rem;
+}
+
+.Contact {
+  line-height: 30px;
+}
+
+#position {
+  border-bottom: 1px solid olivedrab;
+  width: 20%;
+  margin-bottom: 2%;
+}
+
+.Summary {
+  margin-top: 20%;
+}
+
+.name h3,
+h1 {
+  text-transform: uppercase !important;
+}
+
+.skills-section {
+  border-radius: 15px;
+  padding: 2%;
+  margin: auto;
+  margin-top: 0;
+  font-size: 15px;
+  color: rgb(217, 216, 216);
+
+}
+
+
+
+.hobbies-section ul {
+  margin-left: 20px;
+}
+
+
+/*skills*/
+.container {
+  margin-bottom: 5%;
+  border-radius: 15px;
+  height: 30px;
+  width: 100%;
+  background-color: #ddd;
+}
+
+.container * {
+  font-family: "Poppins", sans-serif;
+  color: black;
+  font-weight: 600;
+}
+
+h2 {
+
+  margin-bottom: 50px;
+  letter-spacing: 2px;
+  text-align: center;
+  font-size: 33px;
+  font-weight: bold;
+}
+
+.skills {
+  border-radius: 15px;
+  border: 1px solid transparent;
+  text-align: right;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  color: white;
+}
+
+.react {
+  padding: 1%;
+  text-align: left;
+}
+
+.html {
+  width: 0%;
+  background-color: red;
+  height: 30px;
+}
+
+
+.css {
+  width: 0%;
+  background-color: blue;
+  height: 30px;
+}
+
+.js {
+  width: 0%;
+  background-color: rgb(229, 229, 0);
+  height: 30px;
+}
+
+.react {
+  width: 83%;
+  background-color: black;
+  height: 30px;
+}
+
+.csharp {
+  width: 0%;
+  background-color: blue;
+  height: 30px;
+
+}
+
+.html {
+  animation: html-fill 2s forwards;
+}
+
+.css {
+  animation: css-fill 2s forwards;
+}
+
+.js {
+  animation: js-fill 2s forwards;
+}
+
+.react {
+  animation: react-fill 1s infinite;
+}
+
+.csharp {
+  animation: csharp-fill 2s forwards;
+}
+
+/*end skills*/
+
+
+@keyframes html-fill {
+  100% {
+    width: 90%;
+  }
+}
+
+@keyframes css-fill {
+  100% {
+    width: 75%;
+  }
+}
+
+@keyframes js-fill {
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes csharp-fill {
+  100% {
+    width: 80%;
+  }
+}
+
+@keyframes react-fill {
+  100% {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width:800px) {
+  .leftcolumn .title {
+    margin-top: 10% !important;
+
+  }
+
+  .full {
+    grid-template-columns: auto !important;
+    /* display: none !important; */
+  }
+
+  .skills-section,
+  .aboutme,
+  .main {
+    width: 100% !important;
+  }
+
+  .me_on_github {
+    display: none;
+  }
+
+  .aboutme {
+    border: none !important;
+  }
+
+  .rightcolumn,
+  .initial-post {
+
+    width: 100% !important;
+  }
+
+  .icon-bar {
+    display: none;
+  }
+
+  .app__navbar {
+    position: relative;
+  }
+
+
+}
+
+
+
+@media screen and (max-width:820px) {
+  .leftcolumn .title {
+    margin-top: 10% !important;
+
+  }
+
+  .skills-section,
+  .aboutme,
+  .main {
+    width: 100% !important;
+  }
+
+  .rightcolumn,
+  .leftcolumn,
+  .initial-post {
+
+    width: 100% !important;
+  }
+
+  .app__navbar {
+    position: relative !important;
+  }
+}
+
+@media screen and (max-width:920px) {
+
+  .aboutme,
+  .main {
+    width: 100% !important;
+  }
+
+  .rightcolumn,
+  .initial-post {
+
+    width: 100% !important;
+  }
+
+  .leftcolumn {
+    display: none !important;
+  }
+
+  .app__navbar {
+    position: relative !important;
+  }
+
+}
+
+@media screen and (max-width:1280px) {
+
+  .skills-section,
+  .aboutme,
+  .main {
+    width: 100% !important;
+    border: none !important;
+  }
+
+  .rightcolumn,
+  .midcolumn {
+    position: relative !important;
+    width: 100% !important;
+  }
+
+  .leftcolumn {
+    display: none !important;
+  }
+
+  .me_on_github {
+    display: none;
+  }
+
+  .app__navbar {
+    position: relative !important;
+  }
+
+  .aboutMePage .leftcolumn {
+    display: none;
+  }
+}
+
+.full {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+}
+
+ol {
+  list-style-type: none;
+}
+
+.full li {
+  list-style-type: circle;
+  list-style-position: inside;
+  position: relative;
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+
+.full li:before {
+  content: "";
+  background-color: #333;
+  position: absolute;
+  bottom: 0px;
+  top: 0px;
+  left: 4px;
+  width: 3px;
+}
+
+.full li:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 2px;
+  height: 12px;
+  width: 12px;
+}
+
+
+
+.left {
+  position: initial;
+  padding: 20px;
+  background-color: #333;
+  border-radius: 5px;
+
+}
+
+.right {
+  background-color: black;
+  margin: auto;
+  position: initial;
+  padding: 20px;
+}
+
+.Contact,
+.Skills,
+.Language,
+.Hobbies,
+.Summary,
+.Experience,
+.Education,
+.project {
+  margin-bottom: 30px;
+}
+
+/*aboutme end*/
+
+/*projects*/
+.project-container {
+  width: 85%;
+
+}
+
+.project-container h1 {
+  color: var(--color-black);
+}
+
+
+.project-container a {
+  text-decoration: none;
+  color: #5673C8;
+}
+
+.project-container a:hover {
+  color: lightblue;
+}
+
+.project-container p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+
+}
+
+
+.project-row {
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.project-column {
+  margin-top: 10%;
+  padding: 2%;
+  display: inline-block;
+  width: 50%;
+}
+
+.project-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* content decoration */
+.project-content {
+  border: 1px solid #333;
+  border-radius: 15px;
+  background-color: #111;
+  color: rgb(217, 216, 216);
+  padding: 5%;
+  height: 420px;
+}
+
+.project-content img {
+  height: 200px;
+  width: 100%;
+
+}
+
+.btn-container {
+  height: auto;
+
+  justify-content: center;
+  display: flex;
+}
+
+.btn-container button {
+  margin: 10px;
+}
+
+/* window size 850 width set */
+@media screen and (max-width: 850px) {
+  .project-column {
+    width: 50%;
+  }
+
+  .leftcolumn .title {
+    margin-top: 10% !important;
+
+  }
+
+  .project-content img {
+    height: 100px;
+    width: 100%;
+
+  }
+
+  .project-content {
+    height: 300px;
+    width: 100%;
+
+  }
+}
+
+/* window size 400 width set */
+@media screen and (max-width: 400px) {
+  .project-column {
+    width: 100%;
+  }
+
+  .leftcolumn .title {
+    margin-top: 10% !important;
+
+  }
+
+  .project-content img {
+    height: 100px;
+    width: 100%;
+
+  }
+
+  .project-content {
+    height: 300px;
+    width: 100%;
+
+  }
+}
+
+
+
+.contactFormContainer input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: none;
+
+}
+
+
+
+.contactFormContainer {
+  border-radius: 5px;
+  border-top: 20px solid #333;
+  color: black;
+  width: 50%;
+  margin: auto;
+  margin-top: 10%;
+  background-color: white;
+  padding: 20px;
+}
+
+.marquee {
+  height: 100% !important;
+  width: 220px;
+  margin-bottom: 5%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 10%;
+  display: block;
+  width: 100%;
+  height: 30px;
+
+}
+
+
+
+
+.slide {
+  -webkit-animation: slideIn 2s forwards;
+  -moz-animation: slideIn 2s forwards;
+  animation: slideIn 2s forwards;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+[list]::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
