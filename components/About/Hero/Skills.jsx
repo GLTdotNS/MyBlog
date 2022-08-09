@@ -13,7 +13,8 @@ const Skills = () => {
 
 
   return (
-    <div className='skills-section '>
+    <div className='Skilss'>
+      <div className='skills-section '>
       <h2>Tech skills</h2>
 
 
@@ -45,6 +46,7 @@ const Skills = () => {
         <div id='react' className="skills">Loading...</div>
       </div>
 
+    </div>
     </div>
   )
 }
