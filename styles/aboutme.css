@@ -190,6 +190,10 @@ h2 {
 
   }
 
+  body {
+    background-color: #000000;
+  }
+
   .full {
     grid-template-columns: auto !important;
     /* display: none !important; */
@@ -284,6 +288,10 @@ h2 {
     border: none !important;
   }
 
+  body {
+    background-color: #000000;
+  }
+
   .rightcolumn,
   .midcolumn {
     position: relative !important;
@@ -302,9 +310,7 @@ h2 {
     position: relative !important;
   }
 
-  .aboutMePage .leftcolumn {
-    display: none;
-  }
+
 }
 
 .full {

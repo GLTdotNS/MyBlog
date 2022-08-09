@@ -1,7 +1,7 @@
 export default function handler (req, res) {
     const headers = {
 
-      'Authorization': `bearer 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`,
+      'Authorization': process.env.GITHUB,
     }
     const body = { "query": "query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}" }
      fetch('https://api.github.com/graphql', {
