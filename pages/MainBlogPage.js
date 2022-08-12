@@ -11,6 +11,7 @@ import Image from "next/image"
 import notFoundImage from "../styles/assets/monkey.png"
 import bannerImage from "../styles/assets//code.png"
 import { useRouter } from 'next/router'
+import { FcSearch } from "react-icons/fc"
 
 const MainBlogPage = ({ posts, category }) => {
 
@@ -48,8 +49,10 @@ const MainBlogPage = ({ posts, category }) => {
 
 
   const onFormSubmit = e => {
+
     e.preventDefault();
-    const currentSlug = posts.filter(x => x.title.toLowerCase().includes(valueToSearch.toLowerCase()))[0]?.slug.current;
+    const currentSlug = posts.filter(x => x.title.toLowerCase()
+      .includes(valueToSearch.toLowerCase()))[0]?.slug.current;
 
     currentSlug === undefined
 

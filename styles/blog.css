@@ -31,7 +31,7 @@
   }
   
   .input {
-    padding: 12px;
+    padding: 15px;
     width: 30%;
     height: 10px;
     background: none;
@@ -50,19 +50,15 @@
     border-radius: 80px !important;
   }
   
-  .box i {
+  .search i {
+
     position: absolute;
-    top: 0%;
-    right: 15px;
-    transform: translate(-20%, -20%);
-    font-size: 15px;
-    color: white;
     transition: .2s;
   }
   
   .box:hover i {
     opacity: 0;
-    z-index: -1;
+
   }
   
 

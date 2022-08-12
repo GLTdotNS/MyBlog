@@ -74,8 +74,8 @@ const ProjectsComponent = () => {
  
  
                     <div className='btn-container'>
-                 <button className='btn'>Demo</button>
-                    <button className='btn'>Code</button>
+                 <button className='btn' onClick={() => window.open("https://mtb-world-shop.vercel.app/")}>Demo</button>
+                    <button className='btn'  onClick={() => window.open("https://github.com/GLTdotNS/mtb-world-shop")}>Code</button>
                  </div>
                 </div>
             </div>

@@ -41,13 +41,14 @@ const Navbar = () => {
 
   const variants = {
 
-    visible: { opacity: 1, x: 0, backgroundColor: "#161b22", },
+    visible: { opacity: 1, y: 0,backgroundColor: "#161b22", },
     hidden: { opacity: 0, y: -25 }
   };
 
   const itemVariants = {
     closed: {
-      opacity: 0
+      opacity: 0,
+    
     },
     open: { opacity: 1 }
   };
@@ -113,7 +114,7 @@ const Navbar = () => {
       </ul>
 
 
-      <div id='1' className="app__navbar-smallscreen">
+      <div className="app__navbar-smallscreen">
 
         <GiHamburgerMenu color="#fff" cursor={"pointer"}
           fontSize={27} onClick={() => setToggleMenu(true)} />

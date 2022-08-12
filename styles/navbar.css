@@ -145,18 +145,19 @@
   
     .app__navbar {
       padding: 1rem;
-      position: sticky !important;
-      top: 0;
       z-index: 100;
     }
   
   }
   
   @media screen and (max-width: 650px) {
+  
+   
+
     .app__navbar {
       padding: 1rem;
-      position: sticky !important;
-      top: 0;
+      position: fixed;
+
       z-index: 100;
     }
   
