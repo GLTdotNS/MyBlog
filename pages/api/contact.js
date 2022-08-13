@@ -8,7 +8,7 @@ export default async function (req, res) {
     host: "smtp.gmail.com",
     auth: {
       user: 'georgitonkow@gmail.com',
-      pass: "vhqzplvlsxmkkzlw",
+      pass: "zzlvjcdrpwzmvkzz",
     },
     secure: true,
   })
