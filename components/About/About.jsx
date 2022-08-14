@@ -95,7 +95,7 @@ const About = ({ banner, references }) => {
        <References references={references}/>
         <hr />
 
-      
+      <Contacts/>
       </div>
 
     </motion.div >
