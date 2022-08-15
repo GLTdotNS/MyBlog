@@ -36,7 +36,6 @@ const Layout = ({ children }) => {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        console.log(response.data.data)
         setContributions(response.data.data.viewer.contributionsCollection
           .contributionCalendar.totalContributions)
       })
