@@ -8,7 +8,7 @@ export default async function (req, res) {
     host: "smtp.gmail.com",
     auth: {
       user: 'georgitonkow@gmail.com',
-      pass: process.env.GMAIL.replace(/\\n/g, "\n"),
+      pass: process.env.NEXT_PUBLIC_GMAIL.replace(/\\n/g, "\n"),
     },
     secure: true,
   })

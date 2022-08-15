@@ -1,7 +1,7 @@
 export default function handler (req, res) {
     const headers = {
     
-      'Authorization': process.env.GIT_HUB,
+      'Authorization': process.env.NEXT_PUBLIC_GIT_HUB,
     }
     const body = { "query": "query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}" }
      fetch('https://api.github.com/graphql', {
