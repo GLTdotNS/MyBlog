@@ -23,10 +23,11 @@ const Contacts = () => {
     let data = {
       name,
       email,
-      message,
       company,
+      message,
     }
     setSent(false)
+    
     const toastId = toast.loading();
 
     fetch('/api/contact', {
@@ -55,6 +56,7 @@ const Contacts = () => {
         setTimeout(() => {
           e.target.reset();
           window.scrollTo(0, 0)
+          setMessage("")
           setSent(true)
           toast.remove(toastId)
         }, 100);
@@ -98,7 +100,8 @@ const Contacts = () => {
                     placeholder="Write something.." style={{ height: "100px" }}
                     required onChange={(e) => setMessage(e.target.value)}></textarea>
 
-                {sent === true ? <button className='btn'>Send</button> : "Sending..."}
+                {!message || message.trim().length === 0 ? <button className='hiddenBtn' style={{ visibility: "hidden" }}>Send</button>
+                : sent === true ? <button className='sentBtn'>Send</button> : "Sending..."}
             </form>
         </div>
     )
