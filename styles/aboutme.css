@@ -223,10 +223,6 @@ h2 {
     display: none;
   }
 
-  .app__navbar {
-    position: relative;
-  }
-
 
 }
 
@@ -251,9 +247,7 @@ h2 {
     width: 100% !important;
   }
 
-  .app__navbar {
-    position: relative !important;
-  }
+
 }
 
 @media screen and (max-width:920px) {
@@ -273,9 +267,7 @@ h2 {
     display: none !important;
   }
 
-  .app__navbar {
-    position: relative !important;
-  }
+
 
 }
 
@@ -306,9 +298,6 @@ h2 {
     display: none;
   }
 
-  .app__navbar {
-    position: relative !important;
-  }
 
 
 }
