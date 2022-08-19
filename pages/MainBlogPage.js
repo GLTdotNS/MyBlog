@@ -9,11 +9,11 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Image from "next/image"
 import notFoundImage from "../styles/assets/monkey.png"
-import bannerImage from "../styles/assets//code.png"
+import { urlForImg } from '../lib/sanityClient';
 import { useRouter } from 'next/router'
 import { FcSearch } from "react-icons/fc"
 
-const MainBlogPage = ({ posts, category }) => {
+const MainBlogPage = ({ posts, category, banner}) => {
 
   const [valueToSearch, setValueToSearch] = useState("");
   const router = useRouter()
@@ -22,6 +22,7 @@ const MainBlogPage = ({ posts, category }) => {
 
     document.title = "Начална страница";
     window.scrollTo(0, 0)
+    console.log(banner[1])
   }, [])
 
   if (!posts) {
@@ -91,8 +92,8 @@ const MainBlogPage = ({ posts, category }) => {
         </form>
         <hr />
         <div style={{ backgroundColor: "#333" }}>
-          <Image
-            src={bannerImage}
+          <img
+            src={urlForImg(banner[1].image).url()}
             alt="Picture of the author"
             width="1000px"
             height="300px"

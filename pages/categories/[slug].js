@@ -1,11 +1,9 @@
 // [slug].js
 import groq from 'groq'
 import { client, urlForImg } from '../../lib/sanityClient'
-import MostLikedPosts from "../../components/Blog/BlogPageComponents/MostLikedPosts";
 import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts.jsx";
 import Categories from "../../components/Blog/BlogPageComponents/Categories.jsx";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent.jsx";
-import { AiOutlineSearch } from "react-icons/ai"
 import LoadingSpin from 'react-loading-spin'
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';

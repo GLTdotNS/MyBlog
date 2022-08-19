@@ -3,11 +3,11 @@ import MainBlogPage from './MainBlogPage'
 import { client } from '../lib/sanityClient'
 import groq from 'groq'
 
-const Index = ({ posts, category }) => {
+const Index = ({ posts, category , banner}) => {
   return (
     <div >
       <main>
-        <MainBlogPage posts={posts} category={category} />
+        <MainBlogPage posts={posts} category={category} banner={banner} />
       </main>
 
     </div>
@@ -16,6 +16,24 @@ const Index = ({ posts, category }) => {
 
 export const getServerSideProps = async () => {
 
+  const banner = await client
+    .fetch(
+      groq`*[_type == "banner"]{
+  about,
+  firstName,
+  lastName,
+  years,
+  phone,
+  city,
+  image{
+    asset->{
+      _id,
+      url
+     }
+   },
+
+}`
+    )
   const query = groq`*[_type == "post"] | order(_createdAt desc)
   {
   title,
@@ -53,7 +71,7 @@ export const getServerSideProps = async () => {
 
 
   return {
-    props: { posts, category }
+    props: { posts, category , banner }
   }
 
 }
