@@ -73,7 +73,8 @@ const MainBlogPage = ({ posts, category, banner}) => {
         <form onSubmit={onFormSubmit} className='box aboutme'>
           <div className='search '>
             <input className='input' type="text" placeholder="Search.." autoComplete="off" list="suggestions"
-              onChange={(e) => setValueToSearch(e.target.value)} />
+              onChange={(e) => setValueToSearch(e.target.value.trim()
+)} />
 
             <datalist id="suggestions">
               {posts.map((p, index) => (
