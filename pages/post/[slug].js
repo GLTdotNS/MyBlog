@@ -1,7 +1,6 @@
 // [slug].js
 import groq from 'groq'
 import { client, urlForImg } from '../../lib/sanityClient'
-import MostLikedPosts from "../../components/Blog/BlogPageComponents/MostLikedPosts"
 import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts"
 import dynamic from 'next/dynamic'
 import LoadingSpin from 'react-loading-spin'

@@ -1,9 +1,7 @@
 import React ,{useEffect}from 'react'
-
 import { motion } from 'framer-motion'
 import {animation} from "../../animations/animation"
-import img from "./Untitled.png"
-import res from "./restaurant.jpg"
+
 
 const ProjectsComponent = () => {
     useEffect(() => {
@@ -63,7 +61,7 @@ const ProjectsComponent = () => {
              
             <div className="project-column">
                 <div className="project-content">
-                    <img src={img} alt="" />
+                    
                     <h3>
                        <p>My Blog</p>
                     </h3>
@@ -82,8 +80,7 @@ const ProjectsComponent = () => {
              
             <div className="project-column">
                 <div className="project-content">
-                    <img src={res}
-                        alt="" />
+                    
                     <h3>
                        <p>Restaurant site</p>
                     </h3>
