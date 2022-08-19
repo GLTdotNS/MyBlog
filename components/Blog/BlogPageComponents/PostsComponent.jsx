@@ -51,12 +51,11 @@ const PostsComponent = ({ posts }) => {
           : "YYYY-MM-DD hh:mm"}</p>
 
 
-        <div
-
-          className='inner_post_text'>
+        <div className='inner_post_text'>
 
           {post.mainImage ? <img
           
+            loading='lazy'
             style={{
 
               float: "left", margin: "0 15px 0 0",

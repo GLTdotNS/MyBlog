@@ -73,7 +73,7 @@ describe('createConnect', () => {
 
     expect(res.length).toBe(1)
     expect(res[0]).toBeInstanceOf(Error)
-    expect((<WebSocketError>res[0]).code).toEqual('CONNECTION_ERROR')
+    expect((<WebSocketError>res[0]).type).toEqual('CONNECTION_ERROR')
   })
 
   it('throws an error on unexpected close', async () => {
@@ -99,6 +99,8 @@ describe('createConnect', () => {
 
     expect(res.length).toBe(1)
     expect(res[0]).toBeInstanceOf(Error)
-    expect((<WebSocketError>res[0]).code).toEqual('CONNECTION_CLOSED')
+    expect((<WebSocketError>res[0]).type).toEqual('CONNECTION_CLOSED')
+    expect((<WebSocketError>res[0]).code).toEqual(1006)
+    expect((<WebSocketError>res[0]).reason).toEqual('Unexpected close')
   })
 })

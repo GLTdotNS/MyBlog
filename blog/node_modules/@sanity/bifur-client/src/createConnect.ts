@@ -8,13 +8,22 @@ export interface WebSocket {
   close(code?: number, reason?: string): void
 }
 
-type ErrorCode = 'CONNECTION_ERROR' | 'CONNECTION_CLOSED'
+type ErrorType = 'CONNECTION_ERROR' | 'CONNECTION_CLOSED'
 
 export class WebSocketError extends Error {
-  code: ErrorCode
-  constructor(message: string, code: ErrorCode) {
+  type: ErrorType
+  code: number | undefined
+  reason: string | undefined
+  constructor(
+    message: string,
+    type: ErrorType,
+    code?: number,
+    reason?: string,
+  ) {
     super(message)
+    this.type = type
     this.code = code
+    this.reason = reason
   }
 }
 
@@ -27,22 +36,24 @@ export function createConnect<T extends WebSocket>(
 
       let didUnsubscribe = false
 
-      const onOpen = () => {
+      const onOpen: WebSocket['onopen'] = () => {
         subscriber.next(ws)
       }
 
-      const onError = () => {
+      const onError: WebSocket['onerror'] = () => {
         subscriber.error(
           new WebSocketError('WebSocket connection error', 'CONNECTION_ERROR'),
         )
       }
 
-      const onClose = (ev: CloseEvent) => {
+      const onClose: WebSocket['onclose'] = ev => {
         if (!didUnsubscribe) {
           subscriber.error(
             new WebSocketError(
               'WebSocket connection error',
               'CONNECTION_CLOSED',
+              ev.code,
+              ev.reason,
             ),
           )
         } else {
