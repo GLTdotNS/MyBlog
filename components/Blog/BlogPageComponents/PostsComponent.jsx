@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import moment from "moment";
 import { MdReadMore } from "react-icons/md"
 import { urlForImg } from "../../../lib/sanityClient.js";
 import Link from "next/link"
 import { useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import { motion } from 'framer-motion';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -52,15 +51,12 @@ const PostsComponent = ({ posts }) => {
           : "YYYY-MM-DD hh:mm"}</p>
 
 
-        <motion.div
+        <div
 
           className='inner_post_text'>
 
-          {post.mainImage ? <motion.img
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 3 }}
+          {post.mainImage ? <img
+          
             style={{
 
               float: "left", margin: "0 15px 0 0",
@@ -69,17 +65,11 @@ const PostsComponent = ({ posts }) => {
             src={urlForImg(post.mainImage.asset.url)}
             alt="" width="150" height="150" /> : "none"}
 
-          <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-
-          >{post?.description.slice(0, 300)}...</motion.span>
+          <span> {post?.description.slice(0, 300)}...</span>
 
 
 
-        </motion.div>
+        </div>
 
         <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
           <a><button className="btn">Read more <MdReadMore /></button></a>

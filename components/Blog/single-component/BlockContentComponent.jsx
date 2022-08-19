@@ -1,7 +1,6 @@
 import React from 'react'
 import { serializers } from '../../../serializers/serializers'
 import BlockContent from "@sanity/block-content-to-react";
-import { useEffect } from 'react';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 

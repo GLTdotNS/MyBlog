@@ -1,6 +1,7 @@
 import React from 'react'
 import { urlForImg } from '../../../lib/sanityClient'
 import { BsStackOverflow } from "react-icons/bs"
+
 const Hero = ({banner}) => {
   return (
   <>
