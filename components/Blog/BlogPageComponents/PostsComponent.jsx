@@ -62,7 +62,7 @@ const PostsComponent = ({ posts }) => {
               padding: "1%", borderRadius: "30%"
             }}
             src={urlForImg(post.mainImage.asset.url)}
-            alt="" width="150" height="150" /> : "none"}
+            alt="Image of the post" width="150" height="150" /> : "none"}
 
           <span> {post?.description.slice(0, 300)}...</span>
 

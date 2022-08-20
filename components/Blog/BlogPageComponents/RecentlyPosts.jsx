@@ -11,7 +11,7 @@ const RecentlyPosts = ({ posts }) => {
       <ol className="section" >
         {posts && posts.slice(0, 3).map((post, index) =>
 
-          <li key={post._id}>
+          <li key={index}>
             {moment(post.publishedAt).format("MMM DD")}
             <Link href="/post/[slug]" as={`/post/${post.slug.current}`}
             ><a>{post.title}</a></Link>

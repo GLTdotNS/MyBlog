@@ -12,6 +12,7 @@ const References = ({references}) => {
                 className='mypic'
                 width={100}
                 src={urlForImg(ref.image).url()}
+                alt="Elon Musk maybe..."
               />
               <h2>{ref.name}</h2>
 

@@ -18,9 +18,7 @@ const ProjectsComponent = () => {
         <div className="project-row ">
             <div className="project-column">
                 <div className="project-content">
-                    <img src=
-"https://cms-assets.tutsplus.com/cdn-cgi/image/width=850/uploads/users/30/posts/26768/image/journal-3.jpg"
-                        alt=""/>
+
                     <h3>
                         <p>E-commerce site</p>
                     </h3>
@@ -41,9 +39,7 @@ const ProjectsComponent = () => {
              
             <div className="project-column">
                 <div className="project-content">
-                    <img src=
-"http://www.ning.com/wp-content/uploads/2018/04/create-gaming-website-1024x702.jpg"
-                        alt="" />
+                  
                     <h3>
                         <p>Gaming Blog</p>
                     </h3>
