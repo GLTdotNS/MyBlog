@@ -11,11 +11,11 @@ const Categories = ({ category }) => {
     <div className="categories columns" style={{ backgroundColor: "#333", borderRadius: "10px"   }}>
       <h3 className="p__opensans title">Categories</h3>
       <hr />
-      {category && category.map((category) =>
+      {category && category.map((category,index) =>
 
         <>
           {!category ? "Something went wrong..." :
-            <span  key={category._id} >
+            <span  key={index} >
               <Link href={"/categories/[slug]"} as={`/categories/${category.slug.current}`}>
               <a> {category.title}</a>
             </Link>

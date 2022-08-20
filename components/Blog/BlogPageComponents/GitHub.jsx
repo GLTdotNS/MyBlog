@@ -41,7 +41,7 @@ const GitHub = ({ github, contributions }) => {
       <div className='me_on_github' style={{ padding: "0.3rem", backgroundColor: "#333" }}>
 
         <img width={90} height={90} style={{ borderRadius: "100%", marginLeft: "50%" }}
-          src={github.avatar_url} alt="" />
+          src={github.avatar_url} alt="Canis Lupus" />
         <p>Repositories: <span>{github.public_repos}</span></p>
         <br />
         <p>Followers:  <span>{github.followers} </span>
