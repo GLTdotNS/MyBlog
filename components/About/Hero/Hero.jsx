@@ -24,10 +24,10 @@ const Hero = ({banner}) => {
               <div className="Contact">
                 <a href='mailto:georgitonkow@gmail.com'><span>Email: </span>georgitonkow@gmail.com</a>
                 <p id='phone'><a href='tel:+359889891905 '>Mobile : {banner[0].phone} </a></p>
-                <button type='button' className='btn' style={{ float: "right" }}
-                  onClick={() => downloadPdf("./cv.pdf", "cv.pdf")}>
+                <a type='button'  style={{ float: "right" }}
+                  href="" download>
                   Download CV
-                </button>
+                </a>
               </div>
 
 
