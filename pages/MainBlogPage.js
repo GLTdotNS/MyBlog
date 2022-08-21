@@ -96,8 +96,10 @@ const MainBlogPage = ({ posts, category, banner}) => {
           <img
             src={urlForImg(banner[1].image).url()}
             alt="Picture of the author"
-            width="100%"
-            height="300px"
+            width="99%"
+            height="400px"
+           
+           
           />
 
         </div>
