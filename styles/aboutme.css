@@ -8,7 +8,6 @@
   box-shadow: 1px 1px 18px -9px #000000;
   margin-left: auto;
   border-left: 1px solid #333;
-  margin-top: 3.5% !important;
   width: 85%;
   padding: 30px;
   background-color: black;
@@ -305,7 +304,7 @@ h2 {
 .full {
   display: grid;
   grid-template-columns: 2fr 3fr;
-
+  margin-top: 8%;
 }
 
 ol {
@@ -404,7 +403,9 @@ ol {
   justify-content: center;
 }
 
-
+.project-container h2{
+  margin-top: 8%;
+}
 
 .project-column {
   margin-top: 10%;

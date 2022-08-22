@@ -9,9 +9,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Image from "next/image"
 import notFoundImage from "../styles/assets/monkey.png"
-import { urlForImg } from '../lib/sanityClient';
 import { useRouter } from 'next/router'
-import { FcSearch } from "react-icons/fc"
 
 const MainBlogPage = ({ posts, category, banner}) => {
 
@@ -69,7 +67,6 @@ const MainBlogPage = ({ posts, category, banner}) => {
 
 
       <div className="midcolumn">
-
         <form onSubmit={onFormSubmit} className='box aboutme'>
           <div className='search '>
             <input className='input' type="text" placeholder="Search.." autoComplete="off" list="suggestions"
@@ -92,17 +89,6 @@ const MainBlogPage = ({ posts, category, banner}) => {
 
         </form>
         <hr />
-        <div style={{ backgroundColor: "#333" }}>
-          <img
-            src={urlForImg(banner[1].image).url()}
-            alt="Picture of the author"
-            width="99%"
-            height="400px"
-           
-           
-          />
-
-        </div>
 
 
         <hr />
