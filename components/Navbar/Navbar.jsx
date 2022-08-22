@@ -105,7 +105,7 @@ const Navbar = () => {
             
             transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
             animate={{
-              width: "260px",
+              width: "285px",
               transition: { duration: 0 }
             }}
             exit={{
