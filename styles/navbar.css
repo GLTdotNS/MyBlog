@@ -2,7 +2,7 @@
 
 
 .app__navbar {
-  position: fixed;
+  position: fixed !important;
   background-color: #161b22;
   width: 100%;
   top: 0;
@@ -11,7 +11,7 @@
   align-items: center;
   color: white;
   height: 50px;
-  padding: 2rem 0.7rem;
+  padding: 1% !important;
   z-index: 1000 !important;
 }
 
@@ -46,7 +46,6 @@
 
 .app__navbar-smallscreen {
   display: flex;
-
 }
 
 .app__navbar-smallscreen_overlay {
@@ -54,9 +53,21 @@
   text-align: left;
   top: 50px;
   left: 0;
+  width: 0%;
   height: 100vh;
   background-color: rgb(22, 27, 34);
   backdrop-filter: blur(18px);
+  flex-direction: row;
+
+}
+.k{
+  position: absolute;
+  text-align: left;
+  top: 50px;
+  left: 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  height: 100vh;
   flex-direction: row;
 
 }
@@ -64,7 +75,8 @@
 .overlay__close {
   color: white;
   cursor: pointer;
-  transition:0.8s linear
+  transition:0.8s linear;
+  z-index:999
 }
 
 
