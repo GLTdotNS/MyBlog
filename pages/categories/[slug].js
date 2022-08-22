@@ -53,13 +53,7 @@ const CategoriesPage = ({ posts, category }) => {
 
             <div className="midcolumn">
                 <div className="header">
-                    <motion.img
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 1 }}
-                        src={urlForImg(category.filter(x => x.slug.current === location)[0].image).url()}
-                        alt="" />
+           
                 </div>
 
 

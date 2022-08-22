@@ -84,6 +84,10 @@ const Navbar = () => {
       animate={hidden ? "hidden" : "visible"}
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
+      
+      { !toggleMenu ? <GiHamburgerMenu style={{transition: "0.5s"}} color="#fff" cursor={"pointer"}
+          fontSize={27} onClick={() => setToggleMenu(true)} /> :
+           <AiOutlineClose fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />}
 
       <div className="app__navbar-logo ">
         <Link href="/">
@@ -91,50 +95,26 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <ul className="app__navbar-links">
-
-        <li className="p__opensans">
-          <Link href="/">
-            <a>Blog</a>
-          </Link>
-        </li>
-
-        <li className="p__opensans">
-          <Link href="/aboutme">
-            <a>About me</a>
-          </Link>
-        </li>
-
-        <li className="p__opensans">
-          <Link href="/projects">
-            <a>Projets</a>
-          </Link>
-        </li>
-
-      </ul>
-
 
       <div className="app__navbar-smallscreen">
 
-        <GiHamburgerMenu color="#fff" cursor={"pointer"}
-          fontSize={27} onClick={() => setToggleMenu(true)} />
         <AnimatePresence>
 
           {toggleMenu && (
-
             <motion.div className="app__navbar-smallscreen_overlay"
-
-              transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-              animate={{
-                width: "100%",
-                transition: { duration: 0.2 }
-              }}
-              exit={{
-                width: 0,
-                transition: { delay: 0.1, duration: 0.3 }
-              }}
+            
+            transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
+            animate={{
+              width: "260px",
+              transition: { duration: 0 }
+            }}
+            exit={{
+              width: 0,
+              transition: { delay: 0.1, duration: 0.6 }
+            }}
             >
-              <AiOutlineClose fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />
+          
+             
 
               <motion.ul className="app__navbar-smallscreen_links"
                 initial="closed"
@@ -175,11 +155,7 @@ const Navbar = () => {
                 variants={sideVariants}>
                 <hr />
                 <div className="app__navbar-logo nav-social">
-                  <Link href="/">
-                    <motion.p variants={itemVariants} onClick={() => setToggleMenu(false)}
-                      style={{ fontSize: "50px" }}>Tonkoff
-                    </motion.p>
-                  </Link>
+     
                 </div>
 
                 <div className="nav-social">

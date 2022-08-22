@@ -66,7 +66,7 @@ const About = ({ banner, references }) => {
 
 
   return (
-    <motion.div {...animation} className="aboutMePage">
+    <motion.div {...animation} className="row">
       <div className='aboutme'>
 
         <div className="full">
