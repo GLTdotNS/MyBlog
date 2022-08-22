@@ -47,10 +47,10 @@ const Navbar = () => {
 
   const itemVariants = {
     closed: {
-      opacity: 0,
+      visibility: "hidden",
     
     },
-    open: { opacity: 1 }
+    open: { delay: 1, visibility: "visible"  }
   };
 
 
@@ -59,7 +59,6 @@ const Navbar = () => {
       transition: {
         staggerChildren: 0,
         staggerDirection: -1,
-
       }
     },
     open: {
@@ -100,7 +99,8 @@ const Navbar = () => {
 
         <AnimatePresence>
 
-          {toggleMenu && (
+        {toggleMenu && (
+        <motion.div className='k'>
             <motion.div className="app__navbar-smallscreen_overlay"
             
             transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
@@ -167,6 +167,7 @@ const Navbar = () => {
             </motion.div>
 
 
+        </motion.div>
           )}
 
         </AnimatePresence>
