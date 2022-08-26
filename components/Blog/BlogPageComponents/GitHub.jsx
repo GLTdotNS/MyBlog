@@ -9,7 +9,7 @@ const GitHub = ({ github, contributions }) => {
     return (
       <div className='columns posts'>
 
-        <h1 className="p__opensans links me_on_github title">Me @ GitHub</h1>
+        <h1 className="p__opensans links  title">Me @ GitHub</h1>
         <hr />
 
         <div className='me_on_github' style={{ padding: "0.3rem", backgroundColor: "#333" }}>

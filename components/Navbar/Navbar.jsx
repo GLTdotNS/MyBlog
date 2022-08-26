@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Link from "next/link"
-import { motion, AnimatePresence, useViewportScroll } from 'framer-motion';
+import { motion, AnimatePresence, useScroll } from 'framer-motion';
 import { SiFacebook, SiGithub, SiGmail } from 'react-icons/si';
 
 
 
 const Navbar = () => {
 
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
 
@@ -88,7 +88,7 @@ const Navbar = () => {
           fontSize={27} onClick={() => setToggleMenu(true)} /> :
            <AiOutlineClose fontSize={27} className="overlay__close" onClick={() => setToggleMenu(false)} />}
 
-      <div className="app__navbar-logo ">
+      <div className="app__navbar-logo " onClick={() => setToggleMenu(false)}>
         <Link href="/">
           <a style={{ fontSize: "20px" }}>Tonkoff</a>
         </Link>

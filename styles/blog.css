@@ -193,11 +193,12 @@
   }
   
   .me_on_github p {
-    font-size: 13px;
+    font-size: 15px;
   }
   
   .me_on_github span {
     margin-left: 0.5%;
+    font-weight: 1000;
     color: green;
   }
   
@@ -214,16 +215,14 @@
   
   
   .rightcolumn li:before {
-    content: " ";
-    background-image: url("./assets/punto.svg");
-    background-repeat: no-repeat;
+    content: "*";
     background-color: #333;
     position: absolute;
     bottom: 0;
     top: 0;
-    left: 0px;
+    left: 1px;
     border-radius: 2px;
-    width: 3px;
+    width: 2px;
   }
   
   .rightcolumn li::content {
