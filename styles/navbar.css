@@ -142,8 +142,12 @@
 
 @media screen and (max-width: 650px) {
 
-
-
+  .app__navbar-smallscreen_overlay{
+    width: 50% !important;
+  }
+  .app__navbar-smallscreen_overlay li{
+    font-size: 30px;
+  }
   .app__navbar {
     padding: 1rem;
     position: fixed;

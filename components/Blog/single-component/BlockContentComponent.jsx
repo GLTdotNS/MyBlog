@@ -20,6 +20,7 @@ const BlockContentComponent = ({ post }) => {
 
     )
   }
+
   return (
 
     <div className="post_text" >

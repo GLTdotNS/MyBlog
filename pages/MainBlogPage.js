@@ -20,7 +20,6 @@ const MainBlogPage = ({ posts, category, banner}) => {
 
     document.title = "Начална страница";
     window.scrollTo(0, 0)
-    console.log(banner[1])
   }, [])
 
   if (!posts) {
