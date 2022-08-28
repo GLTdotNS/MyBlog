@@ -283,10 +283,20 @@ h2 {
     background-color: #000000;
   }
 
-  .rightcolumn,
-  .midcolumn {
+
+  .midcolumn,
+  .footer_div {
     position: relative !important;
     width: 100% !important;
+  }
+
+  .rightcolumn {
+    width: 50%;
+    float: none;
+    position: relative;
+    margin-right: 0px auto !important;
+    display: block;
+ 
   }
 
   .leftcolumn {
@@ -403,7 +413,7 @@ ol {
   justify-content: center;
 }
 
-.project-container h2{
+.project-container h2 {
   margin-top: 8%;
 }
 
