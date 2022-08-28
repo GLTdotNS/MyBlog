@@ -122,7 +122,7 @@
   }
   
   .columns .title {
-    margin-top: 30%;
+    margin-top: 20% !important;
     background-color: #111;
     color: white;
     padding: 5=25px;
