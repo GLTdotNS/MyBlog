@@ -1,5 +1,5 @@
 /*Navbar*/
-
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
 
 .app__navbar {
   position: fixed !important;
@@ -43,10 +43,11 @@
   background-color: #0d1117;
   overflow-x: hidden;
   display: block;
+  border-right: 3px solid #333;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
   
 }
-.k{
+.app__navbar-overylay_background{
   position: absolute;
   text-align: left;
   top: 0px;
@@ -72,26 +73,28 @@
 .app__navbar-smallscreen_links {
   margin-top: 30% !important;
   line-height: 20rem;
-  margin-left: 5%;
-  font-family: 'Bebas Neue', cursive;
+
+  font-family: 'Oswald', sans-serif;
   list-style: none;
+ 
 }
 
 .app__navbar-smallscreen_links li  {
   font: 40px Arial;
   color: white;
   line-height: 2em;
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Oswald', sans-serif;
   background: linear-gradient(to left, #0d1117 50%, #161b22 50%) right;
   background-size: 500%;
-  padding: 3%;
+  padding-left: 10%;
   height: 70px;
   transition: .5s ease-out; 
 
 }
 .app__navbar-smallscreen_links li:hover{
   background-position: left;
-  background-size: 500%;
+  background-size: 200%;
+
 }
 .app__navbar-smallscreen_links li:active {
   /*For phone clicked :)*/
