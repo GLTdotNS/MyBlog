@@ -92,7 +92,7 @@ const Navbar = () => {
         <AnimatePresence>
 
           {toggleMenu && (
-            <div className='k'>
+            <div className='app__navbar-overylay_background'>
               <motion.div className="app__navbar-smallscreen_overlay"
 
                 animate={{
