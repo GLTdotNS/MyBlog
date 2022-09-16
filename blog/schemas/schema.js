@@ -10,6 +10,7 @@ import author from './author'
 import comment from './comment'
 import banner from './banner'
 import references from './references'
+import youtube from './youtube'
 
 export default createSchema({
 
@@ -22,5 +23,6 @@ export default createSchema({
     blockContent,
     banner,
     references,
+    youtube,
   ]),
 })

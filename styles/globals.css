@@ -91,6 +91,9 @@ body {
 
 
 @media screen and (max-width: 650px) {
+  figure {
+    width: 100% !important;
+  }
   ::-webkit-scrollbar {
     display: none;
   }
