@@ -36,7 +36,7 @@ const Post = ({ post, posts, category }) => {
 
 
 
-  if (!post || !post.mainImage || !post.body) {
+  if (!post || !post.mainImage || !post.body || !block) {
 
     return (
       <div className="spinner">

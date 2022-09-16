@@ -147,9 +147,8 @@
   }
   
   .post_text figure {
-    width: 100%;
-    margin: auto;
-    padding: 3%;
+    width: 50%;
+    margin: auto;   
     border-radius: 20px;
     background-color: #333;
   }
@@ -372,9 +371,10 @@
   }
   
   .post_text {
-    padding: 2%;
+    padding: 5%;
     margin-top: 2%;
     border-color: transparent;
+    background-color: #111;
   }
   
 
