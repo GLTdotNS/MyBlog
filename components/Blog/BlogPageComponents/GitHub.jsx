@@ -5,6 +5,10 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const GitHub = ({ github, contributions }) => {
 
+  const openGit = () => {
+    window.open("https://github.com/GLTdotNS?tab=repositories")
+  }
+
 
   if (!github || !contributions) {
 
@@ -65,7 +69,7 @@ const GitHub = ({ github, contributions }) => {
         {contributions ? <p style={{fontSize: "12px" , marginBottom: "2%"}}><span> {contributions} contributions in the last year</span></p> : ""}
       <img width={317} height={112} src="https://ghchart.rshah.org/HEXCOLORCODE=216e39/GLTdotNS" alt="Name Your Github chart" />
 
-
+      <button className='btnGit' onClick={() => openGit()}>Go to Repositories</button>
     </div>
   )
 }

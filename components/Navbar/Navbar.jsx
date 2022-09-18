@@ -3,7 +3,8 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { AiOutlineClose } from 'react-icons/ai';
 import Link from "next/link"
 import { motion, AnimatePresence, useScroll } from 'framer-motion';
-
+import {SiGmail , SiFacebook , SiGithub} from "react-icons/si"
+import StickySocialMediaBar from "../Sticky/stickySocialMediaBar"
 
 
 
@@ -131,10 +132,15 @@ const Navbar = () => {
 
 
                 </ul>
-                  <hr />
+                <hr />
               </motion.div>
-
-
+              <div className="icon-bar" onClick={() => setToggleMenu(false)}>
+                <a href="https://www.facebook.com/canis.lupus.33/" className="facebook"><SiFacebook /></a>
+                <a href="https://github.com/GLTdotNS" className="github"><SiGithub /></a>
+                <Link href="/aboutme#contact"  >
+                  <a className="google"><SiGmail /></a>
+                </Link>
+              </div>
             </div>
           )}
 

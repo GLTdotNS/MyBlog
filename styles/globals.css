@@ -19,23 +19,35 @@ body {
 
 }
 
-.buttonGit{
-  background-color: red;
-  color: white;
-  border-radius: 15px;
+.buttonGit {
   width: 50px;
+  color: black;
   border-color: transparent;
   height: 40px;
-  position:absolute;
+  position: absolute;
   top: 100px;
-  left: 230px !important;
+  left: 0 !important;
   transition: 1s ease;
   z-index: 999;
 }
+
 .buttonGit:hover{
   cursor: pointer;
 }
 
+.btnGit {
+  margin-top: 15%;
+  transition: 0.5s ease;
+  border-color: transparent;
+  border-radius: 10px ;
+  height: 20px;
+  width: 200px;
+}
+.btnGit:hover {
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 13px;
@@ -102,6 +114,7 @@ body {
   figure {
     width: 100% !important;
   }
+
   ::-webkit-scrollbar {
     display: none;
   }
@@ -144,13 +157,3 @@ a {
 }
 
 /*end global*/
-
-
-
-
-
-
-
-
-
-

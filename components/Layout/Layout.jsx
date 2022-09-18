@@ -1,8 +1,8 @@
 import React from 'react'
 import Footer from "../Footer/Footer"
 import Navbar from "../Navbar/Navbar"
-import StickySocialMediaBar from "../Sticky/stickySocialMediaBar"
 import GitHub from "../Blog/BlogPageComponents/GitHub"
+import { SiGithub} from "react-icons/si"
 import { useEffect, useState } from 'react'
 import { motion, useViewportScroll } from "framer-motion";
 
@@ -16,10 +16,9 @@ const Layout = ({ children }) => {
 
 
 
-
   const showGithub = (e) => {
     const left = document.getElementById("1")
-    console.log("")
+
     if (show) {
       setShow(false)
       left.style.backgroundColor = "black"
@@ -63,14 +62,12 @@ const Layout = ({ children }) => {
       </header>
 
 
-      <StickySocialMediaBar />
-
 
 
       <div className='leftcolumn' id='1'>
         {!show ?
-          <button className='buttonGit' onClick={(e) => showGithub(e)}>Show</button>
-          : <button style={{ backgroundColor: "transparent" }}
+          <button className='buttonGit' onClick={(e) => showGithub(e)}><SiGithub size={30}/></button>
+          : <button style={{ backgroundColor: "transparent", color: "white" }}
             className='buttonGit' onClick={(e) => showGithub(e)}>X</button>}
         {show ? <GitHub github={github} contributions={contributions} /> : ""}
       </div>
