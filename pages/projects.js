@@ -6,9 +6,9 @@ const Projects = () => {
 
 
   return (
-    <div>
+ 
       <ProjectsComponent />
-    </div>
+
   )
 }
 

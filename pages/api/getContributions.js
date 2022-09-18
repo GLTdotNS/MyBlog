@@ -3,7 +3,24 @@ export default function handler (req, res) {
     
       'Authorization': process.env.NEXT_PUBLIC_GIT_HUB,
     }
-    const body = { "query": "query {viewer {contributionsCollection {contributionCalendar {totalContributions}}}}" }
+    const body = { "query": `query 
+    {viewer  {
+        contributionsCollection {
+          contributionCalendar {
+            colors
+            totalContributions
+            weeks {
+              contributionDays {
+                color
+                contributionCount
+                date
+                weekday
+              }
+            }
+          }
+        }
+      }
+    }` }
      fetch('https://api.github.com/graphql', {
       method: 'POST', body: JSON.stringify(body)
         .replace(/</g, '\\u003c')

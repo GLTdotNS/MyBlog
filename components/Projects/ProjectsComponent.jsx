@@ -10,7 +10,7 @@ const ProjectsComponent = () => {
     }, [])
 
     return (
-        <motion.div {...animation}>
+        <div {...animation}>
             <div className="project-container aboutme">
                 <h2>Portfolio</h2>
                 <hr />
@@ -94,7 +94,7 @@ const ProjectsComponent = () => {
                     </div>
                 </div>
             </div>
-        </motion.div>
+        </div>
     )
 }
 
