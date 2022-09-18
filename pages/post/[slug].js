@@ -62,7 +62,6 @@ const Post = ({ post, posts, category }) => {
 
         <div className="midcolumn">
           <div className='header'>
-            <img src={urlForImg(post.mainImage)} alt="" width={"20%"} height={"20%"} id="mypic" />
           </div>
           <h2>{post.title}</h2>
           <div className="author">
