@@ -79,7 +79,8 @@ const Contacts = () => {
   }
 
     return (
-        <div className="contactFormContainer aboutme">
+       <div>
+         <div  className="contactFormContainer aboutme">
             <h2>Contacts </h2>
             <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
 
@@ -104,6 +105,7 @@ const Contacts = () => {
                 : sent === true ? <button className='sentBtn'>Send</button> : "Sending..."}
             </form>
         </div>
+       </div>
     )
 }
 

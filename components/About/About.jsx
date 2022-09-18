@@ -72,7 +72,7 @@ const About = ({ banner, references }) => {
         <div className="full">
           <div className="left">
             <Hero banner={banner} />
-              <Skills />
+            <Skills />
           </div>
 
           <motion.div
@@ -91,10 +91,12 @@ const About = ({ banner, references }) => {
         </div>
 
         <hr />
-       <References references={references}/>
+        <References references={references} />
         <hr />
+        <div style={{padding: "5%"}} id="contact">
 
-      <Contacts/>
+          <Contacts />
+        </div>
       </div>
 
     </div >
