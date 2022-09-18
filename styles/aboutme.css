@@ -7,8 +7,7 @@
   font-family: 'Oswald', sans-serif;
   box-shadow: 1px 1px 18px -9px #000000;
   margin-left: auto;
-  border-left: 1px solid #333;
-  width: 85%;
+  width: 75%;
   padding: 30px;
   background-color: black;
 
@@ -381,7 +380,7 @@ ol {
 
 /*projects*/
 .project-container {
-  width: 85%;
+  width: 80%;
 
 }
 

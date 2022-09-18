@@ -19,14 +19,22 @@ body {
 
 }
 
-.white-theme {
-  transition: 1s;
-  background-color: white;
-  color: black;
-
+.buttonGit{
+  background-color: red;
+  color: white;
+  border-radius: 15px;
+  width: 50px;
+  border-color: transparent;
+  height: 40px;
+  position:absolute;
+  top: 100px;
+  left: 230px !important;
+  transition: 1s ease;
+  z-index: 999;
 }
-
-
+.buttonGit:hover{
+  cursor: pointer;
+}
 
 /* width */
 ::-webkit-scrollbar {

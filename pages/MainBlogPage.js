@@ -60,8 +60,8 @@ const MainBlogPage = ({ posts, category, banner}) => {
   }
   return (
 
-    <motion.div className="row"
-      {...animation}
+    <div className="row"
+     
     >
 
 
@@ -120,7 +120,7 @@ const MainBlogPage = ({ posts, category, banner}) => {
 
 
       </div>
-    </motion.div>
+    </div>
   )
 }
 

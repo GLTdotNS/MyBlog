@@ -66,7 +66,7 @@ const About = ({ banner, references }) => {
 
 
   return (
-    <motion.div {...animation} className="row">
+    <div {...animation}>
       <div className='aboutme'>
 
         <div className="full">
@@ -97,7 +97,7 @@ const About = ({ banner, references }) => {
       <Contacts/>
       </div>
 
-    </motion.div >
+    </div >
   )
 }
 

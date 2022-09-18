@@ -4,9 +4,9 @@ import groq from "groq"
 
 const AboutMe = ({ banner , references }) => {
   return (
-    <div>
+   
       <About banner={banner} references={references} />
-    </div>
+   
   )
 }
 

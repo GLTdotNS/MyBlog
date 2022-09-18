@@ -3,13 +3,12 @@
 
 
 .footer_div {
-  background-color: black;
   margin-left: auto !important;
   text-align: left;
   border-left: 1px solid #333;
   padding: 5%;
   font-size: 1px;
-  background-color: black;
+
   width: 85%
 }
 
@@ -195,7 +194,7 @@ div.social {
 .icon-bar {
   position: fixed;
   left: 0;
-  top: 60%;
+  top: 75%;
   z-index: 10000 !important;
 
 }

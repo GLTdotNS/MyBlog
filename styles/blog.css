@@ -1,442 +1,459 @@
 /*blog*/
 .header {
-    padding: 30px;
-    font-size: 40px;
-    text-align: center;
-    margin-top: 5%;
-  }
-  
-  .header img {
-    display: block;
-    width: 100%;
-    height: 20vw;
-    object-fit: contain;
-  
-  }
-  
-  
-  .search {
-    position: relative;
-    display: flex;
-    padding: 15px;
-    margin-bottom: 5px;
-  }
-  
-  
-  .box {
-  
-    position: relative;
-    width: 100% !important;
-  
-  }
-  
-  .input {
-    padding: 15px;
-    width: 30%;
-    height: 10px;
-    background: none;
-    border: 1px solid #238636;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    color: white;
-    outline: none;
-    transition: .5s;
-  }
-  
-  .box input:hover {
-    background: whitesmoke;
-    color: black;
-    border-radius: 80px !important;
-  }
-  
-  .search i {
+  padding: 30px;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 5%;
+}
 
-    position: absolute;
-    transition: .2s;
-  }
-  
-  .box:hover i {
-    opacity: 0;
+.header img {
+  display: block;
+  width: 100%;
+  height: 20vw;
+  object-fit: contain;
 
-  }
-  
+}
 
-  
-  .main {
-    margin: auto;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-  
-  }
-  
-  .main a {
-    text-decoration: none;
-  }
-  
-  .categories a {
-    display: inline-block;
-    padding: 0.2rem 1rem;
-    border-radius: 40px;
-    background-color: #238636;
-    margin: 5px 3px;
-    font-size: 15px;
-    white-space: nowrap;
-  
-  }
-  
-  .categories a:hover {
-    background-color: #47cc62;
-    color: black;
-    transition: .7s;
-  }
-  
 
-  .section a:hover {
-  
-    transition: 0.5s ease;
-    color: blue;
-  }
-  
-  .section li {
-    list-style: none;
-  }
-  
-  hr {
-    background-color: #333;
-    height: 1px;
-    border: 0;
-  }
-  
-  .columns {
-    display: block;
-    margin-bottom: 4vh;
-  }
-  
-  .section {
-    text-align: left;
-    font-size: 14px;
-    padding: 1rem;
-  
-  }
-  
-  .columns .title {
-    margin-top: 20% !important;
-    background-color: #111;
-    color: white;
-    padding: 5=25px;
-    text-align: left;
-    width: 100%;
-    display: block;
-  
-  }
-  
-  .posts a {
-    display: flex;
-    align-items: center;
-    margin: 0.4rem 0;
-  }
-  
-  figure img {
-    display: block;
-    width: 100%;
-    margin: auto;
-    margin-left: auto !important;
-    border: 1px solid #333;
-  }
-  
-  .post_text figure {
-    width: 50%;
-    margin: auto;   
-    border-radius: 20px;
-    background-color: #333;
-  }
-  
-  
-  .posts img {
-    width: 100px;
-    margin-right: 10px;
-    border: 1px solid #333;
-  }
-  
-  .author img {
-    border: 1px solid #333;
-  }
-  
-  .midcolumn {
-    display: inline-block;
-    margin: 0 auto;
-    text-align: left;
-    min-height: 100vh;
-    border-left: 1px solid #333;
-    padding: 5%;
-    background-color: black;
-    width: 70%
-  }
-  
-  .leftcolumn {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height:100vh!important;
-    background-color: #0d1117;
-    display: flex;
-    flex-direction: column;
-    float: left;
-    padding: 1rem;
-    position: sticky;
-    top: 0px;
-    padding-top: 10%;
-    width: 15%;
-  }
-  
-  .me_on_github p {
-    font-size: 15px;
-  }
-  
-  .me_on_github span {
-    margin-left: 0.5%;
-    font-weight: 1000;
-    color: green;
-  }
-  
-  .rightcolumn ol {
-    list-style-type: none;
-  }
-  
-  .rightcolumn li {
-    position: relative;
-    margin: 0;
-    padding-bottom: 1em;
-    padding-left: 20px;
-  }
-  
-  
-  .rightcolumn li:before {
-    content: "*";
-    background-color: #333;
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 1px;
-    border-radius: 2px;
-    width: 2px;
-  }
-  
-  .rightcolumn li::content {
-  
-    color: red !important;
-    font-size: 100px !important;
-  }
-  
-  .post_text {
-    width: 90%;
-    margin: auto;
-  }
-  
-  .avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-  }
-  
-  .rightcolumn {
-    border-radius: 3px;
-    transition: 0.1s ease;
-    float: right;
-    width: 15%;
-    background-color: black;
-    height: 100vh;
-    border: 3px;
-    box-sizing: border-box;
-    padding: 2%;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0px;
-  }
-  
-  .card {
-    background-color: #0d1117;
-    /* color: rgb(217, 216, 216); */
-    border-radius: 10px;
-    padding: 25px;
-    margin-top: 5px;
-  }
-  
-  .inner_post_text {
-    border: 1px solid #333;
-    border-radius: 30px;
-    background-color: #0d1117;
-    margin-top: 5px;
-    padding: 3%;
-  }
-  
-  .initial-post {
-    border: 1px solid #333;
-    width: 90%;
-    padding: 3%;
-    margin: auto;
-    margin-top: 20px;
-  
-  }
-  
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  .post_link {
-    margin-top: 10px;
-    display: flex;
-    flex-direction: row;
-    font-size: 30px;
-    text-align: center;
-    box-sizing: border-box;
-    border: 1px solid black;
-  }
-  
-  .post_link:hover {
-    transition: 0.5s ease;
-    cursor: pointer;
-    opacity: 0.7;
-  }
-  
-  /*pagination*/
-  .paginationBttns {
-    margin: auto;
-    margin-top: 10%;
-    width: 80%;
-    height: 40px;
-    list-style: none;
-    margin-bottom: 10%;
-    display: flex;
-    justify-content: center;
-  }
-  
-  
-  .paginationBttns a {
-    padding: 3px 15px;
-    border: 1px solid #333;
-  }
-  
-  .paginationBttns a:hover {
-    cursor: pointer;
-    opacity: 0.7;
-    transition: .5s ease;
-  }
-  
-  .paginationActive a {
-    background-color: #333;
-    color: white;
-    border: 1px solid #333;
-  }
-  
-  .paginationDisabled a {
-    color: grey;
-    background-color: transparent;
-  }
-  
-  .recently-posts-links:hover a {
-    cursor: pointer;
-    opacity: 0.3;
-    transition: .5s ease;
-  }
-  
-  .recently-posts-links {
-  
-    margin-top: 3%;
-  }
-  
-  .recently-posts-links ul {
-    margin-left: 2%;
-  }
-  
-  .recently-posts-links a {
-    text-decoration: underline;
-    color: blue;
-  }
-  
+.search {
+  position: relative;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 5px;
+}
 
-  
-  .comment-body {
-    background-color: rgb(226, 222, 222);
-    color: black;
-    border-radius: 10px;
-    width: 100%;
-    padding: 1%;
-  }
-  
-  .post_text {
-    padding: 5%;
-    margin-top: 2%;
-    border-color: transparent;
-    background-color: #111;
-  }
-  
 
-  
+.box {
 
- 
-  .links:hover {
-    cursor: pointer;
-    transition: .5s ease;
-    opacity: 0.7;
-  }
-  .btn{
-    height: 30px;
-    width: 120px;
-    font-size: 15px;
-    border-radius: 12px;
-    margin-top: 2%;
-    border-color: transparent;
-    background-color: #333;
-    color: white;
-  }
-  
-  .hiddenBtn {
-    height: 30px;
-    width: 10px;
-    font-size: 15px;
-    border-radius: 12px;
-    margin-top: 2%;
-    border-color: transparent;
-    background-color: #333;
-    color: white;
-    will-change: transform;
-    -webkit-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+  position: relative;
+  width: 100% !important;
 
-  }
+}
 
-  .sentBtn {
-    height: 30px;
-    width: 120px;
-    font-size: 15px;
-    border-radius: 12px;
-    margin-top: 2%;
-    border-color: transparent;
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    will-change: transform;
-    -webkit-transition: all .5s ease-in-out;
-    transition: all .2s ease-in-out;
+.input {
+  padding: 15px;
+  width: 30%;
+  height: 10px;
+  background: none;
+  border: 1px solid #238636;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+  color: white;
+  outline: none;
+  transition: .5s;
+}
 
-  }
-  .sentBtn:hover{
-    background-color: rgb(176, 0, 0);
-  }
-  .btn:hover {
-    cursor: pointer;
-    transition: .2s ease-in;
-    border: 1px solid white;
-  
-  }
-  /*sharebutton logic*/
+.box input:hover {
+  background: whitesmoke;
+  color: black;
+  border-radius: 80px !important;
+}
+
+.search i {
+
+  position: absolute;
+  transition: .2s;
+}
+
+.box:hover i {
+  opacity: 0;
+
+}
+
+
+
+.main {
+  margin: auto;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+
+}
+
+.main a {
+  text-decoration: none;
+}
+
+.categories a {
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  border-radius: 40px;
+  background-color: #238636;
+  margin: 5px 3px;
+  font-size: 15px;
+  white-space: nowrap;
+
+}
+
+.categories a:hover {
+  background-color: #47cc62;
+  color: black;
+  transition: .7s;
+}
+
+
+.section a:hover {
+
+  transition: 0.5s ease;
+  color: blue;
+}
+
+.section li {
+  list-style: none;
+}
+
+hr {
+  background-color: #333;
+  height: 1px;
+  border: 0;
+}
+
+.columns {
+  display: block;
+  margin-bottom: 4vh;
+}
+
+.section {
+  text-align: left;
+  font-size: 14px;
+  padding: 1rem;
+
+}
+
+.columns .title {
+  margin-top: 20% !important;
+  background-color: #111;
+  color: white;
+  padding: 5=25px;
+  text-align: left;
+  width: 100%;
+  display: block;
+
+}
+
+.posts a {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  margin: auto;
+  margin-left: auto !important;
+  border: 1px solid #333;
+}
+
+.post_text figure {
+  width: 50%;
+  margin: auto;
+  border-radius: 20px;
+  background-color: #333;
+}
+
+
+.posts img {
+  width: 100px;
+  margin-right: 10px;
+  border: 1px solid #333;
+}
+
+.author img {
+  border: 1px solid #333;
+}
+
+.midcolumn {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: left;
+  min-height: 100vh;
+  padding: 5%;
+  background-color: black;
+  width: 60%
+}
+
+.leftcolumn {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh !important;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  padding: 1rem;
+  position: sticky;
+  top: 0px;
+  padding-top: 5%;
+  border-right: 1px solid #333 !important;
+  transition: 1s ease;
+  width: 20%;
+}
+
+.me_on_github {
+  margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: 12px;
+}
+
+.baba {
+  display: inline-block;
+  overflow: hidden;
+  line-height: 1;
+  vertical-align: middle;
+  border-radius: 6px;
+  flex-shrink: 0;
+  border-radius: 50% !important;
+  border: 1px solid #333;
+}
+
+.me_on_github p {
+  padding-top: 16px !important;
+
+}
+
+
+.rightcolumn ol {
+  list-style-type: none;
+}
+
+.rightcolumn li {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1em;
+  padding-left: 20px;
+}
+
+
+.rightcolumn li:before {
+  content: "*";
+  background-color: #333;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 1px;
+  border-radius: 2px;
+  width: 2px;
+}
+
+.rightcolumn li::content {
+
+  color: red !important;
+  font-size: 100px !important;
+}
+
+.post_text {
+  width: 90%;
+  margin: auto;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.rightcolumn {
+  border-radius: 3px;
+  transition: 0.1s ease;
+  float: right;
+  width: 15%;
+  background-color: black;
+  height: 100vh;
+  border: 3px;
+  box-sizing: border-box;
+  padding: 2%;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.card {
+  background-color: #0d1117;
+  /* color: rgb(217, 216, 216); */
+  border-radius: 10px;
+  padding: 25px;
+  margin-top: 5px;
+}
+
+.inner_post_text {
+  border: 1px solid #333;
+  border-radius: 30px;
+  background-color: #0d1117;
+  margin-top: 5px;
+  padding: 3%;
+}
+
+.initial-post {
+  border: 1px solid #333;
+  width: 90%;
+  padding: 3%;
+  margin: auto;
+  margin-top: 20px;
+
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.post_link {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  font-size: 30px;
+  text-align: center;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+.post_link:hover {
+  transition: 0.5s ease;
+  cursor: pointer;
+  opacity: 0.7;
+}
+
+/*pagination*/
+.paginationBttns {
+  margin: auto;
+  margin-top: 10%;
+  width: 80%;
+  height: 40px;
+  list-style: none;
+  margin-bottom: 10%;
+  display: flex;
+  justify-content: center;
+}
+
+
+.paginationBttns a {
+  padding: 3px 15px;
+  border: 1px solid #333;
+}
+
+.paginationBttns a:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: .5s ease;
+}
+
+.paginationActive a {
+  background-color: #333;
+  color: white;
+  border: 1px solid #333;
+}
+
+.paginationDisabled a {
+  color: grey;
+  background-color: transparent;
+}
+
+.recently-posts-links:hover a {
+  cursor: pointer;
+  opacity: 0.3;
+  transition: .5s ease;
+}
+
+.recently-posts-links {
+
+  margin-top: 3%;
+}
+
+.recently-posts-links ul {
+  margin-left: 2%;
+}
+
+.recently-posts-links a {
+  text-decoration: underline;
+  color: blue;
+}
+
+
+
+.comment-body {
+  background-color: rgb(226, 222, 222);
+  color: black;
+  border-radius: 10px;
+  width: 100%;
+  padding: 1%;
+}
+
+.post_text {
+  padding: 5%;
+  margin-top: 2%;
+  border-color: transparent;
+  background-color: #111;
+}
+
+
+
+
+
+.links:hover {
+  cursor: pointer;
+  transition: .5s ease;
+  opacity: 0.7;
+}
+
+.btn {
+  height: 30px;
+  width: 120px;
+  font-size: 15px;
+  border-radius: 12px;
+  margin-top: 2%;
+  border-color: transparent;
+  background-color: #333;
+  color: white;
+}
+
+.hiddenBtn {
+  height: 30px;
+  width: 10px;
+  font-size: 15px;
+  border-radius: 12px;
+  margin-top: 2%;
+  border-color: transparent;
+  background-color: #333;
+  color: white;
+  will-change: transform;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+
+}
+
+.sentBtn {
+  height: 30px;
+  width: 120px;
+  font-size: 15px;
+  border-radius: 12px;
+  margin-top: 2%;
+  border-color: transparent;
+  background-color: #333;
+  color: white;
+  cursor: pointer;
+  will-change: transform;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .2s ease-in-out;
+
+}
+
+.sentBtn:hover {
+  background-color: rgb(176, 0, 0);
+}
+
+.btn:hover {
+  cursor: pointer;
+  transition: .2s ease-in;
+  border: 1px solid white;
+
+}
+
+/*sharebutton logic*/
 .shareContainer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -553,4 +570,4 @@ article {
   transition: 1.5s ease;
 }
 
-  /*end blog*/
+/*end blog*/
