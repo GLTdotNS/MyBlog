@@ -45,7 +45,7 @@ const GitHub = ({ github, contributions }) => {
         <div style={{ borderBottom: "1px solid #333", zIndex: "0 !important", width: "100%" }}>
           <h3 className="p__opensans">Me @ GitHub</h3>
         </div>
-        <img width={200} height={200} src={github.avatar_url} alt="Canis Lupus" className='baba' />
+        <img width={200} height={200} src={github.avatar_url} alt="Canis Lupus" className='gitHubProfile' />
 
 
         <p> <RiGitRepositoryLine  style={{marginRight: "2%"}}/>

@@ -17,29 +17,18 @@ const Footer = () => {
             <h3>Georgi Tonkov</h3>
             <ul>
               <li>
-              
-                  A Bad Day On The Mountain Bike Always Beats A Good Day In The Office
-                
+
+                A Bad Day On The Mountain
+
               </li>
+              <li>
+                Bike Always Beats A Good Day In The Office</li>
             </ul>
 
 
           </div>
 
-          <div className="column ">
-            <h3>Site map</h3>
 
-            <ul>
-
-              <li>
-                <a id='open_source' href='https://github.com/GLTdotNS/nextjs'>Open source system <SiGithub size={10} /></a>
-              </li>
-              <li>
-                <a href="mailto:georgitonkow@gmail.com">Report bug</a>
-              </li>
-            </ul>
-
-          </div>
 
           <div className='column '>
             <h3>Made with <BsHeartFill size={20} color={"red"} /></h3>
@@ -57,10 +46,15 @@ const Footer = () => {
             <a href='https://github.com/GLTdotNS' className="github"><SiGithub id='footer_github' /></a>
             <a href="mailto:georgitonkow@gmail.com" className="google"><SiGmail /></a>
           </div>
-
+ 
         </div>
 
         <div className="row copyright">
+          <p id='open_source'>
+            <a href='https://github.com/GLTdotNS/nextjs'>
+              Open source system
+            </a> <SiGithub size={10} />
+          </p>
           <p>Copyright &copy; 2022 Tonkoff</p>
 
         </div>
