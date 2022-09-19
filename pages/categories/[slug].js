@@ -6,7 +6,7 @@ import Categories from "../../components/Blog/BlogPageComponents/Categories.jsx"
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent.jsx";
 import LoadingSpin from 'react-loading-spin'
 import { useEffect, useState } from 'react'
-import { motion } from 'framer-motion';
+
 
 const CategoriesPage = ({ posts, category }) => {
 

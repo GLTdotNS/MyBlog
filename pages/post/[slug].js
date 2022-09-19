@@ -10,6 +10,7 @@ import { MdDateRange } from "react-icons/md"
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs"
 import { FacebookShareButton, TwitterShareButton, FacebookMessengerShareButton, ViberShareButton } from "react-share"
 import { FacebookMessengerIcon, FacebookIcon, TwitterIcon, ViberIcon } from "react-share"
+import { useEffect, useState } from 'react'
 
 
 
@@ -28,12 +29,6 @@ const block = dynamic(
 let BlockContent = block;
 
 const Post = ({ post, posts, category }) => {
-
-
-
-
-
-
 
 
   if (!post || !post.mainImage || !post.body || !block) {
@@ -82,8 +77,8 @@ const Post = ({ post, posts, category }) => {
           </div>
           <BlockContent post={post} />
 
+              <button>asd</button>
           <div style={{ backgroundColor: "#161b22" }}>
-
             <div className="btn_wrap">
               <span className='shareSpan'><BsFillShareFill /></span>
               <div className="shareContainer">

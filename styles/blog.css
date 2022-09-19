@@ -62,19 +62,6 @@
 }
 
 
-
-.main {
-  margin: auto;
-  width: 100%;
-  text-align: center;
-  justify-content: center;
-
-}
-
-.main a {
-  text-decoration: none;
-}
-
 .categories a {
   display: inline-block;
   padding: 0.2rem 1rem;
@@ -197,7 +184,7 @@ figure img {
   font-size: 12px;
 }
 
-.baba {
+.gitHubProfile {
   display: inline-block;
   overflow: hidden;
   line-height: 1;
@@ -248,11 +235,7 @@ figure img {
   margin: auto;
 }
 
-.avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+
 
 .rightcolumn {
   border-radius: 3px;
@@ -374,14 +357,6 @@ figure img {
 }
 
 
-
-.comment-body {
-  background-color: rgb(226, 222, 222);
-  color: black;
-  border-radius: 10px;
-  width: 100%;
-  padding: 1%;
-}
 
 .post_text {
   padding: 5%;

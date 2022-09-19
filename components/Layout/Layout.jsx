@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
 
   const showGithub = (e) => {
-    const left = document.getElementById("1")
+    const left = document.getElementById("forShowing")
 
     if (show) {
       setShow(false)
@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
     fetch(`/api/getGitHubInfo`)
       .then(response => response.json())
       .then(response => {
-        console.log(response)
+     
         setGithub(response.name)
       })
   }, [])
@@ -46,7 +46,6 @@ const Layout = ({ children }) => {
     fetch(url)
       .then(response => response.json())
       .then(response => {
-        console.log(response)
         setContributions(response.data.data.viewer.contributionsCollection
           .contributionCalendar.totalContributions)
       })
@@ -65,7 +64,7 @@ const Layout = ({ children }) => {
 
 
 
-      <div className='leftcolumn' id='1'>
+      <div className='leftcolumn' id='forShowing'>
 
         {!show ?
           <button className='buttonGit' onClick={(e) => showGithub(e)}><SiGithub size={30} /></button>
