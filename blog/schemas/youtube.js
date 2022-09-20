@@ -1,3 +1,6 @@
+
+
+
 export default {
     name: 'youtube',
     type: 'object',

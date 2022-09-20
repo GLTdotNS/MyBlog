@@ -63,7 +63,7 @@ const GitHub = ({ github, contributions }) => {
           </span>
         </p>
         <p> <GiShadowFollower /> <span>{github.followers} </span>
-          (My only one fan) * <span>{github.following}  follower </span>
+          (My only one fan) * <span>{github.following}  following </span>
         </p>
       </div>
         {contributions ? <p style={{fontSize: "12px" , marginBottom: "2%"}}><span> {contributions} contributions in the last year</span></p> : ""}

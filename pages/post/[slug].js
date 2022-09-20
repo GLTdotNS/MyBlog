@@ -77,7 +77,6 @@ const Post = ({ post, posts, category }) => {
           </div>
           <BlockContent post={post} />
 
-              <button>asd</button>
           <div style={{ backgroundColor: "#161b22" }}>
             <div className="btn_wrap">
               <span className='shareSpan'><BsFillShareFill /></span>

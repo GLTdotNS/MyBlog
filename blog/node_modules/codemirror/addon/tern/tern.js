@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 // Glue code between CodeMirror and Tern.
 //
@@ -589,16 +589,10 @@
   }
 
   function dialog(cm, text, f) {
-    if (cm.openDialog) {
-      var fragment = document.createDocumentFragment();
-      fragment.appendChild(document.createTextNode(text + ": "));
-      var input = document.createElement("input");
-      input.type = "text";
-      fragment.appendChild(input);
-      cm.openDialog(fragment, f);
-    } else {
+    if (cm.openDialog)
+      cm.openDialog(text + ": <input type=text>", f);
+    else
       f(prompt(text, ""));
-    }
   }
 
   // Tooltips

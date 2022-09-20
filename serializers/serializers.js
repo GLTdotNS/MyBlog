@@ -2,6 +2,8 @@
 import React from "react";
 import BlockContent from "@sanity/block-content-to-react";
 import SyntaxHighlighter from 'react-syntax-highlighter';
+import getYouTubeId from 'get-youtube-id'
+import YouTube from 'react-youtube'
 import { vs2015 } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FaCopy } from 'react-icons/fa'
 import { copyToClipboard } from "../scripts/copyFunction.js"
@@ -12,6 +14,11 @@ export const serializers = {
 
 
     types: {
+        youtube: ({node}) => {
+            const { url } = node
+            const id = getYouTubeId(url)
+            return (<YouTube videoId={id} />)
+          },
         block: (props) => {
             const { style = "normal" } = props.node;
 
@@ -62,7 +69,7 @@ export const serializers = {
     list: (props) =>
 
     (props.type === "bullet" ? (
-        <ul style={{ width: "50%" , lineHeight: "1.5rem", margin: "auto",marginTop: "5%" }}>{props.children}</ul>
+        <ul style={{ width: "90%" , lineHeight: "1.5rem", margin: "auto",marginTop: "10%" ,marginBottom: "10%" }}>{props.children}</ul>
     ) : (
         <ol>{props.children}</ol>
     )),
@@ -89,6 +96,7 @@ export const serializers = {
         }
 
 
-    }
+    },
+  
 
 };
