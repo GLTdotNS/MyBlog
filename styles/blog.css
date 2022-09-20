@@ -235,7 +235,12 @@ figure img {
   margin: auto;
 }
 
+.post_text iframe{
+  margin: 5% 0 5% 0;
+  width: 100%;
+  height: 300px;
 
+}
 
 .rightcolumn {
   border-radius: 3px;
@@ -359,7 +364,7 @@ figure img {
 
 
 .post_text {
-  padding: 5%;
+  padding: 10%;
   margin-top: 2%;
   border-color: transparent;
   background-color: #111;
