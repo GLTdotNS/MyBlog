@@ -5,6 +5,10 @@ import 'react-loading-skeleton/dist/skeleton.css'
 
 const GitHub = ({ github, contributions }) => {
 
+ 
+  
+
+
   const openGit = () => {
     window.open("https://github.com/GLTdotNS?tab=repositories")
   }
@@ -13,7 +17,7 @@ const GitHub = ({ github, contributions }) => {
   if (!github || !contributions) {
 
     return (
-      <div className='columns posts'>
+      <div style={{zIndex: "1000"}} className='columns posts'>
 
         <h1 className="p__opensans links  title">Me @ GitHub</h1>
         <hr />
@@ -48,7 +52,7 @@ const GitHub = ({ github, contributions }) => {
         <img width={200} height={200} src={github.avatar_url} alt="Canis Lupus" className='gitHubProfile' />
 
 
-        <p> <RiGitRepositoryLine  style={{marginRight: "2%"}}/>
+        <p> <RiGitRepositoryLine style={{ marginRight: "2%" }} />
           Repositories
           <span
             style={{
@@ -66,10 +70,11 @@ const GitHub = ({ github, contributions }) => {
           (My only one fan) * <span>{github.following}  following </span>
         </p>
       </div>
-        {contributions ? <p style={{fontSize: "12px" , marginBottom: "2%"}}><span> {contributions} contributions in the last year</span></p> : ""}
-      <img width={317} height={112} src="https://ghchart.rshah.org/HEXCOLORCODE=216e39/GLTdotNS" alt="Name Your Github chart" />
+      {contributions ? <p style={{ fontSize: "12px", marginBottom: "2%" }}><span> {contributions} contributions in the last year</span></p> : ""}
+      <img width={317} height={112} src="https://ghchart.rshah.org/HEXCOLORCODE=/GLTdotNS" alt="Name Your Github chart" />
 
       <button className='btnGit' onClick={() => openGit()}>Go to Repositories</button>
+     
     </div>
   )
 }
