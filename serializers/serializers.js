@@ -14,11 +14,11 @@ export const serializers = {
 
 
     types: {
-        youtube: ({node}) => {
+        youtube: ({ node }) => {
             const { url } = node
             const id = getYouTubeId(url)
             return (<YouTube videoId={id} />)
-          },
+        },
         block: (props) => {
             const { style = "normal" } = props.node;
 
@@ -37,8 +37,8 @@ export const serializers = {
                     width: "100%",
                     margin: "auto",
                     padding: "5%",
-                    marginTop: "20%", 
-                    marginBottom: "10%", 
+                    marginTop: "20%",
+                    marginBottom: "10%",
                     backgroundColor: "#333",
                     fontSize: "20px",
                     textAlign: "center"
@@ -69,7 +69,15 @@ export const serializers = {
     list: (props) =>
 
     (props.type === "bullet" ? (
-        <ul style={{ width: "90%" , lineHeight: "1.5rem", margin: "auto",marginTop: "10%" ,marginBottom: "10%" }}>{props.children}</ul>
+        <ul style={{
+            width: "90%",
+            lineHeight: "1.5rem", 
+            margin: "auto", 
+            marginTop: "5%", 
+            marginBottom: "5%"
+        }}>
+            {props.children}
+        </ul>
     ) : (
         <ol>{props.children}</ol>
     )),
@@ -97,6 +105,6 @@ export const serializers = {
 
 
     },
-  
+
 
 };

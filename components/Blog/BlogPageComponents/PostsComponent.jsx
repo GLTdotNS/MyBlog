@@ -39,11 +39,11 @@ const PostsComponent = ({ posts }) => {
 
       )
     }
-
+    console.log(post.description.length / 200 * 2)
     return (
 
 
-      <div className="card initial-post" key={index}
+      <div className=" initial-post" key={index}
 
       >
         <h3 style={{marginBottom: "4px"}}>{post.title}</h3>
