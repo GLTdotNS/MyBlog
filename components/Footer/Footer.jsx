@@ -51,7 +51,7 @@ const Footer = () => {
 
         <div className="row copyright">
           <p id='open_source'>
-            <a href='https://github.com/GLTdotNS/nextjs'>
+            <a href='https://github.com/GLTdotNS/nextjs' className='links'>
               Open source system
             </a> <SiGithub size={10} />
           </p>

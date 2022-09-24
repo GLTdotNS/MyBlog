@@ -15,7 +15,13 @@ const PostsComponent = ({ posts }) => {
   const pageVisited = pageNumber * postPerPage;
 
 
+
   const displayPost = posts && posts.slice(pageVisited, pageVisited + postPerPage).map((post, index) => {
+
+    let wordsCount = post.description.split(' ')
+
+    let minutesToRead =  wordsCount.length / 200;
+
 
     if (!post) {
       return (
@@ -39,7 +45,7 @@ const PostsComponent = ({ posts }) => {
 
       )
     }
-    console.log(post.description.length / 200 * 2)
+ 
     return (
 
 
@@ -49,7 +55,7 @@ const PostsComponent = ({ posts }) => {
         <h3 style={{marginBottom: "4px"}}>{post.title}</h3>
         <p>{post.publishedAt ? moment(post.publishedAt).format("YYYY , MMM  DD , HH:MM")
           : "YYYY-MM-DD hh:mm"}</p>
-
+    <p>{minutesToRead.toFixed(0)} minutes to read</p>
 
         <div className='inner_post_text'>
 
