@@ -14,23 +14,6 @@ const About = ({ banner, references }) => {
   const [contributions, setContributions] = useState(null);
   const [show, setShow] = useState(false);
 
-  if (!banner) {
-    return <div className="spinner"></div>;
-  }
-
-  const showGithub = (e) => {
-    const left = document.getElementById("forShowing");
-
-    if (show) {
-      setShow(false);
-      document.getElementById("forShowing").style.backgroundColor =
-        "transparent";
-    } else {
-      left.style.backgroundColor = "#0d1117";
-      document.getElementById("forShowing").style.width = "red";
-      setShow(true);
-    }
-  };
   useEffect(() => {
     window.scrollTo(0, 1);
     document.title = "Автобиография - Георги Тонков";
@@ -56,6 +39,24 @@ const About = ({ banner, references }) => {
         );
       });
   }, []);
+
+  if (!banner) {
+    return <div className="spinner"></div>;
+  }
+
+  const showGithub = (e) => {
+    const left = document.getElementById("forShowing");
+
+    if (show) {
+      setShow(false);
+      document.getElementById("forShowing").style.backgroundColor =
+        "transparent";
+    } else {
+      left.style.backgroundColor = "#0d1117";
+      document.getElementById("forShowing").style.width = "red";
+      setShow(true);
+    }
+  };
 
   return (
     <div>
