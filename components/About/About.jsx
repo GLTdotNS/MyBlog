@@ -1,74 +1,95 @@
-import React, { useEffect } from 'react'
-import { motion } from 'framer-motion'
-import LoadingSpin from 'react-loading-spin'
-import Skills from './Hero/Skills'
-import { animation } from '../../animations/animation'
-import Expirience from './Hero/Expirience'
-import Education from './Hero/Education'
-import Hobbies from './Hero/Hobbies'
-import Hero from './Hero/Hero'
-import References from './Hero/References'
-import Contacts from './Hero/Contacts'
+import React, { useEffect, useState } from "react";
+import Skills from "./Hero/Skills";
+import { SiGithub } from "react-icons/si";
+import GitHub from "../Blog/BlogPageComponents/GitHub";
+import Expirience from "./Hero/Expirience";
+import Education from "./Hero/Education";
+import Hobbies from "./Hero/Hobbies";
+import Hero from "./Hero/Hero";
+import References from "./Hero/References";
+import Contacts from "./Hero/Contacts";
 
 const About = ({ banner, references }) => {
-
-  //   client
-  //     .fetch(
-  //       groq`*[_type == "banner"]{
-  //     about,
-  //     firstName,
-  //     lastName,
-  //     years,
-  //     phone,
-  //     city,
-  //     image{
-  //       asset->{
-  //         _id,
-  //         url
-  //        }
-  //      },
-
-  // }`
-  //     )
-  //     .then((data) => {
-
-  //       setBanner(data[0])
-
-  //     })
-  //     .catch(console.error);
-  // }, []);
+  const [github, setGithub] = useState(null);
+  const [contributions, setContributions] = useState(null);
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     document.title = "Автобиография - Георги Тонков";
-  }, [])
-
-
+  }, []);
 
   if (!banner) {
+    return <div className="spinner"></div>;
+  }
 
-    return (
-      <div className="spinner">
-        <LoadingSpin
-          duration="2s"
-          width="15px"
-          timingFunction="ease"
-          direction="alternate"
-          size="200px"
-          primaryColor="white"
-          secondaryColor="#333"
-          numberOfRotationsInAnimation={Infinity}
-        />
-      </div>
-    )
+  const showGithub = (e) => {
+    const left = document.getElementById("forShowing");
+
+    if (show) {
+      setShow(false);
+      document.getElementById("forShowing").style.backgroundColor =
+        "transparent";
+    } else {
+      left.style.backgroundColor = "#0d1117";
+      document.getElementById("forShowing").style.width = "red";
+      setShow(true);
+    }
   };
 
+  useEffect(() => {
+    fetch(`/api/getGitHubInfo`)
+      .then((response) => response.json())
+      .then((response) => {
+        setGithub(response.name);
+      });
+  }, []);
 
+  useEffect(() => {
+    const url = `/api/getContributions`;
+
+    fetch(url)
+      .then((response) => response.json())
+      .then((response) => {
+        setContributions(
+          response.data.data.viewer.contributionsCollection.contributionCalendar
+            .totalContributions
+        );
+      });
+  }, []);
 
   return (
-    <div {...animation}>
-      <div className='aboutme'>
+    <div>
+      <div className="leftcolumn" id="forShowing">
+        {!show ? (
+          <button className="buttonGit" onClick={(e) => showGithub(e)}>
+            <SiGithub size={30} />
+          </button>
+        ) : (
+          <button
+            style={{
+              backgroundColor: "#333",
+              color: "white",
+              borderRadius: "100%",
+              borderColor: "transparent",
+            }}
+            className="buttonGit"
+            onClick={(e) => showGithub(e)}
+          >
+            X
+          </button>
+        )}
 
+        {show && <GitHub github={github} contributions={contributions} />}
+      </div>
+      <div className="aboutme">
+        <div
+          style={{
+            marginTop: "1%",
+            padding: "5%",
+            backgroundColor: " rgb(24, 24, 24)",
+          }}
+        ></div>
         <div className="full">
           <div className="left">
             <Hero banner={banner} />
@@ -76,26 +97,21 @@ const About = ({ banner, references }) => {
           </div>
 
           <div className="right">
-
             <Expirience />
             <Education />
             <Hobbies />
-
           </div>
-
         </div>
 
         <hr />
         <References references={references} />
         <hr />
-        <div style={{padding: "5%"}} id="contact">
-
+        <div id="contact">
           <Contacts />
         </div>
       </div>
+    </div>
+  );
+};
 
-    </div >
-  )
-}
-
-export default About
+export default About;

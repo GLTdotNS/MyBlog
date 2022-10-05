@@ -1,29 +1,45 @@
 /*global*/
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   behavior: smooth;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0px;
 }
+.react-calendar {
+  background-color: black !important;
+  color: wheat;
+  margin-top: 20% !important;
+}
+.react-calendar__tile {
+  background-color: black;
 
+  color: white;
+}
+.react-calendar__tile:hover {
+  background-color: #333 !important;
+}
+.react-calendar__navigation button {
+  background-color: #333 !important;
+  color: wheat;
+}
 body {
   color: white;
   margin: 0;
   padding: 0;
   background-color: black;
-
 }
 
 .buttonGit {
   width: 50px;
   color: black;
-  border-color: transparent;
+  border-color: #333;
   height: 40px;
+
   position: absolute;
   top: 100px;
   left: 0 !important;
@@ -31,15 +47,16 @@ body {
   z-index: 999;
 }
 
-.buttonGit:hover{
+.buttonGit:hover {
   cursor: pointer;
 }
 
 .btnGit {
   margin-top: 15%;
+  margin-bottom: 15%;
   transition: 0.5s ease;
   border-color: transparent;
-  border-radius: 10px ;
+  border-radius: 10px;
   height: 20px;
   width: 200px;
 }
@@ -80,7 +97,7 @@ body {
 }
 
 .p__opensans {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 400;
   font-size: 15px;
   letter-spacing: 0.04em;
@@ -88,27 +105,21 @@ body {
   line-height: 28px;
 }
 
-
-
 @media screen and (min-width: 2000px) {
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .p__opensans {
     font-size: 30px;
     line-height: 50px;
   }
-
-
 }
 
 .syntaxHighlighter {
   max-height: 300px;
   border-radius: 20px;
 }
-
 
 @media screen and (max-width: 650px) {
   figure {
@@ -137,7 +148,6 @@ body {
     display: none;
   }
 }
-
 
 * {
   box-sizing: border-box;

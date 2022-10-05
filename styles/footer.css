@@ -1,41 +1,38 @@
 /*footer*/
-@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 .footer_div {
   margin-left: auto !important;
   text-align: left;
   padding: 5%;
   font-size: 1px;
-  width: 85%
+  background-color: rgb(24, 24, 24);
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
+  width: 60%;
+  margin: auto;
 }
 
 footer {
-  transition: .20s ease;
+  transition: 0.2s ease;
   margin: auto;
   color: #a7a7a7;
   font-size: 16px;
 }
 
 footer * {
-
   font-family: "Poppins", sans-serif;
   box-sizing: border-box;
   border: none;
   outline: none;
 }
 
-
 .row.primary {
-
   display: grid;
   grid-template-columns: auto auto auto;
-
-
 }
 
 .column {
-
   margin-top: 10%;
   width: 100%;
   display: flex;
@@ -79,16 +76,12 @@ footer ul li a:hover {
   margin: 0;
 }
 
-
-
-
 div.social {
   display: none;
   margin-left: 5%;
   margin-top: 5%;
   justify-content: left;
   flex-direction: row;
-
 }
 
 .social a {
@@ -96,7 +89,6 @@ div.social {
   background-color: transparent;
   border-radius: 100%;
 }
-
 
 .copyright {
   line-height: 1.5rem;
@@ -119,13 +111,13 @@ div.social {
   font-size: 25px;
   color: white;
   width: 100px;
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   cursor: pointer;
 }
 
 #sanity:hover {
   width: 120px;
-  transition: .5s ease;
+  transition: 0.5s ease;
   border-bottom: 1px solid goldenrod;
   opacity: 0.8;
 }
@@ -146,7 +138,6 @@ div.social {
 @media screen and (max-width: 850px) {
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .footer_div {
@@ -172,7 +163,6 @@ div.social {
   }
 
   .row.primary {
-
     grid-template-columns: 1fr;
   }
 
@@ -183,7 +173,6 @@ div.social {
   .leftcolumn {
     display: none !important;
   }
-
 }
 
 /*endfooter*/
@@ -195,9 +184,7 @@ div.social {
   left: 0;
   top: 75%;
   z-index: 10000 !important;
-
 }
-
 
 .icon-bar a {
   display: block;
@@ -216,10 +203,9 @@ div.social {
 }
 
 .facebook {
-  background: #3B5998;
+  background: #3b5998;
   color: white;
 }
-
 
 .google {
   background: #dd4b39;
@@ -228,7 +214,6 @@ div.social {
 
 .github {
   background: black;
-
 }
 
 /*footerend*/

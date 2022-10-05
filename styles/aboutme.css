@@ -1,16 +1,17 @@
 /*aboutme*/
-@import url('https://fonts.googleapis.com/css2?family=Tiro+Tamil&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tiro+Tamil&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .aboutme {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   box-shadow: 1px 1px 18px -9px #000000;
   margin-left: auto;
-  width: 75%;
-  padding: 30px;
-  background-color: black;
-
+  width: 60%;
+  margin: auto;
+  background-color: rgb(24, 24, 24);
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
 
 .mypic {
@@ -26,8 +27,6 @@
 .Contact {
   line-height: 30px;
 }
-
-
 
 .Summary {
   margin-top: 20%;
@@ -45,11 +44,7 @@ h1 {
   margin-top: 0;
   font-size: 15px;
   color: rgb(217, 216, 216);
-
 }
-
-
-
 
 /*skills*/
 .container {
@@ -67,7 +62,6 @@ h1 {
 }
 
 h2 {
-
   margin-bottom: 50px;
   letter-spacing: 2px;
   text-align: center;
@@ -95,7 +89,6 @@ h2 {
   height: 30px;
 }
 
-
 .css {
   width: 0%;
   background-color: blue;
@@ -118,7 +111,6 @@ h2 {
   width: 0%;
   background-color: blue;
   height: 30px;
-
 }
 
 .html {
@@ -142,7 +134,6 @@ h2 {
 }
 
 /*end skills*/
-
 
 @keyframes html-fill {
   100% {
@@ -174,10 +165,9 @@ h2 {
   }
 }
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   body {
@@ -205,20 +195,13 @@ h2 {
 
   .rightcolumn,
   .initial-post {
-
     width: 100% !important;
   }
-
-
-
 }
 
-
-
-@media screen and (max-width:820px) {
+@media screen and (max-width: 820px) {
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .skills-section,
@@ -230,15 +213,11 @@ h2 {
   .rightcolumn,
   .leftcolumn,
   .initial-post {
-
     width: 100% !important;
   }
-
-
 }
 
-@media screen and (max-width:920px) {
-
+@media screen and (max-width: 920px) {
   .aboutme,
   .main {
     width: 100% !important;
@@ -246,20 +225,15 @@ h2 {
 
   .rightcolumn,
   .initial-post {
-
     width: 100% !important;
   }
 
   .leftcolumn {
     display: none !important;
   }
-
-
-
 }
 
-@media screen and (max-width:1280px) {
-
+@media screen and (max-width: 1280px) {
   .skills-section,
   .aboutme,
   .main {
@@ -270,7 +244,6 @@ h2 {
   body {
     background-color: #000000;
   }
-
 
   .midcolumn,
   .footer_div {
@@ -284,7 +257,6 @@ h2 {
     position: relative;
     margin-right: 0px auto !important;
     display: block;
- 
   }
 
   .leftcolumn {
@@ -294,15 +266,11 @@ h2 {
   .me_on_github {
     display: none;
   }
-
-
-
 }
 
 .full {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  margin-top: 8%;
 }
 
 ol {
@@ -329,7 +297,7 @@ ol {
 }
 
 .full li:after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 2px;
@@ -337,18 +305,15 @@ ol {
   width: 12px;
 }
 
-
-
 .left {
   position: initial;
   padding: 20px;
   background-color: #333;
   border-radius: 5px;
-
 }
 
 .right {
-  background-color: black;
+  background-color: rgb(24, 24, 24);
   margin: auto;
   position: initial;
   padding: 20px;
@@ -369,15 +334,16 @@ ol {
 
 /*projects*/
 .project-container {
-  width: 80%;
-
+  width: 60%;
+  margin: auto;
+  background-color: rgb(24, 24, 24);
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
 }
-
-
 
 .project-container a {
   text-decoration: none;
-  color: #5673C8;
+  color: #5673c8;
 }
 
 .project-container a:hover {
@@ -389,9 +355,7 @@ ol {
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
   overflow: hidden;
-
 }
-
 
 .project-row {
   align-items: center;
@@ -428,7 +392,6 @@ ol {
 .project-content img {
   height: 200px;
   width: 100%;
-
 }
 
 .btn-container {
@@ -450,19 +413,16 @@ ol {
 
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .project-content img {
     height: 100px;
     width: 100%;
-
   }
 
   .project-content {
     height: 300px;
     width: 100%;
-
   }
 }
 
@@ -474,25 +434,20 @@ ol {
 
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .project-content img {
     height: 100px;
     width: 100%;
-
   }
 
   .project-content {
     height: 300px;
     width: 100%;
-
   }
 }
 
-
-
-.contactFormContainer input[type=text],
+.contactFormContainer input[type="text"],
 select,
 textarea {
   width: 100%;
@@ -505,10 +460,7 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: none;
-
 }
-
-
 
 .contactFormContainer {
   border-radius: 5px;
@@ -532,11 +484,7 @@ textarea {
   display: block;
   width: 100%;
   height: 30px;
- 
 }
-
-
-
 
 .slide {
   -webkit-animation: slideIn 2s forwards;
