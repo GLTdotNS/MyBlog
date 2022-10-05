@@ -14,11 +14,6 @@ const About = ({ banner, references }) => {
   const [contributions, setContributions] = useState(null);
   const [show, setShow] = useState(false);
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-    document.title = "Автобиография - Георги Тонков";
-  }, []);
-
   if (!banner) {
     return <div className="spinner"></div>;
   }
@@ -36,6 +31,10 @@ const About = ({ banner, references }) => {
       setShow(true);
     }
   };
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    document.title = "Автобиография - Георги Тонков";
+  }, []);
 
   useEffect(() => {
     fetch(`/api/getGitHubInfo`)
