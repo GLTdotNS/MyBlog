@@ -1,5 +1,5 @@
 /*Navbar*/
-@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
 
 .app__navbar {
   position: fixed !important;
@@ -15,9 +15,8 @@
   z-index: 1000 !important;
 }
 
-
 .app__navbar-logo {
-  font-family: 'Great Vibes', cursive;
+  font-family: "Great Vibes", cursive;
   display: flex;
   position: absolute;
   margin-right: 30px;
@@ -27,27 +26,22 @@
   align-items: left;
 }
 
-
-
 .app__navbar-smallscreen {
   display: flex;
 }
 
 .app__navbar-smallscreen_overlay {
   height: 100%;
-  width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #0d1117;
   overflow-x: hidden;
-  display: block;
   border-right: 3px solid #333;
   transition: all 300ms cubic-bezier(0.075, 0.82, 0.165, 1);
-  
 }
-.app__navbar-overylay_background{
+.app__navbar-overylay_background {
   position: absolute;
   text-align: left;
   top: 0px;
@@ -55,70 +49,57 @@
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
   height: 100vh;
-  flex-direction: row;  
+  flex-direction: row;
   transition: 0.3s;
 }
-
-
-
 
 .overlay__close {
   color: white;
   cursor: pointer;
-  transition:0.8s linear;
-  z-index:999
+  transition: 0.8s linear;
+  z-index: 999;
 }
-
 
 .app__navbar-smallscreen_links {
   margin-top: 30% !important;
   line-height: 20rem;
 
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   list-style: none;
- 
 }
 
-.app__navbar-smallscreen_links li  {
+.app__navbar-smallscreen_links li {
   font: 40px Arial;
   color: white;
   line-height: 2em;
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   background: linear-gradient(to left, #0d1117 50%, #161b22 50%) right;
   background-size: 500%;
   padding-left: 10%;
   height: 70px;
-  transition: .5s ease-out; 
-
+  transition: 0.5s ease-out;
 }
-.app__navbar-smallscreen_links li:hover{
+.app__navbar-smallscreen_links li:hover {
   background-position: left;
   background-size: 200%;
-
 }
 .app__navbar-smallscreen_links li:active {
   /*For phone clicked :)*/
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-
 }
-
 
 @media screen and (max-width: 1150px) {
   .app__navbar-links {
     display: none;
-
   }
 
   .leftcolumn .title {
     margin-top: 10% !important;
-
   }
 
   .aboutMePage .leftcolumn {
     display: none;
   }
-
-
 
   .footer_div {
     margin-top: 50%;
@@ -137,13 +118,10 @@
     padding: 1rem;
     z-index: 100;
   }
-
 }
 
 @media screen and (max-width: 650px) {
-
-
-  .app__navbar-smallscreen_overlay li{
+  .app__navbar-smallscreen_overlay li {
     font-size: 30px;
   }
   .app__navbar {
@@ -152,7 +130,6 @@
 
     z-index: 100;
   }
-
 }
 
 /*endnavbar*/

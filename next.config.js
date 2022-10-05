@@ -4,6 +4,7 @@ const nextConfig = {
   optimizeFonts: true,
   images: {
     domains: ["openweathermap.org"],
+ 
   },
 }
 

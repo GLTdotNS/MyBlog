@@ -11,9 +11,7 @@
   width: 100%;
   height: 20vw;
   object-fit: contain;
-
 }
-
 
 .search {
   position: relative;
@@ -22,12 +20,9 @@
   margin-bottom: 5px;
 }
 
-
 .box {
-
   position: relative;
   width: 100% !important;
-
 }
 
 .input {
@@ -41,7 +36,7 @@
   font-size: 16px;
   color: white;
   outline: none;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .box input:hover {
@@ -51,16 +46,13 @@
 }
 
 .search i {
-
   position: absolute;
-  transition: .2s;
+  transition: 0.2s;
 }
 
 .box:hover i {
   opacity: 0;
-
 }
-
 
 .categories a {
   display: inline-block;
@@ -70,18 +62,15 @@
   margin: 5px 3px;
   font-size: 15px;
   white-space: nowrap;
-
 }
 
 .categories a:hover {
   background-color: #47cc62;
   color: black;
-  transition: .7s;
+  transition: 0.7s;
 }
 
-
 .section a:hover {
-
   transition: 0.5s ease;
   color: blue;
 }
@@ -105,7 +94,6 @@ hr {
   text-align: left;
   font-size: 14px;
   padding: 1rem;
-
 }
 
 .columns .title {
@@ -116,7 +104,6 @@ hr {
   text-align: left;
   width: 100%;
   display: block;
-
 }
 
 .posts a {
@@ -140,7 +127,6 @@ figure img {
   background-color: #333;
 }
 
-
 .posts img {
   width: 100px;
   margin-right: 10px;
@@ -154,36 +140,32 @@ figure img {
 .midcolumn {
   display: inline-block;
   margin: 0 auto;
+  border-left: 1px solid #333;
+  border-right: 1px solid #333;
   text-align: left;
   min-height: 100vh;
+  background-color: rgb(24, 24, 24);
   padding: 5%;
-  background-color: rgb(11, 11, 11);
-  width: 65%
+  width: 60%;
 }
 
 .leftcolumn {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh !important;
-  display: flex;
-  flex-direction: column;
   float: left;
-  padding: 1rem;
+  width: 20%;
+  background-color: black;
+  box-sizing: border-box;
+  padding: 1.5%;
+  position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  padding-top: 5%;
-  border-right: 1px solid #333 !important;
   transition: 1s ease;
   width: 20%;
 }
 .rightcolumn {
-  border-radius: 3px;
   transition: 0.1s ease;
   float: right;
-  width: 15%;
+  width: 20%;
   background-color: black;
-  height: 100vh;
   box-sizing: border-box;
   padding: 1.5%;
   position: -webkit-sticky;
@@ -195,6 +177,8 @@ figure img {
   margin-top: 20%;
   margin-bottom: 10%;
   font-size: 12px;
+  padding: 10%;
+  transition: 1s ease;
 }
 
 .gitHubProfile {
@@ -210,9 +194,7 @@ figure img {
 
 .me_on_github p {
   padding-top: 16px !important;
-
 }
-
 
 .rightcolumn ol {
   list-style-type: none;
@@ -224,7 +206,6 @@ figure img {
   padding-bottom: 1em;
   padding-left: 20px;
 }
-
 
 .rightcolumn li:before {
   content: "*";
@@ -238,7 +219,6 @@ figure img {
 }
 
 .rightcolumn li::content {
-
   color: red !important;
   font-size: 100px !important;
 }
@@ -248,14 +228,11 @@ figure img {
   margin: auto;
 }
 
-.post_text iframe{
+.post_text iframe {
   margin: 5% 0 5% 0;
   width: 100%;
   height: 300px;
-
 }
-
-
 
 .card {
   background-color: #0d1117;
@@ -283,8 +260,7 @@ figure img {
   border-radius: 30px;
 }
 
-div.widget
-{
+div.widget {
   width: 80%;
   height: 90%;
   margin: auto;
@@ -295,36 +271,31 @@ div.widget
   box-shadow: 0px 31px 35px -26px #080c21;
 }
 
-div.date
-{
+div.date {
   font-size: 14px;
   font-weight: bold;
-  color: rgba(0,0,0,0.5);
+  color: rgba(0, 0, 0, 0.5);
 }
 
-div.city
-{
+div.city {
   font-size: 21px;
   font-weight: bold;
   text-transform: uppercase;
   padding-top: 5px;
-  color: rgba(0,0,0,0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 
-div.temp
-{
+div.temp {
   font-size: 30px;
-  color: rgba(0,0,0,0.9);
+  color: rgba(0, 0, 0, 0.9);
   font-weight: 100;
 }
 
-div.panel
-{
+div.panel {
   display: inline-block;
 }
 
-div.right-panel
-{
+div.right-panel {
   position: absolute;
   float: right;
   top: 0;
@@ -366,7 +337,6 @@ div.right-panel
   justify-content: center;
 }
 
-
 .paginationBttns a {
   padding: 3px 15px;
   border: 1px solid #333;
@@ -375,7 +345,7 @@ div.right-panel
 .paginationBttns a:hover {
   cursor: pointer;
   opacity: 0.7;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .paginationActive a {
@@ -392,11 +362,10 @@ div.right-panel
 .recently-posts-links:hover a {
   cursor: pointer;
   opacity: 0.3;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .recently-posts-links {
-
   margin-top: 3%;
 }
 
@@ -409,8 +378,6 @@ div.right-panel
   color: blue;
 }
 
-
-
 .post_text {
   padding: 5%;
   margin-top: 2%;
@@ -418,13 +385,9 @@ div.right-panel
   background-color: #111;
 }
 
-
-
-
-
 .links:hover {
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0.7;
 }
 
@@ -449,9 +412,8 @@ div.right-panel
   background-color: #333;
   color: white;
   will-change: transform;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .sentBtn {
@@ -465,9 +427,8 @@ div.right-panel
   color: white;
   cursor: pointer;
   will-change: transform;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .2s ease-in-out;
-
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .sentBtn:hover {
@@ -476,9 +437,8 @@ div.right-panel
 
 .btn:hover {
   cursor: pointer;
-  transition: .2s ease-in;
+  transition: 0.2s ease-in;
   border: 1px solid white;
-
 }
 
 /*sharebutton logic*/
@@ -511,14 +471,13 @@ div.right-panel
   margin-top: 10%;
   padding: 0 18px;
   will-change: transform;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .btn_wrap:hover {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-
 }
 
 .i {
@@ -526,23 +485,23 @@ div.right-panel
   padding: 2px !important;
   margin-left: 10px;
   will-change: transform;
-  -webkit-transform: scale(.1);
-  transform: scale(.1);
-  -webkit-transition: all .9s ease;
-  transition: all .9s ease;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+  -webkit-transition: all 0.9s ease;
+  transition: all 0.9s ease;
 }
 
 .btn_wrap:hover span {
-  -webkit-transition-delay: .1s;
-  transition-delay: .1s;
+  -webkit-transition-delay: 0.1s;
+  transition-delay: 0.1s;
   -webkit-transform: translateX(-280px);
   transform: translateX(-280px);
 }
 
 .btn_wrap:hover .i {
   opacity: 1;
-  -webkit-transition-delay: .3s;
-  transition-delay: .3s;
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
   -webkit-transform: scale(1);
   transform: scale(1);
 }
@@ -554,13 +513,12 @@ div.right-panel
   font-size: 20px;
   text-align: center;
   line-height: 70px;
-  color: #EEEEED;
+  color: #eeeeed;
   background-color: #161b22;
   width: 100px;
   -webkit-transition: all 0.8s ease;
   transition: all 0.8s ease;
 }
-
 
 code {
   font-family: input-mono, monospace;
@@ -583,8 +541,6 @@ article {
   background: red;
   transform-origin: 0%;
 }
-
-
 
 .addScrollButton {
   display: block;
