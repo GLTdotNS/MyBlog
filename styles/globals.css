@@ -31,7 +31,7 @@ body {
   color: white;
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: #0d1117;
 }
 
 .buttonGit {
@@ -41,7 +41,7 @@ body {
   height: 40px;
 
   position: absolute;
-  top: 100px;
+  top: 80px;
   left: 0 !important;
   transition: 1s ease;
   z-index: 999;

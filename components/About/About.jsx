@@ -49,11 +49,9 @@ const About = ({ banner, references }) => {
 
     if (show) {
       setShow(false);
-      document.getElementById("forShowing").style.backgroundColor =
-        "transparent";
+      left.style.backgroundColor = "transparent";
     } else {
-      left.style.backgroundColor = "#0d1117";
-      document.getElementById("forShowing").style.width = "red";
+      left.style.width = "21%";
       setShow(true);
     }
   };

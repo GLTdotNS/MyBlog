@@ -16,9 +16,9 @@ const ProjectsComponent = () => {
       <div className="project-container">
         <div
           style={{
-            marginTop: "1%",
+            marginTop: "2%",
             padding: "2%",
-            backgroundColor: " rgb(24, 24, 24)",
+            backgroundColor: " black",
           }}
         ></div>
         <h2>Portfolio</h2>
