@@ -54,11 +54,15 @@ const MainBlogPage = ({ posts, category, banner }) => {
   return (
     <div className="row">
       <div className="leftcolumn" id="forShowing">
-        {" "}
         <Calendar onChange={onChange} value={value} />
+        <p>В случай , че нямате календар...</p>{" "}
       </div>
       <div className="midcolumn ">
-        <form onSubmit={onFormSubmit} className="box aboutme">
+        <form
+          onSubmit={onFormSubmit}
+          className="box aboutme"
+          style={{ marginTop: "10%" }}
+        >
           <div className="search ">
             <input
               className="input"
@@ -97,7 +101,6 @@ const MainBlogPage = ({ posts, category, banner }) => {
           </div>
         )}
       </div>
-
       <div className="rightcolumn">
         <Categories category={category} />
 

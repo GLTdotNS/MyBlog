@@ -7,8 +7,7 @@
   font-family: "Oswald", sans-serif;
   box-shadow: 1px 1px 18px -9px #000000;
   margin-left: auto;
-  width: 60%;
-  margin: auto;
+  width: 85%;
   background-color: rgb(24, 24, 24);
   border-left: 1px solid #333;
   border-right: 1px solid #333;
@@ -334,11 +333,10 @@ ol {
 
 /*projects*/
 .project-container {
-  width: 60%;
-  margin: auto;
-  background-color: rgb(24, 24, 24);
+  width: 85%;
+  background-color: black;
   border-left: 1px solid #333;
-  border-right: 1px solid #333;
+  margin-left: auto;
 }
 
 .project-container a {
@@ -386,7 +384,6 @@ ol {
   background-color: #111;
   color: rgb(217, 216, 216);
   padding: 8%;
-  height: 700px;
 }
 
 .project-content img {
@@ -421,8 +418,8 @@ ol {
   }
 
   .project-content {
-    height: 300px;
     width: 100%;
+    height: 350px;
   }
 }
 
@@ -442,7 +439,7 @@ ol {
   }
 
   .project-content {
-    height: 300px;
+    height: 350px;
     width: 100%;
   }
 }
