@@ -49,9 +49,9 @@ const About = ({ banner, references }) => {
 
     if (show) {
       setShow(false);
-      left.style.backgroundColor = "transparent";
+      left.style.width = "15%";
     } else {
-      left.style.width = "21%";
+      left.style.width = "18%";
       setShow(true);
     }
   };

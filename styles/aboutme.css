@@ -26,6 +26,9 @@
 .Contact {
   line-height: 30px;
 }
+#contact {
+  padding: 2%;
+}
 
 .Summary {
   margin-top: 20%;
@@ -251,7 +254,7 @@ h2 {
   }
 
   .rightcolumn {
-    width: 50%;
+    width: 100% !important;
     float: none;
     position: relative;
     margin-right: 0px auto !important;
@@ -270,6 +273,7 @@ h2 {
 .full {
   display: grid;
   grid-template-columns: 2fr 3fr;
+  padding: 2%;
 }
 
 ol {
@@ -445,6 +449,7 @@ ol {
 }
 
 .contactFormContainer input[type="text"],
+input[type="email"],
 select,
 textarea {
   width: 100%;
@@ -477,9 +482,10 @@ textarea {
   overflow: hidden;
   position: relative;
   margin: auto;
-  margin-top: 10%;
+  margin-top: 2%;
   display: block;
   width: 100%;
+  padding: 2%;
   height: 30px;
 }
 

@@ -88,7 +88,6 @@ hr {
 .columns {
   display: block;
   margin-bottom: 4vh;
-  width: 70%;
 }
 
 .section {
@@ -172,6 +171,7 @@ figure img {
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
+  margin: auto;
 }
 
 .me_on_github {
