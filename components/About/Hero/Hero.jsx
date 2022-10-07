@@ -29,7 +29,6 @@ const Hero = ({ banner }) => {
           <p id="phone">
             <a href="tel:+359889891905 ">Mobile : {banner[0].phone} </a>
           </p>
-          <a onClick={() => download()}>Download CV</a>
         </div>
 
         <div className="Summary">

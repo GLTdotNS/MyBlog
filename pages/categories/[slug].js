@@ -51,6 +51,7 @@ const CategoriesPage = ({ posts, category }) => {
               placeholder="Search.."
               autoComplete="off"
               list="suggestions"
+              style={{ width: "100%" }}
               onChange={(e) => setValueToSearch(e.target.value.trim())}
             />
 
