@@ -26,7 +26,7 @@ const Navbar = () => {
   });
 
   const variants = {
-    visible: { opacity: 1, y: 0, backgroundColor: "#161b22" },
+    visible: { opacity: 1, y: 0, backgroundColor: "#282828" },
     hidden: { opacity: 0, y: -25 },
   };
 

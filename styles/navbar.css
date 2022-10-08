@@ -3,7 +3,7 @@
 
 .app__navbar {
   position: fixed !important;
-  background-color: #161b22;
+  background-color: #282828;
   width: 100%;
   top: 0;
   display: flex;
@@ -129,6 +129,9 @@
     position: fixed;
 
     z-index: 100;
+  }
+  .post_text {
+    font-size: 15px !important;
   }
 }
 

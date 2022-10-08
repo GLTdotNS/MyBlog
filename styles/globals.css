@@ -10,6 +10,12 @@ html {
   margin: 0;
   padding: 0px;
 }
+body {
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+}
 .react-calendar {
   background-color: black !important;
   color: wheat;
@@ -26,12 +32,6 @@ html {
 .react-calendar__navigation button {
   background-color: #333 !important;
   color: wheat;
-}
-body {
-  color: white;
-  margin: 0;
-  padding: 0;
-  background-color: #0d1117;
 }
 
 .buttonGit {
@@ -99,7 +99,7 @@ body {
 .p__opensans {
   font-family: "Oswald", sans-serif;
   font-weight: 400;
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
   line-height: 28px;
@@ -125,6 +125,9 @@ body {
   figure {
     width: 100% !important;
   }
+  .post_text {
+    font-size: 17px !important;
+  }
 
   ::-webkit-scrollbar {
     display: none;
@@ -146,6 +149,10 @@ body {
 
   .aboutMePage .leftcolumn {
     display: none;
+  }
+
+  .post_text {
+    font-size: 16px !important;
   }
 }
 

@@ -18,7 +18,7 @@ const ProjectsComponent = () => {
           style={{
             marginTop: "2%",
             padding: "2%",
-            backgroundColor: " black",
+            backgroundColor: " #181818",
           }}
         ></div>
         <h2>Portfolio</h2>
