@@ -9,6 +9,7 @@ import notFoundImage from "../styles/assets/monkey.png";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/router";
+import { urlForImg } from "../lib/sanityClient";
 
 const MainBlogPage = ({ posts, category, banner }) => {
   const [valueToSearch, setValueToSearch] = useState("");
@@ -67,7 +68,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
             <input
               className="input"
               type="text"
-              placeholder="Search.."
+              placeholder="Search post.."
               autoComplete="off"
               list="suggestions"
               onChange={(e) => setValueToSearch(e.target.value.trim())}

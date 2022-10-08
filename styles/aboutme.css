@@ -346,10 +346,10 @@ ol {
 
 /*projects*/
 .project-container {
-  width: 85%;
+  width: 80%;
   background-color: #181818;
-  border-left: 1px solid #333;
-  margin-left: auto;
+  margin-bottom: 5%;
+  margin: auto;
 }
 
 .project-container a {
@@ -374,11 +374,12 @@ ol {
 }
 
 .project-container h2 {
-  margin-top: 8%;
+  margin-top: 7%;
 }
 
 .project-column {
-  margin-top: 10%;
+  margin-top: 5%;
+  margin-bottom: 5%;
   padding: 2%;
   display: inline-block;
   width: 50%;
@@ -419,6 +420,7 @@ ol {
 @media screen and (max-width: 850px) {
   .project-column {
     width: 50%;
+    margin-bottom: 10%;
   }
 
   .leftcolumn .title {
@@ -452,7 +454,7 @@ ol {
   }
 
   .project-content {
-    height: 350px;
+    height: 380px;
     width: 100%;
   }
 }

@@ -12,129 +12,122 @@ const ProjectsComponent = () => {
   }, []);
 
   return (
-    <div>
-      <div className="project-container">
-        <div
-          style={{
-            marginTop: "2%",
-            padding: "2%",
-            backgroundColor: " #181818",
-          }}
-        ></div>
-        <h2>Portfolio</h2>
-        <hr />
+    <div className="project-container marquee">
+      <h2>Portfolio</h2>
 
-        <div className="project-row">
-          <div className="project-column">
-            <div className="project-content">
-              <Image src={commerce} />
+      <div className="leftcolumn"></div>
+      <h2></h2>
 
-              <h3>
-                <p>E-commerce site</p>
-              </h3>
-              <hr />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-                distinctio necessitatibus laboriosam doloribus cupiditate
-                exercitationem minima numquam eligendi quod voluptates nihil id
-                assumenda molestias deserunt aperiam repudiandae, veritatis
-                explicabo eveniet.
-              </p>
+      <div className="project-row">
+        <div className="project-column forMarquee">
+          <div className="project-content">
+            <Image src={commerce} />
 
-              <div className="btn-container">
-                <button
-                  className="btn"
-                  onClick={() =>
-                    window.open("https://mtb-world-shop.vercel.app/")
-                  }
-                >
-                  Demo
-                </button>
-                <button
-                  className="btn"
-                  onClick={() =>
-                    window.open("https://github.com/GLTdotNS/mtb-world-shop")
-                  }
-                >
-                  Code
-                </button>
-              </div>
+            <h3>
+              <p>E-commerce site</p>
+            </h3>
+            <hr />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              distinctio necessitatibus laboriosam doloribus cupiditate
+              exercitationem minima numquam eligendi quod voluptates nihil id
+              assumenda molestias deserunt aperiam repudiandae, veritatis
+              explicabo eveniet.
+            </p>
+
+            <div className="btn-container">
+              <button
+                className="btn"
+                onClick={() =>
+                  window.open("https://mtb-world-shop.vercel.app/")
+                }
+              >
+                Demo
+              </button>
+              <button
+                className="btn"
+                onClick={() =>
+                  window.open("https://github.com/GLTdotNS/mtb-world-shop")
+                }
+              >
+                Code
+              </button>
             </div>
           </div>
+        </div>
 
-          <div className="project-column">
-            <div className="project-content">
-              <Image src={game} />
-              <h3>
-                <p>Gaming Blog</p>
-              </h3>
-              <hr />
-              <p>
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
-                distinctio necessitatibus laboriosam doloribus cupiditate
-                exercitationem minima numquam eligendi quod voluptates nihil id
-                assumenda molestias deserunt aperiam repudiandae, veritatis
-                explicabo eveniet.
-              </p>
+        <div className="project-column forMarquee">
+          <div className="project-content">
+            <Image src={game} />
+            <h3>
+              <p>Gaming Blog</p>
+            </h3>
+            <hr />
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum
+              distinctio necessitatibus laboriosam doloribus cupiditate
+              exercitationem minima numquam eligendi quod voluptates nihil id
+              assumenda molestias deserunt aperiam repudiandae, veritatis
+              explicabo eveniet.
+            </p>
 
-              <div className="btn-container">
-                <button className="btn">Demo</button>
-                <button className="btn">Code</button>
-              </div>
+            <div className="btn-container">
+              <button className="btn">Demo</button>
+              <button className="btn">Code</button>
             </div>
           </div>
+        </div>
 
-          <div className="project-column">
-            <div className="project-content">
-              <Image src={blog} />
-              <h3>
-                <p>My Blog</p>
-              </h3>
-              <hr />
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
-                magni hic minus doloribus iste a doloremque, minima iure unde
-                officia obcaecati illum enim cumque dolor, recusandae deserunt
-                praesentium officiis. Dolorem.
-              </p>
+        <div className="project-column forMarquee">
+          <div className="project-content">
+            <Image src={blog} />
+            <h3>
+              <p>My Blog</p>
+            </h3>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque
+              magni hic minus doloribus iste a doloremque, minima iure unde
+              officia obcaecati illum enim cumque dolor, recusandae deserunt
+              praesentium officiis. Dolorem.
+            </p>
 
-              <div className="btn-container">
-                <button
-                  className="btn"
-                  onClick={() => window.open("https://glt-blog.vercel.app/")}
-                >
-                  Demo
-                </button>
-                <button
-                  className="btn"
-                  onClick={() =>
-                    window.open("https://github.com/GLTdotNS/MyBlog")
-                  }
-                >
-                  Code
-                </button>
-              </div>
+            <div className="btn-container">
+              <button
+                className="btn"
+                onClick={() => window.open("https://glt-blog.vercel.app/")}
+              >
+                Demo
+              </button>
+              <button
+                className="btn"
+                onClick={() =>
+                  window.open("https://github.com/GLTdotNS/MyBlog")
+                }
+              >
+                Code
+              </button>
             </div>
           </div>
+        </div>
 
-          <div className="project-column">
-            <div className="project-content">
-              <Image src={blog} />
-              <h3>
-                <p>Restaurant site</p>
-              </h3>
-              <hr />
-              <p>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
-                repellat doloremque beatae facere enim quod cum, magnam
-                inventore. Aperiam expedita repudiandae earum enim amet delectus
-                temporibus dolorem, optio error nihil.
-              </p>
+        <div className="project-column forMarquee">
+          <div className="project-content">
+            <Image src={blog} />
+            <h3>
+              <p>Restaurant site</p>
+            </h3>
+            <hr />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem
+              repellat doloremque beatae facere enim quod cum, magnam inventore.
+              Aperiam expedita repudiandae earum enim amet delectus temporibus
+              dolorem, optio error nihil.
+            </p>
 
-              <div className="btn-container">
-                <button className="btn">Demo</button>
-                <button className="btn">Code</button>
-              </div>
+            <div className="btn-container">
+              <button className="btn">Demo</button>
+              <button className="btn">Code</button>
             </div>
           </div>
         </div>
