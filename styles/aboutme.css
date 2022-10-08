@@ -173,9 +173,12 @@ h2 {
   }
 
   body {
-    background-color: #000000;
+    background-color: #181818;
+    font-size: 18px !important;
   }
-
+  .post_text {
+    font-size: 18px !important;
+  }
   .full {
     grid-template-columns: auto !important;
     /* display: none !important; */
@@ -211,6 +214,9 @@ h2 {
   .main {
     width: 100% !important;
   }
+  .post_text {
+    font-size: 18px !important;
+  }
 
   .rightcolumn,
   .leftcolumn,
@@ -229,6 +235,9 @@ h2 {
   .initial-post {
     width: 100% !important;
   }
+  .post_text {
+    font-size: 18px !important;
+  }
 
   .leftcolumn {
     display: none !important;
@@ -244,7 +253,7 @@ h2 {
   }
 
   body {
-    background-color: #000000;
+    background-color: #181818;
   }
 
   .midcolumn,
@@ -338,7 +347,7 @@ ol {
 /*projects*/
 .project-container {
   width: 85%;
-  background-color: black;
+  background-color: #181818;
   border-left: 1px solid #333;
   margin-left: auto;
 }

@@ -9,7 +9,7 @@
   background-color: rgb(24, 24, 24);
   border-left: 1px solid #333;
   border-right: 1px solid #333;
-  background-color: black;
+  background-color: #181818;
   width: 85%;
 }
 
@@ -151,6 +151,9 @@ div.social {
 
   .midcolumn {
     border: none !important;
+  }
+  .post_text {
+    font-size: 18px !important;
   }
 
   .social {
