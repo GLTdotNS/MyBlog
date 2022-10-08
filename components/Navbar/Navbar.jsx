@@ -75,21 +75,14 @@ const Navbar = () => {
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/">Blog</Link>
+                    <Link href="/">Writing...</Link>
                   </li>
 
                   <li
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/aboutme">About</Link>
-                  </li>
-
-                  <li
-                    className="p__opensans"
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    <Link href="/projects">Projects</Link>
+                    <Link href="/aboutme">About me</Link>
                   </li>
                 </ul>
 

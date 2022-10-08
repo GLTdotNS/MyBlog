@@ -8,6 +8,7 @@ import Hobbies from "./Hero/Hobbies";
 import Hero from "./Hero/Hero";
 import References from "./Hero/References";
 import Contacts from "./Hero/Contacts";
+import ProjectsComponent from "../Projects/ProjectsComponent";
 
 const About = ({ banner, references }) => {
   const [github, setGithub] = useState(null);
@@ -51,7 +52,7 @@ const About = ({ banner, references }) => {
       setShow(false);
       left.style.width = "15%";
     } else {
-      left.style.width = "18%";
+      left.style.width = "15%";
       setShow(true);
     }
   };
@@ -100,6 +101,8 @@ const About = ({ banner, references }) => {
             <Hobbies />
           </div>
         </div>
+        <hr />
+        <ProjectsComponent />
 
         <hr />
         <References references={references} />

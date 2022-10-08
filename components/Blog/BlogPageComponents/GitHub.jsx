@@ -42,7 +42,7 @@ const GitHub = ({ github, contributions }) => {
   }
 
   return (
-    <div className="columns">
+    <div className="columns ">
       <div className="me_on_github">
         <div
           style={{
