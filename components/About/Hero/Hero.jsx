@@ -22,14 +22,6 @@ const Hero = ({ banner }) => {
             Full <BsStackOverflow color="#F47F24" /> devolper
           </p>
         </div>
-        <div className="Contact">
-          <a href="mailto:georgitonkow@gmail.com">
-            <span>Email: </span>georgitonkow@gmail.com
-          </a>
-          <p id="phone">
-            <a href="tel:+359889891905 ">Mobile : {banner[0].phone} </a>
-          </p>
-        </div>
 
         <div className="Summary">
           <h2>Summary</h2>

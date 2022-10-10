@@ -4,14 +4,16 @@ import commerce from "../../styles/assets/Untitled.png";
 import blog from "../../styles/assets/blog.png";
 import { animation } from "../../animations/animation";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ProjectsComponent = () => {
   useEffect(() => {
     document.title = "Проекти...";
     window.scrollTo(0, 0);
   }, []);
-  const [showBtn , setShowBtn] = useState(true)
-  const [showGameBtn , setShowGameBtn] = useState(true)
+  const [showBtn, setShowBtn] = useState(true);
+  const [showGameBtn, setShowGameBtn] = useState(true);
+  const router = useRouter();
   return (
     <div className="project-container marquee">
       <h2>Portfolio</h2>
@@ -73,20 +75,41 @@ const ProjectsComponent = () => {
             </p>
 
             <div className="btn-container">
-            {showGameBtn ? 
-              <button className="btn" 
-              onMouseEnter={() => setShowGameBtn(false)} 
-             
-              onClick={() => window.open("sadf")}
-              >
-                Demo
-                </button> :
-               <button className="btn" style={{marginRight: "60%"}} 
-               onMouseEnter={() => setShowGameBtn(true)} 
-             
-               >Demo</button>}
-              {!showGameBtn ? <button onMouseEnter={() => setShowGameBtn(true)} className="btn">Code</button> :
-              <button onMouseEnter={() => setShowGameBtn(false)} className="btn">Code</button>}
+              {showGameBtn ? (
+                <button
+                  className="btn"
+                  onMouseEnter={() => setShowGameBtn(false)}
+                  onClick={() => router.push("/sorry")}
+                >
+                  Demo
+                </button>
+              ) : (
+                <button
+                  className="btn"
+                  style={{ marginRight: "60%" }}
+                  onMouseEnter={() => setShowGameBtn(true)}
+                  onClick={() => router.push("/sorry")}
+                >
+                  Demo
+                </button>
+              )}
+              {!showGameBtn ? (
+                <button
+                  onMouseEnter={() => setShowGameBtn(true)}
+                  onClick={() => router.push("/sorry")}
+                  className="btn"
+                >
+                  Code
+                </button>
+              ) : (
+                <button
+                  onMouseEnter={() => setShowGameBtn(false)}
+                  onClick={() => router.push("/sorry")}
+                  className="btn"
+                >
+                  Code
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -139,20 +162,41 @@ const ProjectsComponent = () => {
             </p>
 
             <div className="btn-container">
-              {showBtn ? 
-              <button className="btn" 
-              onMouseEnter={() => setShowBtn(false)} 
-             
-              onClick={() => window.open("sadf")}
-              >
-                Demo
-                </button> :
-               <button className="btn" style={{marginRight: "50%"}} 
-               onMouseEnter={() => setShowBtn(true)} 
-             
-               >Demo</button>}
-               {!showBtn ? <button onMouseEnter={() => setShowBtn(true)} className="btn">Code</button> :
-              <button onMouseEnter={() => setShowBtn(false)} className="btn">Code</button>}
+              {showBtn ? (
+                <button
+                  className="btn"
+                  onMouseEnter={() => setShowBtn(false)}
+                  onClick={() => router.push("/sorry")}
+                >
+                  Demo
+                </button>
+              ) : (
+                <button
+                  className="btn"
+                  style={{ marginRight: "50%" }}
+                  onMouseEnter={() => setShowBtn(true)}
+                  onClick={() => router.push("/sorry")}
+                >
+                  Demo
+                </button>
+              )}
+              {!showBtn ? (
+                <button
+                  onMouseEnter={() => setShowBtn(true)}
+                  className="btn"
+                  onClick={() => router.push("/sorry")}
+                >
+                  Code
+                </button>
+              ) : (
+                <button
+                  onMouseEnter={() => setShowBtn(false)}
+                  className="btn"
+                  onClick={() => router.push("/sorry")}
+                >
+                  Code
+                </button>
+              )}
             </div>
           </div>
         </div>

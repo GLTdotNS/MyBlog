@@ -21,9 +21,13 @@
   position: absolute;
   margin-right: 30px;
   right: 0;
+
   justify-content: right;
   justify-content: flex-start;
   align-items: left;
+}
+.app__navbar-logo:hover {
+  cursor: pointer;
 }
 
 .app__navbar-smallscreen {
