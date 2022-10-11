@@ -56,7 +56,7 @@ const PostsComponent = ({ posts }) => {
                 loading="lazy"
                 style={{
                   float: "left",
-                  margin: "0 15px 0 0",
+                  margin: "25px 15px 0 0",
                   padding: "1%",
                   borderRadius: "30%",
                 }}

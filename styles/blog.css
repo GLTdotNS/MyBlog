@@ -223,7 +223,6 @@ hr {
 .post_text {
   padding: 5%;
   border-color: transparent;
-  background-color: #303030;
   font-size: 20px;
 }
 
@@ -254,7 +253,7 @@ hr {
   width: 80%;
   padding: 3%;
   margin: auto;
-  margin-top: 3%;
+  margin-top: 2%;
   background-color: #18191a;
 }
 
