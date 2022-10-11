@@ -141,12 +141,16 @@ figure img {
 .midcolumn {
   display: inline-block;
   margin: 0 auto;
-  border-left: 1px solid #333;
   text-align: left;
   min-height: 100vh;
   background-color: #181818;
   padding: 5%;
-  width: 65%;
+  width: 75%;
+  margin-left: auto !important;
+}
+.row {
+  width: 85%;
+  margin: auto;
 }
 
 .leftcolumn {
@@ -163,15 +167,15 @@ figure img {
 .rightcolumn {
   transition: 0.1s ease;
   float: right;
-  width: 20%;
-  height: 100vh;
+  width: 25%;
   background-color: #181818;
   box-sizing: border-box;
   padding: 1.5%;
+  height: 100vh;
   position: -webkit-sticky;
   position: sticky;
   top: 0px;
-  margin: auto;
+  margin-right: auto;
 }
 
 .me_on_github {
@@ -255,7 +259,7 @@ figure img {
 
 .initial-post {
   border: 1px solid #333;
-  width: 90%;
+  width: 80%;
   padding: 3%;
   margin: auto;
   margin-top: 3%;

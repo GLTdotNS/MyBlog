@@ -3,6 +3,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { motion, useViewportScroll } from "framer-motion";
+import Cookies from "../Cookies/Cookies";
 
 const Layout = ({ children }) => {
   const { scrollYProgress } = useViewportScroll();
@@ -29,7 +30,6 @@ const Layout = ({ children }) => {
       <header>
         <Navbar />
       </header>
-
       <main className="main-container row">
         {children}
 

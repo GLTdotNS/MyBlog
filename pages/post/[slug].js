@@ -37,7 +37,6 @@ const Post = ({ post, posts, category }) => {
   return (
     <div className="main">
       <div className="row">
-        <div className="leftcolumn" id="forShowing"></div>
         <div className="midcolumn">
           <div className="header"></div>
           <h2>{post.title}</h2>
@@ -105,7 +104,7 @@ const Post = ({ post, posts, category }) => {
           </div>
         </div>
 
-        <div className="rightcolumn">
+        <div className="rightcolumn" style={{ width: "25%" }}>
           <Categories category={category} />
 
           <RecentlyPosts posts={posts} />

@@ -59,28 +59,6 @@ const About = ({ banner, references }) => {
 
   return (
     <div>
-      <div className="leftcolumn" id="forShowing">
-        {!show ? (
-          <button className="buttonGit" onClick={(e) => showGithub(e)}>
-            <SiGithub size={30} />
-          </button>
-        ) : (
-          <button
-            style={{
-              backgroundColor: "#333",
-              color: "white",
-              borderRadius: "100%",
-              borderColor: "transparent",
-            }}
-            className="buttonGit"
-            onClick={(e) => showGithub(e)}
-          >
-            X
-          </button>
-        )}
-
-        {show && <GitHub github={github} contributions={contributions} />}
-      </div>
       <div className="aboutme">
         <div
           style={{

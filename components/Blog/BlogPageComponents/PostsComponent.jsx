@@ -73,7 +73,10 @@ const PostsComponent = ({ posts }) => {
           </div>
           <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
             <a>
-              <button className="btn">
+              <button
+                className="btn"
+                style={{ backgroundColor: "transparent" }}
+              >
                 Read more <MdReadMore />
               </button>
             </a>

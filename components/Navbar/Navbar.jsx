@@ -88,7 +88,7 @@ const Navbar = () => {
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/aboutme">About me</Link>
+                    <Link href="/aboutme">whoAmI</Link>
                   </li>
                 </ul>
 
