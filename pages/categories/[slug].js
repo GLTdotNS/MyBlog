@@ -39,7 +39,11 @@ const CategoriesPage = ({ posts, category }) => {
   return (
     <div className="row">
       <div className="midcolumn">
-        <form onSubmit={onFormSubmit} className="box aboutme">
+        <form
+          onSubmit={onFormSubmit}
+          style={{ marginTop: "10%" }}
+          className="box aboutme"
+        >
           <div className="search ">
             <input
               className="input"
