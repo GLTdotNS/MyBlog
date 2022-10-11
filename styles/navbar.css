@@ -19,9 +19,8 @@
   font-family: "Great Vibes", cursive;
   display: flex;
   position: absolute;
-  margin-right: 30px;
+  margin-right: 10px;
   right: 0;
-
   justify-content: right;
   justify-content: flex-start;
   align-items: left;

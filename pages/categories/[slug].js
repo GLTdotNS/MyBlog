@@ -38,12 +38,8 @@ const CategoriesPage = ({ posts, category }) => {
 
   return (
     <div className="row">
-      <div className="leftcolumn" id="forShowing">
-        <form
-          onSubmit={onFormSubmit}
-          className="box aboutme"
-          style={{ marginTop: "20%" }}
-        >
+      <div className="midcolumn">
+        <form onSubmit={onFormSubmit} className="box aboutme">
           <div className="search ">
             <input
               className="input"
@@ -51,7 +47,6 @@ const CategoriesPage = ({ posts, category }) => {
               placeholder="Search.."
               autoComplete="off"
               list="suggestions"
-              style={{ width: "100%" }}
               onChange={(e) => setValueToSearch(e.target.value.trim())}
             />
 
@@ -64,8 +59,6 @@ const CategoriesPage = ({ posts, category }) => {
             </datalist>
           </div>
         </form>
-      </div>
-      <div className="midcolumn">
         <div className="header"></div>
         {posts.filter((x) =>
           x.title.toLowerCase().includes(valueToSearch.toLowerCase())

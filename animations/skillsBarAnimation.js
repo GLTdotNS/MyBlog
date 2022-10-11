@@ -1,6 +1,4 @@
-
 export const reveal = () => {
-  
   const reveals = document.querySelectorAll(".skills");
   const merquee = document.querySelectorAll(".forMarquee");
 
@@ -10,31 +8,32 @@ export const reveal = () => {
     const elementVisible = 0;
 
     if (elementTop < windowHeight - elementVisible) {
-
       switch (reveals[i].id) {
-        case "html": 
+        case "html":
           reveals[i].classList.add("html");
           break;
-        case  "js":
+        case "js":
           reveals[i].classList.add("js");
           break;
 
-        case "css": 
+        case "css":
           reveals[i].classList.add("css");
           break;
 
-        case "react": 
+        case "react":
           reveals[i].classList.add("react");
           break;
 
-        case "csharp": 
+        case "csharp":
           reveals[i].classList.add("csharp");
           break;
 
+        case "soft":
+          reveals[i].classList.add("soft");
+          break;
       }
     }
-  } 
-
+  }
 
   for (let i = 0; i < merquee.length; i++) {
     const windowHeight = window.innerHeight;
@@ -42,10 +41,7 @@ export const reveal = () => {
     const elementVisible = 0;
 
     if (elementTop < windowHeight - elementVisible) {
-
       merquee[i].classList.add("slide");
     }
   }
-
-
-}
+};
