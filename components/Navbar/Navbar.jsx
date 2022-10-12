@@ -95,12 +95,6 @@ const Navbar = () => {
                 <hr />
               </motion.div>
               <div className="icon-bar" onClick={() => setToggleMenu(false)}>
-                <a
-                  href="https://www.facebook.com/canis.lupus.33/"
-                  className="facebook"
-                >
-                  <SiFacebook />
-                </a>
                 <a href="https://github.com/GLTdotNS" className="github">
                   <SiGithub />
                 </a>
