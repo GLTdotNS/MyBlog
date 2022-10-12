@@ -10,7 +10,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const PostsComponent = ({ posts }) => {
   const [pageNumber, setPageNumber] = useState(0);
-  const postPerPage = 3;
+  const postPerPage = 4;
   const pageVisited = pageNumber * postPerPage;
 
   const displayPost =
