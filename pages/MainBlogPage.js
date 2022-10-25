@@ -70,7 +70,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
               onChange={(e) => setValueToSearch(e.target.value.trim())}
             />
 
-            <datalist id="suggestions">
+            <datalist style={{ color  : "red" }} id="suggestions">
               {posts.map((p, index) => (
                 <option className="option" key={index}>
                   {p.title}
