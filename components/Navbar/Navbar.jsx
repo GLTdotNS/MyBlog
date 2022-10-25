@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { GiHamburgerMenu } from "react-icons/gi";
-import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { SiGmail, SiFacebook, SiGithub } from "react-icons/si";

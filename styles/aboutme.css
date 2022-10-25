@@ -192,10 +192,6 @@ h2 {
     width: 100% !important;
   }
 
-  .me_on_github {
-    display: none;
-  }
-
   .aboutme {
     border: none !important;
   }
@@ -274,10 +270,6 @@ h2 {
 
   .leftcolumn {
     display: none !important;
-  }
-
-  .me_on_github {
-    display: none;
   }
 }
 

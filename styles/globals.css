@@ -17,24 +17,6 @@ body {
   background-color: #121212;
 }
 
-.react-calendar {
-  background-color: black !important;
-  color: wheat;
-  margin-top: 20% !important;
-}
-.react-calendar__tile {
-  background-color: black;
-
-  color: white;
-}
-.react-calendar__tile:hover {
-  background-color: #333 !important;
-}
-.react-calendar__navigation button {
-  background-color: #333 !important;
-  color: wheat;
-}
-
 .buttonGit {
   width: 50px;
   color: black;
@@ -48,24 +30,6 @@ body {
   z-index: 999;
 }
 
-.buttonGit:hover {
-  cursor: pointer;
-}
-
-.btnGit {
-  margin-top: 15%;
-  margin-bottom: 15%;
-  transition: 0.5s ease;
-  border-color: transparent;
-  border-radius: 10px;
-  height: 20px;
-  width: 200px;
-}
-.btnGit:hover {
-  cursor: pointer;
-  background-color: #333;
-  color: white;
-}
 /* width */
 ::-webkit-scrollbar {
   width: 13px;
@@ -86,15 +50,6 @@ body {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #333;
-}
-
-.spinner {
-  text-align: center;
-  align-items: center;
-  margin: auto;
-  margin-top: 20%;
-  margin-bottom: 20%;
-  width: 205px;
 }
 
 .p__opensans {
@@ -171,7 +126,7 @@ a {
 
 .post_text a {
   text-decoration: underline;
-  color: blue;
+  color: rgb(94, 94, 255);
 }
 
 /*end global*/
