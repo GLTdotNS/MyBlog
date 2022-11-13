@@ -65,7 +65,7 @@ const Post = ({ post, posts, category }) => {
           <div style={{ backgroundColor: "#282828" }}>
             <div className="btn_wrap">
               <span className="shareSpan">
-                <BsFillShareFill />f
+                <BsFillShareFill />
               </span>
               <div className="shareContainer">
                 <FacebookShareButton
