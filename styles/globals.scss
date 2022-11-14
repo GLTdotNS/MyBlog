@@ -14,7 +14,24 @@ body {
   color: #ffffff;
   margin: 0;
   padding: 0;
-  background-color: #121212;
+  min-height: 100%;
+  position: relative;
+
+  z-index: -1;
+  &::before {
+    background-image: url("./assets//pawel-czerwinski-IcOg3D9yh0o-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    will-change: transform;
+    z-index: -1;
+  }
 }
 
 .buttonGit {

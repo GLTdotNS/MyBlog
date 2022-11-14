@@ -28,6 +28,7 @@ const Layout = ({ children }) => {
   return (
     <div className="layout">
       <header>
+        {" "}
         <Navbar />
       </header>
       <main className="main-container row">
