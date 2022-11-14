@@ -41,7 +41,7 @@ h1 {
   padding: 2%;
   margin: auto;
   margin-top: 40% !important;
-  font-size: 15px;
+  font-size: 20px;
   color: rgb(217, 216, 216);
 }
 
@@ -332,8 +332,10 @@ ol {
 .Summary,
 .Experience,
 .Education,
-.project {
+.project,
+.marquee {
   margin-bottom: 30px;
+  font-size: 18px;
 }
 
 /*aboutme end*/
