@@ -8,12 +8,16 @@ const RecentlyPosts = ({ posts }) => {
     <div className="columns posts">
       <h3 className="p__opensans title">Recently Posts</h3>
       <hr />
-      <ol className="section">
+      <ol className="section ">
         {posts &&
           posts.slice(0, 3).map((post, index) => (
-            <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
-              <div style={{ cursor: "pointer", hover: "opacity: 0" }}>
-                <li key={index}>
+            <Link
+              key={index}
+              href="/post/[slug]"
+              as={`/post/${post.slug.current}`}
+            >
+              <div style={{ cursor: "pointer" }}>
+                <li>
                   {moment(post.publishedAt).format("MMM/DD")}
 
                   <a>{post.title}</a>
