@@ -34,12 +34,6 @@ const Footer = () => {
               </ul>
             </div>
             <div className="social">
-              <a
-                href="https://www.facebook.com/canis.lupus.33/"
-                className="facebook"
-              >
-                <SiFacebook id="footer_facebook" />
-              </a>
               <a href="https://github.com/GLTdotNS" className="github">
                 <SiGithub id="footer_github" />
               </a>
