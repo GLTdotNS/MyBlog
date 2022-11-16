@@ -11,18 +11,22 @@ const RecentlyPosts = ({ posts }) => {
       <ol className="section">
         {posts &&
           posts.slice(0, 3).map((post, index) => (
-            <li key={index}>
-              {moment(post.publishedAt).format("MMM/DD")}
-              <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
-                <a>{post.title}</a>
-              </Link>
-              <img
-                width={50}
-                height={80}
-                src={urlForImg(post.mainImage.asset.url)}
-              />
-              <hr />
-            </li>
+            <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
+              <div style={{ cursor: "pointer", hover: "opacity: 0" }}>
+                <li key={index}>
+                  {moment(post.publishedAt).format("MMM/DD")}
+
+                  <a>{post.title}</a>
+                  <img
+                    width={50}
+                    height={80}
+                    src={urlForImg(post.mainImage.asset.url)}
+                  />
+
+                  <hr />
+                </li>
+              </div>
+            </Link>
           ))}
       </ol>
     </div>
