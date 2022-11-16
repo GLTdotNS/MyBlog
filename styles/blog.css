@@ -71,9 +71,9 @@
   transition: 0.7s;
 }
 
-.section a:hover {
+.section div:hover {
   transition: 0.5s ease;
-  color: blue;
+  opacity: 0.5;
 }
 
 .section li {
