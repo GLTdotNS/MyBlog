@@ -2,7 +2,6 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { GiShadowFollower } from "react-icons/gi";
 import { RiGitRepositoryLine } from "react-icons/ri";
 import "react-loading-skeleton/dist/skeleton.css";
-import ux from "../../../styles/assets/ux.jpeg";
 import Image from "next/image";
 
 const GitHub = ({ github, contributions }) => {
