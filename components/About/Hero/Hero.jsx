@@ -1,7 +1,7 @@
 import React from "react";
 import { urlForImg } from "../../../lib/sanityClient";
 import { BsStackOverflow } from "react-icons/bs";
-import { download } from "../../../scripts/download.js";
+
 const Hero = ({ banner }) => {
   return (
     <>

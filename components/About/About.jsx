@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Skills from "./Hero/Skills";
-import { SiGithub } from "react-icons/si";
-import GitHub from "../Blog/BlogPageComponents/GitHub";
 import Expirience from "./Hero/Expirience";
 import Education from "./Hero/Education";
 import Hobbies from "./Hero/Hobbies";
@@ -20,42 +18,13 @@ const About = ({ banner, references }) => {
     document.title = "Автобиография - Георги Тонков";
   }, []);
 
-  useEffect(() => {
-    fetch(`/api/getGitHubInfo`)
-      .then((response) => response.json())
-      .then((response) => {
-        setGithub(response.name);
-      });
-  }, []);
 
-  useEffect(() => {
-    const url = `/api/getContributions`;
-
-    fetch(url)
-      .then((response) => response.json())
-      .then((response) => {
-        setContributions(
-          response.data.data.viewer.contributionsCollection.contributionCalendar
-            .totalContributions
-        );
-      });
-  }, []);
 
   if (!banner) {
     return <div className="spinner"></div>;
   }
 
-  const showGithub = (e) => {
-    const left = document.getElementById("forShowing");
 
-    if (show) {
-      setShow(false);
-      left.style.width = "15%";
-    } else {
-      left.style.width = "15%";
-      setShow(true);
-    }
-  };
 
   return (
     <div>

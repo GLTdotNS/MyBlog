@@ -76,6 +76,11 @@ const Navbar = () => {
                 className="app__navbar-smallscreen_overlay"
                 animate={{
                   width: "285px",
+                  transition: "5s",
+                }}
+                exit={{
+                  width: "0px",
+                  transition: "5s",
                 }}
               >
                 <ul className="app__navbar-smallscreen_links">
@@ -96,16 +101,6 @@ const Navbar = () => {
 
                 <hr />
               </motion.div>
-              <div className="icon-bar" onClick={() => setToggleMenu(false)}>
-                <a href="https://github.com/GLTdotNS" className="github">
-                  <SiGithub />
-                </a>
-                <Link href="/aboutme#contact">
-                  <a className="google">
-                    <SiGmail />
-                  </a>
-                </Link>
-              </div>
             </div>
           )}
         </AnimatePresence>
