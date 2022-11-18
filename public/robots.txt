@@ -1,4 +1,4 @@
-Sitemap: https://glt-blog.vercel.app/api/posts-sitemap
+Sitemap: https://www.noncreativeblog.net/posts
 
 User-agent: *
 Allow: /*

@@ -1,0 +1,9 @@
+  <!-- public/sitemap.xml -->
+   <xml version="1.0" encoding="UTF-8">
+   <urlset xmlns="https://www.noncreativeblog.net/">
+     <url>
+       <loc>https://www.noncreativeblog.net/</loc>
+       <lastmod>2021-06-01</lastmod>
+     </url>
+   </urlset>
+   </xml>
