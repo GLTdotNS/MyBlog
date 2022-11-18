@@ -60,6 +60,7 @@ const Navbar = () => {
       <Link href="/">
         <div className="app__navbar-logo " onClick={() => setToggleMenu(false)}>
           <Image
+            alt="logo"
             src={code}
             width={40}
             height={40}
