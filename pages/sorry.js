@@ -11,10 +11,10 @@ const Sorry = () => {
       style={{
         minHeight: "100vh",
         width: "85%",
-        marginLeft: "auto",
+        margin: "auto",
         textAlign: "center",
-        borderLeft: "1px solid #333",
         padding: "10%",
+        backgroundColor: "#181818",
       }}
     >
       <h2>Oooops!...</h2>
