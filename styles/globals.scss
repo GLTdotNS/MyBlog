@@ -17,7 +17,7 @@ body {
   padding: 0;
   min-height: 100%;
   position: relative;
-
+  background-color: black;
   z-index: -1;
   &::before {
     background-image: url("./assets/305484.jpg");
