@@ -20,7 +20,7 @@ const RecentlyPosts = ({ posts }) => {
                 <li>
                   {moment(post.publishedAt).format("MMM/DD")}
 
-                  <a>{post.title}</a>
+                  <a href={`/post/${post.slug.current}`}>{post.title}</a>
                   <img
                     width={50}
                     height={80}
