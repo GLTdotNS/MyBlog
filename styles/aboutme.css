@@ -344,8 +344,6 @@ ol {
 .project-container {
   width: 80%;
   background-color: #181818;
-  margin-bottom: 5%;
-  margin: auto;
 }
 
 .project-container a {
@@ -367,6 +365,7 @@ ol {
 .project-row {
   align-items: center;
   justify-content: center;
+  margin-bottom: 5%;
 }
 
 .project-container h2 {
@@ -374,11 +373,9 @@ ol {
 }
 
 .project-column {
-  margin-top: 5%;
-  margin-bottom: 5%;
   padding: 2%;
-  display: inline-block;
-  width: 50%;
+  width: 60%;
+  margin: auto !important;
 }
 
 .project-row:after {
