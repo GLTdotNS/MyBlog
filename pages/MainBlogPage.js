@@ -9,11 +9,9 @@ import notFoundImage from "../styles/assets/monkey.png";
 import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/router";
-import { urlForImg } from "../lib/sanityClient";
 
 const MainBlogPage = ({ posts, category, banner }) => {
   const [valueToSearch, setValueToSearch] = useState("");
-  const [value, onChange] = useState(new Date());
   const router = useRouter();
 
   useEffect(() => {
@@ -54,12 +52,13 @@ const MainBlogPage = ({ posts, category, banner }) => {
   };
   return (
     <div className="row">
-      <div className="midcolumn ">
+      <div className="midcolumn">
         <form
           onSubmit={onFormSubmit}
           className="box aboutme"
           style={{ marginTop: "10%" }}
         >
+          <h1 className="slide">NONCRATIVEBLOG</h1>
           <div className="search ">
             <input
               className="input"
