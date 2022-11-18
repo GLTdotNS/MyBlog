@@ -72,7 +72,7 @@ const PostsComponent = ({ posts }) => {
             <span> {post?.description.slice(0, 300)}...</span>
           </div>
           <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
-            <a>
+            <a aria-label="See more about this post">
               <button
                 className="btn"
                 style={{ backgroundColor: "transparent" }}

@@ -25,6 +25,7 @@ const RecentlyPosts = ({ posts }) => {
                     width={50}
                     height={80}
                     src={urlForImg(post.mainImage.asset.url)}
+                    alt="Image of the post"
                   />
 
                   <hr />
