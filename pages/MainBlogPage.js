@@ -58,17 +58,19 @@ const MainBlogPage = ({ posts, category, banner }) => {
           style={{ marginTop: "10%" }}
         >
           <h1 className="slide">NONCRATIVEBLOG</h1>
+
           <div className="search ">
             <input
+              name="service-city"
               className="input"
-              type="text"
               placeholder="Search post.."
-              autoComplete="off"
+              autoComplete="on"
+              type="text"
               list="suggestions"
               onChange={(e) => setValueToSearch(e.target.value.trim())}
             />
 
-            <datalist style={{ color: "red" }} id="suggestions">
+            <datalist className="datalist" id="suggestions">
               {posts.map((p, index) => (
                 <option className="option" key={index}>
                   {p.title}

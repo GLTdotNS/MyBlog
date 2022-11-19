@@ -1,29 +1,24 @@
-import React from 'react'
-import { serializers } from '../../../serializers/serializers'
+import React from "react";
+import { serializers } from "../../../serializers/serializers";
 import BlockContent from "@sanity/block-content-to-react";
-import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
+import VideoCard from "./Videocard.tsx";
 const BlockContentComponent = ({ post }) => {
-
-  document.title = post.title
+  console.log(post);
+  document.title = post.title;
   if (!post.body) {
     return (
-
       <SkeletonTheme baseColor="#202020" highlightColor="#444">
-
-        <div className="post_text" >
-          <Skeleton height={100}/>
+        <div className="post_text">
+          <Skeleton height={100} />
         </div>
-
       </SkeletonTheme>
-
-    )
+    );
   }
 
   return (
-
-    <div className="post_text" >
+    <div className="post_text">
       <BlockContent
         blocks={post.body}
         serializers={serializers}
@@ -31,10 +26,9 @@ const BlockContentComponent = ({ post }) => {
         dataset="production"
       />
 
-
+      {post.Video ? <VideoCard post={post} /> : ""}
     </div>
+  );
+};
 
-  )
-}
-
-export default BlockContentComponent
+export default BlockContentComponent;
