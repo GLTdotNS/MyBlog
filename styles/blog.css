@@ -492,3 +492,29 @@ datalist {
   max-height: 10rem;
   overflow-y: auto;
 }
+
+.video-card video {
+  width: 100% !important;
+  margin: auto;
+}
+.video-card {
+  position: relative;
+}
+.video-card video {
+  display: block;
+}
+.buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  background-color: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: white;
+  font-size: 50px;
+  border: 0px;
+}

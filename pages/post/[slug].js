@@ -135,7 +135,15 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
     url
   },
 
+
   },
+  Video{
+    asset->{
+      _id,
+      url
+    }
+  },
+
   body
 }`;
 
