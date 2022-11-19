@@ -20,9 +20,9 @@ body {
 
   z-index: -1;
   &::before {
-    background-image: url("./assets/305484.jpg");
+    background-image: url("./assets/background.jpg");
     background-repeat: no-repeat;
-    background-size: 120% 2000px, 100% auto;
+
     content: "";
     height: 100%;
     left: 0;
