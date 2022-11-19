@@ -49,7 +49,7 @@ const CategoriesPage = ({ posts, category }) => {
             <input
               className="input"
               type="text"
-              placeholder="Search.."
+              placeholder={`Search in ${location}`}
               autoComplete="off"
               list="suggestions"
               onChange={(e) => setValueToSearch(e.target.value.trim())}

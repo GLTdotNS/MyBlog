@@ -5,6 +5,11 @@ import "../styles/footer.css";
 import "../styles/aboutme.css";
 import Layout from "../components/Layout/Layout";
 import { Toaster } from "react-hot-toast";
+import Router from "next/router";
+import NProgress from "nprogress"; //nprogress module
+Router.events.on("routeChangeStart", () => NProgress.start());
+Router.events.on("routeChangeComplete", () => NProgress.done());
+Router.events.on("routeChangeError", () => NProgress.done());
 
 function MyApp({ Component, pageProps }) {
   return (
