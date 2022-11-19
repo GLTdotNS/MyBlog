@@ -6,7 +6,6 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Image from "next/image";
 import notFoundImage from "../styles/assets/monkey.png";
-import { Calendar } from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import { useRouter } from "next/router";
 
