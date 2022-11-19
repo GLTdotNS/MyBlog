@@ -10,7 +10,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Toaster />
-      <Component {...pageProps} />s
+      <Component {...pageProps} />
     </Layout>
   );
 }
