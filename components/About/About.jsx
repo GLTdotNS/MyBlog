@@ -9,22 +9,14 @@ import Contacts from "./Hero/Contacts";
 import ProjectsComponent from "../Projects/ProjectsComponent";
 
 const About = ({ banner, references }) => {
-  const [github, setGithub] = useState(null);
-  const [contributions, setContributions] = useState(null);
-  const [show, setShow] = useState(false);
-
   useEffect(() => {
-    window.scrollTo(0, 1);
+    window.scrollTo(0, 0);
     document.title = "Автобиография - Георги Тонков";
   }, []);
-
-
 
   if (!banner) {
     return <div className="spinner"></div>;
   }
-
-
 
   return (
     <div>
