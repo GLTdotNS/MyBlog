@@ -6,17 +6,24 @@
   </url>
 
   <url>
-    <loc>https://www.noncreativeblog.net/post</loc>
+    <loc>https://www.noncreativeblog.net/post/https://www.noncreativeblog.net/post/zashoto-si-poet</loc>
     <lastmod>2022-05-05</lastmod>
   </url>
 
   <url>
-    <loc>https://www.noncreativeblog.net/aboutme</loc>
+    <loc>https://www.noncreativeblog.net/post/ezik%D0%B0t-csharp-i-tehnologiyata-net-framework</loc>
     <lastmod>2022-05-05</lastmod>
   </url>
-
   <url>
-    <loc>https://www.noncreativeblog.net/categories</loc>
+    <loc>https://www.noncreativeblog.net/post/https://www.noncreativeblog.net/post/zashoto-si-poet</loc>
+    <lastmod>2022-05-05</lastmod>
+  </url>
+  <url>
+    <loc>https://www.noncreativeblog.net/categories/linux</loc>
+    <lastmod>2022-05-05</lastmod>
+  </url>
+    <url>
+    <loc>https://www.noncreativeblog.net/categories/bash</loc>
     <lastmod>2022-05-05</lastmod>
   </url>
 </urlset>

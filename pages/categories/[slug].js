@@ -120,7 +120,6 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 }`;
 
 export async function getServerSideProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
   const post = await client.fetch(query, { slug });
   const queryPosts = groq`*[_type == "post" ]
