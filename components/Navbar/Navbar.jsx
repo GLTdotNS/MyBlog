@@ -54,6 +54,7 @@ const Navbar = () => {
           fontSize={27}
           className="overlay__close"
           onClick={() => setToggleMenu(false)}
+          color={"#333"}
         />
       )}
 
@@ -69,12 +70,12 @@ const Navbar = () => {
         </div>
       </Link>
 
-      <div className="app__navbar-smallscreen">
+      <div className="app__navbar-smallscreen ">
         <AnimatePresence>
           {toggleMenu && (
             <div className="app__navbar-overylay_background">
               <motion.div
-                className="app__navbar-smallscreen_overlay"
+                className="app__navbar-smallscreen_overlay backgroundIssue"
                 animate={{
                   width: "285px",
                   transition: "5s",
