@@ -59,7 +59,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
         >
           <h1 className="slide">NONCRATIVEBLOG</h1>
 
-          <div className="search ">
+          <div className="search">
             <input
               name="service-city"
               className="input"
@@ -70,7 +70,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
               onChange={(e) => setValueToSearch(e.target.value.trim())}
             />
 
-            <datalist className="datalist" id="suggestions">
+            <datalist className="datalist " id="suggestions">
               {posts.map((p, index) => (
                 <option className="option" key={index}>
                   {p.title}

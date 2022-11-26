@@ -71,10 +71,10 @@
 
 .app__navbar-smallscreen_links li {
   font: 40px Arial;
-  color: white;
+  color: #333;
   line-height: 2em;
   font-family: "Oswald", sans-serif;
-  background: linear-gradient(to left, #111 50%, #161b22 50%) right;
+  background: linear-gradient(to left, #fff 50%, #161b22 50%) right;
   background-size: 500%;
   padding-left: 10%;
   height: 70px;
@@ -83,6 +83,7 @@
 .app__navbar-smallscreen_links li:hover {
   background-position: left;
   background-size: 200%;
+  color: wheat;
 }
 .app__navbar-smallscreen_links li:active {
   /*For phone clicked :)*/

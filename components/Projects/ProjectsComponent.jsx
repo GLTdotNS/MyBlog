@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import game from "../../styles/assets/Screenshot (2).png";
-import commerce from "../../styles/assets/Untitled.png";
 import blog from "../../styles/assets/blog.png";
 import { animation } from "../../animations/animation";
 import Image from "next/image";
@@ -24,8 +23,6 @@ const ProjectsComponent = () => {
       <div className="project-row">
         <div className="project-column forMarquee">
           <div className="project-content">
-            <Image src={commerce} />
-
             <h3>
               <p>E-commerce site</p>
             </h3>
