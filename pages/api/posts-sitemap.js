@@ -1,4 +1,4 @@
-import { SitemapStream, streamToPromise } from 'sitemap';
+import { SitemapStream, streamToPromise } from "sitemap";
 
 export default async (req, res) => {
   try {
@@ -7,34 +7,26 @@ export default async (req, res) => {
       cacheTime: 600000,
     });
 
-    // List of posts
     const posts = [];
 
-    // Create each URL row
-    posts.forEach(post => {
+    posts.forEach((post) => {
       smStream.write({
         url: `/post/${post.slug}`,
-        changefreq: 'daily',
-        priority: 0.9
+        changefreq: "daily",
+        priority: 0.9,
       });
     });
 
-    // End sitemap stream
     smStream.end();
 
-    // XML sitemap string
     const sitemapOutput = (await streamToPromise(smStream)).toString();
 
-    // Change headers
     res.writeHead(200, {
-      'Content-Type': 'application/xml'
+      "Content-Type": "application/xml",
     });
 
-    // Display output to user
     res.end(sitemapOutput);
-  } catch(e) {
-    console.log(e)
-    res.send(JSON.stringify(e))
+  } catch (e) {
+    res.send(JSON.stringify(e));
   }
-
-}
+};
