@@ -1,6 +1,7 @@
-Sitemap: https://www.noncreativeblog.net/posts
 
 User-agent: *
 Allow: /*
 
 Disallow: /api/*
+
+Sitemap: https://www.noncreativeblog.net/sitemap.xml
