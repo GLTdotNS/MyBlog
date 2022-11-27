@@ -19,6 +19,7 @@ import {
   TwitterIcon,
   ViberIcon,
 } from "react-share";
+import Head from "next/head";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
@@ -36,6 +37,10 @@ const Post = ({ post, posts, category }) => {
 
   return (
     <div className="main">
+      <Head>
+        <meta name="description" content={`${post.description}`} key="desc" />
+      </Head>
+
       <div className="row">
         <div className="midcolumn">
           <div className="header"></div>

@@ -1,6 +1,5 @@
 import MainBlogPage from "./MainBlogPage";
 import { client } from "../lib/sanityClient";
-import Script from "next/script";
 import groq from "groq";
 
 const Index = ({ posts, category, banner }) => {
@@ -9,10 +8,6 @@ const Index = ({ posts, category, banner }) => {
       <main>
         <MainBlogPage posts={posts} category={category} banner={banner} />
       </main>
-      <Script
-        src="https://www.google-analytics.com/analytics.js"
-        strategy="lazyOnload"
-      />
     </div>
   );
 };
