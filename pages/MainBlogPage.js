@@ -14,7 +14,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
   const router = useRouter();
 
   useEffect(() => {
-    document.title = "Начална страница";
+    document.title = "NONCREATIVEBLOG";
     window.scrollTo(0, 0);
   }, []);
 
@@ -57,7 +57,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
           className="box aboutme"
           style={{ marginTop: "10%" }}
         >
-          <h1 className="slide">NONCRATIVEBLOG</h1>
+          <h1 className="slide ">NONCRATIVEBLOG</h1>
 
           <div className="search">
             <input
