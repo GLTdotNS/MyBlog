@@ -43,6 +43,7 @@ const Post = ({ post, posts, category }) => {
           <div className="author">
             <img
               src={urlForImg(post.authorImage).url()}
+              alt="my image"
               className="mypic"
               width={100}
               height={100}
