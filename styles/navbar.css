@@ -71,10 +71,10 @@
 
 .app__navbar-smallscreen_links li {
   font: 40px Arial;
-  color: #333;
+  color: white;
   line-height: 2em;
   font-family: "Oswald", sans-serif;
-  background: linear-gradient(to left, #fff 50%, #161b22 50%) right;
+  background: linear-gradient(to left, #111, #161b22 50%) right;
   background-size: 500%;
   padding-left: 10%;
   height: 70px;

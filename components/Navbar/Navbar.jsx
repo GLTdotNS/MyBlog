@@ -54,7 +54,7 @@ const Navbar = () => {
           fontSize={27}
           className="overlay__close"
           onClick={() => setToggleMenu(false)}
-          color={"#333"}
+          color={"#fff"}
         />
       )}
 
