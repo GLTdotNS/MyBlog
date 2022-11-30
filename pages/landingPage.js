@@ -10,7 +10,7 @@ const Landing = () => {
         className="pc-window_component is-home-main"
       >
         <div className="pc-window_top-wrapper">
-          <div clclassNameass="pc-window_top-bar">
+          <div className="pc-window_top-bar">
             <div
               id="w-node-_712c206d-f420-08ca-a2af-4b05406a0873-5fe902a0"
               className="pc-window_top-bar-lines-wrapper"
@@ -18,7 +18,7 @@ const Landing = () => {
               <div className="pc-window_top-bar-horizontal-line"></div>
               <div className="pc-window_top-bar-horizontal-line"></div>
               <div className="pc-window_top-bar-horizontal-line"></div>
-              <div classNames="pc-window_top-bar-horizontal-line"></div>
+              <div className="pc-window_top-bar-horizontal-line"></div>
               <div className="pc-window_top-bar-horizontal-line"></div>
             </div>
             <div
@@ -43,7 +43,7 @@ const Landing = () => {
             </div>
             <div
               id="w-node-_33815bc8-3278-cde7-feee-00d339ed310a-5fe902a0"
-              className="pc-window_top-bar-lines-wrapper"
+              class="pc-window_top-bar-lines-wrapper"
             >
               <div className="pc-window_top-bar-horizontal-line"></div>
               <div className="pc-window_top-bar-horizontal-line"></div>
