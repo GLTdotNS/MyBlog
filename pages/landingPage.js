@@ -65,11 +65,11 @@ const Landing = () => {
           </div>
           <div className="pc-window_inner-countdown">
             <Image src={landingImage} />
-            <div className="spacer _1em"></div>
+            <div className="spacer _1em" style={{ marginTop: "10%" }}></div>
             <div className="inner-countdown-intro-text">
-              GROWTH STRATEGY &amp;
+              Open source &amp;
               <br />
-              BUSINESS DEVELOPMENT For
+              Open Mind
             </div>
             <div className="inner-countdown_typed-text-wrapper">
               <div
@@ -81,7 +81,12 @@ const Landing = () => {
               </div>
               <div
                 id="typed-text"
-                style={{ marginTop: "5rem", fontSize: "30px", color: "red" }}
+                style={{
+                  marginTop: "5rem",
+                  fontSize: "30px",
+                  fontWeight: 500,
+                  color: "red",
+                }}
                 className="typed-text"
               >
                 MENU
