@@ -7,6 +7,9 @@ import "react-loading-skeleton/dist/skeleton.css";
 import Image from "next/image";
 import notFoundImage from "../styles/assets/monkey.png";
 import "react-calendar/dist/Calendar.css";
+import { client } from "../lib/sanityClient";
+import groq from "groq";
+import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 
 const MainBlogPage = ({ posts, category, banner }) => {
@@ -47,64 +50,122 @@ const MainBlogPage = ({ posts, category, banner }) => {
 
     currentSlug === undefined
       ? router.push(window.location.href + "/" + "notfound")
-      : router.push(window.location.href + "/" + "post/" + currentSlug);
+      : router.push("/post/" + currentSlug);
   };
   return (
-    <div className="row">
-      <div className="midcolumn">
-        <form
-          onSubmit={onFormSubmit}
-          className="box aboutme"
-          style={{ marginTop: "10%" }}
-        >
-          <h1 className="slide ">NONCRATIVEBLOG</h1>
+    <Layout>
+      <div className="row">
+        <div className="midcolumn">
+          <form
+            onSubmit={onFormSubmit}
+            className="box aboutme"
+            style={{ marginTop: "10%" }}
+          >
+            <h1 className="slide ">NONCRATIVEBLOG</h1>
 
-          <div className="search">
-            <input
-              name="service-city"
-              className="input"
-              placeholder="Search post.."
-              autoComplete="on"
-              type="text"
-              list="suggestions"
-              onChange={(e) => setValueToSearch(e.target.value.trim())}
+            <div className="search">
+              <input
+                name="service-city"
+                className="input"
+                placeholder="Search post.."
+                autoComplete="on"
+                type="text"
+                list="suggestions"
+                onChange={(e) => setValueToSearch(e.target.value.trim())}
+              />
+
+              <datalist className="datalist " id="suggestions">
+                {posts.map((p, index) => (
+                  <option className="option" key={index}>
+                    {p.title}
+                  </option>
+                ))}
+              </datalist>
+            </div>
+          </form>
+          <hr />
+
+          <hr />
+          {posts.filter((x) =>
+            x.title.toLowerCase().includes(valueToSearch.toLowerCase())
+          ).length > 0 ? (
+            <PostsComponent
+              posts={posts.filter((x) =>
+                x.title.toLowerCase().includes(valueToSearch.toLowerCase())
+              )}
             />
+          ) : (
+            <div style={{ minHeight: "100vh", textAlign: "center" }}>
+              <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
+              <Image src={notFoundImage} width="350px" height="300px" />
+              <p>I am probably working on something that has blown up.</p>
+            </div>
+          )}
+        </div>
+        <div className="rightcolumn">
+          <Categories category={category} />
 
-            <datalist className="datalist " id="suggestions">
-              {posts.map((p, index) => (
-                <option className="option" key={index}>
-                  {p.title}
-                </option>
-              ))}
-            </datalist>
-          </div>
-        </form>
-        <hr />
-
-        <hr />
-        {posts.filter((x) =>
-          x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-        ).length > 0 ? (
-          <PostsComponent
-            posts={posts.filter((x) =>
-              x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-            )}
-          />
-        ) : (
-          <div style={{ minHeight: "100vh", textAlign: "center" }}>
-            <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
-            <Image src={notFoundImage} width="350px" height="300px" />
-            <p>I am probably working on something that has blown up.</p>
-          </div>
-        )}
+          <RecentlyPosts posts={posts} />
+        </div>
       </div>
-      <div className="rightcolumn">
-        <Categories category={category} />
-
-        <RecentlyPosts posts={posts} />
-      </div>
-    </div>
+    </Layout>
   );
 };
+export const getServerSideProps = async () => {
+  const banner = await client.fetch(
+    groq`*[_type == "banner"]{
+  about,
+  firstName,
+  lastName,
+  years,
+  phone,
+  city,
+  image{
+    asset->{
+      _id,
+      url
+     }
+   },
 
+}`
+  );
+  const query = groq`*[_type == "post"] | order(_createdAt desc)
+  {
+  title,
+  slug,
+  "authorImage": author->image,
+  description,
+  body,
+  publishedAt,
+  likes,
+  comments,
+  mainImage{
+    asset->{
+    _id,
+    url
+  }
+}, 'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
+        _id, 
+        name, 
+        email, 
+        comment, 
+        _createdAt
+    }
+
+}`;
+  const category = await client.fetch(
+    groq`*[_type == "category"]{
+  _id,
+  slug,
+  title
+
+  }`
+  );
+
+  const posts = await client.fetch(query);
+
+  return {
+    props: { posts, category, banner },
+  };
+};
 export default MainBlogPage;

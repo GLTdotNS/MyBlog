@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import notFoundImage from "../../styles/assets/monkey.png";
 import { useRouter } from "next/router";
+import Layout from "../../components/Layout/Layout";
 const CategoriesPage = ({ posts, category }) => {
   const [location, setLocation] = useState("");
   const [valueToSearch, setValueToSearch] = useState("");
@@ -38,69 +39,71 @@ const CategoriesPage = ({ posts, category }) => {
   };
 
   return (
-    <div className="row">
-      <div className="midcolumn">
-        <form
-          onSubmit={onFormSubmit}
-          style={{ marginTop: "10%" }}
-          className="box aboutme"
-        >
-          <div className="search ">
-            <input
-              className="input"
-              type="text"
-              placeholder={`Search in ${location}`}
-              autoComplete="off"
-              list="suggestions"
-              onChange={(e) => setValueToSearch(e.target.value.trim())}
+    <Layout>
+      <div className="row">
+        <div className="midcolumn">
+          <form
+            onSubmit={onFormSubmit}
+            style={{ marginTop: "10%" }}
+            className="box aboutme"
+          >
+            <div className="search ">
+              <input
+                className="input"
+                type="text"
+                placeholder={`Search in ${location}`}
+                autoComplete="off"
+                list="suggestions"
+                onChange={(e) => setValueToSearch(e.target.value.trim())}
+              />
+
+              <datalist id="suggestions">
+                {posts.map((p, index) => (
+                  <option className="option" key={index}>
+                    {p.title}
+                  </option>
+                ))}
+              </datalist>
+            </div>
+          </form>
+          <div className="header"></div>
+          {posts.filter((x) =>
+            x.title.toLowerCase().includes(valueToSearch.toLowerCase())
+          ).length > 0 ? (
+            <PostsComponent
+              posts={posts
+                .filter(
+                  (x) =>
+                    x.categories._ref ===
+                    `${
+                      category.filter((x) => x.slug.current === location)[0]._id
+                    }`
+                )
+                .filter((x) =>
+                  x.title.toLowerCase().includes(valueToSearch.toLowerCase())
+                )}
             />
-
-            <datalist id="suggestions">
-              {posts.map((p, index) => (
-                <option className="option" key={index}>
-                  {p.title}
-                </option>
-              ))}
-            </datalist>
-          </div>
-        </form>
-        <div className="header"></div>
-        {posts.filter((x) =>
-          x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-        ).length > 0 ? (
-          <PostsComponent
-            posts={posts
-              .filter(
-                (x) =>
-                  x.categories._ref ===
-                  `${
-                    category.filter((x) => x.slug.current === location)[0]._id
-                  }`
-              )
-              .filter((x) =>
-                x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-              )}
-          />
-        ) : (
-          <div style={{ minHeight: "100vh", textAlign: "center" }}>
-            <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
-            <Image src={notFoundImage} width="350px" height="300px" />
-            <p>I am probably working on something that has blown up.</p>
-          </div>
-        )}
-      </div>
-
-      <div className="rightcolumn">
-        <Categories category={category} />
-        <RecentlyPosts
-          posts={posts.filter(
-            (x) =>
-              x.categories._ref ===
-              `${category.filter((x) => x.slug.current === location)[0]?._id}`
+          ) : (
+            <div style={{ minHeight: "100vh", textAlign: "center" }}>
+              <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
+              <Image src={notFoundImage} width="350px" height="300px" />
+              <p>I am probably working on something that has blown up.</p>
+            </div>
           )}
-        />
+        </div>
+
+        <div className="rightcolumn">
+          <Categories category={category} />
+          <RecentlyPosts
+            posts={posts.filter(
+              (x) =>
+                x.categories._ref ===
+                `${category.filter((x) => x.slug.current === location)[0]?._id}`
+            )}
+          />
+        </div>
       </div>
-    </div>
+    </Layout>
   );
 };
 

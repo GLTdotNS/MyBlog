@@ -90,7 +90,13 @@ const Navbar = () => {
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/">Writing...</Link>
+                    <Link href="/">Index.JS</Link>
+                  </li>
+                  <li
+                    className="p__opensans"
+                    onClick={() => setToggleMenu(false)}
+                  >
+                    <Link href="/MainBlogPage">Writing...</Link>
                   </li>
 
                   <li
