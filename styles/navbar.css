@@ -68,6 +68,12 @@
   font-family: "Oswald", sans-serif;
   list-style: none;
 }
+.backgroundIssue {
+  background-image: (
+    url("./assets/wallpaperflare.com_wallpaper-removebg-preview.png")
+  );
+  color: #333;
+}
 
 .app__navbar-smallscreen_links li {
   font: 40px Arial;

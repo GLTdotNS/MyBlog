@@ -72,7 +72,7 @@ const Contacts = () => {
 
   return (
     <div>
-      <div className="contactFormContainer aboutme backgroundIssue">
+      <div className="contactFormContainer aboutme">
         <h2>Message me </h2>
         <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
           <label htmlFor="fname">Name</label>

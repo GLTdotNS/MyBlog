@@ -1,7 +1,8 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import landingImage from "../styles/assets/landingImage.png";
+
 const Landing = () => {
   return (
     <div className="landingPage">
@@ -37,9 +38,9 @@ const Landing = () => {
             <div
               id="w-node-_423c0a09-2ab8-fed4-8e73-d86b76be509e-5fe902a0"
               className="pc-window_top-bar-text"
-              style={{ color: "black" }}
+              style={{ color: "black", textTransform: "uppercase" }}
             >
-              OPEN SOURCE OPEN MIND
+              Gravé dans la roche
             </div>
             <div
               id="w-node-_33815bc8-3278-cde7-feee-00d339ed310a-5fe902a0"
@@ -66,28 +67,20 @@ const Landing = () => {
           <div className="pc-window_inner-countdown">
             <Image src={landingImage} />
             <div className="spacer _1em" style={{ marginTop: "10%" }}></div>
-            <div className="inner-countdown-intro-text">
-              Open source &amp;
+            <div id="demo" className="inner-countdown-intro-text typewriter">
+              <h4>Open source</h4>
+
               <br />
-              Open Mind
+              <h3>Open Mind</h3>
             </div>
             <div className="inner-countdown_typed-text-wrapper">
               <div
-                data-w-id="f9b9187f-cb55-3cbb-463c-e0f043edf02f"
-                style={{ opacity: "0.76187", willChange: "opacity" }}
-                className="typed-text-cursor"
-              >
-                <div className="spacer_4em"></div>
-              </div>
-              <div
-                id="typed-text"
                 style={{
                   marginTop: "5rem",
                   fontSize: "30px",
                   fontWeight: 500,
-                  color: "red",
+                  color: "wheat",
                 }}
-                className="typed-text"
               >
                 MENU
               </div>
@@ -97,27 +90,19 @@ const Landing = () => {
               className="inner-countdown_countdown-wrapper"
               style={{ marginTop: "1rem" }}
             >
-              <Link href={"/MainBlogPage"}>BLOG</Link>
+              <Link href={"/MainBlogPage"}>
+                <p className="landing-page-link">BLOG</p>
+              </Link>
               <div
                 className="spacer_1em "
                 style={{ marginTop: "1rem", color: "white !important" }}
               ></div>
-              <Link
-                id="js-clock-hours"
-                href={"/aboutme"}
-                className="countdown-text"
-              >
-                WHOAMI
+              <Link id="js-clock-hours" href={"/aboutme"}>
+                <p className="landing-page-link">WHOAMI</p>
               </Link>
               <div className="countdown-text"></div>
             </div>
-
-            <div className="spacer _4em"></div>
           </div>
-        </div>
-        <div className="pc-window_double-lines-bar"></div>
-        <div className="pc-window_bottom-bar">
-          <div className="bottom-bar-texture"></div>
         </div>
       </div>
     </div>
