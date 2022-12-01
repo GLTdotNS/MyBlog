@@ -75,7 +75,7 @@ const Navbar = () => {
           {toggleMenu && (
             <div className="app__navbar-overylay_background">
               <motion.div
-                className="app__navbar-smallscreen_overlay backgroundIssue"
+                className="app__navbar-smallscreen_overlay"
                 animate={{
                   width: "285px",
                   transition: "5s",
