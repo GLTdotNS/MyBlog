@@ -14,6 +14,41 @@
   padding: 1.5% !important;
   z-index: 1000 !important;
 }
+.slideMenu {
+  -webkit-animation: slideIn 0.5s forwards;
+  -moz-animation: slideIn 0.5s forwards;
+  animation: slideIn 0.5s forwards;
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@-moz-keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-900px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
 
 .app__navbar-logo {
   font-family: "Great Vibes", cursive;
@@ -35,13 +70,17 @@
 
 .app__navbar-smallscreen_overlay {
   height: 100%;
+
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #111;
+  background-color: rgb(18, 18, 18);
+  box-shadow: 15px 0 8px -10px rgb(18, 18, 18);
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
   overflow-x: hidden;
-  border-right: 1px solid #333;
 }
 .app__navbar-overylay_background {
   position: absolute;
@@ -49,7 +88,8 @@
   top: 0px;
   left: 0;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
+  /* background: rgba(0, 0, 0, 0.5); */
+  background-color: #111;
   height: 100vh;
   flex-direction: row;
 }
@@ -74,6 +114,13 @@
   );
   color: #333;
 }
+#nprogress .bar {
+  background: red !important;
+}
+#nprogress .spinner-icon {
+  border-top-color: red !important;
+  border-left-color: red !important;
+}
 
 .app__navbar-smallscreen_links li {
   font: 40px Arial;
@@ -84,7 +131,6 @@
   background-size: 500%;
   padding-left: 10%;
   height: 70px;
-  transition: 0.5s ease-out;
 }
 .app__navbar-smallscreen_links li:hover {
   background-position: left;

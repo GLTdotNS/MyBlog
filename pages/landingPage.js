@@ -90,7 +90,7 @@ const Landing = () => {
               className="inner-countdown_countdown-wrapper"
               style={{ marginTop: "1rem" }}
             >
-              <Link href={"/MainBlogPage"}>
+              <Link href={"/blog"}>
                 <p className="landing-page-link">BLOG</p>
               </Link>
               <div

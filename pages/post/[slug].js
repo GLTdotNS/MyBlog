@@ -1,4 +1,3 @@
-// [slug].js
 import groq from "groq";
 import { client, urlForImg } from "../../lib/sanityClient";
 import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts";
@@ -157,7 +156,6 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 }`;
 
 export async function getServerSideProps(context) {
-  // It's important to default the slug so that it doesn't return "undefined"
   const { slug = "" } = context.params;
   const post = await client.fetch(query, { slug });
   const queryPosts = groq`*[_type == "post"] | order(_createdAt desc)
@@ -168,8 +166,6 @@ export async function getServerSideProps(context) {
   description,
   body,
   publishedAt,
-  likes,
-  comments,
   mainImage{
     asset->{
     _id,

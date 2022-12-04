@@ -46,13 +46,14 @@ const Navbar = () => {
         <RiMenuUnfoldFill
           color="#fff"
           cursor={"pointer"}
+          className=""
           fontSize={27}
           onClick={() => setToggleMenu(true)}
         />
       ) : (
         <RiMenuFoldFill
           fontSize={27}
-          className="overlay__close"
+          className="overlay__close slideMenu"
           onClick={() => setToggleMenu(false)}
           color={"#fff"}
         />
@@ -73,21 +74,22 @@ const Navbar = () => {
       <div className="app__navbar-smallscreen ">
         <AnimatePresence>
           {toggleMenu && (
-            <div className="app__navbar-overylay_background">
+            //app__navbar-overylay_background
+            <div className="">
               <motion.div
-                className="app__navbar-smallscreen_overlay backgroundIssue"
+                className="app__navbar-smallscreen_overlay slideMenu "
                 animate={{
                   width: "285px",
-                  transition: "5s",
+                  transition: "0.1ms",
                 }}
                 exit={{
-                  width: "0px",
+                  width: "-50px",
                   transition: "5s",
                 }}
               >
-                <ul className="app__navbar-smallscreen_links">
+                <ul className="app__navbar-smallscreen_links ">
                   <li
-                    className="p__opensans"
+                    className="p__opensans "
                     onClick={() => setToggleMenu(false)}
                   >
                     <Link href="/">Index.JS</Link>
@@ -96,7 +98,7 @@ const Navbar = () => {
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/MainBlogPage">Writing...</Link>
+                    <Link href="/blog">Writing...</Link>
                   </li>
 
                   <li
