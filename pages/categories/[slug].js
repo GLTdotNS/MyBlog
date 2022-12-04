@@ -46,13 +46,13 @@ const CategoriesPage = ({ posts, category }) => {
             style={{ marginTop: "10%" }}
             className="box aboutme"
           >
+            <h1 className="">{location}</h1>
             <div className="search ">
               <input
                 className="input"
                 type="text"
                 placeholder={`Search in ${location}`}
                 autoComplete="off"
-                list="suggestions"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
 
@@ -65,6 +65,7 @@ const CategoriesPage = ({ posts, category }) => {
               </datalist>
             </div>
           </form>
+          <hr />
           <div className="header"></div>
           {posts.filter((x) =>
             x.title.toLowerCase().includes(valueToSearch.toLowerCase())

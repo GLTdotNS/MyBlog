@@ -12,7 +12,7 @@ import groq from "groq";
 import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 
-const MainBlogPage = ({ posts, category, banner }) => {
+const MainBlogPage = ({ posts, category }) => {
   const [valueToSearch, setValueToSearch] = useState("");
   const router = useRouter();
 
@@ -49,7 +49,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
     )[0]?.slug.current;
 
     currentSlug === undefined
-      ? router.push(window.location.href + "/" + "notfound")
+      ? router.push(window.location.href + "/" + "not-founded-post")
       : router.push("/post/" + currentSlug);
   };
   return (
@@ -68,8 +68,7 @@ const MainBlogPage = ({ posts, category, banner }) => {
                 name="service-city"
                 className="input"
                 placeholder="Search post.."
-                autoComplete="on"
-                type="text"
+                autoComplete="off"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
 
@@ -111,23 +110,6 @@ const MainBlogPage = ({ posts, category, banner }) => {
   );
 };
 export const getServerSideProps = async () => {
-  const banner = await client.fetch(
-    groq`*[_type == "banner"]{
-  about,
-  firstName,
-  lastName,
-  years,
-  phone,
-  city,
-  image{
-    asset->{
-      _id,
-      url
-     }
-   },
-
-}`
-  );
   const query = groq`*[_type == "post"] | order(_createdAt desc)
   {
   title,
@@ -136,20 +118,12 @@ export const getServerSideProps = async () => {
   description,
   body,
   publishedAt,
-  likes,
-  comments,
   mainImage{
     asset->{
     _id,
     url
   }
-}, 'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
-        _id, 
-        name, 
-        email, 
-        comment, 
-        _createdAt
-    }
+},
 
 }`;
   const category = await client.fetch(
@@ -164,7 +138,7 @@ export const getServerSideProps = async () => {
   const posts = await client.fetch(query);
 
   return {
-    props: { posts, category, banner },
+    props: { posts, category },
   };
 };
 export default MainBlogPage;
