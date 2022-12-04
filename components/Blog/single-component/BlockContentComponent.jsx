@@ -5,7 +5,6 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import VideoCard from "./Videocard.tsx";
 const BlockContentComponent = ({ post }) => {
-  console.log(post);
   document.title = post.title;
   if (!post.body) {
     return (

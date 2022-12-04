@@ -55,13 +55,13 @@ const MainBlogPage = ({ posts, category, banner }) => {
   return (
     <Layout>
       <div className="row">
-        <div className="midcolumn">
+        <div className="midcolumn ">
           <form
             onSubmit={onFormSubmit}
-            className="box aboutme"
+            className="box "
             style={{ marginTop: "10%" }}
           >
-            <h1 className="slide ">NONCRATIVEBLOG</h1>
+            <h1 className="slide ">NONCREATIVEBLOG</h1>
 
             <div className="search">
               <input
@@ -70,13 +70,12 @@ const MainBlogPage = ({ posts, category, banner }) => {
                 placeholder="Search post.."
                 autoComplete="on"
                 type="text"
-                list="suggestions"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
 
-              <datalist className="datalist " id="suggestions">
+              <datalist className="datalist">
                 {posts.map((p, index) => (
-                  <option className="option" key={index}>
+                  <option className="" key={index}>
                     {p.title}
                   </option>
                 ))}

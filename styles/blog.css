@@ -232,6 +232,10 @@ hr {
   margin: auto;
   margin-top: 2%;
   background-color: #18191a;
+  box-shadow: 3px 1px 1px 1px rgba(46, 46, 46, 0.5);
+  -webkit-transform-origin: 0% 100%;
+  -ms-transform-origin: 0% 100%;
+  transform-origin: 0% 100%;
 }
 
 /* Clear floats after the columns */
