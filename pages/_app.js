@@ -6,7 +6,6 @@ import "../styles/aboutme.css";
 import "../styles/landingPage.scss";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
-import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import { useEffect } from "react";
 
