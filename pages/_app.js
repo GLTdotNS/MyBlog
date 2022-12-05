@@ -9,6 +9,7 @@ import Router from "next/router";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import { useEffect } from "react";
+import Head from "next/head";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
