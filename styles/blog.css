@@ -41,7 +41,6 @@
 }
 
 .box input:hover {
-  background: url("./assets//wallpaperflare.com_wallpaper.jpg");
   color: black;
   border-radius: 80px !important;
 }
