@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { SiGmail, SiFacebook, SiGithub } from "react-icons/si";
 import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
 import code from "../../styles/assets/code.jpg";
 import Image from "next/image";
