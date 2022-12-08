@@ -15,7 +15,7 @@ const PostsComponent = ({ posts }) => {
 
   const displayPost =
     posts &&
-    posts.slice(pageVisited, pageVisited + postPerPage).map((post, index) => {
+    posts.slice(pageVisited, pageVisited + postPerPage).map((post) => {
       let wordsCount = post.description.split(" ");
 
       let minutesToRead = wordsCount.length / 200;
@@ -40,9 +40,9 @@ const PostsComponent = ({ posts }) => {
           </SkeletonTheme>
         );
       }
-
+      console.log(post.title);
       return (
-        <div className=" initial-post" key={post._id}>
+        <div className=" initial-post" key={post.title}>
           <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
           <p>
             {post.publishedAt
