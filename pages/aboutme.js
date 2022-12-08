@@ -12,7 +12,7 @@ const AboutMe = ({ banner, references }) => {
 
 export default AboutMe;
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const banner = await client.fetch(
     groq`*[_type == "banner"]{
   about,

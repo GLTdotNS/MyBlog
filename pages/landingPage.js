@@ -90,14 +90,14 @@ const Landing = () => {
               className="inner-countdown_countdown-wrapper"
               style={{ marginTop: "1rem" }}
             >
-              <Link href={"/blog"}>
+              <Link href={"/blog"} shallow={true}>
                 <p className="landing-page-link">BLOG</p>
               </Link>
               <div
                 className="spacer_1em "
                 style={{ marginTop: "1rem", color: "white !important" }}
               ></div>
-              <Link id="js-clock-hours" href={"/aboutme"}>
+              <Link id="js-clock-hours" href={"/aboutme"} shallow={true}>
                 <p className="landing-page-link">WHOAMI</p>
               </Link>
               <div className="countdown-text"></div>
