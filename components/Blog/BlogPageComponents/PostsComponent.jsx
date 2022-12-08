@@ -20,27 +20,6 @@ const PostsComponent = ({ posts }) => {
 
       let minutesToRead = wordsCount.length / 200;
 
-      if (!post) {
-        return (
-          <SkeletonTheme baseColor="#202020" highlightColor="#444">
-            <div className="card initial-post">
-              <h3>
-                <Skeleton width={50} />
-              </h3>
-              <h5>
-                <Skeleton width={80} />
-              </h5>
-
-              <div className="inner_post_text">
-                <span>
-                  <Skeleton height={100} />
-                </span>
-              </div>
-            </div>
-          </SkeletonTheme>
-        );
-      }
-      console.log(post.title);
       return (
         <div className=" initial-post" key={post.title}>
           <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
