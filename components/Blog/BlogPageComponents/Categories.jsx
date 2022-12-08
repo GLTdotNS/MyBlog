@@ -24,7 +24,7 @@ const Categories = ({ category }) => {
                   href={"/categories/[slug]"}
                   as={`/categories/${category.slug.current}`}
                 >
-                  <a> {category.title}</a>
+                  {category.title}
                 </Link>
               )}
             </span>
