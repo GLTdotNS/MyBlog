@@ -42,7 +42,7 @@ const PostsComponent = ({ posts }) => {
       }
 
       return (
-        <div className=" initial-post" key={index}>
+        <div className=" initial-post" key={post._id}>
           <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
           <p>
             {post.publishedAt
