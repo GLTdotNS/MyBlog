@@ -58,17 +58,18 @@ const Navbar = () => {
         />
       )}
 
-      <Link href="/">
-        <div className="app__navbar-logo " onClick={() => setToggleMenu(false)}>
+      <div className="app__navbar-logo ">
+        <Link href="/">
           <Image
+            onClick={() => setToggleMenu(false)}
             alt="logo"
             src={code}
             width={40}
             height={40}
             style={{ borderRadius: "50px" }}
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
 
       <div className="app__navbar-smallscreen ">
         <AnimatePresence>
