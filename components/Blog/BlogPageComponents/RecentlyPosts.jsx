@@ -14,6 +14,7 @@ const RecentlyPosts = ({ posts }) => {
         {posts &&
           posts.slice(0, 6).map((post, index) => (
             <div
+              key={post.title}
               style={{ cursor: "pointer" }}
               onClick={() => router.push(`/post/${post.slug.current}`)}
             >
