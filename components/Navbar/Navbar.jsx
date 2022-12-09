@@ -83,10 +83,13 @@ const Navbar = () => {
                   transition: "0.1ms",
                 }}
                 exit={{
-                  width: "-50px",
+                  width: "-285px",
                   transition: "5s",
                 }}
               >
+                <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
+                  {" "}
+                </div>
                 <ul className="app__navbar-smallscreen_links ">
                   <li
                     className="p__opensans "
