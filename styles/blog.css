@@ -6,6 +6,10 @@
   font-size: 50px !important;
   margin-top: 5%;
 }
+.ivan {
+  border: 1px solid #494949;
+  width: 65% !important;
+}
 
 .header img {
   display: block;
@@ -145,7 +149,7 @@ hr {
   margin: 0 auto;
   text-align: left;
   min-height: 100vh;
-  background-color: #181818;
+  background-color: #1a1a1a;
   padding: 5%;
   width: 75%;
   margin-left: auto !important;
@@ -153,6 +157,7 @@ hr {
 .row {
   width: 85%;
   margin: auto;
+  background-color: #1a1a1a;
 }
 
 .leftcolumn {
@@ -170,7 +175,7 @@ hr {
   transition: 0.1s ease;
   float: right;
   width: 25%;
-  background-color: #181818;
+  background-color: #1a1a1a;
   box-sizing: border-box;
   padding: 1.5%;
   height: 100vh;
