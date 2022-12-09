@@ -20,7 +20,7 @@ body {
 
   z-index: -1;
   &::before {
-    background-image: url("./assets/background.jpg");
+    background-color: #181818;
     background-repeat: no-repeat;
 
     content: "";

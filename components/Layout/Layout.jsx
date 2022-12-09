@@ -14,7 +14,7 @@ const Layout = ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <main className="main-container row">
+      <main className="main-container row ivan">
         {children}
 
         <motion.div
