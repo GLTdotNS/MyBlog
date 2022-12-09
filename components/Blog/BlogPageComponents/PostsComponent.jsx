@@ -5,14 +5,13 @@ import { urlForImg } from "../../../lib/sanityClient.js";
 import Link from "next/link";
 import { useState } from "react";
 import ReactPaginate from "react-paginate";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-
+import { useRouter } from "next/router.js";
 const PostsComponent = ({ posts }) => {
   const [pageNumber, setPageNumber] = useState(0);
   const postPerPage = 4;
   const pageVisited = pageNumber * postPerPage;
-
+  const router = useRouter();
   const displayPost =
     posts &&
     posts.slice(pageVisited, pageVisited + postPerPage).map((post) => {
@@ -50,11 +49,14 @@ const PostsComponent = ({ posts }) => {
 
             <span> {post?.description.slice(0, 300)}...</span>
           </div>
-          <Link href="/post/[slug]" as={`/post/${post.slug.current}`}>
-            <button className="btn" style={{ backgroundColor: "transparent" }}>
-              Read more <MdReadMore />
-            </button>
-          </Link>{" "}
+
+          <button
+            onClick={() => router.push(`/post/${post.slug.current}`)}
+            className="btn"
+            style={{ backgroundColor: "transparent" }}
+          >
+            Read more <MdReadMore />
+          </button>
         </div>
       );
     });
