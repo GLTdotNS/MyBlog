@@ -6,7 +6,7 @@
   font-size: 50px !important;
   margin-top: 5%;
 }
-.ivan {
+.wrapper {
   border: 1px solid #494949;
   width: 65% !important;
 }
@@ -39,7 +39,7 @@
   border-radius: 5px;
   box-sizing: border-box;
   font-size: 16px;
-  color: white;
+  color: black;
   outline: none;
   transition: 0.5s;
 }
@@ -47,6 +47,7 @@
 .box input:hover {
   color: black;
   border-radius: 80px !important;
+  background-color: #f9b22a;
 }
 
 .search i {
@@ -73,14 +74,15 @@
   color: black;
   transition: 0.7s;
 }
-
+.section li {
+  color: #f9b22a;
+}
+.section div {
+  color: #4ba6e7 !important;
+}
 .section div:hover {
   transition: 0.5s ease;
   opacity: 0.5;
-}
-
-.section li {
-  list-style: none;
 }
 
 hr {
@@ -92,12 +94,6 @@ hr {
 .columns {
   display: block;
   margin-bottom: 4vh;
-}
-
-.section {
-  text-align: left;
-  font-size: 14px;
-  padding: 1rem;
 }
 
 .columns .title {
@@ -155,7 +151,6 @@ hr {
   margin-left: auto !important;
 }
 .row {
-  width: 85%;
   margin: auto;
   background-color: #1a1a1a;
 }
@@ -185,34 +180,6 @@ hr {
   margin-right: auto;
 }
 
-.rightcolumn ol {
-  list-style-type: none;
-}
-
-.rightcolumn li {
-  position: relative;
-  margin: 0;
-  padding-bottom: 1em;
-  padding-left: 20px;
-}
-
-.rightcolumn li:before {
-  content: "\26AB";
-  background-color: #333;
-  font-size: 5px;
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 2px;
-  border-radius: 2px;
-  width: 4px;
-}
-
-.rightcolumn li::content {
-  color: red !important;
-  font-size: 100px !important;
-}
-
 .card {
   background-color: #0d1117;
   /* color: rgb(217, 216, 216); */
@@ -226,17 +193,17 @@ hr {
   border-radius: 30px;
   background-color: #18191a;
   margin-top: 5px;
-  padding: 3%;
+  padding: 2%;
 }
 
 .initial-post {
   border: 1px solid #333;
   width: 80%;
-  padding: 3%;
+  padding: 5%;
   margin: auto;
   margin-top: 2%;
   background-color: #18191a;
-  box-shadow: 3px 1px 1px 1px rgba(46, 46, 46, 0.5);
+
   -webkit-transform-origin: 0% 100%;
   -ms-transform-origin: 0% 100%;
   transform-origin: 0% 100%;

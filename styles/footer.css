@@ -6,7 +6,7 @@
   padding: 5%;
   font-size: 1px;
 
-  background-color: #181818;
+  background-color: #1a1a1a;
   width: 85%;
   margin: auto;
 }
@@ -202,8 +202,6 @@ div.social {
   opacity: 0.3;
   cursor: pointer;
 }
-
-
 
 .google {
   background: #181818;
