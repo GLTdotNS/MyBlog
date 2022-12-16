@@ -8,7 +8,7 @@ const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
-
+  const [showMenu, setshowMenu] = useState(false);
   const update = () => {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
@@ -19,7 +19,13 @@ const Navbar = () => {
       setHidden(true);
     }
   };
-
+  setTimeout(() => {
+    if (toggleMenu) {
+      setshowMenu(true);
+    } else {
+      setshowMenu(false);
+    }
+  }, 190);
   useEffect(() => {
     return scrollY.onChange(() => update());
   });
@@ -71,25 +77,29 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="app__navbar-smallscreen ">
-        <AnimatePresence>
-          {toggleMenu && (
-            //app__navbar-overylay_background
-            <div className="">
-              <motion.div
-                className="app__navbar-smallscreen_overlay slideMenu "
-                animate={{
-                  width: "285px",
-                }}
-                exit={{
-                  width: "-285px",
-                  transition: "555s ease-out",
-                }}
-              >
-                <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
-                  {" "}
-                </div>
-                <ul className="app__navbar-smallscreen_links slideMenu">
+      <AnimatePresence>
+        {toggleMenu && (
+          //app__navbar-overylay_background
+          <div className="">
+            <motion.div
+              className="app__navbar-smallscreen_overlay slideMenu "
+              animate={{
+                width: "285px",
+              }}
+              exit={{
+                width: "-285px",
+                transition: "5s ease-in-out",
+              }}
+            >
+              <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
+                {" "}
+              </div>
+              {showMenu ? (
+                <ul
+                  className={`app__navbar-smallscreen_links slideMenu ${
+                    setshowMenu ? "slideOut" : "slideOut"
+                  }`}
+                >
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
@@ -110,13 +120,15 @@ const Navbar = () => {
                     <Link href="/aboutme">whoAmI</Link>
                   </li>
                 </ul>
+              ) : (
+                ""
+              )}
 
-                <hr />
-              </motion.div>
-            </div>
-          )}
-        </AnimatePresence>
-      </div>
+              <hr />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
