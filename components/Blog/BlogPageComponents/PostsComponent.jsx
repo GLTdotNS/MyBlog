@@ -7,7 +7,7 @@ import { useState } from "react";
 import ReactPaginate from "react-paginate";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
-import Image from "next/image.js";
+
 const PostsComponent = ({ posts }) => {
   const [pageNumber, setPageNumber] = useState(0);
   const postPerPage = 4;

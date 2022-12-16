@@ -16,7 +16,7 @@ const Categories = ({ category }) => {
         <hr />
         {category &&
           category.map((category, index) => (
-            <span className="dropdown-content" key={category.title}>
+            <span className="" key={category.title}>
               {!category ? (
                 "Something went wrong..."
               ) : (

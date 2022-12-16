@@ -10,17 +10,23 @@ import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import { useEffect } from "react";
 import Head from "next/head";
-
+import { useState } from "react";
+import Loading from "../components/Loading/Loading";
 function MyApp({ Component, pageProps }) {
+  const [loading, setLoading] = useState();
+  NProgress.configure({ showSpinner: false });
   useEffect(() => {
-    Router.events.on("routeChangeStart", NProgress.start);
-    Router.events.on("routeChangeComplete", NProgress.done);
-    Router.events.on("routeChangeError", NProgress.done);
-    return () => {
-      Router.events.off("routeChangeStart", NProgress.start);
-      Router.events.off("routeChangeComplete", NProgress.done);
-      Router.events.off("routeChangeError", NProgress.done);
+    Router.onRouteChangeStart = (url) => {
+      NProgress.start();
+      setLoading(true);
     };
+
+    Router.onRouteChangeComplete = () => {
+      NProgress.done();
+      setLoading(false);
+    };
+
+    Router.onRouteChangeError = () => NProgress.done();
   }, []);
   return (
     <>
@@ -35,11 +41,16 @@ function MyApp({ Component, pageProps }) {
           React is one of the most popular JavaScript frameworks for creating web applications. It uses Virtual DOM for memory management and is fully reactive."
           key="desc"
         />
-        <meta name="yandex-verification" content="c1ca0e0d1f097644" />
       </Head>
-
-      <Toaster />
-      <Component {...pageProps} />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          {" "}
+          <Toaster />
+          <Component {...pageProps} />
+        </>
+      )}
     </>
   );
 }
