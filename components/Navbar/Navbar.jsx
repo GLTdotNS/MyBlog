@@ -80,17 +80,16 @@ const Navbar = () => {
                 className="app__navbar-smallscreen_overlay slideMenu "
                 animate={{
                   width: "285px",
-                  transition: "0.1ms",
                 }}
                 exit={{
                   width: "-285px",
-                  transition: "5s",
+                  transition: "555s ease-out",
                 }}
               >
                 <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
                   {" "}
                 </div>
-                <ul className="app__navbar-smallscreen_links ">
+                <ul className="app__navbar-smallscreen_links slideMenu">
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
