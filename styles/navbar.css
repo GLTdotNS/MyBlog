@@ -70,7 +70,7 @@
 
 .app__navbar-smallscreen_overlay {
   height: 100%;
-
+  width: -285px;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -104,6 +104,7 @@
 .app__navbar-smallscreen_links {
   margin-top: 30% !important;
   line-height: 20rem;
+  width: -285px !important;
 
   font-family: "Oswald", sans-serif;
   list-style: none;
