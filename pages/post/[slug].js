@@ -44,7 +44,16 @@ const Post = ({ post, posts, category }) => {
 
         <div className="row">
           <div className="midcolumn">
-            <div className="header"></div>
+            <div className="header">
+              <img
+                loading="lazy"
+                style={{
+                  margin: "35px 15px 0 0",
+                }}
+                src={urlForImg(post.mainImage.asset.url)}
+                alt="Image of the post"
+              />
+            </div>
             <h2>{post.title}</h2>
             <div className="author">
               <img
@@ -155,8 +164,13 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`;
 const isServerReq = (req) => !req.url.startsWith("/_next");
-
-export async function getServerSideProps(context) {
+export async function getStaticPaths() {
+  return {
+    paths: [{ params: { slug: "second-post" } }],
+    fallback: "blocking",
+  };
+}
+export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const post = isServerReq ? await client.fetch(query, { slug }) : null;
   const queryPosts = groq`*[_type == "post"] | order(_createdAt desc)

@@ -25,7 +25,7 @@ const About = ({ banner, references }) => {
           style={{
             marginTop: "1%",
             padding: "5%",
-            backgroundColor: " #181818",
+            backgroundColor: "",
           }}
         ></div>
         <div className="full">

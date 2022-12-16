@@ -24,7 +24,6 @@ const BlockContentComponent = ({ post }) => {
         projectId="6kqgsbl2"
         dataset="production"
       />
-
       {post.Video ? <VideoCard post={post} /> : ""}
     </div>
   );
