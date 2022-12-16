@@ -23,16 +23,21 @@ import Head from "next/head";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
+
   {
     ssr: false,
   }
 );
 
-let BlockContent = block;
+const load = dynamic(() => import("../../components/Loading/Loading"), {
+  ssr: false,
+});
 
+let BlockContent = block;
+let Loading = load;
 const Post = ({ post, posts, category }) => {
   if (!post || !post.mainImage || !post.body || !block) {
-    return <div className="spinner"></div>;
+    return <Loading />;
   }
 
   return (

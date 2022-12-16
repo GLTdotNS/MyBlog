@@ -6,7 +6,6 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Image from "next/image";
 import notFoundImage from "../styles/assets/monkey.png";
-import "react-calendar/dist/Calendar.css";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
