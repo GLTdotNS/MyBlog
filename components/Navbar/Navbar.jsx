@@ -79,10 +79,9 @@ const Navbar = () => {
 
       <AnimatePresence>
         {toggleMenu && (
-          //app__navbar-overylay_background
-          <div className="">
+          <div className="app__navbar-overylay_background">
             <motion.div
-              className="app__navbar-smallscreen_overlay slideMenu "
+              className="app__navbar-smallscreen_overlay slideMenu  "
               animate={{
                 width: "285px",
               }}
