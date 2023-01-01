@@ -88,8 +88,8 @@
   top: 0px;
   left: 0;
   width: 100vw;
-  /* background: rgba(0, 0, 0, 0.5); */
-  background-color: #111;
+  background: rgba(0, 0, 0, 0.5);
+
   height: 100vh;
   flex-direction: row;
 }
