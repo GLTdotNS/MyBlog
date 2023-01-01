@@ -9,6 +9,7 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
+
   const update = () => {
     if (scrollY?.current < scrollY?.prev) {
       setHidden(false);
@@ -85,20 +86,12 @@ const Navbar = () => {
               animate={{
                 width: "285px",
               }}
-              exit={{
-                width: "-285px",
-                transition: "5s ease-in-out",
-              }}
             >
               <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
                 {" "}
               </div>
               {showMenu ? (
-                <ul
-                  className={`app__navbar-smallscreen_links slideMenu ${
-                    setshowMenu ? "slideOut" : "slideOut"
-                  }`}
-                >
+                <ul className={`app__navbar-smallscreen_links slideMenu `}>
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}

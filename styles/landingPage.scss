@@ -205,16 +205,12 @@
   -ms-flex: 1;
   flex: 1;
   border: 1px solid #000;
-  background-image: url("./assets/7YNJPM.webp");
-  background-image: linear-gradient(
-      180deg,
-      hsla(0, 0%, 100%, 0.1),
-      hsla(0, 0%, 100%, 0.1)
-    )
-    url("./assets/7YNJPM.webp");
-
-  background-size: auto, cover;
-  background-repeat: repeat, no-repeat;
+  background-size: contain;
+  overflow: auto;
+  background-repeat: no-repeat;
+  background-image: url("./assets/akali.jpg");
+  background-size: 100% 100%;
+  background-position: center;
 }
 img {
   border: 0;
