@@ -208,7 +208,7 @@
   background-size: contain;
   overflow: auto;
   background-repeat: no-repeat;
-  background-image: url("./assets/akali.jpg");
+  background-image: url("./assets/background.jpg");
   background-size: 100% 100%;
   background-position: center;
 }
@@ -219,8 +219,9 @@ img {
   display: inline-block;
 }
 .landingPage {
-  margin-left: 10%;
+  margin-left: 17%;
   margin-top: 10%;
+  position: fixed;
 }
 .landing-page-link:hover {
   cursor: pointer;
