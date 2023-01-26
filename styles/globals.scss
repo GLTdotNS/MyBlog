@@ -22,16 +22,14 @@ body {
   z-index: -1;
   &::before {
     background-color: #181818;
-    background-repeat: no-repeat;
-
+    background: url("./assets/debian.webp");
     content: "";
     height: 100%;
-    left: 0;
     position: fixed;
-    top: 0;
-    width: 100%;
-    will-change: transform;
+    width: 93%;
     z-index: -1;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 

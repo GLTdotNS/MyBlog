@@ -26,7 +26,7 @@ const Navbar = () => {
     } else {
       setshowMenu(false);
     }
-  }, 190);
+  });
   useEffect(() => {
     return scrollY.onChange(() => update());
   });
@@ -82,7 +82,7 @@ const Navbar = () => {
         {toggleMenu && (
           <div className="app__navbar-overylay_background">
             <motion.div
-              className="app__navbar-smallscreen_overlay slideMenu  "
+              className="app__navbar-smallscreen_overlay slide  "
               animate={{
                 width: "285px",
               }}
@@ -91,7 +91,7 @@ const Navbar = () => {
                 {" "}
               </div>
               {showMenu ? (
-                <ul className={`app__navbar-smallscreen_links slideMenu `}>
+                <ul className={`app__navbar-smallscreen_links  slideMenu`}>
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
@@ -99,7 +99,7 @@ const Navbar = () => {
                     <Link href="/">Index.JS</Link>
                   </li>
                   <li
-                    className="p__opensans"
+                    className="p__opensans "
                     onClick={() => setToggleMenu(false)}
                   >
                     <Link href="/blog">Writing...</Link>
