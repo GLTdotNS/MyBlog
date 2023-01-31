@@ -19,18 +19,8 @@ body {
   min-height: 100%;
   position: relative;
 
-  z-index: -1;
-  &::before {
-    background-color: #181818;
-    background: url("./assets/debian.webp");
-    content: "";
-    height: 100%;
-    position: fixed;
-    width: 93%;
-    z-index: -1;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background: radial-gradient(#333, #181818);
+  background-repeat: no-repeat;
 }
 
 .buttonGit {

@@ -84,15 +84,7 @@ const Navbar = () => {
             <motion.div
               className="app__navbar-smallscreen_overlay slide  "
               animate={{
-                width: navigator.userAgent.match(`/Android/i,
-                /webOS/i,
-                /iPhone/i,
-                /iPad/i,
-                /iPod/i,
-                /BlackBerry/i,
-                /Windows Phone/i`)
-                  ? "285px"
-                  : "100%",
+                width: "285px",
               }}
             >
               <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
