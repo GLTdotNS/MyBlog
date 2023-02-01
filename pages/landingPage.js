@@ -68,12 +68,17 @@ const Landing = () => {
             <Image src={landingImage} />
             <div className="spacer _1em" style={{ marginTop: "10%" }}></div>
             <div id="demo" className="inner-countdown-intro-text typewriter">
-              <h4>Open source</h4>
+              <h4 style={{ color: "green" }}>&#47;&#47; Hello bruh</h4>
 
               <br />
-              <h3>Open Mind</h3>
+              <h3>
+                {" "}
+                <span style={{ color: "blueviolet" }}>const</span>{" "}
+                <span style={{ color: "orange" }}>name</span> ={" "}
+                <span style={{ color: "red" }}>&#34;Georgi&#34;</span>
+              </h3>
             </div>
-            <div className="inner-countdown_typed-text-wrapper">
+            <div className="inner-countdown_typed-text-wrapper ">
               <div
                 style={{
                   marginTop: "5rem",
