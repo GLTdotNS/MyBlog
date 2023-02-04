@@ -3,14 +3,14 @@
 
 .footer_div {
   text-align: left;
-  padding: 5%;
   font-size: 1px;
-
-  background-color: #1a1a1a;
-  width: 85%;
   margin: auto;
-}
 
+  background-color: #000324;
+}
+.copyright {
+  background-color: #000329;
+}
 footer {
   transition: 0.2s ease;
 
@@ -84,7 +84,7 @@ div.social {
 
 .social a {
   margin: 3%;
-  background-color: transparent;
+  background-color: #000324;
   border-radius: 100%;
 }
 
@@ -149,7 +149,9 @@ div.social {
 
   .midcolumn {
     border: none !important;
+    width: 100% !important;
   }
+
   .post_text {
     font-size: 18px !important;
   }
