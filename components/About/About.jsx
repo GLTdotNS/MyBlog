@@ -7,7 +7,8 @@ import Hero from "./Hero/Hero";
 import References from "./Hero/References";
 import Contacts from "./Hero/Contacts";
 import ProjectsComponent from "../Projects/ProjectsComponent";
-
+import asd from "../../styles/assets/akali.jpg";
+import Image from "next/image";
 const About = ({ banner, references }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,38 +20,7 @@ const About = ({ banner, references }) => {
   }
 
   return (
-    <div>
-      <div className="aboutme">
-        <div
-          style={{
-            marginTop: "1%",
-            padding: "5%",
-            backgroundColor: "",
-          }}
-        ></div>
-        <div className="full">
-          <div className="left">
-            <Hero banner={banner} />
-            <Skills />
-          </div>
-
-          <div className="right">
-            <Expirience />
-            <Education />
-            <Hobbies />
-          </div>
-        </div>
-        <hr />
-        <ProjectsComponent />
-
-        <hr />
-        <References references={references} />
-        <hr />
-        <div id="contact">
-          <Contacts />
-        </div>
-      </div>
-    </div>
+  
   );
 };
 

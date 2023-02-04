@@ -18,9 +18,7 @@ body {
   padding: 0;
   min-height: 100%;
   position: relative;
-
-  background: radial-gradient(#333, #181818);
-  background-repeat: no-repeat;
+  background: #457b9d;
 }
 
 .buttonGit {
@@ -112,7 +110,9 @@ body {
   .aboutMePage .leftcolumn {
     display: none;
   }
-
+  .row {
+    width: 100%;
+  }
   .post_text {
     font-size: 16px !important;
   }

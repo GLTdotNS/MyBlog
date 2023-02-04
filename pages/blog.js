@@ -10,6 +10,7 @@ import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
+import logo from "../styles/assets/akali.jpg";
 
 const MainBlogPage = ({ posts, category }) => {
   const [valueToSearch, setValueToSearch] = useState("");
@@ -53,15 +54,15 @@ const MainBlogPage = ({ posts, category }) => {
   };
   return (
     <Layout>
+      <Image src={logo} width="1600" height={500} />
       <div className="row">
         <div className="midcolumn ">
+          <h1 className="slide ">NONCREATIVEBLOG</h1>
           <form
             onSubmit={onFormSubmit}
             className="box "
             style={{ marginTop: "10%" }}
           >
-            <h1 className="slide ">NONCREATIVEBLOG</h1>
-
             <div className="search">
               <input
                 name="service-city"
@@ -70,7 +71,6 @@ const MainBlogPage = ({ posts, category }) => {
                 autoComplete="off"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
-
               <datalist className="datalist">
                 {posts.map((p, index) => (
                   <option className="" key={index}>
@@ -80,7 +80,6 @@ const MainBlogPage = ({ posts, category }) => {
               </datalist>
             </div>
           </form>
-          <hr />
 
           <hr />
           {posts.filter((x) =>

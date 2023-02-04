@@ -3,14 +3,16 @@
 
 .app__navbar {
   position: fixed !important;
-  background-color: #282828;
-  width: 100%;
+  width: 70%;
   top: 0;
   display: flex;
+  margin-left: auto !important;
   justify-content: space-between;
   align-items: center;
   color: white;
   height: 50px;
+  transition: ease-out 0.5s;
+  background-color: #000324;
   padding: 1.5% !important;
   z-index: 1000 !important;
 }
@@ -161,12 +163,13 @@
   }
 
   .app__navbar {
-    position: absolute;
-  }
-
-  .app__navbar {
+    width: 100% !important;
     padding: 1rem;
+
     z-index: 100;
+  }
+  .wrapper {
+    width: 100% !important;
   }
 }
 
@@ -175,6 +178,7 @@
     font-size: 30px;
   }
   .app__navbar {
+    width: 100%;
     padding: 1rem;
     position: fixed;
 

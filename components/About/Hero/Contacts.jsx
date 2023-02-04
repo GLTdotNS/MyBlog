@@ -72,9 +72,15 @@ const Contacts = () => {
 
   return (
     <div>
-      <div className="contactFormContainer aboutme">
+      <div
+        className="aboutme contactFormContainer"
+        style={{ backgroundColor: "white " }}
+      >
         <h2>Message me </h2>
-        <form onSubmit={(e) => handleSubmit(onSubmit(e))}>
+        <form
+          onSubmit={(e) => handleSubmit(onSubmit(e))}
+          style={{ backgroundColor: "white" }}
+        >
           <label htmlFor="fname">Name</label>
           <input
             type="text"

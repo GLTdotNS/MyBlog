@@ -9,11 +9,20 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
+  const [location, setLocation] = useState("");
+
+  useEffect(() => {
+    let index = window.location.href.lastIndexOf("/") + 1;
+    let url = window.location.href;
+    let string = url.slice(index, url.length);
+    setLocation(string);
+  }, []);
 
   const update = () => {
-    if (scrollY?.current < scrollY?.prev) {
-      setHidden(false);
-    } else if (scrollY?.current > 1 && scrollY?.current > scrollY?.prev) {
+    setHidden(false);
+    setHidden(false);
+    if (scrollY?.current == 0 && location == "blog") {
+    } else {
       if (toggleMenu) {
         return;
       }
@@ -35,9 +44,11 @@ const Navbar = () => {
     visible: {
       opacity: 1,
       y: 0,
-      backgroundColor: "#121212",
+      backgroundColor: "transparent",
     },
-    hidden: { opacity: 0, y: -25 },
+    hidden: {
+      backgroundColor: "#000324",
+    },
   };
 
   return (
@@ -49,23 +60,27 @@ const Navbar = () => {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {!toggleMenu ? (
-        <RiMenuUnfoldFill
-          color="#fff"
-          cursor={"pointer"}
-          className=""
-          fontSize={27}
-          onClick={() => setToggleMenu(true)}
-        />
+        <div className="">
+          <RiMenuUnfoldFill
+            fillOpacity={0.8}
+            color="#FFF"
+            cursor={"pointer"}
+            className=""
+            fontSize={40}
+            onClick={() => setToggleMenu(true)}
+          />
+        </div>
       ) : (
         <RiMenuFoldFill
-          fontSize={27}
-          className="overlay__close slideMenu"
+          style={{ transition: 5 }}
+          fontSize={40}
+          className="overlay__close slide"
           onClick={() => setToggleMenu(false)}
           color={"#fff"}
         />
       )}
 
-      <div className="app__navbar-logo ">
+      {/* <div className="app__navbar-logo ">
         <Link href="/">
           <Image
             onClick={() => setToggleMenu(false)}
@@ -76,7 +91,7 @@ const Navbar = () => {
             style={{ borderRadius: "50px" }}
           />
         </Link>
-      </div>
+      </div> */}
 
       <AnimatePresence>
         {toggleMenu && (
@@ -84,12 +99,17 @@ const Navbar = () => {
             <motion.div
               className="app__navbar-smallscreen_overlay slide  "
               animate={{
-                width: "285px",
+                width: "360px",
               }}
             >
-              <div style={{ backgroundColor: "#f9b22a", height: "54px" }}>
-                {" "}
-              </div>
+              <div
+                style={{
+                  backgroundColor: "#f9b22a",
+                  height: "54px",
+                  padding: "1%",
+                }}
+              ></div>
+
               {showMenu ? (
                 <ul className={`app__navbar-smallscreen_links  slideMenu`}>
                   <li
@@ -105,12 +125,12 @@ const Navbar = () => {
                     <Link href="/blog">Writing...</Link>
                   </li>
 
-                  <li
+                  {/* <li
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
                     <Link href="/aboutme">whoAmI</Link>
-                  </li>
+                  </li> */}
                 </ul>
               ) : (
                 ""

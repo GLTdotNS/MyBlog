@@ -10,20 +10,18 @@ const Layout = ({ children }) => {
   const { scrollYProgress } = useViewportScroll();
 
   return (
-    <div className="layout">
+    <main className="main-container row wrapper">
       <header>
         <Navbar />
       </header>
-      <main className="main-container row wrapper">
-        {children}
+      {children}
 
-        <motion.div
-          className="progress-bar"
-          style={{ scaleX: scrollYProgress }}
-        />
-        <Footer />
-      </main>
-    </div>
+      <motion.div
+        className="progress-bar"
+        style={{ scaleX: scrollYProgress }}
+      />
+      <Footer />
+    </main>
   );
 };
 

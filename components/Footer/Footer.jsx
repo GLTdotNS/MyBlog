@@ -10,7 +10,10 @@ const Footer = () => {
         <footer>
           <hr />
 
-          <div className="row primary">
+          <div
+            style={{ backgroundColor: "#000324 !important" }}
+            className="row primary"
+          >
             <div className="column about">
               <h3>Georgi Tonkov</h3>
               <ul>
@@ -43,7 +46,10 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="row copyright">
+          <div
+            className=" copyright"
+            style={{ backgroundColor: "#000324 !important" }}
+          >
             <p id="open_source">
               <a href="https://github.com/GLTdotNS/nextjs" className="links">
                 Open source system
