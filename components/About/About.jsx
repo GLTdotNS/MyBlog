@@ -16,7 +16,7 @@ const About = ({ banner, references }) => {
   }, []);
 
   if (!banner) {
-    <></>;
+    return <div className="spinner"></div>;
   }
 
   return (

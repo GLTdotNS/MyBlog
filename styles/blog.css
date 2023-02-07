@@ -187,15 +187,13 @@ hr {
 }
 
 .inner_post_text {
-  border: 1px solid #333;
-  border-radius: 30px;
   margin-top: 5px;
   padding: 2%;
 }
 
 .initial-post {
-  border: 1px solid #333;
-  width: 80%;
+  border-bottom: 1px solid #333;
+  width: 100%;
   padding: 5%;
   margin: auto;
   margin-top: 2%;
@@ -203,6 +201,11 @@ hr {
   -webkit-transform-origin: 0% 100%;
   -ms-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
+}
+.inner_post_text:hover {
+  transition: ease-in-out 0.3s;
+  opacity: 0.3;
+  cursor: pointer;
 }
 
 /* Clear floats after the columns */

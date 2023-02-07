@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
-import code from "../../styles/assets/code.jpg";
-import Image from "next/image";
+
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -11,21 +10,17 @@ const Navbar = () => {
   const [showMenu, setshowMenu] = useState(false);
   const [location, setLocation] = useState("");
 
-  useEffect(() => {
-    let index = window.location.href.lastIndexOf("/") + 1;
-    let url = window.location.href;
-    let string = url.slice(index, url.length);
-    setLocation(string);
-  }, []);
-
   const update = () => {
-    setHidden(false);
-    setHidden(false);
-    if (scrollY?.current == 0 && location == "blog") {
+    const image = document.getElementById("blurBackground");
+    if (scrollY?.current == 0) {
+      setHidden(false);
+
+      image.classList.remove("blurBackground");
     } else {
       if (toggleMenu) {
         return;
       }
+      image?.classList.add("blurBackground");
       setHidden(true);
     }
   };
@@ -95,7 +90,10 @@ const Navbar = () => {
 
       <AnimatePresence>
         {toggleMenu && (
-          <div className="app__navbar-overylay_background">
+          <div
+            className="app__navbar-overylay_background"
+            onClick={() => setToggleMenu(false)}
+          >
             <motion.div
               className="app__navbar-smallscreen_overlay slide  "
               animate={{

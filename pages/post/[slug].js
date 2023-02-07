@@ -51,6 +51,7 @@ const Post = ({ post, posts, category }) => {
           <div className="midcolumn">
             <div className="header">
               <img
+                id="blurBackground"
                 loading="lazy"
                 style={{
                   margin: "35px 15px 0 0",
