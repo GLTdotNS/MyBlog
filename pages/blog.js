@@ -23,8 +23,8 @@ const MainBlogPage = ({ posts, category }) => {
 
   if (!posts) {
     return (
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
-        <div className="card initial-post">
+      <SkeletonTheme baseColor="#000324" highlightColor="#fff">
+        <div className=" initial-post">
           <h3>
             <Skeleton width={50} />
           </h3>
@@ -54,10 +54,12 @@ const MainBlogPage = ({ posts, category }) => {
   };
   return (
     <Layout>
-      <Image src={logo} width="1600" height={500} />
-      <div className="row">
+      <div id="blurBackground">
+        <Image src={logo} width="1600" height={500} />
+      </div>
+      <div className="row ">
         <div className="midcolumn ">
-          <h1 className="slide ">NONCREATIVEBLOG</h1>
+          <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
           <form
             onSubmit={onFormSubmit}
             className="box "
@@ -69,6 +71,7 @@ const MainBlogPage = ({ posts, category }) => {
                 className="input"
                 placeholder="Search post.."
                 autoComplete="off"
+                id="suggestion"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
               <datalist className="datalist">

@@ -21,23 +21,22 @@ const PostsComponent = ({ posts }) => {
       let minutesToRead = wordsCount.length / 200;
 
       return (
-        <div className=" initial-post" key={post.title}>
-          <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
-          <p>
-            {post.publishedAt
-              ? moment(post.publishedAt).format("YYYY , MMM  DD , HH:MM")
-              : "YYYY-MM-DD hh:mm"}
-          </p>
-          <p>{minutesToRead.toFixed(0)} minutes to read</p>
+        <div
+          className=" initial-post"
+          key={post.title}
+          onClick={() => router.push(`/post/${post.slug.current}`)}
+        >
           <div className="inner_post_text">
+            <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
+
+            <p>{minutesToRead.toFixed(0)} minutes to read</p>
             {post.mainImage ? (
               <img
                 loading="lazy"
                 style={{
                   float: "left",
-                  margin: "35px 15px 0 0",
+                  margin: "5px 15px 0 0",
                   padding: "1%",
-                  borderRadius: "30%",
                 }}
                 src={urlForImg(post.mainImage.asset.url)}
                 alt="Image of the post"
@@ -50,14 +49,6 @@ const PostsComponent = ({ posts }) => {
 
             <span> {post?.description.slice(0, 300)}...</span>
           </div>
-
-          <button
-            onClick={() => router.push(`/post/${post.slug.current}`)}
-            className="btn"
-            style={{ backgroundColor: "transparent" }}
-          >
-            Read more <MdReadMore />
-          </button>
         </div>
       );
     });
