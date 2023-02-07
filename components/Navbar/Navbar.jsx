@@ -8,7 +8,6 @@ const Navbar = () => {
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
-  const [location, setLocation] = useState("");
 
   const update = () => {
     const image = document.getElementById("blurBackground");
