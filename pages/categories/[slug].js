@@ -1,6 +1,6 @@
 // [slug].js
 import groq from "groq";
-import { client } from "../../lib/sanityClient";
+import { client, urlForImg } from "../../lib/sanityClient";
 import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts.jsx";
 import Categories from "../../components/Blog/BlogPageComponents/Categories.jsx";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent.jsx";
@@ -40,6 +40,18 @@ const CategoriesPage = ({ posts, category }) => {
   return (
     <Layout>
       <div className="row">
+        <div id="blurBackground">
+          <img
+            loading="lazy"
+            src={urlForImg(
+              category.filter((x) => x.slug.current === location)[0].image.asset
+                .url
+            )}
+            width="100%"
+            height="500"
+            alt="Image of the post"
+          />
+        </div>
         <div className="midcolumn">
           <form
             onSubmit={onFormSubmit}
