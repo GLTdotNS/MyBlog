@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { RiMenuUnfoldFill, RiMenuFoldFill } from "react-icons/ri";
+import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 
 const Navbar = () => {
   const { scrollY } = useScroll();
@@ -65,7 +65,7 @@ const Navbar = () => {
           />
         </div>
       ) : (
-        <RiMenuFoldFill
+        <RiCloseCircleLine
           style={{ transition: 5 }}
           fontSize={40}
           className="overlay__close slide"
@@ -108,7 +108,7 @@ const Navbar = () => {
               ></div>
 
               {showMenu ? (
-                <ul className={`app__navbar-smallscreen_links  slideMenu`}>
+                <ul className={`app__navbar-smallscreen_links  slide`}>
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
