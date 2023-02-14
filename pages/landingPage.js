@@ -104,7 +104,7 @@ const Landing = () => {
               ></div>
               <Link
                 id="js-clock-hours"
-                href={"/post/zashtoto-si-poet"}
+                href={"https://gltdotns.github.io/"}
                 shallow={true}
               >
                 <p className="landing-page-link">WHOAMI</p>
