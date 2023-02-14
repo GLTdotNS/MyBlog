@@ -150,7 +150,7 @@ hr {
 }
 .row {
   margin: auto;
-  background: linear-gradient(#010103, #000340);
+  background: linear-gradient(#010103, #000340, #000350);
 }
 
 .leftcolumn {
