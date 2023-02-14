@@ -1,11 +1,14 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import Layout from "../Layout/Layout";
+import logo from "../../styles/assets/akali.jpg";
+import Image from "next/image";
 const Loading = () => {
   return (
     <Layout>
-      <SkeletonTheme baseColor="#202020" highlightColor="#444">
+      <SkeletonTheme baseColor="#000350" highlightColor="#444">
         <main className="">
+          <Skeleton width={"100%"} height={500} />
           <div className="row">
             <div className="midcolumn ">
               <form className="box " style={{ marginTop: "10%" }}>
@@ -20,7 +23,7 @@ const Loading = () => {
               <hr />
 
               <hr />
-              <div className="card initial-post">
+              <div className=" initial-post">
                 <h3>
                   <Skeleton width={50} />
                 </h3>
@@ -34,7 +37,7 @@ const Loading = () => {
                   </span>
                 </div>
               </div>
-              <div className="card initial-post">
+              <div className=" initial-post">
                 <h3>
                   <Skeleton width={50} />
                 </h3>
@@ -48,7 +51,7 @@ const Loading = () => {
                   </span>
                 </div>
               </div>
-              <div className="card initial-post">
+              <div className=" initial-post">
                 <h3>
                   <Skeleton width={50} />
                 </h3>

@@ -131,7 +131,13 @@ export const getStaticProps = async () => {
     groq`*[_type == "category"]{
   _id,
   slug,
-  title
+  title,
+  mainImage{
+    asset->{
+    _id,
+    url
+  }
+}
 
   }`
   );
