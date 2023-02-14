@@ -499,9 +499,9 @@ textarea {
 }
 
 .slide {
-  -webkit-animation: slideIn 1s forwards;
-  -moz-animation: slideIn 1s forwards;
-  animation: slideIn 1s forwards;
+  -webkit-animation: slideIn 0.5s forwards;
+  -moz-animation: slideIn 0.5s forwards;
+  animation: slideIn 0.5s forwards;
 }
 
 @-webkit-keyframes slideIn {
