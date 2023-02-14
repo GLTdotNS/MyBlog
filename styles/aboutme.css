@@ -484,20 +484,6 @@ textarea {
   padding: 20px;
 }
 
-.marquee {
-  height: 100% !important;
-  width: 100%;
-  margin-bottom: 5%;
-  overflow: hidden;
-  position: relative;
-  margin: auto;
-  margin-top: 2%;
-  display: block;
-  width: 100%;
-  padding: 2%;
-  height: 30px;
-}
-
 .slide {
   -webkit-animation: slideIn 0.5s forwards;
   -moz-animation: slideIn 0.5s forwards;
@@ -626,14 +612,6 @@ textarea {
   position: relative;
 }
 
-.about-me-container {
-  margin: 150px 0 100px;
-  width: 100%;
-  display: grid;
-  grid-template-columns: 40% 60%;
-  grid-gap: 50px;
-}
-
 .left-col,
 .right-col {
   position: relative;
@@ -659,81 +637,6 @@ textarea {
   transform: rotate(-30deg);
 }
 
-.about-image {
-  border-radius: 10px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.25);
-}
-
-.about-para {
-  font-size: 1.2rem;
-  font-weight: 300;
-  line-height: 35px;
-  margin-bottom: 40px;
-}
-
-.skill-container {
-  position: relative;
-  margin-top: 100px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-}
-
-.skill-card {
-  height: 200px;
-  border-radius: 10px;
-  border: 1px solid #464646;
-  text-align: center;
-  position: relative;
-  cursor: pointer;
-  transition: 0.5s;
-}
-
-.skill {
-  font-size: 2rem;
-  color: #464646;
-  line-height: 200px;
-}
-
-.skill-card:hover {
-  background: var(--bg);
-}
-
-.skill-card:hover .skill {
-  color: #fff;
-}
-
-.skill-card.large {
-  grid-column: 2 span;
-}
-
-/* project section */
-
-.project,
-.contact {
-  position: relative;
-  padding: 50px 10vw;
-}
-
-.filters {
-  width: fit-content;
-  display: block;
-  margin: 100px auto;
-}
-
-.filter-btn {
-  padding: 10px 20px;
-  border-radius: 5px;
-  border: none;
-  text-transform: capitalize;
-  margin: 0 5px 10px;
-  cursor: pointer;
-}
-
-.filter-btn.active {
-  background: #ff3559;
-  color: #fff;
-}
 @media (max-width: 996px) {
   html {
     font-size: 14px;

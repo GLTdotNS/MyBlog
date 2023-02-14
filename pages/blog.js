@@ -55,7 +55,12 @@ const MainBlogPage = ({ posts, category }) => {
   return (
     <Layout>
       <div id="blurBackground">
-        <Image src={logo} width="1600" height={500} />
+        <Image
+          src={logo}
+          style={{
+            height: "500px",
+          }}
+        />
       </div>
       <div className="row ">
         <div className="midcolumn ">

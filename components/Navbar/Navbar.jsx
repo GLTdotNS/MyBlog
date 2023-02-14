@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
-
+import code from "../../styles/assets/code.jpg";
+import Image from "next/image";
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -74,7 +75,7 @@ const Navbar = () => {
         />
       )}
 
-      {/* <div className="app__navbar-logo ">
+      <div className="app__navbar-logo ">
         <Link href="/">
           <Image
             onClick={() => setToggleMenu(false)}
@@ -85,7 +86,7 @@ const Navbar = () => {
             style={{ borderRadius: "50px" }}
           />
         </Link>
-      </div> */}
+      </div>
 
       <AnimatePresence>
         {toggleMenu && (
