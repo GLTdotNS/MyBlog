@@ -42,95 +42,93 @@ const Post = ({ post, posts, category }) => {
 
   return (
     <Layout>
-      <div className="main">
+      <div className="main postPage">
         <Head>
           <meta name="description" content={`${post.description}`} key="desc" />
         </Head>
 
-        <div className="row">
-          <div className="midcolumn">
-            <div className="header">
-              <img
-                id="blurBackground"
-                loading="lazy"
-                style={{
-                  margin: "35px 15px 0 0",
-                }}
-                src={urlForImg(post.mainImage.asset.url)}
-                alt="Image of the post"
-              />
-            </div>
-            <h2>{post.title}</h2>
-            <div className="author">
-              <img
-                src={urlForImg(post.authorImage).url()}
-                alt="my image"
-                className="mypic"
-                width={100}
-                height={100}
-                style={{ borderRadius: "100%", float: "right" }}
-              />
-              <h4>
-                {" "}
-                <BsPencilSquare />: {post.name}
-              </h4>
-              <h4>
-                <MdDateRange />:{" "}
-                {post.publishedAt
-                  ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
-                  : "YYYY-MM-DD hh:mm"}
-              </h4>
-              <hr />
-            </div>
-            <BlockContent post={post} />
+        <div className="midcolumn postPage">
+          <div className="header">
+            <img
+              id="blurBackground"
+              loading="lazy"
+              style={{
+                margin: "35px 15px 0 0",
+              }}
+              src={urlForImg(post.mainImage.asset.url)}
+              alt="Image of the post"
+            />
+          </div>
+          <h2>{post.title}</h2>
+          <div className="author">
+            <img
+              src={urlForImg(post.authorImage).url()}
+              alt="my image"
+              className="mypic"
+              width={100}
+              height={100}
+              style={{ borderRadius: "100%", float: "right" }}
+            />
+            <h4>
+              {" "}
+              <BsPencilSquare />: {post.name}
+            </h4>
+            <h4>
+              <MdDateRange />:{" "}
+              {post.publishedAt
+                ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
+                : "YYYY-MM-DD hh:mm"}
+            </h4>
+            <hr />
+          </div>
+          <BlockContent post={post} />
+          <hr />
+          <div>
+            <div className="btn_wrap">
+              <span className="shareSpan">
+                <BsFillShareFill />
+              </span>
+              <div className="shareContainer">
+                <FacebookShareButton
+                  className="i"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <FacebookIcon size={30} color="blue" />
+                </FacebookShareButton>
 
-            <div style={{ backgroundColor: "#282828" }}>
-              <div className="btn_wrap">
-                <span className="shareSpan">
-                  <BsFillShareFill />
-                </span>
-                <div className="shareContainer">
-                  <FacebookShareButton
-                    className="i"
-                    url={`https://glt-blog.vercel.app/post/${post.slug.current}`}
-                  >
-                    <FacebookIcon size={30} color="blue" />
-                  </FacebookShareButton>
+                <FacebookMessengerShareButton
+                  onShareWindowClose={() => window.close()}
+                  className="i"
+                  appId="585823522989597"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <FacebookMessengerIcon size={30} />
+                </FacebookMessengerShareButton>
 
-                  <FacebookMessengerShareButton
-                    onShareWindowClose={() => window.close()}
-                    className="i"
-                    appId="585823522989597"
-                    url={`https://glt-blog.vercel.app/post/${post.slug.current}`}
-                  >
-                    <FacebookMessengerIcon size={30} />
-                  </FacebookMessengerShareButton>
+                <TwitterShareButton
+                  className="i"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <TwitterIcon size={30} color="blue" />
+                </TwitterShareButton>
 
-                  <TwitterShareButton
-                    className="i"
-                    url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                  >
-                    <TwitterIcon size={30} color="blue" />
-                  </TwitterShareButton>
-
-                  <ViberShareButton
-                    onShareWindowClose={() => window.close()}
-                    className="i"
-                    appId="585823522989597"
-                    url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                  >
-                    <ViberIcon size={30} />
-                  </ViberShareButton>
-                </div>
+                <ViberShareButton
+                  onShareWindowClose={() => window.close()}
+                  className="i"
+                  appId="585823522989597"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <ViberIcon size={30} />
+                </ViberShareButton>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="rightcolumn" style={{ width: "25%" }}>
-            <Categories category={category} />
+        <div className="rightcolumn" style={{ width: "25%" }}>
+          <Categories category={category} />
 
-            <RecentlyPosts posts={posts} />
-          </div>
+          <RecentlyPosts posts={posts} />
         </div>
       </div>
     </Layout>

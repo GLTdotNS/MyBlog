@@ -114,6 +114,7 @@
 
 #nprogress .bar {
   background: red !important;
+  z-index: 1000;
 }
 #nprogress .spinner-icon {
   border-top-color: red !important;
@@ -142,14 +143,6 @@
 
 @media screen and (max-width: 1150px) {
   .app__navbar-links {
-    display: none;
-  }
-
-  .leftcolumn .title {
-    margin-top: 10% !important;
-  }
-
-  .aboutMePage .leftcolumn {
     display: none;
   }
 
@@ -185,7 +178,7 @@
     z-index: 100;
   }
   .post_text {
-    font-size: 15px !important;
+    font-size: 19px !important;
   }
 }
 

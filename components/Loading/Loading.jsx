@@ -6,7 +6,7 @@ import Image from "next/image";
 const Loading = () => {
   return (
     <Layout>
-      <SkeletonTheme baseColor="#000350" highlightColor="#444">
+      <SkeletonTheme baseColor="#202124" highlightColor="#444">
         <main className="">
           <Skeleton width={"100%"} height={500} />
           <div className="row">
