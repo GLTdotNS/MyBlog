@@ -7,10 +7,7 @@ const Categories = ({ category }) => {
   }
 
   return (
-    <div
-      className="categories  columns"
-      style={{ backgroundColor: "#333", borderRadius: "10px" }}
-    >
+    <div className="categories columns">
       <div className="dropdown ">
         <h3 className="p__opensans  title">Categories</h3>
         <hr />

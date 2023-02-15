@@ -8,7 +8,6 @@
   font-family: "Great Vibes", cursive;
   cursor: pointer;
 }
-
 #sanity:hover {
   width: 120px;
   transition: 0.5s ease;
@@ -16,8 +15,6 @@
   opacity: 0.8;
 }
 .footer {
-  background: #000324;
-  padding: 30px 0px;
   font-family: "Play", sans-serif;
   text-align: center;
   border-top: 1px solid #333;
@@ -33,7 +30,7 @@
 
 .footer .footerRow a {
   text-decoration: none;
-  color: gray;
+  color: #4ba6e7;
   transition: 0.5s;
 }
 
@@ -74,5 +71,9 @@
   .footer .footerRow svg {
     margin: 0% 3%;
     float: right;
+  }
+  .row,
+  .input {
+    width: 100%;
   }
 }
