@@ -27,7 +27,7 @@ export const getServerSideProps = async ({
   params: { searchTerm: string };
 }) => {
   const res = await fetch(
-    `${"http://localhost:3000/"}/api/search/${searchTerm}`
+    `${"https://www.noncreativeblog.net/"}/api/search/${searchTerm}`
   );
 
   const response = await res.json();
