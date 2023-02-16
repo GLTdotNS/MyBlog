@@ -21,6 +21,14 @@ const MainBlogPage = ({ posts, category }) => {
     window.scrollTo(0, 0);
   }, []);
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (valueToSearch) {
+      router.push(`/search/${valueToSearch}`);
+    }
+  };
+
   if (!posts) {
     return (
       <SkeletonTheme baseColor="#000324" highlightColor="#fff">
@@ -42,16 +50,16 @@ const MainBlogPage = ({ posts, category }) => {
     );
   }
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    const currentSlug = posts.filter((x) =>
-      x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-    )[0]?.slug.current;
+  // const onFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   const currentSlug = posts.filter((x) =>
+  //     x.title.toLowerCase().includes(valueToSearch.toLowerCase())
+  //   )[0]?.slug.current;
 
-    currentSlug === undefined
-      ? router.push(window.location.href + "/" + "not-founded-post")
-      : router.push("/post/" + currentSlug);
-  };
+  //   currentSlug === undefined
+  //     ? router.push(window.location.href + "/" + "not-founded-post")
+  //     : router.push("/post/" + currentSlug);
+  // };
   return (
     <Layout>
       <div id="blurBackground">
@@ -66,12 +74,13 @@ const MainBlogPage = ({ posts, category }) => {
         <div className="midcolumn ">
           <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
           <form
-            onSubmit={onFormSubmit}
+            onSubmit={handleSearch}
             className="box "
             style={{ marginTop: "10%" }}
           >
             <div className="search">
               <input
+                value={valueToSearch}
                 name="service-city"
                 className="input"
                 placeholder="Search post.."
@@ -79,32 +88,12 @@ const MainBlogPage = ({ posts, category }) => {
                 id="suggestion"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
-              <datalist className="datalist">
-                {posts.map((p, index) => (
-                  <option className="" key={index}>
-                    {p.title}
-                  </option>
-                ))}
-              </datalist>
             </div>
           </form>
 
           <hr />
-          {posts.filter((x) =>
-            x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-          ).length > 0 ? (
-            <PostsComponent
-              posts={posts.filter((x) =>
-                x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-              )}
-            />
-          ) : (
-            <div style={{ minHeight: "100vh", textAlign: "center" }}>
-              <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
-              <Image src={notFoundImage} width="350px" height="300px" />
-              <p>I am probably working on something that has blown up.</p>
-            </div>
-          )}
+
+          <PostsComponent posts={posts} />
         </div>
         <div className="rightcolumn">
           <Categories category={category} />
