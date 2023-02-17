@@ -13,21 +13,10 @@ import { useRouter } from "next/router";
 import logo from "../styles/assets/akali.jpg";
 
 const MainBlogPage = ({ posts, category }) => {
-  const [valueToSearch, setValueToSearch] = useState("");
-  const router = useRouter();
-
   useEffect(() => {
     document.title = "NONCREATIVEBLOG";
     window.scrollTo(0, 0);
   }, []);
-
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    if (valueToSearch) {
-      router.push(`/search/${valueToSearch}`);
-    }
-  };
 
   if (!posts) {
     return (
@@ -50,16 +39,6 @@ const MainBlogPage = ({ posts, category }) => {
     );
   }
 
-  // const onFormSubmit = (e) => {
-  //   e.preventDefault();
-  //   const currentSlug = posts.filter((x) =>
-  //     x.title.toLowerCase().includes(valueToSearch.toLowerCase())
-  //   )[0]?.slug.current;
-
-  //   currentSlug === undefined
-  //     ? router.push(window.location.href + "/" + "not-founded-post")
-  //     : router.push("/post/" + currentSlug);
-  // };
   return (
     <Layout>
       <div id="blurBackground">
@@ -73,23 +52,6 @@ const MainBlogPage = ({ posts, category }) => {
       <div className="row ">
         <div className="midcolumn ">
           <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
-          <form
-            onSubmit={handleSearch}
-            className="box "
-            style={{ marginTop: "10%" }}
-          >
-            <div className="search">
-              <input
-                value={valueToSearch}
-                name="service-city"
-                className="input"
-                placeholder="Search post.."
-                autoComplete="off"
-                id="suggestion"
-                onChange={(e) => setValueToSearch(e.target.value.trim())}
-              />
-            </div>
-          </form>
 
           <hr />
 

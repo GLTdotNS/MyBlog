@@ -2,14 +2,23 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
-import code from "../../styles/assets/code.jpg";
-import Image from "next/image";
+import { useRouter } from "next/router";
 const Navbar = () => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
+  const [valueToSearch, setValueToSearch] = useState("");
+  const [text, setText] = useState(false);
+  const router = useRouter();
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    if (valueToSearch) {
+      router.push(`/search/${valueToSearch}`);
+    }
+  };
   const update = () => {
     const image = document.getElementById("blurBackground");
     if (scrollY?.current == 0) {
@@ -73,21 +82,21 @@ const Navbar = () => {
           onClick={() => setToggleMenu(false)}
           color={"#fff"}
         />
-      )}
-
-      <div className="app__navbar-logo ">
-        <Link href="/">
-          <Image
-            onClick={() => setToggleMenu(false)}
-            alt="logo"
-            src={code}
-            width={40}
-            height={40}
-            style={{ borderRadius: "50px" }}
+      )}{" "}
+      <form onSubmit={handleSearch} className="box ">
+        <div className="search ">
+          <input
+            onFocus={() => setText("asd")}
+            onMouseLeave={() =>
+              setText(String.fromCharCode(parseInt(16, `U+1F50D`)))
+            }
+            onChange={(e) => setValueToSearch(e.target.value)}
+            className="input"
+            placeholder="&#128269;"
+            autoComplete="off"
           />
-        </Link>
-      </div>
-
+        </div>
+      </form>
       <AnimatePresence>
         {toggleMenu && (
           <div

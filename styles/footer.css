@@ -72,8 +72,10 @@
     margin: 0% 3%;
     float: right;
   }
-  .row,
-  .input {
+  .row {
     width: 100%;
+  }
+  .box .input:hover {
+    width: 80%;
   }
 }
