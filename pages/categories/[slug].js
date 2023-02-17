@@ -56,25 +56,17 @@ const CategoriesPage = ({ posts, category }) => {
           <form
             onSubmit={onFormSubmit}
             style={{ marginTop: "10%" }}
-            className="box aboutme"
+            className="box "
           >
             <h1 className="">{location}</h1>
-            <div className="search ">
+            <div className="box">
               <input
-                className="input"
+                className="categoriesSearch"
                 type="text"
                 placeholder={`Search in ${location}`}
                 autoComplete="off"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
-
-              <datalist id="suggestions">
-                {posts.map((p, index) => (
-                  <option className="option" key={index}>
-                    {p.title}
-                  </option>
-                ))}
-              </datalist>
             </div>
           </form>
           <hr />

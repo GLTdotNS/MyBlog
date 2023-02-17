@@ -28,9 +28,9 @@ export default async function handler(
   if (req.method === "GET") {
     const { id } = req.query;
 
-    const videosQuery = searchPostsQuery(id);
+    const postQuery = searchPostsQuery(id);
 
-    const posts = await client.fetch(videosQuery);
+    const posts = await client.fetch(postQuery);
     res.status(200).json(posts);
   }
 }
