@@ -27,8 +27,7 @@ const Search = ({ posts }) => {
                 style={{ backgroundColor: "transparent", height: "100px" }}
               ></div>
               <h1>
-                Резултати от търсенето съдържащи -{" "}
-                {searchTerm.toString().toLocaleUpperCase()}
+              Резултати от търсенето съдържащи - {searchTerm.toString().toLocaleUpperCase()}
               </h1>
               <hr></hr>
               <PostsComponent posts={posts} />
