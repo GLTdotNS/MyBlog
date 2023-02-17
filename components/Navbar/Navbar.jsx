@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
+import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
 const Navbar = () => {
   const { scrollY } = useScroll();
@@ -64,8 +65,8 @@ const Navbar = () => {
       transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
     >
       {!toggleMenu ? (
-        <div className="">
-          <RiMenuUnfoldFill
+        <div className="ovarlay_open">
+          <CgMenuLeftAlt
             fillOpacity={0.8}
             color="#FFF"
             cursor={"pointer"}
