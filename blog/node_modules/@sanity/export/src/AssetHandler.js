@@ -124,7 +124,7 @@ class AssetHandler {
     const isImage = assetDoc._type === 'sanity.imageAsset'
 
     const url = parseUrl(assetDoc.url, true)
-    if (isImage && ['cdn.sanity.io', 'cdn.sanity.work'].includes(url.hostname)) {
+    if (isImage && ['cdn.sanity.io', 'cdn.sanity.work'].includes(url.hostname) && token) {
       headers.Authorization = `Bearer ${token}`
       url.query = {...(url.query || {}), dlRaw: 'true'}
     }
@@ -167,14 +167,14 @@ class AssetHandler {
     const remoteSha1 = stream.headers['x-sanity-sha1']
     const remoteMd5 = stream.headers['x-sanity-md5']
     const hasHash = Boolean(remoteSha1 || remoteMd5)
-    const method = md5 ? 'md5' : 'sha1'
+    const method = sha1 ? 'sha1' : 'md5'
 
-    let differs = false
-    if (remoteMd5 && md5) {
-      differs = remoteMd5 !== md5
-    } else if (remoteSha1 && sha1) {
-      differs = remoteSha1 !== sha1
-    }
+    // Asset validity is primarily determined by the sha1 hash. However, the sha1 hash is computed
+    // before certain processes (i.e. svg sanitization) which can result in a different hash.
+    // When the sha1 hashes don't match, fallback to using the md5 hash.
+    const sha1Differs = remoteSha1 && sha1 !== remoteSha1
+    const md5Differs = remoteMd5 && md5 !== remoteMd5
+    const differs = sha1Differs && md5Differs
 
     if (differs && attemptNum < 3) {
       debug('%s does not match downloaded asset, retrying (#%d) [%s]', method, attemptNum + 1, url)
