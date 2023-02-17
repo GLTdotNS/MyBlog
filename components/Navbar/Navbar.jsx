@@ -91,7 +91,7 @@ const Navbar = () => {
             onMouseLeave={() =>
               setText(String.fromCharCode(parseInt(16, `U+1F50D`)))
             }
-            onChange={(e) => setValueToSearch(e.target.value)}
+            onChange={(e) => setValueToSearch(e.target.value.trim())}
             className="input"
             placeholder="&#128269;"
             autoComplete="off"
