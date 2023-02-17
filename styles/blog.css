@@ -47,16 +47,17 @@ input:focus::placeholder {
   font-size: 15px;
   color: white;
   border-radius: 100%;
-  border: 1px solid white;
+  border: 1px solid none;
   opacity: 0.8;
-  background-color: white;
+  box-shadow: 0 10px 15px rgb(0 0 0 / 1);
+  cursor: pointer;
 }
 
 .box .input:focus {
   background-color: #4ba6e7;
   width: 20%;
   height: 40px;
-
+  cursor: text;
   background: #333;
   border-radius: 5px;
   box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px black;

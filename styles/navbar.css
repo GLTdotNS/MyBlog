@@ -16,12 +16,6 @@
   padding: 1.5% !important;
   z-index: 1000 !important;
 }
-.slideMenu {
-  -webkit-animation: slideIn 0.5s ease-in-out;
-  -moz-animation: slideIn 0.5s ease-in-out;
-  animation: slideIn 0.5s ease-in-out;
-  transition: 0.25s;
-}
 
 @-webkit-keyframes slideIn {
   0% {
@@ -65,7 +59,14 @@
 .app__navbar-logo:hover {
   cursor: pointer;
 }
-
+.ovarlay_open:hover {
+  background-color: #f9b22a;
+  border-radius: 20%;
+}
+.ovarlay_open {
+  padding: 5px;
+  transition: 0.5s ease;
+}
 .app__navbar-smallscreen {
   display: flex;
 }
