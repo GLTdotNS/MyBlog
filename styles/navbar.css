@@ -73,11 +73,10 @@
 
 .app__navbar-smallscreen_overlay {
   height: 100%;
-  width: -285px;
+  width: 200px !important  ;
   position: fixed;
   z-index: 1;
-  top: 0;
-  left: 0;
+
   background-color: rgb(18, 18, 18);
   box-shadow: 15px 0 8px -10px rgb(18, 18, 18);
   -webkit-transform-origin: 0% 100%;
@@ -91,8 +90,7 @@
   top: 0px;
   left: 0;
   width: 100vw;
-  background: rgba(0, 0, 0, 0.5);
-
+  overflow: hidden !important;
   height: 100vh;
   flex-direction: row;
 }
@@ -123,7 +121,7 @@
 }
 
 .app__navbar-smallscreen_links li {
-  font: 40px Arial;
+  font: 27px Arial;
   color: white;
   line-height: 2em;
   font-family: "Oswald", sans-serif;
@@ -134,7 +132,7 @@
 }
 .app__navbar-smallscreen_links li:hover {
   background-position: left;
-  background-size: 200%;
+  background-size: 100%;
   color: wheat;
 }
 .app__navbar-smallscreen_links li:active {

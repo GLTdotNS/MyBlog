@@ -61,14 +61,6 @@ const Post = ({ post, posts, category }) => {
           </div>
           <h2>{post.title}</h2>
           <div className="author">
-            <img
-              src={urlForImg(post.authorImage).url()}
-              alt="my image"
-              className="mypic"
-              width={100}
-              height={100}
-              style={{ borderRadius: "100%", float: "right" }}
-            />
             <h4>
               {" "}
               <BsPencilSquare />: {post.name}

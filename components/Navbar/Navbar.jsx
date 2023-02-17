@@ -112,7 +112,7 @@ const Navbar = () => {
             >
               <div
                 style={{
-                  backgroundColor: "#f9b22a",
+                  backgroundColor: "#333",
                   height: "54px",
                   padding: "1%",
                 }}
