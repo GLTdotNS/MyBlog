@@ -58,12 +58,16 @@ const CategoriesPage = ({ posts, category }) => {
             style={{ marginTop: "10%" }}
             className="box "
           >
-            <h1 className="">{location}</h1>
+            <h1 className="">
+              {category.filter((x) => x.slug.current === location)[0].title}
+            </h1>
             <div className="box">
               <input
                 className="categoriesSearch"
                 type="text"
-                placeholder={`Search in ${location}`}
+                placeholder={`Търсене в/във ${
+                  category.filter((x) => x.slug.current === location)[0].title
+                }`}
                 autoComplete="off"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
               />
