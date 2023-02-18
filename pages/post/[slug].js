@@ -39,9 +39,6 @@ const load = dynamic(() => import("../../components/Loading/Loading"), {
 let BlockContent = block;
 let Loading = load;
 const Post = ({ post, posts, category }) => {
-  if (!post || !post.mainImage || !post.body || !block) {
-    return <Loading />;
-  }
   let cont;
   let midcolumn;
   useEffect(() => {
@@ -80,6 +77,9 @@ const Post = ({ post, posts, category }) => {
       default:
         break;
     }
+  }
+  if (!post || !post.mainImage || !post.body || !block) {
+    return <Loading />;
   }
 
   return (
