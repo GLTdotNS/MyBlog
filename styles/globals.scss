@@ -29,7 +29,6 @@ body {
   margin: auto;
   background: linear-gradient(184deg, #010103, #1a1a1a, #262626);
 
-  color: white;
   font-size: 17px;
 }
 .wrapper {
@@ -208,8 +207,7 @@ a {
     border: none !important;
   }
 
-  .midcolumn,
-  .footer_div {
+  .midcolumn {
     position: relative !important;
     width: 100% !important;
   }

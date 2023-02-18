@@ -15,7 +15,7 @@ const BlockContentComponent = ({ post }) => {
   }, []);
 
   return (
-    <div className="post_text ">
+    <div>
       <BlockContent
         blocks={post.body}
         serializers={serializers}

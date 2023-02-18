@@ -4,9 +4,12 @@ import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPost
 import dynamic from "next/dynamic";
 import Categories from "../../components/Blog/BlogPageComponents/Categories";
 import moment from "moment";
-import { MdDateRange } from "react-icons/md";
+import { MdDateRange, MdOutlineInvertColors } from "react-icons/md";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
+import { AiOutlineFontSize, AiOutlineFontColors } from "react-icons/ai";
+import { VscColorMode } from "react-icons/vsc";
 import Layout from "../../components/Layout/Layout";
+import { useEffect } from "react";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -39,15 +42,54 @@ const Post = ({ post, posts, category }) => {
   if (!post || !post.mainImage || !post.body || !block) {
     return <Loading />;
   }
+  let cont;
+  let midcolumn;
+  useEffect(() => {
+    cont = document.getElementById("container");
+    midcolumn = document.getElementById("mid");
+  }, []);
+  function changeSizeByBtn(name) {
+    switch (name) {
+      case "btn1":
+        cont.style.fontSize = "17px";
+        break;
+      case "btn2":
+        cont.style.fontSize = "20px";
+        break;
+      case "btn3":
+        cont.style.fontSize = "30px";
+        break;
+      default:
+        break;
+    }
+  }
+
+  function changeColorSchema(name) {
+    switch (name) {
+      case "btn1":
+        midcolumn.style.color = "black";
+        cont.style.color = "black";
+        midcolumn.style.backgroundColor = "white";
+        break;
+      case "btn2":
+        cont.style.color = "#fff";
+        midcolumn.style.color = "#fff";
+        midcolumn.style.backgroundColor = "#202124";
+        break;
+
+      default:
+        break;
+    }
+  }
 
   return (
     <Layout>
-      <div className="main postPage">
+      <div className="main postPage ">
         <Head>
           <meta name="description" content={`${post.description}`} key="desc" />
         </Head>
 
-        <div className="midcolumn postPage">
+        <div className="midcolumn postPage dropdown" id="mid">
           <div className="header">
             <img
               id="blurBackground"
@@ -73,7 +115,10 @@ const Post = ({ post, posts, category }) => {
             </h4>
             <hr />
           </div>
-          <BlockContent post={post} />
+          <div className="post_text " id="container">
+            <BlockContent post={post} />
+          </div>
+
           <hr />
           <div>
             <div className="btn_wrap">
@@ -117,10 +162,65 @@ const Post = ({ post, posts, category }) => {
           </div>
         </div>
 
-        <div className="rightcolumn" style={{ width: "25%" }}>
-          <Categories category={category} />
+        <div className="rightcolumn">
+          <div className="dropdown">
+            {" "}
+            <center>
+              <h1 style={{ padding: "1%" }}>
+                <AiOutlineFontSize />
+              </h1>
+              <button
+                className="settingBtn"
+                onClick={(e) => changeSizeByBtn(e.target.name)}
+                type="button"
+                name="btn1"
+              >
+                -A
+              </button>
+              <button
+                className="settingBtn"
+                onClick={(e) => changeSizeByBtn(e.target.name)}
+                type="button"
+                name="btn2"
+              >
+                A
+              </button>
+              <button
+                className="settingBtn"
+                onClick={(e) => changeSizeByBtn(e.target.name)}
+                type="button"
+                name="btn3"
+              >
+                A+
+              </button>
+              <br />
+              <br />
+            </center>
+            <center>
+              <h1 style={{ padding: "1%" }}>
+                <AiOutlineFontColors />
+              </h1>
 
-          <RecentlyPosts posts={posts} />
+              <button
+                id="white"
+                className="settingBtn"
+                onClick={(e) => changeColorSchema(e.target.name)}
+                type="button"
+                name="btn1"
+              ></button>
+
+              <button
+                id="dark"
+                className="settingBtn"
+                onClick={(e) => changeColorSchema(e.target.name)}
+                type="button"
+                name="btn2"
+              ></button>
+
+              <br />
+              <br />
+            </center>
+          </div>
         </div>
       </div>
     </Layout>
