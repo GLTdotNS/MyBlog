@@ -39,8 +39,8 @@ body {
 .header img {
   display: block;
   width: 100% !important;
-  height: 300px !important;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
 }
 .blurBackground {
   filter: blur(4px);
@@ -107,7 +107,6 @@ body {
     width: 100% !important;
   }
   .post_text {
-    font-size: 17px !important;
   }
 
   ::-webkit-scrollbar {
@@ -126,9 +125,6 @@ body {
 
   .row {
     width: 100%;
-  }
-  .post_text {
-    font-size: 16px !important;
   }
 }
 
@@ -154,9 +150,6 @@ a {
     background-color: #181818;
     font-size: 18px !important;
   }
-  .post_text {
-    font-size: 18px !important;
-  }
 
   .main,
   .row {
@@ -177,9 +170,6 @@ a {
   .main {
     width: 100% !important;
   }
-  .post_text {
-    font-size: 18px !important;
-  }
 
   .rightcolumn,
   .initial-post {
@@ -195,9 +185,6 @@ a {
   .rightcolumn,
   .initial-post {
     width: 100% !important;
-  }
-  .post_text {
-    font-size: 18px !important;
   }
 }
 

@@ -68,7 +68,7 @@ const Navbar = () => {
         <div className="ovarlay_open">
           <CgMenuLeftAlt
             fillOpacity={0.8}
-            color="#FFF"
+            color="blue"
             cursor={"pointer"}
             className=""
             fontSize={40}
