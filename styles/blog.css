@@ -180,7 +180,7 @@ hr {
 }
 .rightcolumn {
   transition: 0.1s ease;
-  float: right;
+  float: left;
   width: 25%;
   background-color: transparent;
   box-sizing: border-box;

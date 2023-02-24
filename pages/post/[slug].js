@@ -66,7 +66,7 @@ const Post = ({ post, posts, category }) => {
       case "btn1":
         midcolumn.style.color = "black";
         cont.style.color = "black";
-        midcolumn.style.backgroundColor = "white";
+        midcolumn.style.backgroundColor = "#FAF9F6";
         break;
       case "btn2":
         cont.style.color = "#fff";
@@ -123,7 +123,7 @@ const Post = ({ post, posts, category }) => {
           <div>
             <div className="btn_wrap">
               <span className="shareSpan">
-                <BsFillShareFill />
+                <BsFillShareFill color="blue" />
               </span>
               <div className="shareContainer">
                 <FacebookShareButton
@@ -221,6 +221,7 @@ const Post = ({ post, posts, category }) => {
               <br />
             </center>
           </div>
+          <RecentlyPosts posts={posts} />
         </div>
       </div>
     </Layout>
