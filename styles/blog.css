@@ -122,6 +122,19 @@ hr {
 .dropdown {
   box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px #636363;
 }
+
+#settingMenu {
+  background-color: #202124;
+  height: 0px;
+  width: 200px;
+  -webkit-transition: height 0.3s;
+  transition: height 0.2s;
+}
+#center {
+  opacity: 0;
+  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-out;
+}
 .columns .title {
   margin-top: 20% !important;
   background-color: #111;
@@ -132,7 +145,7 @@ hr {
   display: block;
 }
 .post_text {
-  padding: 5%;
+  padding: 8%;
   border-color: transparent;
   font-size: 20px;
 }
@@ -165,7 +178,9 @@ hr {
 .author img {
   border: 1px solid #333;
 }
-
+.author {
+  margin-top: 10%;
+}
 .midcolumn {
   display: inline-block;
   margin: 0 auto;
@@ -178,6 +193,7 @@ hr {
 .postPage {
   background-color: #202124;
 }
+
 .rightcolumn {
   transition: 0.1s ease;
   float: left;
@@ -188,6 +204,7 @@ hr {
   position: -webkit-sticky;
   position: sticky;
   top: 50px;
+  margin: auto;
 }
 
 .card {

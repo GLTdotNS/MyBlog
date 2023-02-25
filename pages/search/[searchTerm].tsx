@@ -4,6 +4,7 @@ import PostsComponent from "../../components/Blog/BlogPageComponents/PostsCompon
 import Layout from "../../components/Layout/Layout";
 import Image from "next/image";
 import logo from "../../styles/assets/monkey.png";
+import Link from "next/link";
 const Search = ({ posts }) => {
   const router = useRouter();
   const { searchTerm } = router.query;
@@ -27,7 +28,8 @@ const Search = ({ posts }) => {
                 style={{ backgroundColor: "transparent", height: "100px" }}
               ></div>
               <h1>
-              Резултати от търсенето съдържащи - {searchTerm.toString().toLocaleUpperCase()}
+                Резултати от търсенето съдържащи -{" "}
+                {searchTerm.toString().toLocaleUpperCase()}
               </h1>
               <hr></hr>
               <PostsComponent posts={posts} />
@@ -69,6 +71,15 @@ const Search = ({ posts }) => {
                   <p>
                     Опитайте се да прецизирате търсенето си или използвайте
                     навигационния панел по-горе, за да намерите статията.
+                  </p>
+                  <br />
+                  <p>
+                    <Link
+                      style={{ color: "blue", textDecoration: "underline" }}
+                      href={"/blog"}
+                    >
+                      Към начална страница
+                    </Link>
                   </p>
                 </div>
               </div>
