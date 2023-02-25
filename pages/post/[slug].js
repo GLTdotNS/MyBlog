@@ -103,6 +103,9 @@ const Post = ({ post, posts, category }) => {
   return (
     <Layout>
       <div className="main postPage ">
+        <Head>
+          <meta name="description" content={`${post.description}`} key="desc" />
+        </Head>
         <div className="midcolumn  dropdown" id="mid">
           <div style={{ height: "70px" }}></div>
           {!settings ? (
@@ -310,8 +313,32 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 }`;
 const isServerReq = (req) => !req.url.startsWith("/_next");
 export async function getStaticPaths() {
+  const queryPosts = groq`*[_type == "post"] | order(_createdAt desc)
+  {
+  title,
+  slug,
+  "authorImage": author->image,
+  description,
+  body,
+  publishedAt,
+  mainImage{
+    asset->{
+    _id,
+    url
+  }
+}, 'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
+        _id, 
+        name, 
+        email, 
+        comment, 
+        _createdAt
+    }
+
+}`;
+  const posts = await client.fetch(queryPosts);
+  const paths = posts.map((post) => ({ params: { slug: post.slug.current } }));
   return {
-    paths: [{ params: { slug: "[slug]" } }],
+    paths,
     fallback: "blocking",
   };
 }
