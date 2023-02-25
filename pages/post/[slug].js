@@ -4,12 +4,17 @@ import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPost
 import dynamic from "next/dynamic";
 import Categories from "../../components/Blog/BlogPageComponents/Categories";
 import moment from "moment";
-import { MdDateRange, MdOutlineInvertColors } from "react-icons/md";
+import { MdDateRange, MdSettingsBrightness } from "react-icons/md";
+import { GoSettings } from "react-icons/go";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
-import { AiOutlineFontSize, AiOutlineFontColors } from "react-icons/ai";
-import { VscColorMode } from "react-icons/vsc";
+import {
+  AiOutlineFontSize,
+  AiOutlineFontColors,
+  AiOutlineArrowDown,
+} from "react-icons/ai";
+import Link from "next/link";
 import Layout from "../../components/Layout/Layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -39,13 +44,27 @@ const load = dynamic(() => import("../../components/Loading/Loading"), {
 let BlockContent = block;
 let Loading = load;
 const Post = ({ post, posts, category }) => {
+  const [settings, setSettings] = useState(false);
   let cont;
   let midcolumn;
-  useEffect(() => {
-    cont = document.getElementById("container");
-    midcolumn = document.getElementById("mid");
-  }, []);
+
+  useEffect(() => {}, []);
+
+  const handleSettings = () => {
+    const settingMenu = document.getElementById("settingMenu");
+    const center = document.getElementById("center");
+    if (!settings) {
+      settingMenu.style.height = "200px";
+      center.style.opacity = "1";
+      setSettings(true);
+    } else {
+      settingMenu.style.height = "0px";
+      center.style.opacity = "0";
+      setSettings(false);
+    }
+  };
   function changeSizeByBtn(name) {
+    cont = document.getElementById("container");
     switch (name) {
       case "btn1":
         cont.style.fontSize = "17px";
@@ -62,6 +81,8 @@ const Post = ({ post, posts, category }) => {
   }
 
   function changeColorSchema(name) {
+    cont = document.getElementById("container");
+    midcolumn = document.getElementById("mid");
     switch (name) {
       case "btn1":
         midcolumn.style.color = "black";
@@ -78,9 +99,6 @@ const Post = ({ post, posts, category }) => {
         break;
     }
   }
-  if (!post || !post.mainImage || !post.body || !block) {
-    return <Loading />;
-  }
 
   return (
     <Layout>
@@ -88,23 +106,112 @@ const Post = ({ post, posts, category }) => {
         <Head>
           <meta name="description" content={`${post.description}`} key="desc" />
         </Head>
-
-        <div className="midcolumn postPage dropdown" id="mid">
-          <div className="header">
-            <img
-              id="blurBackground"
-              loading="lazy"
+        <div className="midcolumn  dropdown" id="mid">
+          <div style={{ height: "70px" }}></div>
+          {!settings ? (
+            <button
+              onClick={() => handleSettings()}
               style={{
-                margin: "35px 15px 0 0",
+                border: "none",
+                backgroundColor: "transparent",
+                cursor: "pointer",
               }}
-              src={urlForImg(post.mainImage.asset.url)}
-              alt="Image of the post"
-            />
+            >
+              <GoSettings
+                style={{ border: "1px solid #333" }}
+                size={40}
+                color="orange"
+              />
+            </button>
+          ) : (
+            <button
+              style={{
+                border: "none",
+                backgroundColor: "transparent",
+                cursor: "pointer",
+              }}
+              onClick={() => handleSettings()}
+              className=""
+            >
+              <GoSettings
+                style={{ border: "1px solid white" }}
+                size={40}
+                color="orange"
+              />
+            </button>
+          )}
+          <div className="dropdown " id="settingMenu">
+            <div id="center">
+              <center>
+                <h1 style={{ padding: "1%" }}>
+                  <AiOutlineFontSize color="white" />
+                </h1>
+                <button
+                  className="settingBtn"
+                  onClick={(e) => changeSizeByBtn(e.target.name)}
+                  type="button"
+                  name="btn1"
+                >
+                  -A
+                </button>
+                <button
+                  className="settingBtn"
+                  onClick={(e) => changeSizeByBtn(e.target.name)}
+                  type="button"
+                  name="btn2"
+                >
+                  A
+                </button>
+                <button
+                  className="settingBtn"
+                  onClick={(e) => changeSizeByBtn(e.target.name)}
+                  type="button"
+                  name="btn3"
+                >
+                  A+
+                </button>
+                <br />
+                <br />
+              </center>
+              <center>
+                <h1 style={{ padding: "1%" }}>
+                  <AiOutlineFontColors color="white" />
+                </h1>
+
+                <button
+                  id="white"
+                  className="settingBtn"
+                  onClick={(e) => changeColorSchema(e.target.name)}
+                  type="button"
+                  name="btn1"
+                ></button>
+
+                <button
+                  id="dark"
+                  className="settingBtn"
+                  onClick={(e) => changeColorSchema(e.target.name)}
+                  type="button"
+                  name="btn2"
+                ></button>
+
+                <br />
+                <br />
+              </center>
+            </div>
           </div>
-          <h2>{post.title}</h2>
+
+          <Link
+            className=""
+            style={{ color: "blue", float: "right" }}
+            href={"/blog"}
+          >
+            Назад към блога
+          </Link>
+
           <div className="author">
+            <h1>{post.title}</h1>
+            <br />
             <h4>
-              {" "}
               <BsPencilSquare />: {post.name}
             </h4>
             <h4>
@@ -163,65 +270,9 @@ const Post = ({ post, posts, category }) => {
         </div>
 
         <div className="rightcolumn">
-          <div className="dropdown">
-            {" "}
-            <center>
-              <h1 style={{ padding: "1%" }}>
-                <AiOutlineFontSize />
-              </h1>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn1"
-              >
-                -A
-              </button>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn2"
-              >
-                A
-              </button>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn3"
-              >
-                A+
-              </button>
-              <br />
-              <br />
-            </center>
-            <center>
-              <h1 style={{ padding: "1%" }}>
-                <AiOutlineFontColors />
-              </h1>
-
-              <button
-                id="white"
-                className="settingBtn"
-                onClick={(e) => changeColorSchema(e.target.name)}
-                type="button"
-                name="btn1"
-              ></button>
-
-              <button
-                id="dark"
-                className="settingBtn"
-                onClick={(e) => changeColorSchema(e.target.name)}
-                type="button"
-                name="btn2"
-              ></button>
-
-              <br />
-              <br />
-            </center>
-          </div>
-          <RecentlyPosts posts={posts} />
+          <RecentlyPosts
+            posts={posts.filter((x) => x.category === post.category)}
+          />
         </div>
       </div>
     </Layout>
