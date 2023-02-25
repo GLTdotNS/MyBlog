@@ -314,7 +314,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 const isServerReq = (req) => !req.url.startsWith("/_next");
 export async function getStaticPaths() {
   return {
-    paths: [{ params: { slug: "second-post" } }],
+    paths: [{ params: { slug: "slug" } }],
     fallback: "blocking",
   };
 }
