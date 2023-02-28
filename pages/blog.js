@@ -10,7 +10,7 @@ import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
-import logo from "../styles/assets/akali.jpg";
+import logo from "../styles/assets/a.jpg";
 
 const MainBlogPage = ({ posts, category }) => {
   useEffect(() => {
