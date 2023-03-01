@@ -389,6 +389,7 @@ slug,
       posts,
       category,
     },
+    revalidate: 10,
   };
 }
 
