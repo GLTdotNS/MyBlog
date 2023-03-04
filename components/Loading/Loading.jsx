@@ -1,7 +1,7 @@
 import React from "react";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import Layout from "../Layout/Layout";
-import logo from "../../styles/assets/akali.jpg";
+import logo from "../../styles/assets/a.jpg";
 import Image from "next/image";
 const Loading = () => {
   return (
