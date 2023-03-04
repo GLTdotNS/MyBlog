@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
 
       <motion.div
         className="progress-bar"
-        style={{ scaleX: scrollYProgress }}
+        style={{ scaleX: scrollYProgress, zIndex: 2000 }}
       />
       <Footer />
     </main>
