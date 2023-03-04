@@ -339,7 +339,7 @@ export async function getStaticPaths() {
   const paths = posts.map((post) => ({ params: { slug: post.slug.current } }));
   return {
     paths,
-    fallback: true,
+    fallback: "blocking",
   };
 }
 export async function getStaticProps(context) {
