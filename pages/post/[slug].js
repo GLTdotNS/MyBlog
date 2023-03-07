@@ -4,6 +4,7 @@ import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPost
 import dynamic from "next/dynamic";
 import Categories from "../../components/Blog/BlogPageComponents/Categories";
 import moment from "moment";
+import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
 import { GoSettings } from "react-icons/go";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
@@ -46,6 +47,7 @@ let BlockContent = block;
 let Loading = load;
 const Post = ({ post, posts, category }) => {
   const [settings, setSettings] = useState(false);
+  const router = useRouter();
   let cont;
   let midcolumn;
 
@@ -251,15 +253,6 @@ const Post = ({ post, posts, category }) => {
                   <FacebookIcon size={30} color="blue" />
                 </FacebookShareButton>
 
-                <FacebookMessengerShareButton
-                  onShareWindowClose={() => window.close()}
-                  className="i"
-                  appId="585823522989597"
-                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                >
-                  <FacebookMessengerIcon size={30} />
-                </FacebookMessengerShareButton>
-
                 <TwitterShareButton
                   className="i"
                   url={`https://noncreativeblog.net/post/${post.slug.current}`}
@@ -279,36 +272,38 @@ const Post = ({ post, posts, category }) => {
             </div>
             <div className="columns posts">
               <h3 className="p__opensans title">Подобни постове</h3>
-              {posts.map((post) => (
-                <div
-                  className=" initial-post"
-                  key={post.title}
-                  onClick={() => router.push(`/post/${post.slug.current}`)}
-                >
-                  <div className="inner_post_text">
-                    <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
+              {posts
+                .filter((x) => x.categories[0] === post.categories[0])
+                .map((post) => (
+                  <div
+                    className=" initial-post"
+                    key={post.title}
+                    onClick={() => router.push(`/post/${post.slug.current}`)}
+                  >
+                    <div className="inner_post_text">
+                      <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
 
-                    {post.mainImage ? (
-                      <img
-                        loading="lazy"
-                        style={{
-                          float: "left",
-                          margin: "5px 15px 0 0",
-                          padding: "1%",
-                        }}
-                        src={urlForImg(post.mainImage.asset.url)}
-                        alt="Image of the post"
-                        width="150"
-                        height="150"
-                      />
-                    ) : (
-                      "none"
-                    )}
+                      {post.mainImage ? (
+                        <img
+                          loading="lazy"
+                          style={{
+                            float: "left",
+                            margin: "5px 15px 0 0",
+                            padding: "1%",
+                          }}
+                          src={urlForImg(post.mainImage.asset.url)}
+                          alt="Image of the post"
+                          width="150"
+                          height="150"
+                        />
+                      ) : (
+                        "none"
+                      )}
 
-                    <span> {post?.description.slice(0, 300)}...</span>
+                      <span> {post?.description.slice(0, 300)}...</span>
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
             </div>
           </div>
         </div>
