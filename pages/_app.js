@@ -31,6 +31,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <Head>
         <title>NONCREATIVEBLOG</title>
+        <meta name="google" content="notranslate" />
         <meta
           name="description"
           content="portfolio ☝️  This is a dev blog about the projects I'm working on at the moment. 
