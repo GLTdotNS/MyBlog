@@ -36,7 +36,13 @@ const CategoriesPage = ({ posts, category }) => {
       ? router.push("/" + "notfound")
       : router.push("/post/" + currentSlug);
   };
-
+  console.log(
+    posts.filter(
+      (x) =>
+        x.categories._ref ===
+        `${category.filter((x) => x.slug.current === location)[0]._id}`
+    )
+  );
   return (
     <Layout>
       <div className="row">

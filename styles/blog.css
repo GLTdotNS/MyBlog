@@ -127,6 +127,7 @@ hr {
   background-color: #202124;
   height: 0px;
   width: 200px;
+
   -webkit-transition: height 0.3s;
   transition: height 0.2s;
 }
@@ -145,7 +146,6 @@ hr {
   display: block;
 }
 .post_text {
-  padding: 6%;
   border-color: transparent;
   font-size: 20px;
 }
@@ -179,7 +179,7 @@ hr {
   border: 1px solid #333;
 }
 .author {
-  margin-top: 10%;
+  width: 100%;
 }
 .midcolumn {
   display: inline-block;
@@ -191,8 +191,20 @@ hr {
   margin-left: auto !important;
 }
 
+.postPage .midcolumn {
+  margin: auto !important;
+  display: block;
+  width: 70%;
+  background-color: #202124;
+}
 .postPage {
   background-color: #202124;
+}
+.postPage img {
+  display: block;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover; /* or object-fit: contain; */
 }
 
 .rightcolumn {
