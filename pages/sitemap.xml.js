@@ -1,21 +1,19 @@
 //pages/sitemap.xml.js
-const EXTERNAL_DATA_URL = "https://jsonplaceholder.typicode.com/posts";
+import { client } from "../lib/sanityClient";
+const EXTERNAL_DATA_URL = "https://noncreativeblog.net/post";
 
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <!--We manually set the two URLs we know already-->
      <url>
-       <loc>https://jsonplaceholder.typicode.com</loc>
+       <loc>https://noncreativeblog.net</loc>
      </url>
-     <url>
-       <loc>https://jsonplaceholder.typicode.com/guide</loc>
-     </url>
+    
      ${posts
-       .map(({ id }) => {
+       .map((p) => {
          return `
        <url>
-           <loc>${`${EXTERNAL_DATA_URL}/${id}`}</loc>
+           <loc>${`${EXTERNAL_DATA_URL}/${p.slug.current}`}</loc>
        </url>
      `;
        })
@@ -30,9 +28,23 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }) {
   // We make an API call to gather the URLs for our site
-  const request = await fetch(EXTERNAL_DATA_URL);
-  const posts = await request.json();
+  const query = `*[_type == "post"] | order(_createdAt desc)
+  {
+  title,
+  slug,
+  "authorImage": author->image,
+  description,
+  body,
+  publishedAt,
+  mainImage{
+    asset->{
+    _id,
+    url
+  }
+},
 
+}`;
+  const posts = await client.fetch(query);
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(posts);
 
