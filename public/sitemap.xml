@@ -1,23 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://www.noncreativeblog.net/</loc>
-    <lastmod>2022-05-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.noncreativeblog.net/post/ezik%D0%B0t-csharp-i-tehnologiyata-net-framework</loc>
-    <lastmod>2022-05-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.noncreativeblog.net/post/zashoto-si-poet</loc>
-    <lastmod>2022-05-05</lastmod>
-  </url>
-  <url>
-    <loc>https://www.noncreativeblog.net/categories/linux</loc>
-    <lastmod>2022-05-05</lastmod>
-  </url>
-    <url>
-    <loc>https://www.noncreativeblog.net/categories/bash</loc>
-    <lastmod>2022-05-05</lastmod>
-  </url>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap><loc>https://noncreativeblog.net/sitemap-0.xml</loc></sitemap>
+</sitemapindex>
 </urlset>
