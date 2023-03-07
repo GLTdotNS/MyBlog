@@ -200,7 +200,7 @@ hr {
 .postPage {
   background-color: #202124;
 }
-.postPage img {
+.postPage #blurBackground {
   display: block;
   width: 100vw;
   height: 70vh;

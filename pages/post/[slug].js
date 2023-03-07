@@ -28,6 +28,7 @@ import {
   ViberIcon,
 } from "react-share";
 import Head from "next/head";
+import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
@@ -47,8 +48,6 @@ const Post = ({ post, posts, category }) => {
   const [settings, setSettings] = useState(false);
   let cont;
   let midcolumn;
-
-  useEffect(() => {}, []);
 
   const handleSettings = () => {
     const settingMenu = document.getElementById("settingMenu");
@@ -278,6 +277,39 @@ const Post = ({ post, posts, category }) => {
                 </ViberShareButton>
               </div>
             </div>
+            <div className="columns posts">
+              <h3 className="p__opensans title">Подобни постове</h3>
+              {posts.map((post) => (
+                <div
+                  className=" initial-post"
+                  key={post.title}
+                  onClick={() => router.push(`/post/${post.slug.current}`)}
+                >
+                  <div className="inner_post_text">
+                    <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
+
+                    {post.mainImage ? (
+                      <img
+                        loading="lazy"
+                        style={{
+                          float: "left",
+                          margin: "5px 15px 0 0",
+                          padding: "1%",
+                        }}
+                        src={urlForImg(post.mainImage.asset.url)}
+                        alt="Image of the post"
+                        width="150"
+                        height="150"
+                      />
+                    ) : (
+                      "none"
+                    )}
+
+                    <span> {post?.description.slice(0, 300)}...</span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
@@ -356,6 +388,7 @@ export async function getStaticProps(context) {
   title,
   slug,
   "authorImage": author->image,
+  "categories": categories[]->title,
   description,
   body,
   publishedAt,

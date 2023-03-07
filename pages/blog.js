@@ -60,7 +60,10 @@ const MainBlogPage = ({ posts, category }) => {
         <div className="rightcolumn">
           <Categories category={category} />
 
-          <RecentlyPosts posts={posts} />
+          <div className="columns posts">
+            <h3 className="p__opensans title">Recently Posts</h3>
+            <RecentlyPosts posts={posts} />
+          </div>
         </div>
       </div>
     </Layout>

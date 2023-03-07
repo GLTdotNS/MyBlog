@@ -7,8 +7,7 @@ import { useRouter } from "next/router.js";
 const RecentlyPosts = ({ posts }) => {
   const router = useRouter();
   return (
-    <div className="columns posts">
-      <h3 className="p__opensans title">Recently Posts</h3>
+    <div>
       <hr />
       <ul className="section ">
         {posts &&
