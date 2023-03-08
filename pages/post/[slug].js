@@ -22,12 +22,7 @@ import {
   FacebookMessengerShareButton,
   ViberShareButton,
 } from "react-share";
-import {
-  FacebookMessengerIcon,
-  FacebookIcon,
-  TwitterIcon,
-  ViberIcon,
-} from "react-share";
+import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
 import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 

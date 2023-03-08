@@ -567,7 +567,15 @@ button#dark {
   background-color: #238636;
   cursor: pointer;
 }
-
+.readMore {
+  background-color: transparent;
+  border: none;
+  color: white;
+}
+.readMore:hover {
+  cursor: pointer;
+  color: #4ba6e7;
+}
 #dark:hover,
 #white:hover {
   opacity: 0.3;

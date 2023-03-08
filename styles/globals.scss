@@ -70,15 +70,14 @@ body {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background-color: transparent;
-  border-top: 60px solid #333 /*or any height and color you want*/;
+  background-color: #333;
+
   border-radius: 10px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: transparent;
-  border-top: 60px solid #457b9d /*or any height and color you want*/;
+  background-color: #457b9d;
 }
 
 .p__opensans {

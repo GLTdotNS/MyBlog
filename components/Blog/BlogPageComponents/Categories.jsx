@@ -9,7 +9,7 @@ const Categories = ({ category }) => {
   return (
     <div className="categories columns">
       <div className="dropdown ">
-        <h3 className="p__opensans  title">Categories</h3>
+        <h3 className="p__opensans  title">Категории</h3>
         <hr />
         {category &&
           category.map((category, index) => (

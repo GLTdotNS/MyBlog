@@ -74,8 +74,8 @@ const Landing = () => {
               <h3>
                 {" "}
                 <span style={{ color: "blueviolet" }}>const</span>{" "}
-                <span style={{ color: "orange" }}>name</span> ={" "}
-                <span style={{ color: "red" }}>&#34;Georgi&#34;</span>
+                <span style={{ color: "orange" }}>openSource</span> ={" "}
+                <span style={{ color: "red" }}>&#34;Open mind&#34;</span>
               </h3>
             </div>
             <div className="inner-countdown_typed-text-wrapper ">
@@ -104,7 +104,7 @@ const Landing = () => {
               ></div>
               <Link
                 id="js-clock-hours"
-                href={"https://gltdotns.github.io/"}
+                href={"https://tonkoff.vercel.app/"}
                 shallow={true}
               >
                 <p className="landing-page-link">WHOAMI</p>

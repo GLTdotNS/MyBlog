@@ -61,7 +61,7 @@ const MainBlogPage = ({ posts, category }) => {
           <Categories category={category} />
 
           <div className="columns posts">
-            <h3 className="p__opensans title">Recently Posts</h3>
+            <h3 className="p__opensans title">Последни постове</h3>
             <RecentlyPosts posts={posts} />
           </div>
         </div>

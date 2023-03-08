@@ -4,6 +4,7 @@ import { MdReadMore } from "react-icons/md";
 import { urlForImg } from "../../../lib/sanityClient.js";
 import Link from "next/link";
 import { useState } from "react";
+import { IoIosArrowRoundForward } from "react-icons/io";
 import ReactPaginate from "react-paginate";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
@@ -49,6 +50,10 @@ const PostsComponent = ({ posts }) => {
 
             <span> {post?.description.slice(0, 300)}...</span>
           </div>
+          <button className="readMore">
+            Виж повече
+            <IoIosArrowRoundForward size={20} />
+          </button>
         </div>
       );
     });
