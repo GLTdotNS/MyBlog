@@ -105,6 +105,7 @@ const Post = ({ post, posts, category }) => {
       <div className="main postPage " id="postPage">
         <Head>
           <meta name="description" content={`${post.description}`} key="desc" />
+          <title>{post.title}</title>
         </Head>
         <img
           id="blurBackground"
@@ -170,7 +171,7 @@ const Post = ({ post, posts, category }) => {
           </button>
         )}
         <div className="dropdown " id="settingMenu">
-          <div s id="center">
+          <div id="center">
             <center>
               <h1 style={{ padding: "1%" }}>
                 <AiOutlineFontSize color="white" />
@@ -269,6 +270,7 @@ const Post = ({ post, posts, category }) => {
               <h3 className="p__opensans title">Подобни постове</h3>
               {posts
                 .filter((x) => x.categories[0] === post.categories[0])
+                .filter((x) => x.slug.current !== post.slug.current)
                 .map((post) => (
                   <div
                     className=" initial-post"

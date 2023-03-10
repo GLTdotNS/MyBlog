@@ -30,7 +30,10 @@ const PostsComponent = ({ posts }) => {
           <div className="inner_post_text">
             <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
 
-            <p>{minutesToRead.toFixed(0)} minutes to read</p>
+            <p>
+              {minutesToRead.toFixed(0) == 0 ? 1 : minutesToRead.toFixed(0)}{" "}
+              minutes to read
+            </p>
             {post.mainImage ? (
               <img
                 loading="lazy"

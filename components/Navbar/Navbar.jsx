@@ -87,10 +87,6 @@ const Navbar = () => {
       <form onSubmit={handleSearch} className="box ">
         <div className="search ">
           <input
-            onFocus={() => setText("asd")}
-            onMouseLeave={() =>
-              setText(String.fromCharCode(parseInt(16, `U+1F50D`)))
-            }
             onChange={(e) => setValueToSearch(e.target.value.trim())}
             className="input"
             placeholder="&#128269;"
@@ -104,12 +100,7 @@ const Navbar = () => {
             className="app__navbar-overylay_background"
             onClick={() => setToggleMenu(false)}
           >
-            <motion.div
-              className="app__navbar-smallscreen_overlay slide  "
-              animate={{
-                width: "360px",
-              }}
-            >
+            <motion.div className="app__navbar-smallscreen_overlay slide  ">
               <div
                 style={{
                   backgroundColor: "#333",
@@ -133,12 +124,12 @@ const Navbar = () => {
                     <Link href="/blog">Writing...</Link>
                   </li>
 
-                  {/* <li
+                  <li
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/aboutme">whoAmI</Link>
-                  </li> */}
+                    <Link href={"https://tonkoff.vercel.app/"}>whoAmI</Link>
+                  </li>
                 </ul>
               ) : (
                 ""

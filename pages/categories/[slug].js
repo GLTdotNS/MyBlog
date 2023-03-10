@@ -130,7 +130,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   body
 }`;
 const isServerReq = (req) => !req.url.startsWith("/_next");
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const { slug = "" } = context.params;
   const post = isServerReq ? await client.fetch(query, { slug }) : null;
   const queryPosts = groq`*[_type == "post" ]
