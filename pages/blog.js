@@ -12,6 +12,11 @@ import Layout from "../components/Layout/Layout";
 import { useRouter } from "next/router";
 import logo from "../styles/assets/a.jpg";
 
+import dynamic from "next/dynamic";
+
+const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
+  ssr: false,
+});
 const MainBlogPage = ({ posts, category }) => {
   useEffect(() => {
     document.title = "NONCREATIVEBLOG";
@@ -54,7 +59,6 @@ const MainBlogPage = ({ posts, category }) => {
           <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
 
           <hr />
-
           <PostsComponent posts={posts} />
         </div>
         <div className="rightcolumn">
@@ -62,6 +66,7 @@ const MainBlogPage = ({ posts, category }) => {
 
           <div className="columns posts">
             <h3 className="p__opensans title">Последни постове</h3>
+            <CrispWithNoSSR />
             <RecentlyPosts posts={posts} />
           </div>
         </div>

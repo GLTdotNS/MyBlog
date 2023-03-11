@@ -74,7 +74,7 @@ const Landing = () => {
               <h3>
                 {" "}
                 <span style={{ color: "blueviolet" }}>const</span>{" "}
-                <span style={{ color: "orange" }}>openSource</span> ={" "}
+                <span style={{ color: "orange" }}>linux</span> ={" "}
                 <span style={{ color: "red" }}>&#34;Open mind&#34;</span>
               </h3>
             </div>
