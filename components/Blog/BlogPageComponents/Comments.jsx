@@ -8,6 +8,7 @@ export default function Comments({ comments = [] }) {
       {comments.map(({ _id, _createdAt, name, email, comment }) => (
         <div
           className=""
+          key={comment._id}
           style={{
             marginTop: "10%",
             width: "100%",
