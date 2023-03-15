@@ -6,10 +6,9 @@ export default function Form({ _id }) {
   const [formData, setFormData] = useState();
 
   const router = useRouter();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [hasSubmitted, setHasSubmitted] = useState(false);
-  const [name, setName] = useState();
-  const [comment, setcomment] = useState();
+
+  const [name, setName] = useState("");
+  const [comment, setcomment] = useState("");
 
   const { register, handleSubmit, watch, errors } = useForm();
 
@@ -17,12 +16,10 @@ export default function Form({ _id }) {
     router.replace(router.asPath);
   };
 
-  const onSubmit = async () => {
-    setIsSubmitting(true);
+  const onSubmit = async (e) => {
     if (!name || !comment) {
       return;
     }
-
     let data = {
       name,
       _id,
@@ -35,16 +32,17 @@ export default function Form({ _id }) {
         method: "POST",
         body: JSON.stringify(data),
         type: "application/json",
-      }).then(() => {
-        setIsSubmitting(false);
-        setHasSubmitted(true);
-        refreshData();
-        setName("");
-        setcomment("");
-      });
-    } catch (err) {
-      setFormData(err);
-    }
+      })
+        .then(() => {
+          refreshData();
+
+          setName("");
+          setcomment("");
+        })
+        .then(() => {
+          window.scrollTo(0, 300);
+        });
+    } catch (err) {}
   };
 
   return (
@@ -53,32 +51,26 @@ export default function Form({ _id }) {
         <h2>Остави коментар:</h2>
         <div className="commentform">
           <div className="field small">
+            <label htmlFor="name">Име</label>
             <input
-              value={name}
               id="name"
               type="text"
               placeholder="Your name"
               onChange={(e) => setName(e.target.value.trim())}
             />
-            <label htmlFor="name">Име</label>
           </div>
 
           <div className="field large ">
+            <label htmlFor="comment">Коментар </label>
             <textarea
-              value={comment}
               id="comment"
               onChange={(e) => setcomment(e.target.value.trim())}
               placeholder="Your comment"
             ></textarea>
-            <label htmlFor="comment">Коментар </label>
           </div>
         </div>
         {name && comment ? (
-          <button
-            className="btn  large"
-            onClick={handleSubmit(onSubmit)}
-            type="submit"
-          >
+          <button className="btn  small" onClick={handleSubmit(onSubmit)}>
             Публикувай
           </button>
         ) : (
