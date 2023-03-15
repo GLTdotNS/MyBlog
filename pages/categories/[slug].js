@@ -101,7 +101,7 @@ const CategoriesPage = ({ posts, category }) => {
         </div>
 
         <div className="rightcolumn">
-          <Categories category={category} />
+          <Categories posts={posts} category={category} />
           <RecentlyPosts
             posts={posts.filter(
               (x) =>

@@ -1,6 +1,6 @@
 import "../styles/globals.scss";
 import "../styles/navbar.css";
-import "../styles/blog.css";
+import "../styles/blog.scss";
 import "../styles/footer.css";
 import "../styles/landingPage.scss";
 import { Toaster } from "react-hot-toast";

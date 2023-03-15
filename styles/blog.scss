@@ -411,9 +411,9 @@ hr {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 200px;
+  width: 150px;
   height: 50px;
-  margin-top: 10%;
+  margin-top: 5%;
   padding: 0 18px;
   will-change: transform;
   -webkit-transition: all 0.2s ease-in-out;
@@ -579,4 +579,71 @@ button#dark {
 #dark:hover,
 #white:hover {
   opacity: 0.3;
+}
+.wrap {
+  width: 640px;
+  margin: 100px auto;
+  padding-bottom: 40px;
+}
+
+.field {
+  position: relative;
+  margin-bottom: 10px;
+  input,
+  textarea {
+    width: 100%;
+    display: block;
+    outline: none;
+    padding: 5px;
+    &:focus {
+      border: 4px solid #4ba6e7;
+    }
+    &:focus + label {
+      display: block;
+    }
+  }
+  textarea {
+    height: 150px;
+  }
+  label {
+    width: 100%;
+    background-color: #4ba6e7;
+    display: block;
+    color: #fff;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 300;
+    display: none;
+  }
+}
+h2 {
+  font-weight: 300;
+}
+
+.small {
+  width: 32%;
+  // float: left;
+  // margin-left: 2%;
+  // &:first-child {
+  //   margin-left: 0%;
+  // }
+}
+.large {
+  // float: left;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+  font-weight: 300;
+}
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-weight: 300;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-weight: 300;
+}
+:-ms-input-placeholder {
+  font-weight: 300;
 }

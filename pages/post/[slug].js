@@ -25,6 +25,8 @@ import {
 import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
 import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
+import Comments from "../../components/Blog/BlogPageComponents/Comments";
+import Form from "../../components/Blog/BlogPageComponents/Form";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
@@ -131,7 +133,7 @@ const Post = ({ post, posts, category }) => {
         </div>
         <Link
           className="dropdown"
-          style={{ color: "blue", float: "right" }}
+          style={{ color: "blue", float: "right", marginRight: "1%" }}
           href={"/blog"}
         >
           Назад към блога
@@ -170,7 +172,11 @@ const Post = ({ post, posts, category }) => {
             />
           </button>
         )}
-        <div className="dropdown " id="settingMenu">
+        <div
+          style={{ padding: "20% !important" }}
+          className="dropdown "
+          id="settingMenu"
+        >
           <div id="center">
             <center>
               <h1 style={{ padding: "1%" }}>
@@ -236,36 +242,38 @@ const Post = ({ post, posts, category }) => {
           </div>
 
           <hr />
-          <div>
-            <div className="btn_wrap">
-              <span className="shareSpan">
-                <BsFillShareFill color="blue" />
-              </span>
-              <div className="shareContainer">
-                <FacebookShareButton
-                  className="i"
-                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                >
-                  <FacebookIcon size={30} color="blue" />
-                </FacebookShareButton>
+          <div className="btn_wrap" style={{ float: "right" }}>
+            <span className="shareSpan">
+              <BsFillShareFill color="blue" />
+            </span>
+            <div className="shareContainer">
+              <FacebookShareButton
+                className="i"
+                url={`https://noncreativeblog.net/post/${post.slug.current}`}
+              >
+                <FacebookIcon size={30} color="blue" />
+              </FacebookShareButton>
 
-                <TwitterShareButton
-                  className="i"
-                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                >
-                  <TwitterIcon size={30} color="blue" />
-                </TwitterShareButton>
+              <TwitterShareButton
+                className="i"
+                url={`https://noncreativeblog.net/post/${post.slug.current}`}
+              >
+                <TwitterIcon size={30} color="blue" />
+              </TwitterShareButton>
 
-                <ViberShareButton
-                  onShareWindowClose={() => window.close()}
-                  className="i"
-                  appId="585823522989597"
-                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
-                >
-                  <ViberIcon size={30} />
-                </ViberShareButton>
-              </div>
+              <ViberShareButton
+                onShareWindowClose={() => window.close()}
+                className="i"
+                appId="585823522989597"
+                url={`https://noncreativeblog.net/post/${post.slug.current}`}
+              >
+                <ViberIcon size={30} />
+              </ViberShareButton>
             </div>
+          </div>
+          <div>
+            <Comments comments={post.comments} />
+            <Form _id={post._id} />
             <div className="columns posts">
               <h3 className="p__opensans title">Подобни постове</h3>
               {posts

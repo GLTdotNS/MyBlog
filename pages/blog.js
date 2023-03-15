@@ -62,12 +62,12 @@ const MainBlogPage = ({ posts, category }) => {
           <PostsComponent posts={posts} />
         </div>
         <div className="rightcolumn">
-          <Categories category={category} />
+          <Categories posts={posts} category={category} />
 
           <div className="columns posts">
-            <h3 className="p__opensans title">Последни постове</h3>
+            <h3 className="p__opensans title">Най - четени</h3>
             <CrispWithNoSSR />
-            <RecentlyPosts posts={posts} />
+            <RecentlyPosts posts={posts.sort((x, b) => x.likes + b.likes)} />
           </div>
         </div>
       </div>
@@ -80,7 +80,10 @@ export const getServerSideProps = async () => {
   title,
   slug,
   "authorImage": author->image,
+  "categories": categories[0]->title,
   description,
+  likes,
+  _id,
   body,
   publishedAt,
   mainImage{

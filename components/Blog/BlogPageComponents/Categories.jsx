@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const Categories = ({ category }) => {
+const Categories = ({ category, posts }) => {
   if (!category) {
     return <p>loading</p>;
   }
@@ -21,7 +21,9 @@ const Categories = ({ category }) => {
                   href={"/categories/[slug]"}
                   as={`/categories/${category.slug.current}`}
                 >
-                  {category.title}
+                  {category.title} &#40;
+                  {posts?.filter((x) => x.categories === category.title).length}
+                  &#41;
                 </Link>
               )}
             </span>
