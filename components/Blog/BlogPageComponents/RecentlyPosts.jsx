@@ -15,7 +15,7 @@ const RecentlyPosts = ({ posts }) => {
             <div
               key={post.title}
               style={{ cursor: "pointer" }}
-              onClick={() => router.push(`/post/${post.slug.current}`)}
+              onClick={() => router.push(`post/${post.slug.current}`)}
             >
               <li>{moment(post.publishedAt).format("MMM/DD")}</li>
               {post.title}

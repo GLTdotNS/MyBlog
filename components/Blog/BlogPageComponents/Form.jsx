@@ -32,16 +32,12 @@ export default function Form({ _id }) {
         method: "POST",
         body: JSON.stringify(data),
         type: "application/json",
-      })
-        .then(() => {
-          refreshData();
+      }).then(() => {
+        refreshData();
 
-          setName("");
-          setcomment("");
-        })
-        .then(() => {
-          window.scrollTo(0, 300);
-        });
+        setName("");
+        setcomment("");
+      });
     } catch (err) {}
   };
 

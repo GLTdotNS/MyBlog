@@ -33,14 +33,14 @@ const PostsComponent = ({ posts }) => {
       return (
         <div className=" initial-post" key={post.title}>
           <div className="inner_post_text">
-            <Link href={`post/${post.slug.current}`}>
-              <h3
-                onClick={() => updateReaders(post)}
-                style={{ marginBottom: "4px" }}
-              >
-                {post.title}
-              </h3>
-            </Link>
+            <h3
+              onClick={() =>
+                updateReaders(post) && router.push(`/post/${post.slug.current}`)
+              }
+              style={{ marginBottom: "4px" }}
+            >
+              {post.title}
+            </h3>
 
             <p>
               {minutesToRead.toFixed(0) == 0 ? 1 : minutesToRead.toFixed(0)}{" "}
@@ -67,12 +67,15 @@ const PostsComponent = ({ posts }) => {
             <span> {post?.description.slice(0, 300)}...</span>
           </div>
 
-          <Link href={`post/${post.slug.current}`}>
-            <button className="readMore" onClick={() => updateReaders(post)}>
-              Виж повече
-              <IoIosArrowRoundForward size={20} />
-            </button>
-          </Link>
+          <button
+            className="readMore"
+            onClick={() =>
+              updateReaders(post) && router.push(`/post/${post.slug.current}`)
+            }
+          >
+            Виж повече
+            <IoIosArrowRoundForward size={20} />
+          </button>
         </div>
       );
     });
