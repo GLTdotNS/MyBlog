@@ -1,6 +1,7 @@
 import logo from "../../../styles/assets/a.jpg";
 import Image from "next/image";
 import moment from "moment";
+import { useState, useEffect } from "react";
 export default function Comments({ comments = [] }) {
   return (
     <div className="initial-post wrapper" style={{ marginTop: "20%" }}>
@@ -9,7 +10,7 @@ export default function Comments({ comments = [] }) {
       {comments.map(({ _id, _createdAt, name, email, comment }) => (
         <div
           className=""
-          key={comment._id}
+          key={comment?._id}
           style={{
             marginTop: "10%",
             width: "100%",
@@ -30,7 +31,7 @@ export default function Comments({ comments = [] }) {
           </h3>
           <h4 style={{ color: "#A9A9A9", float: "right", fontWeight: "400" }}>
             {" "}
-            {moment(comment._createdAt).fromNow()}
+            {moment(comment?._createdAt).fromNow()}
           </h4>
           <br />
           <p style={{ color: "black", padding: "5px" }}>{comment}</p>

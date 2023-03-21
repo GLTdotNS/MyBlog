@@ -10,10 +10,10 @@ export default function Form({ _id }) {
   const [name, setName] = useState("");
   const [comment, setcomment] = useState("");
 
-  const { register, handleSubmit, watch, errors } = useForm();
+  const { handleSubmit } = useForm();
 
   const refreshData = async (e) => {
-    router.replace(router.asPath);
+    router.prefetch(router.asPath);
   };
 
   const onSubmit = async (e) => {
@@ -33,10 +33,9 @@ export default function Form({ _id }) {
         body: JSON.stringify(data),
         type: "application/json",
       }).then(() => {
-        refreshData();
-
         setName("");
         setcomment("");
+        refreshData();
       });
     } catch (err) {}
   };
