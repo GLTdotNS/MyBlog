@@ -115,20 +115,20 @@ const Navbar = () => {
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/">Index.JS</Link>
+                    <Link href="/">Начало</Link>
                   </li>
                   <li
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/blog">Writing...</Link>
+                    <Link href="/blog">Писацини...</Link>
                   </li>
 
                   <li
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href={"https://tonkoff.vercel.app/"}>whoAmI</Link>
+                    <Link href={"https://tonkoff.vercel.app/"}>КойСъмАз</Link>
                   </li>
                 </ul>
               ) : (
