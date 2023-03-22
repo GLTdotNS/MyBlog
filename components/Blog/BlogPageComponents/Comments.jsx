@@ -1,13 +1,14 @@
 import logo from "../../../styles/assets/a.jpg";
 import Image from "next/image";
 import moment from "moment";
+import { client } from "../../../lib/sanityClient";
 import { useState, useEffect } from "react";
 export default function Comments({ comments = [] }) {
   return (
     <div className="initial-post wrapper" style={{ marginTop: "20%" }}>
       <h1>Коментари:</h1>
 
-      {comments.map(({ _id, _createdAt, name, email, comment }) => (
+      {comments?.map(({ _id, _createdAt, name, email, comment }) => (
         <div
           className=""
           key={comment?._id}

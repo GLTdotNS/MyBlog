@@ -13,7 +13,7 @@ export default function Form({ _id }) {
   const { handleSubmit } = useForm();
 
   const refreshData = async (e) => {
-    router.prefetch(router.asPath);
+    router.replace(router.asPath);
   };
 
   const onSubmit = async (e) => {
@@ -35,7 +35,7 @@ export default function Form({ _id }) {
       }).then(() => {
         setName("");
         setcomment("");
-        refreshData();
+        //refreshData();
       });
     } catch (err) {}
   };
