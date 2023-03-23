@@ -20,7 +20,7 @@ footer h4 {
   font-size: 1.5rem;
 }
 
-p {
+footer p {
   font-size: 1rem;
   line-height: 1.3rem;
 }
@@ -35,7 +35,7 @@ footer ul li {
   margin-bottom: 0.625rem;
 }
 
-ul li a {
+footer ul li a {
   color: #6faaff;
   font-size: 1rem;
 }
@@ -74,7 +74,7 @@ footer ul.social-icons li:hover a {
   background-color: #6fdeff;
 }
 
-.copyright {
+footer .copyright {
   text-align: center;
   color: #fff;
   background-color: #6faaff;

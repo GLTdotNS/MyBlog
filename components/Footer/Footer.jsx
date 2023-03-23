@@ -97,7 +97,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="copyright">© 2023 All Rights Reserved</p>
+      <p className="copyright">© 2023 Tonkoff</p>
     </footer>
   );
 };
