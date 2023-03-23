@@ -121,7 +121,7 @@ const Navbar = () => {
                     className="p__opensans "
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href="/blog">Писацини...</Link>
+                    <Link href="/blog">Писаници...</Link>
                   </li>
 
                   <li
