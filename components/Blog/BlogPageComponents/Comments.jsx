@@ -32,7 +32,7 @@ export default function Comments({ comments = [] }) {
           </h3>
           <h4 style={{ color: "#A9A9A9", float: "right", fontWeight: "400" }}>
             {" "}
-            {moment(comment?._createdAt).fromNow()}
+            {moment(_createdAt).fromNow()}
           </h4>
           <br />
           <p style={{ color: "black", padding: "5px" }}>{comment}</p>

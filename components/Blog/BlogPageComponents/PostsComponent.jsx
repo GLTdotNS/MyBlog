@@ -81,7 +81,7 @@ const PostsComponent = ({ posts }) => {
     });
 
   const pageCount = posts && Math.ceil(posts.length / postPerPage);
-
+  const count = 1;
   const handleChange = ({ selected }) => {
     setPageNumber(selected);
     window.scrollTo(0, 500);
@@ -98,9 +98,12 @@ const PostsComponent = ({ posts }) => {
         nextLinkClassName={"nextBttn"}
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActive"}
+        pageRangeDisplayed={3}
         marginPagesDisplayed={2}
         pageCount={pageCount}
         onPageChange={handleChange}
+        renderOnZeroPageCount={null}
+        breakLabel="..."
       />
     </>
   );

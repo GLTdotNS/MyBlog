@@ -35,7 +35,7 @@ export default function Form({ _id }) {
       }).then(() => {
         setName("");
         setcomment("");
-        //refreshData();
+        refreshData();
       });
     } catch (err) {}
   };
@@ -48,6 +48,7 @@ export default function Form({ _id }) {
           <div className="field small">
             <label htmlFor="name">Име</label>
             <input
+              value={name}
               id="name"
               type="text"
               placeholder="Your name"
@@ -58,8 +59,9 @@ export default function Form({ _id }) {
           <div className="field large ">
             <label htmlFor="comment">Коментар </label>
             <textarea
+              value={comment}
               id="comment"
-              onChange={(e) => setcomment(e.target.value.trim())}
+              onChange={(e) => setcomment(e.target.value.trimStart())}
               placeholder="Your comment"
             ></textarea>
           </div>

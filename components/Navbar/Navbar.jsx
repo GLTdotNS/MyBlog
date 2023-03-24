@@ -52,7 +52,7 @@ const Navbar = () => {
       backgroundColor: "transparent",
     },
     hidden: {
-      backgroundColor: "#333",
+      backgroundColor: "black",
     },
   };
 
