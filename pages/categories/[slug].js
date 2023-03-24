@@ -9,7 +9,7 @@ import Image from "next/image";
 import notFoundImage from "../../styles/assets/monkey.png";
 import { useRouter } from "next/router";
 import Layout from "../../components/Layout/Layout";
-const CategoriesPage = ({ posts, category }) => {
+const CategoriesPage = ({ posts, category, post }) => {
   const [location, setLocation] = useState("");
   const [valueToSearch, setValueToSearch] = useState("");
   const router = useRouter();
@@ -59,14 +59,18 @@ const CategoriesPage = ({ posts, category }) => {
             className="box "
           >
             <h1 className="">
-              {category.filter((x) => x.slug.current === location)[0].title}
+              {
+                category.slice().filter((x) => x.slug.current === location)[0]
+                  .title
+              }
             </h1>
             <div className="box">
               <input
                 className="categoriesSearch"
                 type="text"
                 placeholder={`Търсене в/във ${
-                  category.filter((x) => x.slug.current === location)[0].title
+                  category.slice().filter((x) => x.slug.current === location)[0]
+                    .title
                 }`}
                 autoComplete="off"
                 onChange={(e) => setValueToSearch(e.target.value.trim())}
@@ -102,12 +106,18 @@ const CategoriesPage = ({ posts, category }) => {
 
         <div className="rightcolumn">
           <Categories posts={posts} category={category} />
+          {console.log(category)}
+          {console.log(posts)}
           <RecentlyPosts
-            posts={posts.filter(
-              (x) =>
-                x.categories._ref ===
-                `${category.filter((x) => x.slug.current === location)[0]?._id}`
-            )}
+            posts={posts
+              .slice()
+              .filter(
+                (x) =>
+                  x.categories._ref ===
+                  `${
+                    category.filter((x) => x.slug.current === location)[0]?._id
+                  }`
+              )}
           />
         </div>
       </div>
@@ -142,6 +152,7 @@ export async function getServerSideProps(context) {
     body,
     publishedAt,
     comments,
+    "category": categories[0]->title,
     categories[0],
     likes,
     mainImage{

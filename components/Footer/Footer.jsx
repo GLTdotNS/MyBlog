@@ -13,7 +13,7 @@ const Footer = () => {
 
     try {
       const res = await fetch("/api/newsletter", {
-        method: "POST",
+        method: "PUT",
         body: e.target[0].value,
       });
 

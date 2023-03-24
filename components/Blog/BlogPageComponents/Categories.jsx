@@ -22,7 +22,7 @@ const Categories = ({ category, posts }) => {
                   as={`/categories/${category.slug.current}`}
                 >
                   {category.title} &#40;
-                  {posts?.filter((x) => x.categories === category.title).length}
+                  {posts?.filter((x) => x.category === category.title).length}
                   &#41;
                 </Link>
               )}

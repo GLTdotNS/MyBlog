@@ -59,7 +59,9 @@ const MainBlogPage = ({ posts, category }) => {
           <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
 
           <hr />
-          <PostsComponent posts={posts} />
+          <PostsComponent
+            posts={posts.sort((x, b) => x._createdAt - b._createdAt)}
+          />
         </div>
         <div className="rightcolumn">
           <Categories posts={posts} category={category} />
@@ -67,7 +69,9 @@ const MainBlogPage = ({ posts, category }) => {
           <div className="columns posts">
             <h3 className="p__opensans title">Най - четени</h3>
             <CrispWithNoSSR />
-            <RecentlyPosts posts={posts.sort((x, b) => x.likes + b.likes)} />
+            <RecentlyPosts
+              posts={posts.slice().sort((x, b) => b.likes - x.likes)}
+            />
           </div>
         </div>
       </div>
@@ -80,7 +84,7 @@ export const getServerSideProps = async () => {
   title,
   slug,
   "authorImage": author->image,
-  "categories": categories[0]->title,
+  "category": categories[0]->title,
   description,
   likes,
   _id,
