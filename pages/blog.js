@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import logo from "../styles/assets/a.jpg";
 
 import dynamic from "next/dynamic";
+import Contacts from "../components/Contacts/contacts";
 
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
   ssr: false,
@@ -47,12 +48,21 @@ const MainBlogPage = ({ posts, category }) => {
   return (
     <Layout>
       <div id="blurBackground">
-        <Image
-          src={logo}
+        <div
           style={{
+            position: "relative",
             height: "500px",
           }}
-        />
+        >
+          <Image src={logo} height={"500"} style={{ width: "100%" }} />
+          <div class="bg"></div>
+
+          <div class="star-field">
+            <div class="layer"></div>
+            <div class="layer"></div>
+            <div class="layer"></div>
+          </div>
+        </div>
       </div>
       <div className="row ">
         <div className="midcolumn ">

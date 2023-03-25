@@ -63,12 +63,6 @@ const Footer = () => {
                 </form>
               )}
             </li>
-
-            <li>
-              <a href="#">
-                <i className="fa fa-angle-right"></i>
-              </a>
-            </li>
           </ul>
         </div>
 
@@ -83,7 +77,7 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="#">
+              <a href="/message">
                 <TbMessages size={40} />
               </a>
             </li>
@@ -97,7 +91,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="copyright">© 2023 Tonkoff</p>
+      <p className="copyright">© 2023 Designed by Tonkoff</p>
     </footer>
   );
 };

@@ -3,6 +3,7 @@ import "../styles/navbar.css";
 import "../styles/blog.scss";
 import "../styles/footer.css";
 import "../styles/landingPage.scss";
+import "../styles/modal.css";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";
