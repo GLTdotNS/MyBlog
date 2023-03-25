@@ -4,6 +4,7 @@ import "../styles/blog.scss";
 import "../styles/footer.css";
 import "../styles/landingPage.scss";
 import "../styles/modal.css";
+import "../styles/about.css";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";

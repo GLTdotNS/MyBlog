@@ -102,11 +102,7 @@ const Landing = () => {
                 className="spacer_1em "
                 style={{ marginTop: "1rem", color: "white !important" }}
               ></div>
-              <Link
-                id="js-clock-hours"
-                href={"https://tonkoff.vercel.app/"}
-                shallow={true}
-              >
+              <Link id="js-clock-hours" href={"/about"} shallow={true}>
                 <p className="landing-page-link">WHOAMI</p>
               </Link>
               <div className="countdown-text"></div>

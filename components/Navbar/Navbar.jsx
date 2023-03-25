@@ -128,7 +128,7 @@ const Navbar = () => {
                     className="p__opensans"
                     onClick={() => setToggleMenu(false)}
                   >
-                    <Link href={"https://tonkoff.vercel.app/"}>КойСъмАз</Link>
+                    <Link href={"/about"}>За мен</Link>
                   </li>
                 </ul>
               ) : (
