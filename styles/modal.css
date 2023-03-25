@@ -1,4 +1,4 @@
-input[type="text"],
+.contacts-page input[type="text"],
 select {
   width: 100%;
   padding: 12px 20px;
@@ -9,7 +9,7 @@ select {
   box-sizing: border-box;
 }
 
-input[type="submit"] {
+.contacts-page input[type="submit"] {
   width: 100%;
   color: white;
   padding: 14px 20px;
@@ -112,5 +112,8 @@ span.psw {
   .mywork .rightcolumn {
     border: none !important;
     margin-bottom: 80%;
+  }
+  .input:focus {
+    width: 80% !important;
   }
 }
