@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { BsGithub, BsFacebook } from "react-icons/bs";
 import { TbMessages } from "react-icons/tb";
+import Link from "next/link";
 const Footer = () => {
   const [state, setState] = useState(0);
   const [errorMsg, setErrorMsg] = useState("");
@@ -77,9 +78,9 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="/message">
+              <Link href={"/message"}>
                 <TbMessages size={40} />
-              </a>
+              </Link>
             </li>
 
             <li>
