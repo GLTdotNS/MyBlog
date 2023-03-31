@@ -11,6 +11,7 @@
     "@portabletext/react": "^1.0.6",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.2",
+    "@sanity/code-input": "^4.1.0",
     "@sanity/image-url": "^1.0.1",
     "ably": "^1.2.5-beta.1",
     "crisp-sdk-web": "^1.0.13",

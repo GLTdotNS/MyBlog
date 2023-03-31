@@ -88,7 +88,7 @@ const MainBlogPage = ({ posts, category }) => {
     </Layout>
   );
 };
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const query = groq`*[_type == "post"] | order(_createdAt desc)
   {
   title,
