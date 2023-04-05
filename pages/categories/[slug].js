@@ -106,8 +106,7 @@ const CategoriesPage = ({ posts, category, post }) => {
 
         <div className="rightcolumn">
           <Categories posts={posts} category={category} />
-          {console.log(category)}
-          {console.log(posts)}
+
           <RecentlyPosts
             posts={posts
               .slice()

@@ -2,10 +2,6 @@ import React from "react";
 import Link from "next/link";
 
 const Categories = ({ category, posts }) => {
-  if (!category) {
-    return <p>loading</p>;
-  }
-
   return (
     <div className="categories columns">
       <div className="dropdown ">
@@ -18,7 +14,7 @@ const Categories = ({ category, posts }) => {
                 "Something went wrong..."
               ) : (
                 <Link
-                  href={"/categories/[slug]"}
+                  href={"/categories/asd[slug]"}
                   as={`/categories/${category.slug.current}`}
                 >
                   {category.title} &#40;
