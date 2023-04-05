@@ -5,15 +5,11 @@ import RecentlyPosts from "../components/Blog/BlogPageComponents/RecentlyPosts";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import Image from "next/image";
-import notFoundImage from "../styles/assets/monkey.png";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
-import { useRouter } from "next/router";
-import logo from "../styles/assets/a.jpg";
-
+import logo from "../styles/assets/wolf.jpg";
 import dynamic from "next/dynamic";
-import Contacts from "../components/Contacts/contacts";
 
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
   ssr: false,
@@ -24,26 +20,26 @@ const MainBlogPage = ({ posts, category }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  if (!posts) {
-    return (
-      <SkeletonTheme baseColor="#000324" highlightColor="#fff">
-        <div className=" initial-post">
-          <h3>
-            <Skeleton width={50} />
-          </h3>
-          <h5>
-            <Skeleton width={80} />
-          </h5>
+  // if (!posts) {
+  //   return (
+  //     <SkeletonTheme baseColor="#000324" highlightColor="#fff">
+  //       <div className=" initial-post">
+  //         <h3>
+  //           <Skeleton width={50} />
+  //         </h3>
+  //         <h5>
+  //           <Skeleton width={80} />
+  //         </h5>
 
-          <div className="inner_post_text">
-            <span>
-              <Skeleton height={100} />
-            </span>
-          </div>
-        </div>
-      </SkeletonTheme>
-    );
-  }
+  //         <div className="inner_post_text">
+  //           <span>
+  //             <Skeleton height={100} />
+  //           </span>
+  //         </div>
+  //       </div>
+  //     </SkeletonTheme>
+  //   );
+  // }
 
   return (
     <Layout>
@@ -54,8 +50,7 @@ const MainBlogPage = ({ posts, category }) => {
             height: "500px",
           }}
         >
-          <Image src={logo} height={"500"} style={{ width: "100%" }} />
-          <div class="bg"></div>
+          <Image id="landingImage" src={logo} height={"500"} />
 
           <div class="star-field">
             <div class="layer"></div>
