@@ -1,9 +1,12 @@
 footer {
   margin-top: 5px;
+
+  height: 100%;
+  margin: auto;
+  font-family: "Inconsolata", Helvetica, sans-serif;
+  font-size: 1.5rem;
   color: #6faaff;
-  background-color: #333;
-  border-radius: 58% 42% 100% 0% / 30% 100% 0% 70%;
-  bottom: 0;
+  text-shadow: 0 0 1ex #6faaff, 0 0 2px rgba(255, 255, 255, 0.8);
 }
 
 footer .row {
@@ -77,9 +80,6 @@ footer ul.social-icons li:hover a {
 
 footer .copyright {
   text-align: center;
-  color: #fff;
-  background-color: purple;
-  padding: 0.6rem 0;
 }
 
 /* Responsive adjustments */
@@ -112,4 +112,16 @@ footer .copyright {
     width: 1.875rem;
     height: 1.875rem;
   }
+}
+.copyright span {
+  color: #fff;
+  text-decoration: none;
+}
+
+.copyright span::before {
+  content: "[";
+}
+
+.copyright span::after {
+  content: "]";
 }

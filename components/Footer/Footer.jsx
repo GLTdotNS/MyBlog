@@ -92,7 +92,9 @@ const Footer = () => {
         </div>
       </div>
 
-      <p className="copyright">© 2023 Designed by Tonkoff</p>
+      <p className="copyright">
+        © 2023 Designed by <span>Canis Lupus</span>
+      </p>
     </footer>
   );
 };
