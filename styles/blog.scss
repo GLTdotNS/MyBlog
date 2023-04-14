@@ -156,8 +156,12 @@ hr {
 .post_text {
   border-color: transparent;
   font-size: 20px;
+  padding: 5%;
 }
-
+.post_text p {
+  width: 100%;
+  margin: auto;
+}
 .post_text iframe {
   margin: 5% 0 5% 0;
   width: 100%;
@@ -187,6 +191,7 @@ hr {
   border: 1px solid #333;
 }
 .author {
+  padding: 2%;
   width: 100%;
 }
 .midcolumn {
@@ -643,4 +648,31 @@ h2 {
 }
 :-ms-input-placeholder {
   font-weight: 300;
+}
+
+blockquote {
+  background: #fcfcfc;
+  border-left: 1px solid silver;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote::after {
+  color: #ccc;
+  content: close-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-left: 0.25em;
+  vertical-align: -0.6em;
+}
+blockquote p {
+  display: inline;
 }

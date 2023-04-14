@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -13,18 +13,18 @@
 
   CodeMirror.defineMode("jinja2", function() {
     var keywords = ["and", "as", "block", "endblock", "by", "cycle", "debug", "else", "elif",
-      "extends", "filter", "endfilter", "firstof", "do", "for",
+      "extends", "filter", "endfilter", "firstof", "for",
       "endfor", "if", "endif", "ifchanged", "endifchanged",
-      "ifequal", "endifequal", "ifnotequal", "set", "raw", "endraw",
+      "ifequal", "endifequal", "ifnotequal",
       "endifnotequal", "in", "include", "load", "not", "now", "or",
-      "parsed", "regroup", "reversed", "spaceless", "call", "endcall", "macro",
-      "endmacro", "endspaceless", "ssi", "templatetag", "openblock",
-      "closeblock", "openvariable", "closevariable", "without", "context",
+      "parsed", "regroup", "reversed", "spaceless",
+      "endspaceless", "ssi", "templatetag", "openblock",
+      "closeblock", "openvariable", "closevariable",
       "openbrace", "closebrace", "opencomment",
       "closecomment", "widthratio", "url", "with", "endwith",
       "get_current_language", "trans", "endtrans", "noop", "blocktrans",
       "endblocktrans", "get_available_languages",
-      "get_current_language_bidi", "pluralize", "autoescape", "endautoescape"],
+      "get_current_language_bidi", "plural"],
     operator = /^[+\-*&%=<>!?|~^]/,
     sign = /^[:\[\(\{]/,
     atom = ["true", "false"],
@@ -78,24 +78,7 @@
           state.instring = ch;
           stream.next();
           return "string";
-        }
-        else if (state.inbraces > 0 && ch ==")") {
-          stream.next()
-          state.inbraces--;
-        }
-        else if (ch == "(") {
-          stream.next()
-          state.inbraces++;
-        }
-        else if (state.inbrackets > 0 && ch =="]") {
-          stream.next()
-          state.inbrackets--;
-        }
-        else if (ch == "[") {
-          stream.next()
-          state.inbrackets++;
-        }
-        else if (!state.lineTag && (stream.match(state.intag + "}") || stream.eat("-") && stream.match(state.intag + "}"))) {
+        } else if(stream.match(state.intag + "}") || stream.eat("-") && stream.match(state.intag + "}")) {
           state.intag = false;
           return "tag";
         } else if(stream.match(operator)) {
@@ -104,10 +87,6 @@
         } else if(stream.match(sign)) {
           state.sign = true;
         } else {
-          if (stream.column() == 1 && state.lineTag && stream.match(keywords)) {
-            //allow nospace after tag before the keyword
-            return "keyword";
-          }
           if(stream.eat(" ") || stream.sol()) {
             if(stream.match(keywords)) {
               return "keyword";
@@ -141,25 +120,10 @@
         } else if (ch = stream.eat(/\{|%/)) {
           //Cache close tag
           state.intag = ch;
-          state.inbraces = 0;
-          state.inbrackets = 0;
           if(ch == "{") {
             state.intag = "}";
           }
           stream.eat("-");
-          return "tag";
-        }
-      //Line statements
-      } else if (stream.eat('#')) {
-        if (stream.peek() == '#') {
-          stream.skipToEnd();
-          return "comment"
-        }
-        else if (!stream.eol()) {
-          state.intag = true;
-          state.lineTag = true;
-          state.inbraces = 0;
-          state.inbrackets = 0;
           return "tag";
         }
       }
@@ -168,24 +132,13 @@
 
     return {
       startState: function () {
-        return {
-          tokenize: tokenBase,
-          inbrackets:0,
-          inbraces:0
-        };
+        return {tokenize: tokenBase};
       },
-      token: function(stream, state) {
-        var style = state.tokenize(stream, state);
-        if (stream.eol() && state.lineTag && !state.instring && state.inbraces == 0 && state.inbrackets == 0) {
-          //Close line statement at the EOL
-          state.intag = false
-          state.lineTag = false
-        }
-        return style;
+      token: function (stream, state) {
+        return state.tokenize(stream, state);
       },
       blockCommentStart: "{#",
-      blockCommentEnd: "#}",
-      lineComment: "##",
+      blockCommentEnd: "#}"
     };
   });
 

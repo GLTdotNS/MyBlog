@@ -33,16 +33,17 @@ const Footer = () => {
     <footer>
       <div className="row">
         <div className="column">
-          <h4>За сайтът</h4>
+          <h4>Информация за блога</h4>
 
           <p>
-            Сайтът е създаден с некомерсиална цел. Не обработваме лични данни ,
-            както и не използваме бискитвки.
+            Добре дошли в моя блог! Тук ще намерите различни материали за
+            митологии от различни култури, поезия и статии свързани с
+            програмирането.
           </p>
         </div>
 
         <div className="column">
-          <h4>Бързи връзки</h4>
+          <h4>Fylgja mér</h4>
 
           <ul>
             <li>
@@ -68,7 +69,7 @@ const Footer = () => {
         </div>
 
         <div className="column">
-          <h4>Свържи се с нас</h4>
+          <h4>Ако скате да се свържете с мен </h4>
 
           <ul className="social-icons">
             <li>
@@ -81,12 +82,6 @@ const Footer = () => {
               <Link href={"/message"}>
                 <TbMessages size={40} />
               </Link>
-            </li>
-
-            <li>
-              <a href="https://www.facebook.com/canis.lupus.33/">
-                <BsFacebook size={40} />
-              </a>
             </li>
           </ul>
         </div>

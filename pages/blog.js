@@ -20,27 +20,6 @@ const MainBlogPage = ({ posts, category }) => {
     window.scrollTo(0, 0);
   }, []);
 
-  // if (!posts) {
-  //   return (
-  //     <SkeletonTheme baseColor="#000324" highlightColor="#fff">
-  //       <div className=" initial-post">
-  //         <h3>
-  //           <Skeleton width={50} />
-  //         </h3>
-  //         <h5>
-  //           <Skeleton width={80} />
-  //         </h5>
-
-  //         <div className="inner_post_text">
-  //           <span>
-  //             <Skeleton height={100} />
-  //           </span>
-  //         </div>
-  //       </div>
-  //     </SkeletonTheme>
-  //   );
-  // }
-
   return (
     <Layout>
       <div id="blurBackground">
@@ -65,7 +44,7 @@ const MainBlogPage = ({ posts, category }) => {
 
           <hr />
           <PostsComponent
-            posts={posts.sort((x, b) => x._createdAt - b._createdAt)}
+            posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
           />
         </div>
         <div className="rightcolumn">

@@ -1,5 +1,5 @@
 // CodeMirror, copyright (c) by Marijn Haverbeke and others
-// Distributed under an MIT license: https://codemirror.net/5/LICENSE
+// Distributed under an MIT license: https://codemirror.net/LICENSE
 
 (function(mod) {
   if (typeof exports == "object" && typeof module == "object") // CommonJS
@@ -31,6 +31,8 @@ CodeMirror.defineMode("pegjs", function (config) {
       };
     },
     token: function (stream, state) {
+      if (stream)
+
       //check for state changes
       if (!state.inString && !state.inComment && ((stream.peek() == '"') || (stream.peek() == "'"))) {
         state.stringType = stream.peek();
@@ -41,6 +43,7 @@ CodeMirror.defineMode("pegjs", function (config) {
         state.inComment = true;
       }
 
+      //return state
       if (state.inString) {
         while (state.inString && !stream.eol()) {
           if (stream.peek() === state.stringType) {

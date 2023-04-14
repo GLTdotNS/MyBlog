@@ -19,15 +19,15 @@ const PostsComponent = ({ posts }) => {
   const displayPost =
     posts &&
     posts.slice(pageVisited, pageVisited + postPerPage).map((post) => {
-      let wordsCount = post.description.split(" ");
+      let wordsCount = post?.description.split(" ");
 
       let minutesToRead = wordsCount.length / 200;
       const updateReaders = async (_id) => {
-        if (localStorage.getItem(post.title)) {
+        if (localStorage.getItem(post?.title)) {
           return;
         }
-        await client.patch(post._id).inc({ likes: 1 }).commit();
-        localStorage.setItem(post.title, true);
+        await client.patch(post?._id).inc({ likes: 1 }).commit();
+        localStorage.setItem(post?.title, true);
       };
 
       return (
@@ -35,7 +35,8 @@ const PostsComponent = ({ posts }) => {
           <div className="inner_post_text">
             <h3
               onClick={() =>
-                updateReaders(post) && router.push(`/post/${post.slug.current}`)
+                updateReaders(post) &&
+                router.push(`/post/${post?.slug.current}`)
               }
               style={{ marginBottom: "4px" }}
             >
@@ -47,7 +48,7 @@ const PostsComponent = ({ posts }) => {
               minutes to read
             </p>
             <p>{post.likes} visitors</p>
-            {post.mainImage ? (
+            {post?.mainImage ? (
               <img
                 loading="lazy"
                 style={{
