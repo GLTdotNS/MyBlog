@@ -19,10 +19,11 @@ const About = () => {
             <h2>Hi , i am Georgi</h2>
             <br id="blurBackground" />
             <span>
-              I am an enthusiastic , responsible and hard working person.
-              Hobbyist by nature, workaholic by accident. I have basic
-              experience with programming languages - C++ , Python , JS , as
-              well as HTML and CSS syntax.
+              I am a passionate, reliable, and hardworking person. A hobbyist at
+              heart, but a workaholic by accident. I have a basic grasp of
+              programming languages like C++, Python, and JS, as well as HTML
+              and CSS syntax. Just don not ask me to write a code that will
+              launch a rocket to Mars. I am not quite there yet.
             </span>
             <hr />
             <br />
