@@ -99,13 +99,14 @@ export const serializers = {
     ),
   marks: {
     strong: (props) => (
-      <strong style={{ marginTop: "5% !important" }}>{props.children}</strong>
-    ),
-    em: (props) => (
-      <em style={{ color: "#FFA45E", fontWeight: "bolder" }}>
+      <strong
+        style={{ color: "#FFA45E", fontWeight: "bolder", marginTop: "5%" }}
+      >
         {props.children}
-      </em>
+      </strong>
     ),
+
+    em: (props) => <em>{props.children}</em>,
     code: (props) => {
       return (
         <p
