@@ -8,7 +8,7 @@ import Image from "next/image";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
-import logo from "../styles/assets/wolf.jpg";
+import logo from "../styles/assets/bg.png";
 import dynamic from "next/dynamic";
 
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {

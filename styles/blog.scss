@@ -259,13 +259,15 @@ hr {
   -ms-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
 }
-.inner_post_text:hover {
+.inner_post_text h3:hover {
   opacity: 0.9;
   cursor: pointer;
-}
-.inner_post_text:hover h3 {
-  color: blue;
+  color: #4ba6e7;
   text-decoration: underline;
+}
+.inner_post_text button:hover {
+  color: blue;
+
   transition: ease-in-out 0.3s;
 }
 
