@@ -35,7 +35,7 @@ export default function Form({ _id }) {
       }).then(() => {
         setName("");
         setcomment("");
-        refreshData();
+        refreshData();  
       });
     } catch (err) {}
   };

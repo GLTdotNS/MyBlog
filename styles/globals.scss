@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   behavior: smooth;
@@ -191,9 +192,9 @@ body {
   transition: ease-out 1s;
 }
 .siteLogo {
-  font-family: "Paytone One", sans-serif;
+  font-family: "Metal Mania", cursive;
   font-size: 80px;
-  background: -webkit-linear-gradient(pink, blue);
+  background: -webkit-linear-gradient(#1a1a1a, #333);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
