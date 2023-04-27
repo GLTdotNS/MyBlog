@@ -106,7 +106,12 @@ const Post = ({ post, posts, category }) => {
     <Layout>
       <div className="main postPage " id="postPage">
         <Head>
-          <meta name="description" content={`${post.description}`} key="desc" />
+          {console.log(post?.description)}
+          <meta
+            name="description"
+            content={`${post?.description}}`}
+            key="desc"
+          />
           <title>{post.title}</title>
         </Head>
         <img
@@ -321,6 +326,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   _id,
   publishedAt,
+  description,
   slug,
   "name": author->name,
   "categories": categories[]->title,

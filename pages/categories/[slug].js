@@ -98,7 +98,12 @@ const CategoriesPage = ({ posts, category, post }) => {
           ) : (
             <div style={{ minHeight: "100vh", textAlign: "center" }}>
               <h2 style={{ marginTop: "10px" }}>Oooops!...</h2>
-              <Image src={notFoundImage} width="350px" height="300px" />
+              <Image
+                src={notFoundImage}
+                width="350px"
+                height="300px"
+                alt="notFound image"
+              />
               <p>I am probably working on something that has blown up.</p>
             </div>
           )}

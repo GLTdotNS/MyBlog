@@ -29,7 +29,12 @@ const MainBlogPage = ({ posts, category }) => {
             height: "500px",
           }}
         >
-          <Image id="landingImage" src={logo} height={"500"} />
+          <Image
+            id="landingImage"
+            src={logo}
+            height={"500"}
+            alt="Image of Linux"
+          />
 
           <div class="star-field">
             <div class="layer"></div>
