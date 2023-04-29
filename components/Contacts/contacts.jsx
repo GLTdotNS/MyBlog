@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import logo from "../../styles/assets/a.jpg";
+import Router from "next/router";
 const Contacts = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -52,6 +53,7 @@ const Contacts = () => {
             window.scrollTo(0, 0);
             setMessage("");
             setSent(true);
+            Router.back();
             toast.remove(toastId);
           }, 100);
         }
@@ -74,95 +76,158 @@ const Contacts = () => {
   return (
     <div
       id="1"
-      className=" modal"
-      style={{ backgroundImage: `url(${logo.src})` }}
+      className=" modal contacts-page"
+      style={{ zIndex: "100000000000", padding: "10%" }}
     >
-      <Link
-        className="btn"
-        style={{
-          color: "white",
-          marginLeft: "1%",
-          padding: "10px",
-        }}
-        href={"/blog"}
-      >
-        Назад към блога
-      </Link>
-      <div className="container modal-content animate contactForm ">
-        <h2 style={{ color: "black" }}>Пиши ни</h2>
-        <form
-          id="contactForm "
-          onSubmit={(e) => handleSubmit(onSubmit(e))}
-          style={{ marginTop: "15px" }}
+      <div className="" style={{ margin: "0 auto !important" }}>
+        <div
+          className="pc-window_component is-home-main"
+          style={{ margin: "5%" }}
         >
-          <div className="mb-3 ">
-            <label className="form-label" htmlFor="name">
-              Име
-            </label>
-            <input
-              id="name"
-              type="text"
-              placeholder="Name"
-              data-sb-validations="required"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
+          <div className="pc-window_top-wrapper">
+            <div className="pc-window_top-bar">
+              <div
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0873-5fe902a0"
+                className="pc-window_top-bar-lines-wrapper"
+              >
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+              </div>
+              <div
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0879-5fe902a0"
+                className="pc-window_top-bar-square"
+              ></div>
+              <div
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a087a-5fe902a0"
+                className="pc-window_top-bar-lines-wrapper"
+              >
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+              </div>
+              <div
+                id="w-node-_423c0a09-2ab8-fed4-8e73-d86b76be509e-5fe902a0"
+                className="pc-window_top-bar-text "
+                style={{ color: "black", textTransform: "uppercase" }}
+              >
+                NONCREATIVEBLOG
+              </div>
+              <div
+                id="w-node-_33815bc8-3278-cde7-feee-00d339ed310a-5fe902a0"
+                class="pc-window_top-bar-lines-wrapper"
+              >
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+              </div>
+              <div
+                onClick={() => Router.back()}
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0880-5fe902a0"
+                className="pc-window_top-bar-square"
+              >
+                <img
+                  src="https://uploads-ssl.webflow.com/62781264fb6e62279063d828/62781264fb6e6242f363d868_Cross%20Icon.svg"
+                  loading="eager"
+                  alt=""
+                  className="pc-window_top-bar-cross-icon"
+                />
+              </div>
+            </div>
+            <div
+              className="pc-window_inner-countdown "
+              style={{ backgroundColor: "#fff" }}
+            >
+              <div className="">
+                <div className="container">
+                  <h2 className="">Пиши ни</h2>
+                  <form
+                    id="contactForm "
+                    onSubmit={(e) => handleSubmit(onSubmit(e))}
+                    style={{ marginTop: "15px" }}
+                  >
+                    <div className="mb-3 ">
+                      <label className="form-label" htmlFor="name">
+                        Име
+                      </label>
+                      <input
+                        id="name"
+                        type="text"
+                        placeholder="Name"
+                        data-sb-validations="required"
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                    </div>
 
-          <div className="mb-3">
-            <label className="form-label" htmlFor="emailAddress">
-              Email
-            </label>
-            <input
-              id="emailAddress"
-              type="text"
-              placeholder="Email Address"
-              data-sb-validations="required"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-3">
-            <label className="form-label" htmlFor="emailAddress">
-              Причина
-            </label>
-            <input
-              id="emailAddress"
-              type="text"
-              placeholder="Reason"
-              data-sb-validations="required"
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </div>
-          <div className="mb-3 w-2">
-            <label className="form-label" htmlFor="message">
-              Съобщение
-            </label>
-            <textarea
-              onChange={(e) => setMessage(e.target.value)}
-              className="form-control"
-              id="message"
-              type="text"
-              placeholder="Message"
-              data-sb-validations="required"
-            ></textarea>
-          </div>
+                    <div className="mb-3">
+                      <label className="form-label" htmlFor="emailAddress">
+                        Email
+                      </label>
+                      <input
+                        id="emailAddress"
+                        type="text"
+                        placeholder="Email Address"
+                        data-sb-validations="required"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3">
+                      <label className="form-label" htmlFor="emailAddress">
+                        Причина
+                      </label>
+                      <input
+                        id="emailAddress"
+                        type="text"
+                        placeholder="Reason"
+                        data-sb-validations="required"
+                        onChange={(e) => setEmail(e.target.value)}
+                      />
+                    </div>
+                    <div className="mb-3 w-2">
+                      <label className="form-label" htmlFor="message">
+                        Съобщение
+                      </label>
+                      <textarea
+                        onChange={(e) => setMessage(e.target.value)}
+                        className="form-control"
+                        id="message"
+                        type="text"
+                        placeholder="Message"
+                        data-sb-validations="required"
+                      ></textarea>
+                    </div>
 
-          <div className="d-grid">
-            {!message ||
-            message.trim().length === 0 ||
-            email.trim().length === 0 ||
-            name.trim().length === 0 ? (
-              <button className="hiddenBtn" style={{ visibility: "hidden" }}>
-                Send
-              </button>
-            ) : sent === true ? (
-              <button className="btn" type="submit">
-                Submit
-              </button>
-            ) : (
-              "Sending..."
-            )}
+                    <div className="d-grid">
+                      {!message ||
+                      message.trim().length === 0 ||
+                      email.trim().length === 0 ||
+                      name.trim().length === 0 ? (
+                        <button
+                          className="hiddenBtn"
+                          style={{ visibility: "hidden" }}
+                        >
+                          Send
+                        </button>
+                      ) : sent === true ? (
+                        <button className="btn" type="submit">
+                          Submit
+                        </button>
+                      ) : (
+                        "Sending..."
+                      )}
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div className="spacer grow is-home"></div>
+            </div>
           </div>
-        </form>
+        </div>
       </div>
     </div>
   );

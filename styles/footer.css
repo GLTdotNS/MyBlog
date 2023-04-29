@@ -6,7 +6,7 @@ footer {
   font-family: "Inconsolata", Helvetica, sans-serif;
   font-size: 1.5rem;
   color: #6faaff;
-  text-shadow: 0 0 1ex #6faaff, 0 0 2px rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 0.5ex #6faaff, 0 0 0.1px rgba(255, 255, 255, 0.8);
 }
 
 footer .row {

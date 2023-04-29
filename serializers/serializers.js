@@ -99,9 +99,7 @@ export const serializers = {
     ),
   marks: {
     strong: (props) => (
-      <strong
-        style={{ color: "#FFA45E", fontWeight: "bolder", marginTop: "5%" }}
-      >
+      <strong style={{ color: "#fff", fontWeight: "bolder", marginTop: "5%" }}>
         {props.children}
       </strong>
     ),

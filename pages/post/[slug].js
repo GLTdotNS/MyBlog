@@ -106,7 +106,6 @@ const Post = ({ post, posts, category }) => {
     <Layout>
       <div className="main postPage " id="postPage">
         <Head>
-          {console.log(post?.description)}
           <meta
             name="description"
             content={`${post?.description}}`}
@@ -137,7 +136,6 @@ const Post = ({ post, posts, category }) => {
           <hr />
         </div>
         <Link
-          className="dropdown"
           style={{ color: "blue", float: "right", marginRight: "1%" }}
           href={"/blog"}
         >

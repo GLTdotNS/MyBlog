@@ -65,7 +65,7 @@ const Landing = () => {
             </div>
           </div>
           <div className="pc-window_inner-countdown">
-            <Image src={landingImage} />
+            <Image src={landingImage} alt="image" />
             <div className="spacer _1em" style={{ marginTop: "10%" }}></div>
             <div id="demo" className="inner-countdown-intro-text typewriter">
               <h4 style={{ color: "green" }}>&#47;&#47; Hello bruh</h4>

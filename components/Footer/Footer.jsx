@@ -3,30 +3,33 @@ import { useState } from "react";
 import { BsGithub, BsFacebook } from "react-icons/bs";
 import { TbMessages } from "react-icons/tb";
 import Link from "next/link";
+import Admin from "../Admin/admin";
+import Contacts from "../Contacts/contacts";
 const Footer = () => {
-  const [state, setState] = useState(0);
+  const [contact, setContact] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [succes, setsucces] = useState(false);
   const subscribe = async (e) => {
     e.preventDefault();
+    setsucces(true);
+    // setState(1);
+    // setErrorMsg("");
 
-    setState(1);
-    setErrorMsg("");
+    // try {
+    //   const res = await fetch("/api/newsletter", {
+    //     method: "PUT",
+    //     body: e.target[0].value,
+    //   });
 
-    try {
-      const res = await fetch("/api/newsletter", {
-        method: "PUT",
-        body: e.target[0].value,
-      });
-
-      const data = await res.json();
-      if (data.error !== null) {
-        throw data.error;
-      }
-      setState(2);
-    } catch (e) {
-      setErrorMsg(e);
-      setState(3);
-    }
+    //   const data = await res.json();
+    //   if (data.error !== null) {
+    //     throw data.error;
+    //   }
+    //   setState(2);
+    // } catch (e) {
+    //   setErrorMsg(e);
+    //   setState(3);
+    // }
   };
 
   return (
@@ -47,29 +50,53 @@ const Footer = () => {
 
           <ul>
             <li>
-              {state == 2 ? (
-                <p className="font-medium mt-4 text-xl text-green-800">
-                  Благодарим за интереса. Проверете пощата си за нови известия.
-                </p>
-              ) : (
-                <form onSubmit={subscribe} className="flex flex-col mb-9 mt-4">
+              <form onSubmit={subscribe} className="flex flex-col mb-9 mt-4">
+                {!succes ? (
                   <input required placeholder="Email address" type="email" />
+                ) : (
+                  <span>Благодаря ! Очаквайте нови статии съвсем скоро !</span>
+                )}
+                {!succes ? (
                   <button type="submit" className="btn">
                     Абонирай се
                   </button>
-                  {state === 3 ? (
-                    <p className="text-red-500 mt-3">{errorMsg}</p>
-                  ) : (
-                    ""
-                  )}
-                </form>
-              )}
+                ) : (
+                  <div className="  ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      height="50"
+                      width="50"
+                      viewBox="0 0 48 48"
+                      aria-hidden="true"
+                    >
+                      <circle
+                        style={{ stroke: "#6faaff" }}
+                        className="circle"
+                        fill="#6faaff"
+                        cx="24"
+                        cy="24"
+                        r="22"
+                      />
+                      <path
+                        className="tick"
+                        fill="none"
+                        stroke="#FFF"
+                        stroke-width="6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M14 27l5.917 4.917L34 17"
+                      />
+                    </svg>
+                  </div>
+                )}
+              </form>
             </li>
           </ul>
         </div>
 
         <div className="column">
-          <h4>Ако скате да се свържете с мен </h4>
+          <h4>Ако искате да се свържете с мен </h4>
 
           <ul className="social-icons">
             <li>
@@ -78,7 +105,7 @@ const Footer = () => {
               </a>
             </li>
 
-            <li>
+            <li onClick={() => setContact(true)}>
               <Link href={"/message"}>
                 <TbMessages size={40} />
               </Link>

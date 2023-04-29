@@ -4,8 +4,15 @@ import moment from "moment";
 export default function Comments({ comments = [] }) {
   return (
     <div className="initial-post wrapper" style={{ marginTop: "20%" }}>
-      <h1>Коментари:</h1>
-
+      {comments.length < 1 ? (
+        <>
+          <h1>Коментари: </h1>
+          <br />
+          <p>Все още няма коментари по темата</p>
+        </>
+      ) : (
+        <h1>Коментари:</h1>
+      )}
       {comments?.map(({ _id, _createdAt, name, email, comment }) => (
         <div
           className=""

@@ -31,7 +31,7 @@ const PostsComponent = ({ posts }) => {
       };
 
       return (
-        <div className=" initial-post" key={post.title}>
+        <div className=" initial-post " key={post.title}>
           <div className="inner_post_text">
             <h3
               onClick={() =>
@@ -45,9 +45,9 @@ const PostsComponent = ({ posts }) => {
 
             <p>
               {minutesToRead.toFixed(0) == 0 ? 1 : minutesToRead.toFixed(0)}{" "}
-              minutes to read
+              минута за четене
             </p>
-            <p>{post.likes} visitors</p>
+            <p> Прочетено {post.likes} пъти</p>
             {post?.mainImage ? (
               <img
                 loading="lazy"

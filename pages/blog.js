@@ -8,7 +8,7 @@ import Image from "next/image";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
-import logo from "../styles/assets/bg.png";
+import logo from "../styles/assets/bg1.png";
 import dynamic from "next/dynamic";
 
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
@@ -32,15 +32,17 @@ const MainBlogPage = ({ posts, category }) => {
           <Image
             id="landingImage"
             src={logo}
-            height={"500"}
+            height={"300"}
+            width={300}
+            style={{ objectFit: "contain" }}
             alt="Image of Linux"
           />
 
-          <div class="star-field">
+          {/* <div class="star-field">
             <div class="layer"></div>
             <div class="layer"></div>
             <div class="layer"></div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="row ">
@@ -48,6 +50,7 @@ const MainBlogPage = ({ posts, category }) => {
           <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
 
           <hr />
+
           <PostsComponent
             posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
           />
