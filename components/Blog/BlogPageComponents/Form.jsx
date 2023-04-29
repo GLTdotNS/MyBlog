@@ -25,7 +25,6 @@ export default function Form({ _id }) {
       _id,
       comment,
     };
-    setFormData(data);
 
     try {
       await fetch("/api/createComment", {
