@@ -38,7 +38,7 @@ const CategoriesPage = ({ posts, category, post }) => {
   };
 
   return (
-    <Layout category={category} posts={posts}>
+    <Layout posts={posts}>
       <div className="row">
         <div className="midcolumn">
           <form

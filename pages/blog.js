@@ -21,7 +21,7 @@ const MainBlogPage = ({ posts, category }) => {
   }, []);
 
   return (
-    <Layout category={category} posts={posts}>
+    <Layout posts={posts}>
       <div id="blurBackground">
         <div>
           <div className="layer"></div>

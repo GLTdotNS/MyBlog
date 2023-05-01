@@ -103,7 +103,7 @@ const Post = ({ post, posts, category }) => {
   }
 
   return (
-    <Layout category={category} posts={posts}>
+    <Layout posts={posts}>
       {console.log(posts)}
       <div className="main postPage " id="postPage">
         <Head>

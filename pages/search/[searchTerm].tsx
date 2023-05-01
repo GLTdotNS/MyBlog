@@ -11,7 +11,7 @@ const Search = ({ posts }) => {
 
   return (
     <>
-      <Layout>
+      <Layout posts={posts}>
         {posts.filter((x) =>
           x.title.toLowerCase().includes(searchTerm.toString().toLowerCase())
         ).length > 0 ? (
