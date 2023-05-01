@@ -1,5 +1,5 @@
 import "../styles/globals.scss";
-import "../styles/navbar.css";
+import "../styles/navbar.scss";
 import "../styles/blog.scss";
 import "../styles/footer.css";
 import "../styles/landingPage.scss";

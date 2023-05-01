@@ -17,7 +17,7 @@ const Sorry = () => {
       }}
     >
       <h2>Oooops!...</h2>
-      <Image src={notFoundImage} width="350px" height="300px" />
+      <Image src={notFoundImage} width="350px" height="300px" alt="not found" />
       <p>I am probably working on something that has blown up.</p>
       <button className="btn" onClick={() => router.back()}>
         Go back

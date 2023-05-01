@@ -4,15 +4,21 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
-const Navbar = () => {
+import logo from "../../styles/assets/niffleheim.png";
+const Navbar = ({ category, posts }) => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
   const [valueToSearch, setValueToSearch] = useState("");
   const [text, setText] = useState(false);
+  const [click, setClick] = useState(false);
   const router = useRouter();
-
+  const handleClick = () => {
+    setClick(!click);
+    var element = document.getElementById("nav-icon3");
+    element.classList.toggle("open");
+  };
   const handleSearch = (e) => {
     e.preventDefault();
 
@@ -20,29 +26,13 @@ const Navbar = () => {
       router.push(`/search/${valueToSearch}`);
     }
   };
-  const update = () => {
-    const image = document.getElementById("blurBackground");
-    if (scrollY?.current == 0) {
-      setHidden(false);
 
-      image.classList.remove("blurBackground");
-    } else {
-      if (toggleMenu) {
-        return;
-      }
-      image?.classList.add("blurBackground");
-      setHidden(true);
-    }
-  };
   setTimeout(() => {
     if (toggleMenu) {
       setshowMenu(true);
     } else {
       setshowMenu(false);
     }
-  });
-  useEffect(() => {
-    return scrollY.onChange(() => update());
   });
 
   const variants = {
@@ -57,90 +47,155 @@ const Navbar = () => {
   };
 
   return (
-    <motion.nav
-      id="navbar"
-      className="app__navbar"
-      variants={variants}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ ease: [0.1, 0.25, 0.3, 1], duration: 0.6 }}
-    >
-      {!toggleMenu ? (
-        <div className="ovarlay_open">
-          <CgMenuLeftAlt
-            fillOpacity={0.8}
-            color="blue"
-            cursor={"pointer"}
-            className=""
-            fontSize={40}
-            onClick={() => setToggleMenu(true)}
-          />
-        </div>
-      ) : (
-        <RiCloseCircleLine
-          style={{ transition: 5 }}
-          fontSize={40}
-          className="overlay__close slide"
-          onClick={() => setToggleMenu(false)}
-          color={"#fff"}
-        />
-      )}{" "}
-      <form onSubmit={handleSearch} className="box ">
-        <div className="search ">
-          <input
-            onChange={(e) => setValueToSearch(e.target.value.trim())}
-            className="input"
-            placeholder="&#128269;"
-            autoComplete="off"
-          />
+    <>
+      <div
+        style={{
+          height: "50vh",
+          backgroundImage: ` linear-gradient(
+            rgba(0, 0, 0, 0.1), 
+            #262626
+            ),
+            url(${logo.src})`,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          alignItems: "center",
+          justifyContent: "center",
+          position: "relative",
+        }}
+      >
+        <h1
+          style={{
+            textAlign: "center",
+            position: "absolute",
+            top: "35%",
+            left: "30px",
+            right: "30px",
+          }}
+          className=" siteLogo"
+        >
+          NONCREATIVEBLOG
+        </h1>{" "}
+      </div>
+      <form class="search-form" onSubmit={handleSearch}>
+        <div class="input-group">
+          <div class="input-group2">
+            <label>
+              <input
+                onChange={(e) => setValueToSearch(e.target.value.trim())}
+                type="search"
+                class="search-field"
+                placeholder="Потърси..."
+              />
+            </label>
+            <input
+              type="submit"
+              class="rstore-domain-search-button search-submit  btn-primary"
+              value="Търси  "
+            />
+          </div>
         </div>
       </form>
-      <AnimatePresence>
-        {toggleMenu && (
-          <div
-            className="app__navbar-overylay_background"
-            onClick={() => setToggleMenu(false)}
-          >
-            <motion.div className="app__navbar-smallscreen_overlay slide  ">
-              <div
-                style={{
-                  backgroundColor: "#333",
-                  height: "54px",
-                  padding: "1%",
-                }}
-              ></div>
+      <nav>
+        <label
+          onClick={handleClick}
+          className="hamburger-icon"
+          aria-label="Open navigation menu"
+          htmlFor="drop"
+        >
+          <div id="nav-icon3" className="">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </label>
 
-              {showMenu ? (
-                <ul className={`app__navbar-smallscreen_links  slide`}>
-                  <li
-                    className="p__opensans "
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    <Link href="/">Начало</Link>
+        <input type="checkbox" id="drop" />
+        <ul class="menu">
+          <li>
+            <Link href={"/blog"}>Blog</Link>
+          </li>
+          <li>
+            <label for="drop-1" class="toggle">
+              The gods
+            </label>
+            <a href="#">The gods</a>
+            <input type="checkbox" id="drop-1" />
+            <ul>
+              {posts &&
+                posts
+                  ?.filter((p) => p.category === "TheGods")
+                  .map((post, index) => (
+                    <li className="" key={post.title}>
+                      {!post ? (
+                        "Something went wrong..."
+                      ) : (
+                        <Link
+                          href={"/post/asd[slug]"}
+                          as={`/post/${post.slug.current}`}
+                        >
+                          {post.title}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+            </ul>
+          </li>
+          <li>
+            <label for="drop-2" class="toggle">
+              Cosmology +
+            </label>
+            <a href="#"> Cosmology </a>
+            <input type="checkbox" id="drop-2" />
+            <ul>
+              <li>
+                <a href="#">YGGDRASIL</a>
+              </li>
+              <li>
+                <a href="#">VALHALLA</a>
+              </li>
+              <li>
+                <a href="#">BIFROST</a>
+              </li>
+              <li>
+                <a href="">HLIÐSKJÁLF</a>
+              </li>
+              <li>
+                <label for="drop-3" class="toggle">
+                  Worlds +
+                </label>
+                <a href="#"> Worlds </a>
+                <input type="checkbox" id="drop-3" />
+                <ul>
+                  <li>
+                    <a href="#">YGGDRASIL</a>
                   </li>
-                  <li
-                    className="p__opensans "
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    <Link href="/blog">Писаници...</Link>
+                  <li>
+                    <a href="#">VALHALLA</a>
                   </li>
-
-                  <li
-                    className="p__opensans"
-                    onClick={() => setToggleMenu(false)}
-                  >
-                    <Link href={"/about"}>За мен</Link>
+                  <li>
+                    <a href="#">BIFROST</a>
                   </li>
                 </ul>
-              ) : (
-                ""
-              )}
+              </li>
+              <li>
+                <a href="">GINNUNGAGAP</a>
+              </li>
+              <li>
+                <a href="">FOLKVANG</a>
+              </li>
+            </ul>
+          </li>
 
-              <hr />
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </nav>
+    </>
   );
 };
 

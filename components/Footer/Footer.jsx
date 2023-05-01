@@ -33,90 +33,78 @@ const Footer = () => {
   };
 
   return (
-    <footer>
-      <div className="row">
-        <div className="column">
-          <h4>Информация за блога</h4>
-
-          <p>
-            Добре дошли в моя блог! Тук ще намерите различни материали за
-            митологии от различни култури, поезия и статии свързани с
-            технологиите.
-          </p>
-        </div>
-
-        <div className="column">
-          <h4>Fylgja mér</h4>
-
-          <ul>
-            <li>
-              <form onSubmit={subscribe} className="flex flex-col mb-9 mt-4">
-                {!succes ? (
-                  <input required placeholder="Email address" type="email" />
-                ) : (
-                  <span>Благодаря ! Очаквайте нови статии съвсем скоро !</span>
-                )}
-                {!succes ? (
-                  <button type="submit" className="btn">
-                    Абонирай се
-                  </button>
-                ) : (
-                  <div className="  ">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      height="50"
-                      width="50"
-                      viewBox="0 0 48 48"
-                      aria-hidden="true"
-                    >
-                      <circle
-                        style={{ stroke: "#6faaff" }}
-                        className="circle"
-                        fill="#6faaff"
-                        cx="24"
-                        cy="24"
-                        r="22"
-                      />
-                      <path
-                        className="tick"
-                        fill="none"
-                        stroke="#FFF"
-                        stroke-width="6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-miterlimit="10"
-                        d="M14 27l5.917 4.917L34 17"
-                      />
-                    </svg>
-                  </div>
-                )}
-              </form>
-            </li>
-          </ul>
-        </div>
-
-        <div className="column">
-          <h4>Ако искате да се свържете с мен </h4>
-
-          <ul className="social-icons">
-            <li>
-              <a href="https://github.com/GLTdotNS">
-                <BsGithub color="black" size={40} />
-              </a>
-            </li>
-
-            <li onClick={() => setContact(true)}>
-              <Link href={"/message"}>
-                <TbMessages size={40} />
-              </Link>
-            </li>
-          </ul>
-        </div>
+    <footer className="footer">
+      <div className="footer-left col-md-4 col-sm-6">
+        <p className="about">
+          <span>Добре дошли в моя блог! </span> Тук ще намерите различни
+          материали за митологии от различни култури, поезия и статии свързани с
+          технологиите.
+        </p>
+        <div className="icons"></div>
       </div>
-
-      <p className="copyright">
-        © 2023 Designed by <span>Canis Lupus</span>
-      </p>
+      <div className="footer-center col-md-4 col-sm-6">
+        <form onSubmit={subscribe} className="flex flex-col mb-9 mt-4">
+          {!succes ? (
+            <input required placeholder="Email address" type="email" />
+          ) : (
+            <span>Благодаря ! Очаквайте нови статии съвсем скоро !</span>
+          )}
+          {!succes ? (
+            <button type="submit" className="btn">
+              Абонирай се
+            </button>
+          ) : (
+            <div className="  ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="50"
+                width="50"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+              >
+                <circle
+                  style={{ stroke: "#6faaff" }}
+                  className="circle"
+                  fill="#6faaff"
+                  cx="24"
+                  cy="24"
+                  r="22"
+                />
+                <path
+                  className="tick"
+                  fill="none"
+                  stroke="#FFF"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-miterlimit="10"
+                  d="M14 27l5.917 4.917L34 17"
+                />
+              </svg>
+            </div>
+          )}
+        </form>
+      </div>
+      <div className="footer-right col-md-4 col-sm-6">
+        <h2>
+          {" "}
+          <span> Noncreativeblog</span>
+        </h2>
+        <p className="menu">
+          <Link href={"/blog"} legacyBehavior>
+            BLOG
+          </Link>{" "}
+          |{" "}
+          <Link href={"/about"} legacyBehavior>
+            <a>ABOUT</a>
+          </Link>{" "}
+          |{" "}
+          <Link href={"/message"} legacyBehavior>
+            <a>CONTACTS</a>
+          </Link>{" "}
+        </p>
+        <p className="name"> Designed by Canis Lupus &copy; 2023</p>
+      </div>
     </footer>
   );
 };

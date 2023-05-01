@@ -1,0 +1,307 @@
+h1 {
+  margin-top: 100px;
+}
+
+.toggle,
+[id^="drop"] {
+  display: none;
+}
+nav {
+  margin: 0;
+  padding: 0;
+  margin-top: 15px;
+  z-index: 10000000;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav ul {
+  justify-content: center;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  display: block;
+  margin: 0 auto;
+  list-style: none;
+  position: relative;
+  z-index: 1000;
+}
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+
+  font-family: "Metal Mania", cursive;
+}
+
+nav a {
+  display: block;
+  padding: 0 20px;
+  color: #fff;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+
+nav ul li ul li:hover {
+  background: #000000;
+}
+nav ul li ul ul li {
+  background: #000000;
+}
+
+nav a:hover {
+  background-color: #000000;
+}
+nav ul li {
+  background-color: #000000;
+}
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 60px;
+}
+
+nav ul li:hover > ul {
+  display: inherit;
+}
+
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+
+li > a:after {
+  content: " +";
+}
+
+li > a:only-child:after {
+  content: "";
+}
+
+/* Media Queries
+--------------------------------------------- */
+
+@media all and (max-width: 768px) {
+  .search-field {
+    min-width: 55% !important;
+  }
+  nav ul li {
+    background-color: rgb(44, 44, 44);
+  }
+  nav {
+    margin: 15px !important;
+    background-color: rgb(44, 44, 44);
+    padding: 2%;
+  }
+
+  .toggle + a,
+  .menu {
+    display: none;
+  }
+
+  .toggle {
+    display: block;
+    background-color: #254441;
+    padding: 0 20px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 60px;
+    text-decoration: none;
+    border: none;
+  }
+
+  .toggle:hover {
+    background-color: #000000;
+  }
+
+  [id^="drop"]:checked + ul {
+    display: block;
+  }
+
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: #000000;
+  }
+
+  nav ul li ul li .toggle,
+  nav ul ul a {
+    background-color: #212121;
+  }
+
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+  }
+
+  nav ul ul li:hover > ul,
+  nav ul li:hover > ul {
+    display: none;
+  }
+
+  nav ul ul li {
+    display: block;
+    width: 100%;
+  }
+
+  nav ul ul ul li {
+    position: static;
+  }
+}
+
+@media all and (max-width: 330px) {
+  nav ul li {
+    display: block;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 990px) {
+  .navigation-menu {
+    font-family: "Metal Mania", cursive;
+    height: auto;
+    align-items: center;
+    width: 60% !important;
+    transition: 1s ease;
+    background-color: transparent;
+    margin: 12px auto !important;
+  }
+
+  .main-navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 !important;
+
+    border: none;
+    transition: 1s ease;
+  }
+
+  .hamburger-icon {
+    display: none;
+  }
+
+  #menu-toggle:checked + .main-navigation {
+    display: flex;
+  }
+}
+
+#menu-open,
+#menu-close {
+  color: inherit;
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  z-index: 1;
+}
+
+#nav-icon1,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  width: 60px;
+  height: 45px;
+  position: relative;
+  margin: 0px auto;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+#nav-icon1 span,
+#nav-icon3 span,
+#nav-icon4 span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 80%;
+  background: #b0903d;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#nav-icon3 span:nth-child(1) {
+  top: 0px;
+  width: 100%;
+}
+
+#nav-icon3 span:nth-child(2),
+#nav-icon3 span:nth-child(3) {
+  top: 15px;
+  width: 80% !important;
+}
+
+#nav-icon3 span:nth-child(4) {
+  top: 30px;
+  width: 100%;
+}
+
+#nav-icon3.open span:nth-child(1) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}
+
+#nav-icon3.open span:nth-child(2) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#nav-icon3.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+#nav-icon3.open span:nth-child(4) {
+  top: 18px;
+  width: 0%;
+  left: 50%;
+}

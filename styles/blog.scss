@@ -1,74 +1,44 @@
 /*blog*/
 
-.search {
-  position: relative;
-  display: flex;
-  padding: 20px;
-  margin-bottom: 5px;
+.search-field {
+  /* this class is for input field, if in your code its different, just substitute the class name '.search-field' */
+  padding: 10px 15px;
+  width: 35%;
+  font-size: 1rem;
+  line-height: 1.5em;
+  color: #373d41;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #c5c5c7;
+  border-radius: 6px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  flex-grow: 1;
+  border-right: none;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
-
-.box {
-  position: relative;
-  width: 100% !important;
-}
-::placeholder {
-  /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
-  opacity: 1; /* Firefox */
-}
-
-:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: white;
-}
-
-::-ms-input-placeholder {
-  /* Microsoft Edge */
-  color: white;
-}
-input:focus::placeholder {
-  color: transparent;
-}
-#landingImage {
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 100%;
-  width: 100%;
-  object-fit: contain;
-  background-color: black;
-}
-
-.input {
-  padding: 10px;
-  background-color: transparent;
-  width: 45px;
-  box-sizing: border-box;
-  background-position: left top;
-  -webkit-transition: width 0.2s;
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 20px !important;
-  outline: none;
-  transition: 0.5s;
-  border: none;
-  font-size: 15px;
-  color: white;
-  border-radius: 100%;
-  border: 1px solid none;
-  opacity: 0.8;
-  box-shadow: 0 10px 15px rgb(0 0 0 / 1);
+.search-submit {
+  /* this class is for submit button, if in your code its different, just substitute the class name '.search-submit' */
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: normal;
+  -webkit-transition: none;
+  transition: none;
   cursor: pointer;
+  outline: 0;
+  padding: 14px 24px 13px;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  border-radius: 6px;
+  border-width: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
 }
-
-.box .input:focus {
-  background-color: #4ba6e7;
-  width: 20%;
-  height: 40px;
-  cursor: text;
-  background: #333;
-  border-radius: 5px;
-  box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px black;
+.search-form .input-group {
+  text-align: center;
 }
 .categoriesSearch {
   width: 200px;
@@ -124,26 +94,265 @@ hr {
   margin-bottom: 4vh;
 }
 .section {
-  box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px #636363;
   padding: 10%;
 }
-.dropdown {
-  box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px #636363;
+
+.champion-page {
+  background-color: rgb(250, 248, 243);
+  width: 100%;
+}
+.content-wrapper {
+  align-items: "";
+}
+#main-background {
+  background-color: #b0903d;
+  position: relative;
+  overflow: hidden;
+  width: 75%;
+  margin: auto;
 }
 
-#settingMenu {
-  background-color: #202124;
-  height: 0px;
-  width: 200px;
+#main-background .top,
+#main-background .bottom {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: rgb(44, 44, 44);
+}
 
-  -webkit-transition: height 0.3s;
-  transition: height 0.2s;
+#secondary-background {
+  margin: 20px;
+  height: calc(100% - 40px);
+  background-color: rgb(250, 248, 243);
+  position: relative;
+  overflow: hidden;
 }
-#center {
-  opacity: 0;
-  transition: all 0.3s ease-in;
-  transition: all 0.2s ease-out;
+
+#secondary-background .top,
+#secondary-background .bottom {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: #b0903d;
 }
+
+#tertiary-background {
+  margin: 5px;
+  height: calc(100% - 10px);
+
+  position: relative;
+  overflow: hidden;
+}
+
+#tertiary-background .top-small,
+#tertiary-background .bottom-small {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 5px solid rgb(250, 248, 243);
+}
+
+.top {
+  top: -20px;
+}
+.bottom {
+  bottom: -20px;
+}
+.left {
+  left: -20px;
+}
+.right {
+  right: -20px;
+}
+
+.top {
+  top: -20px;
+}
+.bottom {
+  bottom: -20px;
+}
+.left {
+  left: -20px;
+}
+.right {
+  right: -20px;
+}
+
+.top-small {
+  top: -30px;
+}
+.bottom-small {
+  bottom: -30px;
+}
+.left-small {
+  left: -30px;
+}
+.right-small {
+  right: -30px;
+}
+hr {
+  background-color: #333;
+  height: 1px;
+  border: 0;
+}
+.postPage h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.post_text {
+  border-color: transparent;
+  font-size: 20px;
+}
+
+.post_text iframe {
+  margin: 5% 0 5% 0;
+  width: 100%;
+  height: 500px;
+}
+
+.posts a {
+  display: flex;
+  align-items: center;
+  margin: 0.4rem 0;
+}
+
+.post_text figure img {
+  width: 70%;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+  background-color: #333;
+}
+
+.posts img {
+  width: 100px;
+  margin-right: 10px;
+  border: 1px solid #333;
+}
+
+.midcolumn {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+  margin: 0 auto !important;
+  padding: 1%;
+  width: 80%;
+}
+
+.postPage #blurBackground {
+  display: block;
+  width: 100vw;
+  height: 70vh;
+  object-fit: cover; /* or object-fit: contain; */
+}
+
+.addScrollButton {
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  transition: 1.5s ease;
+}
+
+/*end blog*/
+
+.video-card video {
+  width: 100% !important;
+  margin: auto;
+}
+.video-card {
+  position: relative;
+}
+.video-card video {
+  display: block;
+}
+.buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  text-align: center;
+  background-color: transparent;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: white;
+  font-size: 50px;
+  border: 0px;
+}
+
+.band {
+  width: 90%;
+  max-width: 1240px;
+
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.postCard {
+  background: rgb(55, 53, 52);
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  z-index: 1;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 0;
+  transition: all 0.1s ease-in;
+
+  &:hover {
+    top: -15px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+  }
+
+  article {
+    padding: 20px;
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .thumb {
+    padding-bottom: 60%;
+    background-size: cover;
+    background-position: center center;
+  }
+}
+
+.item-1 {
+  @media (min-width: 60em) {
+    grid-column: 1 / span 2;
+
+    h1 {
+      font-size: 24px;
+    }
+  }
+}
+
 .columns .title {
   margin-top: 20% !important;
   background-color: #111;
@@ -201,6 +410,7 @@ hr {
   min-height: 100vh;
   padding: 5%;
   width: 75%;
+  border-left: 1px solid #333;
   margin-left: auto !important;
   z-index: 10;
 }
@@ -209,15 +419,24 @@ hr {
   margin: auto !important;
   display: block;
   width: 70%;
-  background-color: #202124;
+  background-color: transparent;
+  text-align: left !important;
 }
+.postPage .midcolumn {
+  text-align: left !important;
+  border: none;
+}
+
 .postPage {
-  background-color: #202124;
+  width: 100%;
+  margin: auto;
+  background-color: transparent !important;
 }
 .postPage #blurBackground {
   display: block;
   width: 100vw;
-  height: 70vh;
+  height: 50vh;
+  margin: auto;
   object-fit: cover; /* or object-fit: contain; */
 }
 

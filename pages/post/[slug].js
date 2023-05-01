@@ -103,7 +103,8 @@ const Post = ({ post, posts, category }) => {
   }
 
   return (
-    <Layout>
+    <Layout category={category} posts={posts}>
+      {console.log(posts)}
       <div className="main postPage " id="postPage">
         <Head>
           <meta
@@ -113,26 +114,20 @@ const Post = ({ post, posts, category }) => {
           />
           <title>{post.title}</title>
         </Head>
-        <img
-          id="blurBackground"
-          loading="lazy"
-          src={urlForImg(post.mainImage.asset.url)}
-          alt="Image of the post"
-          width={"100%"}
-          height={"600"}
-        />
-        <div style={{ textAlign: "center" }} className="author">
-          <h1 style={{ fontSize: "40px" }}>{post.title}</h1>
-          <br />
-          <h4>
-            <BsPencilSquare />: {post.name}
-          </h4>
-          <h4>
-            <MdDateRange />:{" "}
-            {post.publishedAt
-              ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
-              : "YYYY-MM-DD hh:mm"}
-          </h4>
+        <div style={{ textAlign: "center", position: "" }} className="">
+          <div>
+            <h1>{post.title}</h1>
+            <br />
+            <p>
+              <BsPencilSquare />: {post.name}
+            </p>
+            <h4>
+              <MdDateRange />:{" "}
+              {post.publishedAt
+                ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
+                : "YYYY-MM-DD hh:mm"}
+            </h4>
+          </div>
           <hr />
         </div>
         <Link
@@ -141,106 +136,8 @@ const Post = ({ post, posts, category }) => {
         >
           Назад към блога
         </Link>
-        {!settings ? (
-          <button
-            onClick={() => handleSettings()}
-            style={{
-              border: "none",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-            }}
-          >
-            <GoSettings
-              style={{
-                border: "1px solid #333",
-              }}
-              size={40}
-              color="orange"
-            />
-          </button>
-        ) : (
-          <button
-            style={{
-              border: "none",
-              backgroundColor: "transparent",
-              cursor: "pointer",
-            }}
-            onClick={() => handleSettings()}
-            className=""
-          >
-            <MdClose
-              style={{ border: "1px solid white" }}
-              size={40}
-              color="orange"
-            />
-          </button>
-        )}
-        <div
-          style={{ padding: "20% !important" }}
-          className="dropdown "
-          id="settingMenu"
-        >
-          <div id="center">
-            <center>
-              <h1 style={{ padding: "1%" }}>
-                <AiOutlineFontSize color="white" />
-              </h1>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn1"
-              >
-                -A
-              </button>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn2"
-              >
-                A
-              </button>
-              <button
-                className="settingBtn"
-                onClick={(e) => changeSizeByBtn(e.target.name)}
-                type="button"
-                name="btn3"
-              >
-                A+
-              </button>
-              <br />
-              <br />
-            </center>
-            <center>
-              <h1 style={{ padding: "1%" }}>
-                <AiOutlineFontColors color="white" />
-              </h1>
-
-              <button
-                id="white"
-                className="settingBtn"
-                onClick={(e) => changeColorSchema(e.target.name)}
-                type="button"
-                name="btn1"
-              ></button>
-
-              <button
-                id="dark"
-                className="settingBtn"
-                onClick={(e) => changeColorSchema(e.target.name)}
-                type="button"
-                name="btn2"
-              ></button>
-
-              <br />
-              <br />
-            </center>
-          </div>
-        </div>
-
         <div className="midcolumn boxShadow " id="mid">
-          <div className="post_text " id="container">
+          <div className="post_text " id="postContainer">
             <BlockContent post={post} />
           </div>
 
@@ -280,7 +177,7 @@ const Post = ({ post, posts, category }) => {
             <div className="columns posts">
               <h3 className="p__opensans title">Подобни постове</h3>
               {posts
-                .filter((x) => x.categories[0] === post.categories[0])
+                .filter((x) => x.category === post.categories[0])
                 .filter((x) => x.slug.current !== post.slug.current)
                 .map((post) => (
                   <div
@@ -325,6 +222,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   _id,
   publishedAt,
   description,
+ 
   slug,
   "name": author->name,
   "categories": categories[]->title,
@@ -361,6 +259,7 @@ export async function getStaticPaths() {
   slug,
   "authorImage": author->image,
   description,
+  "category": categories[0]->title,
   body,
   publishedAt,
   mainImage{
@@ -392,7 +291,7 @@ export async function getStaticProps(context) {
   title,
   slug,
   "authorImage": author->image,
-  "categories": categories[]->title,
+  "category": categories[0]->title,
   description,
   body,
   publishedAt,

@@ -38,20 +38,8 @@ const CategoriesPage = ({ posts, category, post }) => {
   };
 
   return (
-    <Layout>
+    <Layout category={category} posts={posts}>
       <div className="row">
-        <div id="blurBackground">
-          <img
-            loading="lazy"
-            src={urlForImg(
-              category.filter((x) => x.slug.current === location)[0].image.asset
-                .url
-            )}
-            width="100%"
-            height="500"
-            alt="Image of the post"
-          />
-        </div>
         <div className="midcolumn">
           <form
             onSubmit={onFormSubmit}
@@ -110,8 +98,6 @@ const CategoriesPage = ({ posts, category, post }) => {
         </div>
 
         <div className="rightcolumn">
-          <Categories posts={posts} category={category} />
-
           <RecentlyPosts
             posts={posts
               .slice()

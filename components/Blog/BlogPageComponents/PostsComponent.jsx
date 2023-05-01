@@ -13,12 +13,12 @@ import { client } from "../../../lib/sanityClient.js";
 
 const PostsComponent = ({ posts }) => {
   const [pageNumber, setPageNumber] = useState(0);
-  const postPerPage = 4;
+  const postPerPage = 7;
   const pageVisited = pageNumber * postPerPage;
   const router = useRouter();
   const displayPost =
     posts &&
-    posts.slice(pageVisited, pageVisited + postPerPage).map((post) => {
+    posts.slice(pageVisited, pageVisited + postPerPage).map((post, index) => {
       let wordsCount = post?.description.split(" ");
 
       let minutesToRead = wordsCount.length / 200;
@@ -31,52 +31,28 @@ const PostsComponent = ({ posts }) => {
       };
 
       return (
-        <div className=" initial-post " key={post.title}>
-          <div className="inner_post_text">
-            <h3
-              onClick={() =>
-                updateReaders(post) &&
-                router.push(`/post/${post?.slug.current}`)
-              }
-              style={{ marginBottom: "4px" }}
-            >
-              {post.title}
-            </h3>
-
-            <p>
-              {minutesToRead.toFixed(0) == 0 ? 1 : minutesToRead.toFixed(0)}{" "}
-              минута за четене
-            </p>
-            <p> Прочетено {post.likes} пъти</p>
-            {post?.mainImage ? (
-              <img
-                loading="lazy"
-                style={{
-                  float: "left",
-                  margin: "5px 15px 0 0",
-                  padding: "1%",
-                }}
-                src={urlForImg(post.mainImage.asset.url)}
-                alt="Image of the post"
-                width="150"
-                height="150"
-              />
-            ) : (
-              "none"
-            )}
-
-            <span> {post?.description.slice(0, 300)}...</span>
-          </div>
-
-          <button
-            className="readMore"
+        <div className={`item-${index + 1}`} key={post.slug.current}>
+          <a
+            className="postCard"
             onClick={() =>
               updateReaders(post) && router.push(`/post/${post.slug.current}`)
             }
           >
-            Виж повече
-            <IoIosArrowRoundForward size={20} />
-          </button>
+            <h3 style={{ color: "#999" }}>{post.title}</h3>
+            <div
+              class="thumb"
+              style={{
+                backgroundImage: `url(${urlForImg(post.mainImage.asset.url)})`,
+              }}
+            ></div>
+            <article>
+              <h4>{post.description.slice(0, 100)}</h4>
+              <span>
+                By Canis Lupus ,{" "}
+                {moment(post.publishedAt).format("YYYY , MMM  DD")}
+              </span>
+            </article>
+          </a>
         </div>
       );
     });
@@ -85,7 +61,7 @@ const PostsComponent = ({ posts }) => {
   const count = 1;
   const handleChange = ({ selected }) => {
     setPageNumber(selected);
-    window.scrollTo(0, 500);
+    window.scrollTo(0, 0);
   };
 
   return (

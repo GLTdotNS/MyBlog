@@ -5,13 +5,13 @@ import { useEffect, useState } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import Head from "next/head";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, category, posts }) => {
   const { scrollYProgress } = useViewportScroll();
 
   return (
     <main className="main-container row wrapper">
       <header>
-        <Navbar />
+        <Navbar category={category} posts={posts} />
       </header>
       {children}
 

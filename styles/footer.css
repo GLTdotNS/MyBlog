@@ -1,127 +1,172 @@
-footer {
-  margin-top: 5px;
-
-  height: 100%;
-  margin: auto;
-  font-family: "Inconsolata", Helvetica, sans-serif;
-  font-size: 1.5rem;
-  color: #6faaff;
-  text-shadow: 0 0 0.5ex #6faaff, 0 0 0.1px rgba(255, 255, 255, 0.8);
+.footer {
+  background: linear-gradient(black, rgba(0, 0, 0, 0.6)),
+    url("./assets//footer-background.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  height: 400px;
+  font-size: 16px;
+  padding: 50px;
 }
 
-footer .row {
-  display: flex;
-  padding: 1rem;
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
 }
 
-footer .column {
-  width: calc(100% / 3);
-  padding: 0 0.9375rem;
+/* footer left*/
+
+.footer .footer-left {
+  width: 33%;
+  padding-right: 15px;
 }
 
-footer h4 {
-  margin-bottom: 0.9375rem;
-  font-size: 1.5rem;
-}
-
-footer p {
-  font-size: 1rem;
-  line-height: 1.3rem;
-}
-
-footer ul {
-  list-style: none;
+.footer .about {
+  line-height: 20px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: normal;
   margin: 0;
-  padding: 0;
 }
 
-footer ul li {
-  margin-bottom: 0.625rem;
-}
-
-footer ul li a {
-  color: #6faaff;
-  font-size: 1rem;
-}
-
-footer ul li i {
-  color: #6faaff;
-}
-
-footer ul li a:hover {
+.footer .about span {
+  display: block;
   color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
-footer ul.social-icons {
-  display: flex;
-  column-gap: 0.625rem;
+.footer .icons {
+  margin-top: 25px;
 }
 
-.social-icons i {
-  color: white;
-}
-
-footer ul.social-icons li {
-  margin-bottom: 0rem;
-}
-
-footer ul.social-icons li a {
-  display: grid;
-  place-content: center;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 100%;
-  background-color: #282828;
-}
-
-footer ul.social-icons li:hover a {
-  background-color: #6fdeff;
-}
-
-footer .copyright {
+.footer .icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #fff;
   text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
 }
 
-/* Responsive adjustments */
+/* footer center*/
 
-@media screen and (max-width: 768px) {
-  footer .column {
-    margin: 0.4rem 0;
-    width: 100%;
-    padding: 0;
-  }
-
-  footer .row {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  footer h4 {
-    font-size: 1.3125rem;
-  }
-
-  footer p {
-    font-size: 0.9375rem;
-  }
-
-  footer ul li a {
-    font-size: 0.9375rem;
-  }
-
-  footer ul.social-icons li a {
-    width: 1.875rem;
-    height: 1.875rem;
-  }
+.footer .footer-center {
+  width: 30%;
+  margin-right: 15px;
 }
-.copyright span {
+
+.footer .footer-center i {
+  background-color: #33383b;
   color: #fff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  color: #fff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer .footer-center p a {
+  color: #0099ff;
   text-decoration: none;
 }
 
-.copyright span::before {
-  content: "[";
+/* footer right*/
+
+.footer .footer-right {
+  width: 35%;
 }
 
-.copyright span::after {
-  content: "]";
+.footer h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer h2 span {
+  text-transform: uppercase;
+  font-family: "Metal Mania", cursive;
+  color: #0099ff;
+}
+
+.footer .menu {
+  color: #fff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .menu a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .menu a:hover {
+  color: #0099ff;
+}
+
+.footer .name {
+  color: #0099ff;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 14px;
+  }
+  .footer .icons {
+    background-color: white;
+    color: white !important;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer .footer-center p {
+    color: white;
+  }
+  .footer .footer-center i {
+    margin-left: 0;
+  }
 }

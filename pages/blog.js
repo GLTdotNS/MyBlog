@@ -8,7 +8,7 @@ import Image from "next/image";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 import Layout from "../components/Layout/Layout";
-import logo from "../styles/assets/bg1.png";
+
 import dynamic from "next/dynamic";
 
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
@@ -21,45 +21,27 @@ const MainBlogPage = ({ posts, category }) => {
   }, []);
 
   return (
-    <Layout>
+    <Layout category={category} posts={posts}>
       <div id="blurBackground">
-        <div
-          style={{
-            position: "relative",
-            height: "500px",
-          }}
-        >
-          <Image
-            id="landingImage"
-            src={logo}
-            height={"300"}
-            width={300}
-            style={{ objectFit: "contain" }}
-            alt="Image of Linux"
-          />
-
-          {/* <div class="star-field">
-            <div class="layer"></div>
-            <div class="layer"></div>
-            <div class="layer"></div>
-          </div> */}
+        <div>
+          <div className="layer"></div>
+          <div className="layer"></div>
+          <div className="layer"></div>
         </div>
       </div>
+
       <div className="row ">
+        <div></div>
         <div className="midcolumn ">
-          <h1 className=" siteLogo">NONCREATIVEBLOG</h1>
-
-          <hr />
-
-          <PostsComponent
-            posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
-          />
+          <div className="band">
+            <PostsComponent
+              posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
+            />
+          </div>
         </div>
         <div className="rightcolumn">
-          <Categories posts={posts} category={category} />
-
-          <div className="columns posts">
-            <h3 className="p__opensans title">Най - четени</h3>
+          <div className="columns ">
+            <h3 className="p__opensans ">Най - четени</h3>
             <CrispWithNoSSR />
             <RecentlyPosts
               posts={posts.slice().sort((x, b) => b.likes - x.likes)}
