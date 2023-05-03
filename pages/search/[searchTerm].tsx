@@ -76,7 +76,7 @@ const Search = ({ posts }) => {
                   <p>
                     <Link
                       style={{ color: "blue", textDecoration: "underline" }}
-                      href={"/blog"}
+                      href={"/"}
                     >
                       Към начална страница
                     </Link>

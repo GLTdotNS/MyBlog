@@ -44,7 +44,7 @@ const MainBlogPage = ({ posts, category }) => {
             <h3 className="p__opensans ">Най - четени</h3>
             <CrispWithNoSSR />
             <RecentlyPosts
-              posts={posts.slice().sort((x, b) => b.likes - x.likes)}
+              posts={posts?.slice().sort((x, b) => b.likes - x.likes)}
             />
           </div>
         </div>
@@ -52,45 +52,5 @@ const MainBlogPage = ({ posts, category }) => {
     </Layout>
   );
 };
-export const getServerSideProps = async () => {
-  const query = groq`*[_type == "post"] | order(_createdAt desc)
-  {
-  title,
-  slug,
-  "authorImage": author->image,
-  "category": categories[0]->title,
-  description,
-  likes,
-  _id,
-  body,
-  publishedAt,
-  mainImage{
-    asset->{
-    _id,
-    url
-  }
-},
 
-}`;
-  const category = await client.fetch(
-    groq`*[_type == "category"]{
-  _id,
-  slug,
-  title,
-  mainImage{
-    asset->{
-    _id,
-    url
-  }
-}
-
-  }`
-  );
-
-  const posts = await client.fetch(query);
-
-  return {
-    props: { posts, category },
-  };
-};
 export default MainBlogPage;

@@ -1,131 +1,116 @@
-.our_solution_category {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+  max-width: 1240px;
+  justify-content: center;
+  width: 90%;
+  margin: auto;
+  margin-top: 5%;
+  align-items: center;
+
+  font-family: "Baloo Paaji 2", cursive;
+  @media (min-width: 30em) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 60em) {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
-.our_solution_category .solution_cards_box {
+
+.staffCard {
+  background: rgb(55, 53, 52);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.solution_cards_box .solution_card {
-  flex: 50% 50%;
-
-  box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px #636363;
-  border-radius: 15px;
-  margin: 15px;
-  padding: 10px 15px;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
-  min-height: 265px;
-  max-width: 400px;
-  transition: 0.7s;
-}
-
-.solution_cards_box .solution_card:hover {
-  background: #000324;
-  color: #fff;
-  transform: scale(1.01);
-  z-index: 9;
-}
-
-.solution_cards_box .solution_card:hover::before {
-  background: rgb(85 108 214 / 30%);
-}
-
-.solution_cards_box .solution_card:hover .solu_title h3,
-.solution_cards_box .solution_card:hover .solu_description p {
-  color: wheat;
-}
-
-.solution_cards_box .solution_card:before {
-  content: "";
-  position: absolute;
-  background: rgb(85 108 214 / 0%);
-  width: 170px;
-  height: 400px;
-  z-index: -1;
-  transform: rotate(30deg);
-  right: -56px;
-  top: -23px;
-}
-
-.solution_cards_box .solution_card:hover .solu_description button {
-  background: #fff !important;
-  color: #309df0;
-}
-
-.solution_card .solu_title h3 {
-  color: white;
-  font-size: 1.3rem;
-  margin-top: 13px;
-  margin-bottom: 13px;
-}
-
-.solution_card .solu_description p {
-  font-size: 15px;
-  margin-bottom: 15px;
-}
-
-.solution_card .solu_description button {
-  border: 0;
-  border-radius: 15px;
-  background: linear-gradient(
-    140deg,
-    #42c3ca 0%,
-    #42c3ca 50%,
-    #42c3cac7 75%
-  ) !important;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
-  padding: 5px 16px;
-}
-
-.our_solution_content h1 {
-  text-transform: capitalize;
-  margin-bottom: 1rem;
-  font-size: 2.5rem;
-}
-
-.hover_color_bubble {
-  position: absolute;
-  background: rgb(54 81 207 / 15%);
-  width: 100rem;
-  height: 100rem;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  top: 16rem;
-  border-radius: 50%;
-  transform: rotate(-36deg);
-  left: -18rem;
-  transition: 0.7s;
-}
-
-.solution_cards_box .solution_card:hover .hover_color_bubble {
-  top: 0rem;
-}
-
-.solution_cards_box .solution_card .so_top_icon {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  background: none;
-  overflow: hidden;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
 }
 
-.solution_cards_box .solution_card .so_top_icon img {
-  width: 40px;
-  height: 50px;
-  object-fit: cover;
+.card__name {
+  margin-top: 15px;
+  font-size: 1.5em;
 }
 
-#mywork {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
-    Liberation Mono, Courier New, monospace;
+.card__image {
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  border: 5px solid #252525;
+  margin-top: 20px;
+}
+
+.draw-border {
+  box-shadow: inset 0 0 0 4px #333;
+  color: #58afd1;
+  -webkit-transition: color 0.25s 0.0833333333s;
+  transition: color 0.25s 0.0833333333s;
+  position: relative;
+}
+
+.draw-border::before,
+.draw-border::after {
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  width: 0rem;
+  height: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.draw-border::before {
+  border-bottom-width: 4px;
+  border-left-width: 4px;
+}
+
+.draw-border::after {
+  border-top-width: 4px;
+  border-right-width: 4px;
+}
+
+.draw-border:hover {
+  color: #ffe593;
+}
+
+.draw-border:hover::before,
+.draw-border:hover::after {
+  border-color: #252423;
+  -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+  transition: border-color 0s, width 0.25s, height 0.25s;
+  width: 100%;
+  height: 100%;
+}
+
+.draw-border:hover::before {
+  -webkit-transition-delay: 0s, 0s, 0.25s;
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.draw-border:hover::after {
+  -webkit-transition-delay: 0s, 0.25s, 0s;
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+.btn:focus {
+  outline: 2px dotted #55d7dc;
+}
+
+.ial-icons {
+  padding: 0;
+  list-style: none;
+  margin: 1em;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  font-size: 1.2em;
 }

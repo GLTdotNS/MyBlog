@@ -315,16 +315,20 @@ hr {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   z-index: 1;
+  padding: 2%;
+  cursor: pointer;
   flex-direction: column;
   height: 100%;
   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
   position: relative;
   top: 0;
-  transition: all 0.1s ease-in;
+  transition: all 0.2s ease-in;
 
   &:hover {
     top: -15px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+    background-color: #333;
+    color: #c5c5c7;
   }
 
   article {

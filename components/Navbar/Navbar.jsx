@@ -113,7 +113,7 @@ const Navbar = ({ category, posts }) => {
         <input type="checkbox" id="drop" />
         <ul class="menu">
           <li>
-            <Link href={"/blog"}>Blog</Link>
+            <Link href={"/"}>Blog</Link>
           </li>
           <li>
             <label for="drop-1" class="toggle">
@@ -188,10 +188,10 @@ const Navbar = ({ category, posts }) => {
           </li>
 
           <li>
-            <a href="#">Contact</a>
+            <Link href={"/message"}>Contacts</Link>
           </li>
           <li>
-            <a href="#">About</a>
+            <Link href={"/about"}>About</Link>
           </li>
         </ul>
       </nav>

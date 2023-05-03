@@ -132,7 +132,7 @@ const Post = ({ post, posts, category }) => {
         </div>
         <Link
           style={{ color: "blue", float: "right", marginRight: "1%" }}
-          href={"/blog"}
+          href={"/"}
         >
           Назад към блога
         </Link>

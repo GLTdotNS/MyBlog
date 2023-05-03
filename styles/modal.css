@@ -16,7 +16,7 @@ select:focus {
   outline: none;
 }
 .contacts-page input[type="submit"] {
-  width: 100%;
+  width: 10%;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -52,22 +52,19 @@ span.psw {
   z-index: 1000000000;
   left: 0;
   top: 0;
-  justify-content: center;
-  text-align: center;
+  right: 0;
   width: 100%;
-  height: 100%;
-  overflow: inherit !important;
-  background-color: rgba(255, 255, 255, 0.3);
-  padding-top: 60px;
+  height: 100%v;
+  overflow: hidden !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), #262626),
+    url("../styles/assets/niffleheim.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto 15% auto;
-  border: 1px solid #888;
 
-  padding: 15px;
-  width: 30%;
+  margin-bottom: 100px;
 }
 
 .animate {

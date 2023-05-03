@@ -11,7 +11,7 @@ const RecentlyPosts = ({ posts }) => {
       <hr />
       <ul className="section ">
         {posts &&
-          posts.slice(0, 6).map((post, index) => (
+          posts?.slice(0, 6).map((post, index) => (
             <div
               key={post.title}
               style={{ cursor: "pointer" }}
