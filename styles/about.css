@@ -5,19 +5,10 @@
   grid-gap: 20px;
   max-width: 1240px;
   justify-content: center;
-  width: 90%;
+  width: 100%;
   margin: auto;
   margin-top: 5%;
   align-items: center;
-
-  font-family: "Baloo Paaji 2", cursive;
-  @media (min-width: 30em) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  @media (min-width: 60em) {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 .staffCard {
@@ -26,7 +17,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }

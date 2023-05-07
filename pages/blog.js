@@ -41,7 +41,7 @@ const MainBlogPage = ({ posts, category }) => {
         </div>
         <div className="rightcolumn">
           <div className="columns ">
-            <h3 className="p__opensans ">Най - четени</h3>
+            <h3 className="p__opensans ">Trending</h3>
             <CrispWithNoSSR />
             <RecentlyPosts
               posts={posts?.slice().sort((x, b) => b.likes - x.likes)}

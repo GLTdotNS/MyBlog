@@ -104,7 +104,6 @@ const Post = ({ post, posts, category }) => {
 
   return (
     <Layout posts={posts}>
-      {console.log(posts)}
       <div className="main postPage " id="postPage">
         <Head>
           <meta
@@ -130,12 +129,7 @@ const Post = ({ post, posts, category }) => {
           </div>
           <hr />
         </div>
-        <Link
-          style={{ color: "blue", float: "right", marginRight: "1%" }}
-          href={"/"}
-        >
-          Назад към блога
-        </Link>
+
         <div className="midcolumn boxShadow " id="mid">
           <div className="post_text " id="postContainer">
             <BlockContent post={post} />

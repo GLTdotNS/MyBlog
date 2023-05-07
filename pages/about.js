@@ -3,6 +3,7 @@ import Image from "next/image";
 import image from "../styles/assets/bg1.png";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
+import Link from "next/link";
 import { client } from "../lib/sanityClient";
 const About = ({ category, posts }) => {
   return (
@@ -15,13 +16,38 @@ const About = ({ category, posts }) => {
             <h4 className="card__name">Canis Lupus</h4>
             <div
               style={{
-                backgroundColor: "#0089bb",
                 color: "white",
-                padding: "5px",
+                padding: "20px",
+                width: "90%",
+                fontSize: "20px",
+                marginTop: "2%",
+                marginBottom: "5%",
                 borderRadius: "20px",
               }}
             >
-              afsdgsad
+              <span style={{ width: "70% !important" }}>
+                Здравейте, приятели на скандинавската митология! Казвам се
+                Георги и от няколко години изследвам нордическите богове и
+                създания.
+                <br />В този блог ще намерите разкази за боговете и героите на
+                скандинавската митология, както и за техните битки и епични
+                приключения. Ще се запознаете с космологията на нордическите
+                племена и техните вярвания. Какво всъщност е било за тях живота
+                , семейството и родината !
+                <br />
+                <br />
+                Ако искате да предложите тема или да бъдете автор , не се
+                колебайте да ми пишете{" "}
+                <Link
+                  style={{ color: "blue", textDecoration: "underline" }}
+                  href={"message"}
+                >
+                  тук.
+                </Link>
+                <br />
+                <br />
+                <strong> Приятно четене , Skál</strong> !
+              </span>
             </div>
           </div>
         </div>
