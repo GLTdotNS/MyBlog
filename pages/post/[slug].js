@@ -101,7 +101,11 @@ const Post = ({ post, posts, category }) => {
     midcolumn = document.getElementById("postPage");
 
     const backgroundColor = document.querySelector("body");
-    if (localStorage.getItem("dark") == 1) {
+    if (
+      localStorage.getItem("dark") === 1 ||
+      localStorage.getItem("dark") === null ||
+      localStorage.getItem("dark") == undefined
+    ) {
       setDark(true);
       midcolumn.style.color = "#ffff";
       backgroundColor.style.backgroundColor = "#262626";

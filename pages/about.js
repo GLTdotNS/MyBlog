@@ -27,9 +27,16 @@ const About = ({ category, posts }) => {
               }}
             >
               <span style={{ width: "70% !important" }}>
-                Здравейте, приятели на скандинавската митология! Казвам се
-                Георги и от няколко години изследвам нордическите богове и
-                създания.
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry standard dummy text
+                ever since the 1500s, when an unknown printer took a galley of
+                type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum
                 <br />В този блог ще намерите разкази за боговете и героите на
                 скандинавската митология, както и за техните битки и епични
                 приключения. Ще се запознаете с космологията на нордическите

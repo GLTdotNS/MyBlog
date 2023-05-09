@@ -209,7 +209,7 @@ const Navbar = ({ category, posts }) => {
             <Link href={"/message"}>Contacts</Link>
           </li>
           <li>
-            <Link href={"/about"}>About</Link>
+            <Link href={"/comingsoon"}>About</Link>
           </li>
           <li>
             <Link href={"/comingsoon"}>Store</Link>

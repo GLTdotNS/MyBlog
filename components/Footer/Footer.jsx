@@ -36,9 +36,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left col-md-4 col-sm-6">
         <p className="about">
-          <span>Добре дошли в моя блог! </span> Тук ще намерите различни
-          материали за митологии от различни култури, поезия и статии свързани с
-          технологиите.
+          <span>Vilkomen! </span> Lorem Ipsum is simply dummy text of the
+          printing and typesetting industry.
         </p>
         <div className="icons"></div>
       </div>
