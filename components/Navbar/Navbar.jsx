@@ -117,7 +117,7 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li>
             <label for="drop-1" class="toggle">
-              The gods
+              The gods +
             </label>
             <a href="#">The gods</a>
             <input type="checkbox" id="drop-1" />
@@ -134,7 +134,7 @@ const Navbar = ({ category, posts }) => {
                           href={"/post/asd[slug]"}
                           as={`/post/${post.slug.current}`}
                         >
-                          {post.title}
+                          {post.rowTitle}
                         </Link>
                       )}
                     </li>
@@ -164,18 +164,36 @@ const Navbar = ({ category, posts }) => {
                 <label for="drop-3" class="toggle">
                   Worlds +
                 </label>
-                <a href="#"> Worlds </a>
+                <a id="worldsLink" href="#">
+                  {" "}
+                  Worlds{" "}
+                </a>
                 <input type="checkbox" id="drop-3" />
-                <ul>
+                <ul id="worlds">
                   <li>
-                    <a href="#">YGGDRASIL</a>
+                    <a href="#">Asgard</a>
                   </li>
                   <li>
-                    <a href="#">VALHALLA</a>
+                    <a href="#">Álfheim</a>
                   </li>
                   <li>
-                    <a href="#">BIFROST</a>
+                    <a href="#">Niðavellir</a>
                   </li>
+                  <li>
+                    <a href="#">Jötunheimr</a>
+                  </li>
+                  <li>
+                    <a href="#">Vanaheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Niflheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Muspelheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Hel</a>
+                  </li>{" "}
                 </ul>
               </li>
               <li>
@@ -192,6 +210,9 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li>
             <Link href={"/about"}>About</Link>
+          </li>
+          <li>
+            <Link href={"/comingsoon"}>Store</Link>
           </li>
         </ul>
       </nav>

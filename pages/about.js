@@ -3,13 +3,14 @@ import Image from "next/image";
 import image from "../styles/assets/bg1.png";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
+import { BsGithub, BsLinkedin, BsMailbox2, BsFacebook } from "react-icons/bs";
 import Link from "next/link";
 import { client } from "../lib/sanityClient";
 const About = ({ category, posts }) => {
   return (
     <Layout posts={posts}>
       <div style={{ marginBottom: "20%" }}>
-        <div className="container content-wrapper">
+        <div className="container content-wrapper ">
           <div className="staffCard draw-border ">
             <Image className="card__image" src={image} alt="Staff" />
 
@@ -48,6 +49,22 @@ const About = ({ category, posts }) => {
                 <br />
                 <strong> Приятно четене , Skál</strong> !
               </span>
+            </div>
+            <div class="wrap">
+              <div class="social">
+                <i class="">
+                  <BsGithub color="black" />
+                </i>
+                <i class="icon-twitter tw">
+                  <BsLinkedin />
+                </i>
+                <i class="icon-youtube yt">
+                  <BsMailbox2 color="black" />
+                </i>
+                <i class="icon-facebook fb">
+                  <BsFacebook />
+                </i>
+              </div>
             </div>
           </div>
         </div>

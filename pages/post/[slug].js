@@ -7,6 +7,8 @@ import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
 import { GoSettings } from "react-icons/go";
+import logo from "../../styles/assets/niffleheim.png";
+
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
 import {
   AiOutlineFontSize,
@@ -27,6 +29,7 @@ import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Comments from "../../components/Blog/BlogPageComponents/Comments";
 import Form from "../../components/Blog/BlogPageComponents/Form";
+import Footer from "../../components/Footer/Footer";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
@@ -45,6 +48,7 @@ let Loading = load;
 const Post = ({ post, posts, category }) => {
   const [settings, setSettings] = useState(false);
   const router = useRouter();
+  const [dark, setDark] = useState(true);
   let cont;
   let midcolumn;
 
@@ -79,135 +83,200 @@ const Post = ({ post, posts, category }) => {
   }
 
   function changeColorSchema(name) {
-    cont = document.getElementById("container");
-    midcolumn = document.getElementById("mid");
-    const backgroundColor = document.getElementById("postPage");
-    switch (name) {
-      case "btn1":
-        cont.style.color = "hsl(210deg 8% 15%)";
-        midcolumn.style.backgroundColor = "#FAF9F6";
-        backgroundColor.style.backgroundColor = "#FAF9F3";
-        backgroundColor.style.color = "black";
-        break;
-      case "btn2":
-        cont.style.color = "#fff";
-
-        midcolumn.style.backgroundColor = "#202124";
-        backgroundColor.style.backgroundColor = "#202124";
-        backgroundColor.style.color = "#fff";
-        break;
-
-      default:
-        break;
+    midcolumn = document.getElementById("postPage");
+    const backgroundColor = document.querySelector("body");
+    if (dark) {
+      midcolumn.style.color = "#313131";
+      backgroundColor.style.backgroundColor = "#faf8f3";
+      localStorage.setItem("dark", 2);
+      setDark(!dark);
+    } else {
+      setDark(!dark);
+      midcolumn.style.color = "#ffff";
+      backgroundColor.style.backgroundColor = "#262626";
+      localStorage.setItem("dark", 1);
     }
   }
+  useEffect(() => {
+    midcolumn = document.getElementById("postPage");
+
+    const backgroundColor = document.querySelector("body");
+    if (localStorage.getItem("dark") == 1) {
+      setDark(true);
+      midcolumn.style.color = "#ffff";
+      backgroundColor.style.backgroundColor = "#262626";
+    } else {
+      setDark(false);
+      midcolumn.style.color = "#313131";
+      backgroundColor.style.backgroundColor = "#faf8f3";
+    }
+  }, []);
 
   return (
-    <Layout posts={posts}>
-      <div className="main postPage " id="postPage">
-        <Head>
-          <meta
-            name="description"
-            content={`${post?.description}}`}
-            key="desc"
-          />
-          <title>{post.title}</title>
-        </Head>
-        <div style={{ textAlign: "center", position: "" }} className="">
-          <div>
-            <h1>{post.title}</h1>
-            <br />
-            <p>
-              <BsPencilSquare />: {post.name}
-            </p>
-            <h4>
-              <MdDateRange />:{" "}
-              {post.publishedAt
-                ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
-                : "YYYY-MM-DD hh:mm"}
-            </h4>
-          </div>
-          <hr />
-        </div>
+    <>
+      <aside className="slide">
+        <GoSettings
+          onClick={() => {
+            const nav = document.getElementById("sideNav");
+            nav.style.display == "block"
+              ? (nav.style.display = "none")
+              : (nav.style.display = "block");
+          }}
+          id="nav-btn"
+        />
 
-        <div className="midcolumn boxShadow " id="mid">
-          <div className="post_text " id="postContainer">
-            <BlockContent post={post} />
-          </div>
-
-          <hr />
-          <div className="btn_wrap" style={{ float: "right" }}>
-            <span className="shareSpan">
-              <BsFillShareFill color="blue" />
-            </span>
-            <div className="shareContainer">
-              <FacebookShareButton
-                className="i"
-                url={`https://noncreativeblog.net/post/${post.slug.current}`}
-              >
-                <FacebookIcon size={30} color="blue" />
-              </FacebookShareButton>
-
-              <TwitterShareButton
-                className="i"
-                url={`https://noncreativeblog.net/post/${post.slug.current}`}
-              >
-                <TwitterIcon size={30} color="blue" />
-              </TwitterShareButton>
-
-              <ViberShareButton
-                onShareWindowClose={() => window.close()}
-                className="i"
-                appId="585823522989597"
-                url={`https://noncreativeblog.net/post/${post.slug.current}`}
-              >
-                <ViberIcon size={30} />
-              </ViberShareButton>
+        <div id="sideNav" className="nav ">
+          <ul>
+            <div className="">
+              <div>
+                <br />
+                <p>
+                  <BsPencilSquare />: {post.name}
+                </p>
+                <h4>
+                  <MdDateRange />:{" "}
+                  {post.publishedAt
+                    ? moment(post.publishedAt).format("YYYY , MMM  DD,  HH:mm")
+                    : "YYYY-MM-DD hh:mm"}
+                </h4>
+              </div>
+              <hr />
             </div>
-          </div>
-          <div>
-            <Comments comments={post.comments} />
-            <Form _id={post._id} />
-            <div className="columns posts">
-              <h3 className="p__opensans title">Подобни постове</h3>
-              {posts
-                .filter((x) => x.category === post.categories[0])
-                .filter((x) => x.slug.current !== post.slug.current)
-                .map((post) => (
-                  <div
-                    className=" initial-post"
-                    key={post.title}
-                    onClick={() => router.push(`/post/${post.slug.current}`)}
-                  >
-                    <div className="inner_post_text">
-                      <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
+            <li style={{ marginTop: "5%" }} onClick={() => router.back()}>
+              Назад
+            </li>
+            <li>
+              <a href="#comments">Коментари</a>
+            </li>
+            <li>
+              <a href="#mayLike">Подобни постове</a>
+            </li>
+            <li>
+              <p>Тема</p>
+              <input type="checkbox" onClick={(e) => changeColorSchema()} />
+            </li>
+            <li>
+              <Link href={"/"}>Начало</Link>
+            </li>
+          </ul>
+        </div>
+        <div class="vertical-line"></div>
+      </aside>
 
-                      {post.mainImage ? (
-                        <img
-                          loading="lazy"
-                          style={{
-                            float: "left",
-                            margin: "5px 15px 0 0",
-                            padding: "1%",
-                          }}
-                          src={urlForImg(post.mainImage.asset.url)}
-                          alt="Image of the post"
-                          width="150"
-                          height="150"
-                        />
-                      ) : (
-                        "none"
-                      )}
+      <article>
+        <header>
+          <h2>{post.title}</h2>
+        </header>
+        <div
+          className=" postPage "
+          style={{
+            height: "35vh",
+            backgroundImage: ` linear-gradient(
+    rgba(0, 0, 0, 0.1), 
+    ${dark ? "#262626" : "#faf8f3"}
+    ),
+    url(${urlForImg(post.mainImage.asset.url)})`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "absolute",
+            top: 0,
+          }}
+          id="postPage"
+        >
+          <Head>
+            <meta
+              name="description"
+              content={`${post?.description}}`}
+              key="desc"
+            />
+            <title>{post.title}</title>
+          </Head>
 
-                      <span> {post?.description.slice(0, 300)}...</span>
+          <div className="midcolumn boxShadow " id="mid">
+            <div className="post_text " id="postContainer">
+              <BlockContent post={post} />
+            </div>
+
+            <hr />
+            <div className="btn_wrap" style={{ float: "right" }}>
+              <span className="shareSpan">
+                <BsFillShareFill color="blue" />
+              </span>
+              <div className="shareContainer">
+                <FacebookShareButton
+                  className="i"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <FacebookIcon size={30} color="blue" />
+                </FacebookShareButton>
+
+                <TwitterShareButton
+                  className="i"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <TwitterIcon size={30} color="blue" />
+                </TwitterShareButton>
+
+                <ViberShareButton
+                  onShareWindowClose={() => window.close()}
+                  className="i"
+                  appId="585823522989597"
+                  url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                >
+                  <ViberIcon size={30} />
+                </ViberShareButton>
+              </div>
+            </div>
+            <div id="comments">
+              <Comments comments={post.comments} />
+              <Form _id={post._id} />
+              <div className="columns posts">
+                <div id="mayLike" className="title">
+                  <h3 className="p__opensans ">
+                    <span>Подобни постове</span>
+                  </h3>
+                </div>
+                {posts
+                  .filter((x) => x.category === post.categories[0])
+                  .filter((x) => x.slug.current !== post.slug.current)
+                  .slice(0, 3)
+                  .map((post) => (
+                    <div
+                      className=" initial-post"
+                      key={post.title}
+                      onClick={() => router.push(`/post/${post.slug.current}`)}
+                    >
+                      <div className="inner_post_text">
+                        <h3 style={{ marginBottom: "4px" }}>{post.title}</h3>
+
+                        {post.mainImage ? (
+                          <img
+                            loading="lazy"
+                            style={{
+                              float: "left",
+                              margin: "5px 15px 0 0",
+                            }}
+                            src={urlForImg(post.mainImage.asset.url)}
+                            alt="Image of the post"
+                            width="100"
+                            height="50"
+                          />
+                        ) : (
+                          "none"
+                        )}
+
+                        <span> {post?.description.slice(0, 300)}...</span>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  ))}
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </article>
+    </>
   );
 };
 
@@ -220,6 +289,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   slug,
   "name": author->name,
   "categories": categories[]->title,
+  rowTitle,
   "authorImage": author->image,
   'comments': *[_type == "comment" && post._ref == ^._id && approved == true] | order(_createdAt desc){
               _id, 
@@ -286,6 +356,7 @@ export async function getStaticProps(context) {
   slug,
   "authorImage": author->image,
   "category": categories[0]->title,
+  rowTitle,
   description,
   body,
   publishedAt,

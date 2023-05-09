@@ -7,9 +7,10 @@ const Sorry = () => {
   const router = useRouter();
   return (
     <div
+      className="modal"
       style={{
         minHeight: "100vh",
-        width: "85%",
+        width: "100%",
         margin: "auto",
         textAlign: "center",
         padding: "10%",

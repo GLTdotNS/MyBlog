@@ -44,7 +44,7 @@ export default function Form({ _id }) {
       {succes && <Admin />}
       {!succes && (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="wrap wrapper">
+          <div className="wrap ">
             <h2>Остави коментар:</h2>
             <div className="commentform">
               <div className="field small">

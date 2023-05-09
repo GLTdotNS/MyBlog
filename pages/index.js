@@ -19,6 +19,7 @@ export const getServerSideProps = async () => {
   "category": categories[0]->title,
   description,
   likes,
+  rowTitle,
   _id,
   body,
   publishedAt,

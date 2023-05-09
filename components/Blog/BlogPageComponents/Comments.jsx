@@ -3,7 +3,7 @@ import Image from "next/image";
 import moment from "moment";
 export default function Comments({ comments = [] }) {
   return (
-    <div className="initial-post wrapper" style={{ marginTop: "20%" }}>
+    <div className="initial-post  " style={{ marginTop: "20%" }}>
       {comments.length < 1 ? (
         <>
           <h1>Коментари: </h1>

@@ -1,5 +1,145 @@
-/*blog*/
+#nav-btn {
+  height: 40px;
+  position: absolute;
+  right: 10px;
+  top: 7px;
+  display: none;
+}
+.vertical-line {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 35px;
+  border-bottom: #f7f7f7 4px solid;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 65px;
+  height: 25px;
+  -webkit-appearance: none;
+  appearance: none;
+  background: #262626;
+  outline: none;
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: inset 0 0 5px rgb(0 0 0 / 50%);
+}
 
+input[type="checkbox"]::before {
+  content: "";
+  width: 30px;
+  height: 25px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: translateX(100%);
+  background: black;
+}
+
+input[type="checkbox"]:checked {
+  background: white !important;
+}
+
+aside {
+  position: fixed;
+  float: left;
+  width: 15%;
+  padding-left: 3%;
+  padding-top: 30px;
+  top: 0;
+  bottom: 0;
+  background-color: #262626;
+  z-index: 99 !important;
+}
+.nav ul {
+  list-style: none;
+}
+article header {
+  float: left;
+  width: 100%;
+  padding-left: 20%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: absolute;
+  top: 0;
+  z-index: 1000;
+}
+
+article {
+  float: left;
+  padding-top: 200px;
+}
+
+.nav {
+  display: block;
+}
+
+.nav ul li {
+  line-height: 30px;
+}
+
+.nav ul li {
+  color: #e3e2e2;
+}
+
+.nav ul li:hover {
+  color: #2b99ff;
+}
+
+#products {
+  padding-top: 40px;
+  font-weight: bold;
+  color: #f7f7f7;
+}
+
+@media (max-width: 1280px) {
+  aside {
+    float: left;
+    width: 100%;
+    height: 50px;
+  }
+
+  .nav {
+    display: none;
+  }
+  #nav-btn {
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    background-color: transparent;
+    color: white;
+
+    right: 7px;
+    top: 7px;
+    display: block;
+    cursor: pointer;
+  }
+
+  .vertical-line {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: none;
+  }
+  #products {
+    padding-top: 0;
+  }
+  article header {
+    margin-top: 5%;
+  }
+  .nav {
+    padding: 15px;
+    margin-top: 19px;
+    float: right;
+    background-color: #333;
+    width: 30%;
+    z-index: 1000 !important;
+  }
+}
 .search-field {
   /* this class is for input field, if in your code its different, just substitute the class name '.search-field' */
   padding: 10px 15px;
@@ -237,7 +377,7 @@ hr {
 
 .midcolumn {
   display: block;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Ubuntu", sans-serif;
   text-align: left;
   margin: 0 auto !important;
   padding: 1%;
@@ -360,12 +500,20 @@ hr {
 
 .columns .title {
   margin-top: 20% !important;
-  background-color: #111;
   color: white;
   padding: 5px;
   text-align: left;
   width: 100%;
   display: block;
+}
+.columns .title h3 {
+  width: 80%;
+  border-bottom: 1px solid #636363;
+  padding: 0px;
+}
+.title h3 span {
+  padding: 2px;
+  background-color: #636363;
 }
 .post_text {
   border-color: transparent;
@@ -423,8 +571,8 @@ hr {
 .postPage .midcolumn {
   margin: auto !important;
   display: block;
-  width: 70%;
-  background-color: transparent;
+  width: 60%;
+  margin-top: 15% !important;
   text-align: left !important;
 }
 .postPage .midcolumn {
@@ -478,7 +626,7 @@ hr {
   padding: 5%;
 
   margin-top: 2%;
-
+  margin: auto;
   -webkit-transform-origin: 0% 100%;
   -ms-transform-origin: 0% 100%;
   transform-origin: 0% 100%;
@@ -710,12 +858,6 @@ code {
   font-family: input-mono, monospace;
   font-weight: 400;
   font-style: normal;
-}
-
-article {
-  max-width: 500px;
-  padding: 20px;
-  margin: 0 auto;
 }
 
 .progress-bar {

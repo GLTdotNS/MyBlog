@@ -48,17 +48,37 @@ nav a {
 }
 
 nav ul li ul li:hover {
-  background: #000000;
+  background: #333;
 }
 nav ul li ul ul li {
   background: #000000;
 }
 
-nav a:hover {
-  background-color: #000000;
+nav li:hover {
+  background-color: #333;
 }
 nav ul li {
   background-color: #000000;
+}
+nav ul li li a {
+  background-color: #333;
+  border-bottom: 1px solid #b0903d;
+  border-bottom: 1px solid transparent;
+
+  transition: 0.3s ease;
+}
+nav ul li li a:hover {
+  background-color: #212121;
+  color: red;
+}
+nav ul li a:hover {
+  background-color: #333;
+}
+#worldsLink {
+  background-color: #212121;
+}
+#worlds a {
+  background-color: #212121;
 }
 
 nav ul ul {
@@ -83,7 +103,9 @@ nav ul ul ul li {
   top: -60px;
   left: 170px;
 }
-
+nav ul ul ul {
+  width: 30px;
+}
 li > a:after {
   content: " +";
 }
@@ -107,7 +129,9 @@ li > a:only-child:after {
     background-color: rgb(44, 44, 44);
     padding: 2%;
   }
-
+  nav ul ul ul {
+    width: 100%;
+  }
   .toggle + a,
   .menu {
     display: none;
@@ -115,7 +139,6 @@ li > a:only-child:after {
 
   .toggle {
     display: block;
-    background-color: #254441;
     padding: 0 20px;
     color: #fff;
     font-size: 22px;
@@ -126,7 +149,7 @@ li > a:only-child:after {
   }
 
   .toggle:hover {
-    background-color: #000000;
+    background-color: #b0903d;
   }
 
   [id^="drop"]:checked + ul {

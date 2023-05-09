@@ -73,6 +73,7 @@ body {
   color: #ffffff;
   margin: 0;
   padding: 0;
+  background-color: #262626;
   min-height: 100%;
   position: relative;
 }
@@ -202,11 +203,6 @@ a {
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    background-color: #181818;
-    font-size: 18px !important;
-  }
-
   .main,
   .row {
     width: 100% !important;
