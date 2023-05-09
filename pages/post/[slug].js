@@ -99,20 +99,15 @@ const Post = ({ post, posts, category }) => {
   }
   useEffect(() => {
     midcolumn = document.getElementById("postPage");
-
     const backgroundColor = document.querySelector("body");
-    if (
-      localStorage.getItem("dark") === 1 ||
-      localStorage.getItem("dark") === null ||
-      localStorage.getItem("dark") == undefined
-    ) {
-      setDark(true);
-      midcolumn.style.color = "#ffff";
-      backgroundColor.style.backgroundColor = "#262626";
-    } else {
+    if (localStorage.getItem("dark") == 2) {
       setDark(false);
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
+    } else {
+      setDark(true);
+      midcolumn.style.color = "#ffff";
+      backgroundColor.style.backgroundColor = "#262626";
     }
   }, []);
 
