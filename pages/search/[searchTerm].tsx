@@ -2,8 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Layout from "../../components/Layout/Layout";
-import Image from "next/image";
-import logo from "../../styles/assets/monkey.png";
+
 import Link from "next/link";
 const Search = ({ posts }) => {
   const router = useRouter();
@@ -16,7 +15,7 @@ const Search = ({ posts }) => {
           x.title.toLowerCase().includes(searchTerm.toString().toLowerCase())
         ).length > 0 ? (
           <div
-            className="midcolumn dropdown"
+            className="midcolumn "
             style={{
               width: "70%",
               margin: "0 auto",
@@ -47,15 +46,7 @@ const Search = ({ posts }) => {
               }}
             >
               <div style={{ backgroundColor: "" }}>
-                <div id="blurBackground" style={{ marginTop: "5%" }}>
-                  <Image
-                    src={logo}
-                    alt=""
-                    style={{
-                      height: "300px",
-                    }}
-                  />
-                </div>
+                <div id="blurBackground" style={{ marginTop: "5%" }}></div>
                 <div
                   className="initial-post"
                   style={{ display: "block", margin: "0 auto" }}

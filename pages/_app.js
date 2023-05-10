@@ -38,10 +38,7 @@ function MyApp({ Component, pageProps }) {
         <meta name="google" content="notranslate" />
         <meta
           name="description"
-          content="portfolio ☝️ 
-          The blog includes different kinds of articles related to the projects and links to the projects' Github repositories.
-          This is a blog post that I made to share some of my experience with React, React NextJS and a little bit of web development.
-          My portfolio  is just a collection of a few of the projects that I've worked on. It showcases the different areas of web development that I enjoy.
+          content="Открийте магията на скандинавската митология с нашия блог - богове, същества и легенди. Разкрийте тайните на северната митология с увлекателни статии. Изследвайте скандинавската митология в детайли и насладете се на нейното вълнуващо наследство.
         "
           key="desc"
         />

@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 import PostsComponent from "../components/Blog/BlogPageComponents/PostsComponent";
-import Categories from "../components/Blog/BlogPageComponents/Categories";
 import RecentlyPosts from "../components/Blog/BlogPageComponents/RecentlyPosts";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import Image from "next/image";
-import { client } from "../lib/sanityClient";
-import groq from "groq";
 import Layout from "../components/Layout/Layout";
 
 import dynamic from "next/dynamic";

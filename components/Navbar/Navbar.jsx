@@ -23,7 +23,7 @@ const Navbar = ({ category, posts }) => {
     e.preventDefault();
 
     if (valueToSearch) {
-      router.push(`/search/${valueToSearch}`);
+      router.push(`/search/${valueToSearch} `, undefined, { shallow: true });
     }
   };
 
