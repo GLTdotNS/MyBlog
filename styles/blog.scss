@@ -375,15 +375,6 @@ hr {
   border: 1px solid #333;
 }
 
-.midcolumn {
-  display: block;
-  font-family: "Ubuntu", sans-serif;
-  text-align: left;
-  margin: 0 auto !important;
-  padding: 1%;
-  width: 80%;
-}
-
 .postPage #blurBackground {
   display: block;
   width: 100vw;
@@ -572,7 +563,7 @@ hr {
   margin: auto !important;
   display: block;
   width: 60%;
-  margin-top: 15% !important;
+  margin-top: 25% !important;
   text-align: left !important;
 }
 .postPage .midcolumn {
@@ -581,7 +572,6 @@ hr {
 }
 
 .postPage {
-  width: 100%;
   margin: auto;
   background-color: transparent !important;
 }

@@ -118,6 +118,9 @@ li > a:only-child:after {
 --------------------------------------------- */
 
 @media all and (max-width: 768px) {
+  .midcolumn {
+    padding: 0 !important;
+  }
   .search-field {
     min-width: 55% !important;
   }

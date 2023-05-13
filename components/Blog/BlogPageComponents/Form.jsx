@@ -46,7 +46,7 @@ export default function Form({ _id }) {
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="wrap ">
             <h2>Остави коментар:</h2>
-            <div className="commentform">
+            <div className="commentform" style={{ padding: "5%" }}>
               <div className="field small">
                 <label htmlFor="name">Име</label>
                 <input

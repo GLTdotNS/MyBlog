@@ -11,13 +11,14 @@ const Index = ({ posts, category }) => {
   );
 };
 export const getServerSideProps = async () => {
-  const query = groq`*[_type == "post"] | order(_createdAt desc)
+  const query = groq`*[_type == "post"] | order(publishedAt desc)
   {
   title,
   slug,
   "authorImage": author->image,
   "category": categories[0]->title,
   description,
+  "author": author->name,
   likes,
   rowTitle,
   _id,

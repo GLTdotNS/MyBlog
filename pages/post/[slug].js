@@ -123,13 +123,19 @@ const Post = ({ post, posts, category }) => {
           }}
           id="nav-btn"
         />
-
         <div id="sideNav" className="nav ">
           <ul>
             <div className="">
               <div>
                 <br />
+                <img
+                  src={urlForImg(post.authorImage.asset)}
+                  width={100}
+                  height={100}
+                  style={{ borderRadius: "100%" }}
+                />
                 <p>
+                  {console.log(post)}
                   <BsPencilSquare />: {post.name}
                 </p>
                 <h4>
@@ -141,7 +147,10 @@ const Post = ({ post, posts, category }) => {
               </div>
               <hr />
             </div>
-            <li style={{ marginTop: "5%" }} onClick={() => router.back()}>
+            <li
+              style={{ marginTop: "5%", cursor: "pointer" }}
+              onClick={() => router.back()}
+            >
               Назад
             </li>
             <li>
@@ -164,14 +173,14 @@ const Post = ({ post, posts, category }) => {
 
       <article>
         <header>
-          <h2>{post.title}</h2>
+          <h2 style={{ marginTop: "2%", zIndex: "1" }}>{post.title}</h2>
         </header>
         <div
           className=" postPage "
           style={{
-            height: "35vh",
+            height: "40vh",
             backgroundImage: ` linear-gradient(
-    rgba(0, 0, 0, 0.1), 
+    rgba(0, 0, 0, 0.3), 
     ${dark ? "#262626" : "#faf8f3"}
     ),
     url(${urlForImg(post.mainImage.asset.url)})`,
