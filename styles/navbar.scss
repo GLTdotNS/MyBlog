@@ -118,8 +118,36 @@ li > a:only-child:after {
 --------------------------------------------- */
 
 @media all and (max-width: 768px) {
-  .midcolumn {
+  .postPage .midcolumn {
+    margin-top: 35% !important;
     padding: 0 !important;
+  }
+  nav ul li li a {
+    width: 100%;
+    border-bottom: 1px solid rgb(69, 68, 68);
+    box-shadow: 5px 15px 15px 1px #212121;
+    margin: auto;
+    transition: 0.3s ease;
+  }
+  .siteLogo {
+    top: 30px !important;
+  }
+  .bg {
+    background-size: cover;
+    height: 35vh !important;
+  }
+  .postPage .post_text {
+    margin-top: 50%;
+  }
+  article header {
+    margin-top: 15% !important;
+    z-index: 1 !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+  #sideNav {
+    width: 50% !important;
   }
   .search-field {
     min-width: 55% !important;

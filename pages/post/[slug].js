@@ -6,7 +6,7 @@ import Categories from "../../components/Blog/BlogPageComponents/Categories";
 import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
-import { GoSettings } from "react-icons/go";
+import { ImMenu2 } from "react-icons/im";
 import logo from "../../styles/assets/niffleheim.png";
 
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
@@ -114,7 +114,7 @@ const Post = ({ post, posts, category }) => {
   return (
     <>
       <aside className="slide">
-        <GoSettings
+        <ImMenu2
           onClick={() => {
             const nav = document.getElementById("sideNav");
             nav.style.display == "block"
@@ -171,9 +171,16 @@ const Post = ({ post, posts, category }) => {
         <div class="vertical-line"></div>
       </aside>
 
-      <article>
+      <article
+        onClick={() => {
+          const nav = document.getElementById("sideNav");
+          nav.style.display == "block"
+            ? (nav.style.display = "none")
+            : (nav.style.display = "");
+        }}
+      >
         <header>
-          <h2 style={{ marginTop: "2%", zIndex: "1" }}>{post.title}</h2>
+          <h2 style={{ marginTop: "5%" }}>{post.title}</h2>
         </header>
         <div
           className=" postPage "

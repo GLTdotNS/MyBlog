@@ -1,7 +1,8 @@
 .footer {
-  background: linear-gradient(black, rgba(0, 0, 0, 0.6)),
-    url("./assets//footer-background.webp");
+  background: linear-gradient(#262629, rgba(0, 0, 0, 0.9)),
+    url("./assets//footer-bg.jpg");
   background-repeat: no-repeat;
+  border-top: 1px solid #333;
   background-size: cover;
   width: 100%;
   text-align: left;

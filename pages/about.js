@@ -10,10 +10,9 @@ const About = ({ category, posts }) => {
   return (
     <Layout posts={posts}>
       <div style={{ marginBottom: "20%" }}>
-        <div className="container content-wrapper ">
+        <div className=" container content-wrapper ">
           <div className="staffCard draw-border ">
             <Image className="card__image" src={image} alt="Staff" />
-
             <h4 className="card__name">Canis Lupus</h4>
             <div
               style={{
@@ -27,16 +26,6 @@ const About = ({ category, posts }) => {
               }}
             >
               <span style={{ width: "70% !important" }}>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum
                 <br />В този блог ще намерите разкази за боговете и героите на
                 скандинавската митология, както и за техните битки и епични
                 приключения. Ще се запознаете с космологията на нордическите
@@ -44,6 +33,29 @@ const About = ({ category, posts }) => {
                 , семейството и родината !
                 <br />
                 <br />
+                <blockquote
+                  style={{
+                    backgroundColor: "transparent",
+                    borderLeft: "none",
+                    marginBottom: "1px",
+                  }}
+                >
+                  <em>
+                    Слънцето чернее ,<br /> потъва земята в морето. <br />{" "}
+                    Звездите блестящи , чезнат от небето.
+                    <br /> Огън гори на Живота дървото.
+                    <br />
+                    Жупел се вдига до самото небе
+                  </em>
+                </blockquote>
+                <em> Из Völuspá , Snorri Sturluson</em>
+                <br />
+                <br />
+                <strong> Приятно четене , Skál</strong> !
+              </span>
+              <br />
+              <br />
+              <em style={{ fontWeight: "400" }}>
                 Ако искате да предложите тема или да бъдете автор , не се
                 колебайте да ми пишете{" "}
                 <Link
@@ -51,13 +63,10 @@ const About = ({ category, posts }) => {
                   href={"message"}
                 >
                   тук.
-                </Link>
-                <br />
-                <br />
-                <strong> Приятно четене , Skál</strong> !
-              </span>
+                </Link>{" "}
+              </em>
             </div>
-            <div class="wrap">
+            {/* <div class="wrap">
               <div class="social">
                 <i class="">
                   <BsGithub color="black" />
@@ -72,7 +81,7 @@ const About = ({ category, posts }) => {
                   <BsFacebook />
                 </i>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
@@ -88,6 +97,8 @@ export const getServerSideProps = async () => {
     "category": categories[0]->title,
     description,
     likes,
+    rowTitle,
+
     _id,
     body,
     publishedAt,

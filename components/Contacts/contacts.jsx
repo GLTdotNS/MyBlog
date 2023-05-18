@@ -54,7 +54,6 @@ const Contacts = () => {
             window.scrollTo(0, 0);
             setMessage("");
             setSent(true);
-            Router.back();
             toast.remove(toastId);
           }, 100);
         }
@@ -79,13 +78,10 @@ const Contacts = () => {
       <div
         id="1"
         className=" modal wrapper row midcolumn   "
-        style={{ zIndex: "1000000", padding: "10%" }}
+        style={{ zIndex: "1000000", padding: "5%" }}
       >
         <div className="" style={{ margin: "0 auto !important" }}>
-          <div
-            className="pc-window_component is-home-main"
-            style={{ margin: "5%" }}
-          >
+          <div className="pc-window_component is-home-main">
             <div className="pc-window_top-wrapper">
               <div className="pc-window_top-bar">
                 <div
@@ -160,7 +156,7 @@ const Contacts = () => {
                         <input
                           id="name"
                           type="text"
-                          placeholder="Name"
+                          placeholder="Име"
                           data-sb-validations="required"
                           onChange={(e) => setName(e.target.value)}
                         />
@@ -172,10 +168,10 @@ const Contacts = () => {
                         </label>
                         <input
                           id="emailAddress"
-                          type="text"
-                          placeholder="Email Address"
-                          data-sb-validations="required"
+                          type="email"
+                          placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
+                          required
                         />
                       </div>
                       <div className="mb-3">
@@ -185,7 +181,7 @@ const Contacts = () => {
                         <input
                           id="emailAddress"
                           type="text"
-                          placeholder="Reason"
+                          placeholder="Причина"
                           data-sb-validations="required"
                           onChange={(e) => setEmail(e.target.value)}
                         />
@@ -199,7 +195,7 @@ const Contacts = () => {
                           className="form-control"
                           id="message"
                           type="text"
-                          placeholder="Message"
+                          placeholder="Съобщение"
                           data-sb-validations="required"
                         ></textarea>
                       </div>

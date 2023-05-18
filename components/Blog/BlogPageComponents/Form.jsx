@@ -44,7 +44,7 @@ export default function Form({ _id }) {
       {succes && <Admin />}
       {!succes && (
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="wrap ">
+          <div className="wrap wrapper">
             <h2>Остави коментар:</h2>
             <div className="commentform" style={{ padding: "5%" }}>
               <div className="field small">
@@ -53,7 +53,7 @@ export default function Form({ _id }) {
                   value={name}
                   id="name"
                   type="text"
-                  placeholder="Your name"
+                  placeholder="Име"
                   onChange={(e) => setName(e.target.value.trim())}
                 />
               </div>
@@ -64,7 +64,7 @@ export default function Form({ _id }) {
                   value={comment}
                   id="comment"
                   onChange={(e) => setcomment(e.target.value.trimStart())}
-                  placeholder="Your comment"
+                  placeholder="Коментар..."
                 ></textarea>
               </div>
             </div>

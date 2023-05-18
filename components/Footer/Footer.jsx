@@ -36,8 +36,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left col-md-4 col-sm-6">
         <p className="about">
-          <span>Vilkomen! </span> Lorem Ipsum is simply dummy text of the
-          printing and typesetting industry.
+          <span>Vilkomen! </span> Harðr er í heimi hǫrðumur mikill, skeggjǫld,
+          skalmǫld, skildir eru klufnir, vindǫld, vargǫld, áðr verǫld steypisk,
+          mun engi maður oðrum pyrma
         </p>
         <div className="icons"></div>
       </div>

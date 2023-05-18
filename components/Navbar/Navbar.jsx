@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
-import logo from "../../styles/assets/niffleheim.png";
+import logo from "../../styles/assets/bg.jpg";
 const Navbar = ({ category, posts }) => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -16,7 +16,7 @@ const Navbar = ({ category, posts }) => {
   const router = useRouter();
   const handleClick = () => {
     setClick(!click);
-    var element = document.getElementById("nav-icon3");
+    const element = document.getElementById("nav-icon3");
     element.classList.toggle("open");
   };
   const handleSearch = (e) => {
@@ -35,39 +35,28 @@ const Navbar = ({ category, posts }) => {
     }
   });
 
-  const variants = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      backgroundColor: "transparent",
-    },
-    hidden: {
-      backgroundColor: "black",
-    },
-  };
-
   return (
     <>
       <div
+        className="bg"
         style={{
-          height: "50vh",
+          height: "60vh",
+          width: "100%",
+          backgroundSize: "cover",
           backgroundImage: ` linear-gradient(
-            rgba(0, 0, 0, 0.1), 
+            
+            rgba(0, 0, 0, 0.2), 
             #262626
             ),
             url(${logo.src})`,
           backgroundRepeat: "no-repeat",
-          backgroundSize: "cover",
-          alignItems: "center",
-          justifyContent: "center",
-          position: "relative",
         }}
       >
         <h1
           style={{
             textAlign: "center",
             position: "absolute",
-            top: "35%",
+            top: "155px",
             left: "30px",
             right: "30px",
           }}
@@ -115,7 +104,7 @@ const Navbar = ({ category, posts }) => {
           <li>
             <Link href={"/"}>Blog</Link>
           </li>
-          <li>
+          <li id="firstDrop">
             <label for="drop-1" class="toggle">
               The gods +
             </label>
@@ -209,7 +198,7 @@ const Navbar = ({ category, posts }) => {
             <Link href={"/message"}>Contacts</Link>
           </li>
           <li>
-            <Link href={"/comingsoon"}>About</Link>
+            <Link href={"/about"}>About</Link>
           </li>
           <li>
             <Link href={"/comingsoon"}>Store</Link>
