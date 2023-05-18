@@ -6,6 +6,7 @@ import "../styles/landingPage.scss";
 import "../styles/modal.css";
 import "../styles/about.css";
 import "../styles/admin.css";
+import "../styles/cookies.css";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";
@@ -15,6 +16,7 @@ import Head from "next/head";
 import { useState } from "react";
 import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
+import Cookies from "../components/Cookies/Cookies";
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState();
   NProgress.configure({ showSpinner: false });
@@ -48,9 +50,10 @@ function MyApp({ Component, pageProps }) {
       ) : (
         <>
           {" "}
-          <Analytics />
+          <Cookies />
           <Toaster />
           <Component {...pageProps} />
+          <Analytics />
         </>
       )}
     </>
