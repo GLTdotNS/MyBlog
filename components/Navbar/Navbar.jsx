@@ -137,23 +137,60 @@ const Navbar = ({ category, posts }) => {
             <a href="#"> Cosmology </a>
             <input type="checkbox" id="drop-2" />
             <ul>
-              {posts &&
-                posts
-                  ?.filter((p) => p.category === "Cosmology")
-                  .map((post, index) => (
-                    <li className="" key={post.title}>
-                      {!post ? (
-                        "Something went wrong..."
-                      ) : (
-                        <Link
-                          href={"/post/asd[slug]"}
-                          as={`/post/${post.slug.current}`}
-                        >
-                          {post.rowTitle}
-                        </Link>
-                      )}
-                    </li>
-                  ))}
+              <li>
+                <a href="#">YGGDRASIL</a>
+              </li>
+              <li>
+                <a href="#">VALHALLA</a>
+              </li>
+              <li>
+                <a href="#">BIFROST</a>
+              </li>
+              <li>
+                <a href="">HLIÐSKJÁLF</a>
+              </li>
+              <li>
+                <label for="drop-3" class="toggle">
+                  Worlds +
+                </label>
+                <a id="worldsLink" href="#">
+                  {" "}
+                  Worlds{" "}
+                </a>
+                <input type="checkbox" id="drop-3" />
+                <ul id="worlds">
+                  <li>
+                    <a href="#">Asgard</a>
+                  </li>
+                  <li>
+                    <a href="#">Álfheim</a>
+                  </li>
+                  <li>
+                    <a href="#">Niðavellir</a>
+                  </li>
+                  <li>
+                    <a href="#">Jötunheimr</a>
+                  </li>
+                  <li>
+                    <a href="#">Vanaheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Niflheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Muspelheim</a>
+                  </li>{" "}
+                  <li>
+                    <a href="#">Hel</a>
+                  </li>{" "}
+                </ul>
+              </li>
+              <li>
+                <a href="">GINNUNGAGAP</a>
+              </li>
+              <li>
+                <a href="">FOLKVANG</a>
+              </li>
             </ul>
           </li>
 
