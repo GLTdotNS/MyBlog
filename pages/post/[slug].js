@@ -45,7 +45,7 @@ const load = dynamic(() => import("../../components/Loading/Loading"), {
 
 let BlockContent = block;
 let Loading = load;
-const Post = ({ post, posts, category }) => {
+const Post = ({ post, posts }) => {
   const [settings, setSettings] = useState(false);
   const router = useRouter();
   const [dark, setDark] = useState(true);
@@ -128,6 +128,7 @@ const Post = ({ post, posts, category }) => {
             <div className="">
               <div>
                 <br />
+
                 <img
                   src={urlForImg(post.authorImage.asset)}
                   width={100}
@@ -135,7 +136,7 @@ const Post = ({ post, posts, category }) => {
                   style={{ borderRadius: "100%" }}
                 />
                 <p>
-                  {console.log(post)}
+                  {/* <iframe src={`${post.url}`} allowFullScreen="true" /> */}
                   <BsPencilSquare />: {post.name}
                 </p>
                 <h4>
@@ -300,7 +301,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   _id,
   publishedAt,
   description,
- 
+  url,
   slug,
   "name": author->name,
   "categories": categories[]->title,
@@ -341,6 +342,7 @@ export async function getStaticPaths() {
   "category": categories[0]->title,
   body,
   publishedAt,
+  url,
   mainImage{
     asset->{
     _id,
@@ -373,6 +375,7 @@ export async function getStaticProps(context) {
   "category": categories[0]->title,
   rowTitle,
   description,
+ 
   body,
   publishedAt,
   mainImage{
@@ -390,26 +393,11 @@ export async function getStaticProps(context) {
 
 }`;
   const posts = await client.fetch(queryPosts);
-  const category = await client.fetch(
-    groq`*[_type == "category"]{
-_id,
-title,
-image{
-   asset->{
-      _id,
-      url
-      }
-  },
-slug,
-
-}`
-  );
 
   return {
     props: {
       post,
       posts,
-      category,
     },
     revalidate: 10,
   };

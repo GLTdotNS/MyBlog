@@ -4,6 +4,11 @@ export default {
   type: "document",
   fields: [
     {
+      name: "url",
+      title: "url",
+      type: "url",
+    },
+    {
       name: "rowTitle",
       title: "Row",
       type: "string",
