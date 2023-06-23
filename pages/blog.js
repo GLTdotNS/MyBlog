@@ -61,7 +61,6 @@ const MainBlogPage = ({ posts, category }) => {
       </div>
 
       <div className="row ">
-        <div></div>
         <div className="midcolumn ">
           <div className="band">
             <PostsComponent

@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const searchPostsQuery = (id: string | string[]) => {
-    const query = `*[_type == "post" &&  title match '${id}*'] {
+    const query = `*[_type == "post" &&  match   '*${id}*'] {
         _id,
         title,
         slug,

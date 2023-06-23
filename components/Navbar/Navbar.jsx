@@ -23,7 +23,7 @@ const Navbar = ({ category, posts }) => {
     e.preventDefault();
 
     if (valueToSearch) {
-      router.push(`/search/${valueToSearch} `, undefined, { shallow: true });
+      router.push(`/search/${valueToSearch} `, undefined, { shallow: false });
     }
   };
 
@@ -137,9 +137,24 @@ const Navbar = ({ category, posts }) => {
             <a href="#"> Cosmology </a>
             <input type="checkbox" id="drop-2" />
             <ul>
-              <li>
-                <a href="#">YGGDRASIL</a>
-              </li>
+              {posts &&
+                posts
+                  ?.filter((p) => p.category === "Cosmology")
+                  .map((post, index) => (
+                    <li className="" key={post.title}>
+                      {!post ? (
+                        "Something went wrong..."
+                      ) : (
+                        <Link
+                          href={"/post/asd[slug]"}
+                          as={`/post/${post.slug.current}`}
+                        >
+                          {post.rowTitle}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+
               <li>
                 <a href="#">VALHALLA</a>
               </li>
@@ -159,7 +174,25 @@ const Navbar = ({ category, posts }) => {
                 </a>
                 <input type="checkbox" id="drop-3" />
                 <ul id="worlds">
-                  <li>
+                  {posts &&
+                    posts
+                      ?.filter((p) => p.category === "Worlds")
+                      .map((post, index) => (
+                        <li className="" key={post.title}>
+                          {!post ? (
+                            "Something went wrong..."
+                          ) : (
+                            <Link
+                              href={"/post/asd[slug]"}
+                              as={`/post/${post.slug.current}`}
+                            >
+                              {post.rowTitle}
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+
+                  {/* <li>
                     <a href="#">Asgard</a>
                   </li>
                   <li>
@@ -182,7 +215,7 @@ const Navbar = ({ category, posts }) => {
                   </li>{" "}
                   <li>
                     <a href="#">Hel</a>
-                  </li>{" "}
+                  </li>{" "} */}
                 </ul>
               </li>
               <li>
@@ -199,9 +232,6 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li>
             <Link href={"/about"}>About</Link>
-          </li>
-          <li>
-            <Link href={"/comingsoon"}>Store</Link>
           </li>
         </ul>
       </nav>

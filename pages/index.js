@@ -3,11 +3,9 @@ import groq from "groq";
 import { client } from "../lib/sanityClient";
 const Index = ({ posts, category }) => {
   return (
-    <div>
-      <main>
-        <MainBlogPage posts={posts} category={category} />
-      </main>
-    </div>
+    <main>
+      <MainBlogPage posts={posts} category={category} />
+    </main>
   );
 };
 export const getStaticProps = async () => {
