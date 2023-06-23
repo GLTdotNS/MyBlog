@@ -10,6 +10,7 @@ import Cookies from "../components/Cookies/Cookies";
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
   ssr: false,
 });
+
 const MainBlogPage = ({ posts, category }) => {
   useEffect(() => {
     /* common fuctions */

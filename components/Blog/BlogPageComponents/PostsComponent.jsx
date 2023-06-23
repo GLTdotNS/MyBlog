@@ -61,7 +61,6 @@ const PostsComponent = ({ posts }) => {
   const count = 1;
   const handleChange = ({ selected }) => {
     setPageNumber(selected);
-    window.scrollTo(0, 0);
   };
 
   return (

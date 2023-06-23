@@ -660,17 +660,17 @@ hr {
 .paginationBttns {
   margin: auto;
   margin-top: 10%;
-  width: 80%;
-  height: 40px;
+  width: 100% !important;
+  height: 80px;
   list-style: none;
   margin-bottom: 10%;
   display: flex;
-  justify-content: center;
+  justify-content: right;
 }
 
 .paginationBttns a {
   padding: 3px 15px;
-  border: 1px solid #333;
+  border: 1px solid #2b99ff;
 }
 
 .paginationBttns a:hover {
@@ -680,9 +680,8 @@ hr {
 }
 
 .paginationActive a {
-  background-color: #333;
+  background-color: #b0903d;
   color: white;
-  border: 1px solid #333;
 }
 
 .paginationDisabled a {

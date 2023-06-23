@@ -30,6 +30,7 @@ import PostsComponent from "../../components/Blog/BlogPageComponents/PostsCompon
 import Comments from "../../components/Blog/BlogPageComponents/Comments";
 import Form from "../../components/Blog/BlogPageComponents/Form";
 import Footer from "../../components/Footer/Footer";
+import Navbar from "../../components/Navbar/Navbar";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
