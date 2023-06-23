@@ -159,7 +159,7 @@ const Post = ({ post, posts }) => {
               <a href="#comments">Коментари</a>
             </li>
             <li>
-              <a href="#mayLike">Подобни постове</a>
+              <a href="#suggestions">Подобни постове</a>
             </li>
             <li>
               <p>Тема</p>
@@ -187,16 +187,15 @@ const Post = ({ post, posts }) => {
         <div
           className=" postPage "
           style={{
-            height: "40vh",
+            height: "20vh",
+
             backgroundImage: ` linear-gradient(
-    rgba(0, 0, 0, 0.3), 
+    rgba(0, 0, 0, 0.8), 
     ${dark ? "#262626" : "#faf8f3"}
     ),
     url(${urlForImg(post.mainImage.asset.url)})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
-            alignItems: "center",
-            justifyContent: "center",
             position: "absolute",
             top: 0,
           }}

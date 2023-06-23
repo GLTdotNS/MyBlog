@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
-import logo from "../../styles/assets/bg.jpg";
+import logo from "../../styles/assets/mokey.jpg";
 const Navbar = ({ category, posts }) => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -40,9 +40,11 @@ const Navbar = ({ category, posts }) => {
       <div
         className="bg"
         style={{
-          height: "60vh",
+          height: "63vh",
           width: "100%",
           backgroundSize: "cover",
+          backgroundAttachment: "",
+          margin: "auto",
           backgroundImage: ` linear-gradient(
             
             rgba(0, 0, 0, 0.2), 
