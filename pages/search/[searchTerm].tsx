@@ -88,7 +88,7 @@ export const getServerSideProps = async ({
   params: { searchTerm: string };
 }) => {
   const res = await fetch(
-    `${"https://www.noncreativeblog.net/"}/api/search/${searchTerm}`
+    `${"https://noncreativeblog.net"}/api/search/${searchTerm}`
   );
 
   const response = await res.json();
