@@ -1,6 +1,6 @@
 import React from "react";
 
-const Admin = () => {
+const Admin = ({ message }) => {
   return (
     <div className="svg-container wrap wrapper ">
       <div className="succes-content ">
@@ -23,7 +23,7 @@ const Admin = () => {
             d="M14 27l5.917 4.917L34 17"
           />
         </svg>
-        <p>Коментарът Ви е получен и ще бъде разгледан скоро.</p>
+        <p>{message} </p>
       </div>
     </div>
   );

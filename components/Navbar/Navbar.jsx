@@ -104,13 +104,13 @@ const Navbar = ({ category, posts }) => {
         <input type="checkbox" id="drop" />
         <ul class="menu">
           <li>
-            <Link href={"/"}>Blog</Link>
+            <Link href={"/"}>Блог</Link>
           </li>
           <li id="firstDrop">
             <label for="drop-1" class="toggle">
-              The gods +
+              Боговете +
             </label>
-            <a href="#">The gods</a>
+            <a href="#">Боговете</a>
             <input type="checkbox" id="drop-1" />
             <ul>
               {posts &&
@@ -134,9 +134,9 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li>
             <label for="drop-2" class="toggle">
-              Cosmology +
+              Космология +
             </label>
-            <a href="#"> Cosmology </a>
+            <a href="#"> Космология </a>
             <input type="checkbox" id="drop-2" />
             <ul>
               {posts &&
@@ -168,11 +168,11 @@ const Navbar = ({ category, posts }) => {
               </li>
               <li>
                 <label for="drop-3" class="toggle">
-                  Worlds +
+                  Световете +
                 </label>
                 <a id="worldsLink" href="#">
                   {" "}
-                  Worlds{" "}
+                  Светове{" "}
                 </a>
                 <input type="checkbox" id="drop-3" />
                 <ul id="worlds">
@@ -230,10 +230,10 @@ const Navbar = ({ category, posts }) => {
           </li>
 
           <li>
-            <Link href={"/message"}>Contacts</Link>
+            <Link href={"/message"}>Контакти</Link>
           </li>
           <li>
-            <Link href={"/about"}>About</Link>
+            <Link href={"/about"}>За сайта</Link>
           </li>
         </ul>
       </nav>

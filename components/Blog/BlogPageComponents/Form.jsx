@@ -41,7 +41,9 @@ export default function Form({ _id }) {
 
   return (
     <>
-      {succes && <Admin />}
+      {succes && (
+        <Admin message={"Коментарът Ви е получен и ще бъде разгледан скоро."} />
+      )}
       {!succes && (
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="wrap wrapper">

@@ -6,12 +6,14 @@ import toast from "react-hot-toast";
 import logo from "../../styles/assets/a.jpg";
 import Router from "next/router";
 import Layout from "../Layout/Layout";
+import Admin from "../Admin/admin";
 const Contacts = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [company, setCompany] = useState("");
   const [sent, setSent] = useState(true);
+  const [succes, setSucces] = useState(false);
   const { register, handleSubmit, errors, reset } = useForm();
 
   const onSubmit = (e) => {
@@ -51,10 +53,11 @@ const Contacts = () => {
 
           setTimeout(() => {
             e.target.reset();
-            window.scrollTo(0, 0);
             setMessage("");
             setSent(true);
             toast.remove(toastId);
+            setSucces(true);
+            // Router.push("/");
           }, 100);
         }
       })
@@ -74,74 +77,86 @@ const Contacts = () => {
       });
   };
   return (
-    <Layout>
-      <div
-        id="1"
-        className=" modal wrapper row midcolumn   "
-        style={{ zIndex: "1000000", padding: "5%" }}
-      >
-        <div className="" style={{ margin: "0 auto !important" }}>
-          <div className="pc-window_component is-home-main">
-            <div className="pc-window_top-wrapper">
-              <div className="pc-window_top-bar">
-                <div
-                  id="w-node-_712c206d-f420-08ca-a2af-4b05406a0873-5fe902a0"
-                  className="pc-window_top-bar-lines-wrapper"
-                >
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                </div>
-                <div
-                  id="w-node-_712c206d-f420-08ca-a2af-4b05406a0879-5fe902a0"
-                  className="pc-window_top-bar-square"
-                ></div>
-                <div
-                  id="w-node-_712c206d-f420-08ca-a2af-4b05406a087a-5fe902a0"
-                  className="pc-window_top-bar-lines-wrapper"
-                >
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                </div>
-                <div
-                  id="w-node-_423c0a09-2ab8-fed4-8e73-d86b76be509e-5fe902a0"
-                  className="pc-window_top-bar-text "
-                  style={{ color: "black", textTransform: "uppercase" }}
-                >
-                  NONCREATIVEBLOG
-                </div>
-                <div
-                  id="w-node-_33815bc8-3278-cde7-feee-00d339ed310a-5fe902a0"
-                  class="pc-window_top-bar-lines-wrapper"
-                >
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                  <div className="pc-window_top-bar-horizontal-line"></div>
-                </div>
-                <div
-                  onClick={() => Router.back()}
-                  id="w-node-_712c206d-f420-08ca-a2af-4b05406a0880-5fe902a0"
-                  className="pc-window_top-bar-square"
-                >
-                  <img
-                    src="https://uploads-ssl.webflow.com/62781264fb6e62279063d828/62781264fb6e6242f363d868_Cross%20Icon.svg"
-                    loading="eager"
-                    alt=""
-                    className="pc-window_top-bar-cross-icon"
-                  />
-                </div>
+    <div
+      id="1"
+      className="  wrapper row midcolumn   "
+      style={{ zIndex: "1000000", padding: "5%" }}
+    >
+      <div className="" style={{ margin: "0 auto !important" }}>
+        <div className="pc-window_component is-home-main">
+          <div className="pc-window_top-wrapper">
+            <div className="pc-window_top-bar">
+              <div
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0873-5fe902a0"
+                className="pc-window_top-bar-lines-wrapper"
+              >
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
               </div>
               <div
-                className="pc-window_inner-countdown "
-                style={{ backgroundColor: "#fff" }}
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0879-5fe902a0"
+                className="pc-window_top-bar-square"
+              ></div>
+              <div
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a087a-5fe902a0"
+                className="pc-window_top-bar-lines-wrapper"
               >
-                <div className="">
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+              </div>
+              <div
+                id="w-node-_423c0a09-2ab8-fed4-8e73-d86b76be509e-5fe902a0"
+                className="pc-window_top-bar-text "
+                style={{ color: "black", textTransform: "uppercase" }}
+              >
+                NONCREATIVEBLOG
+              </div>
+              <div
+                id="w-node-_33815bc8-3278-cde7-feee-00d339ed310a-5fe902a0"
+                class="pc-window_top-bar-lines-wrapper"
+              >
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+                <div className="pc-window_top-bar-horizontal-line"></div>
+              </div>
+              <div
+                onClick={() => Router.back()}
+                id="w-node-_712c206d-f420-08ca-a2af-4b05406a0880-5fe902a0"
+                className="pc-window_top-bar-square"
+              >
+                <img
+                  src="https://uploads-ssl.webflow.com/62781264fb6e62279063d828/62781264fb6e6242f363d868_Cross%20Icon.svg"
+                  loading="eager"
+                  alt=""
+                  className="pc-window_top-bar-cross-icon"
+                />
+              </div>
+            </div>
+            <div
+              className="pc-window_inner-countdown "
+              style={{ backgroundColor: "#fff" }}
+            >
+              <div className="">
+                {succes ? (
+                  <div style={{ color: "#333", textAlign: "center" }}>
+                    <Admin
+                      message={
+                        "Съобщението Ви е получено ! Очаквайте отговор в рамките на 3 дни."
+                      }
+                    />
+
+                    <Link style={{ color: "blue" }} href={"/"}>
+                      Назад към началната страница
+                    </Link>
+                  </div>
+                ) : (
                   <div className="container">
                     <h2 className="">Пиши ни</h2>
                     <form
@@ -221,14 +236,14 @@ const Contacts = () => {
                       </div>
                     </form>
                   </div>
-                </div>
-                <div className="spacer grow is-home"></div>
+                )}
               </div>
+              <div className="spacer grow is-home"></div>
             </div>
           </div>
         </div>
       </div>
-    </Layout>
+    </div>
   );
 };
 

@@ -91,16 +91,20 @@ const Footer = () => {
           <span> Noncreativeblog</span>
         </h2>
         <p className="menu">
-          <Link href={"/blog"} legacyBehavior>
-            BLOG
+          <Link href={"/"} legacyBehavior>
+            БЛОГ
           </Link>{" "}
           |{" "}
           <Link href={"/about"} legacyBehavior>
-            <a>ABOUT</a>
+            <a>ЗА САЙТА</a>
           </Link>{" "}
           |{" "}
           <Link href={"/message"} legacyBehavior>
-            <a>CONTACTS</a>
+            <a>КОНТАКТИ</a>
+          </Link>
+          |{" "}
+          <Link href={"/privacy"} legacyBehavior>
+            <a>ПОВЕРИТЕЛНОСТ</a>
           </Link>{" "}
         </p>
         <p className="name"> Designed by Canis Lupus &copy; 2023</p>
