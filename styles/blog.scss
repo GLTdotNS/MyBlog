@@ -446,7 +446,6 @@ hr {
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  z-index: 1;
   padding: 2%;
   cursor: pointer;
   flex-direction: column;
@@ -738,7 +737,11 @@ hr {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
 }
-
+.searchPage {
+  width: 50%;
+  margin: auto;
+  padding: 2%;
+}
 .sentBtn {
   height: 30px;
   width: 120px;
@@ -789,7 +792,7 @@ hr {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 150px;
+  width: 200px;
   height: 50px;
   margin-top: 5%;
   padding: 0 18px;
@@ -1006,7 +1009,35 @@ h2 {
 :-ms-input-placeholder {
   font-weight: 300;
 }
+.loadmore-btn {
+  background-color: #1a1a1a;
+  width: 100%;
+  height: 50px;
+  border: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #b0903d;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.loadmore-btn:hover {
+  opacity: 0.7;
+}
+.postCard {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
 
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 blockquote {
   background: #fcfcfc;
   border-left: 1px solid silver;

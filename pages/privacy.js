@@ -5,7 +5,7 @@ import { client } from "../lib/sanityClient";
 const ToS = ({ posts }) => {
   return (
     <Layout posts={posts}>
-      <div className=" wrapper wrap">
+      <div className="row  wrapper wrap">
         <strong>Условия за политика на поверителност:</strong>
         <br /> <br />
         <p>
@@ -47,7 +47,6 @@ const ToS = ({ posts }) => {
         <br />
         <br />
       </div>
-      ;
     </Layout>
   );
 };

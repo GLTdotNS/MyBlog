@@ -6,7 +6,11 @@ import Layout from "../components/Layout/Layout";
 
 import dynamic from "next/dynamic";
 import Cookies from "../components/Cookies/Cookies";
-
+import { Rubik_Distressed } from "next/font/google";
+const rubik = Rubik_Distressed({
+  weight: "400",
+  subsets: ["cyrillic"],
+});
 const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
   ssr: false,
 });
@@ -63,7 +67,7 @@ const MainBlogPage = ({ posts, category }) => {
 
       <div className="row ">
         <div className="midcolumn ">
-          <div className="band">
+          <div className="">
             <PostsComponent
               posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
             />
@@ -72,15 +76,7 @@ const MainBlogPage = ({ posts, category }) => {
         </div>
         <div className="rightcolumn">
           <div className="columns ">
-            <h3
-              className=" "
-              style={{
-                fontFamily: "Rubik Distressed , cursive",
-                fontWeight: "5",
-              }}
-            >
-              Най - четени
-            </h3>
+            <h3 className={rubik.className}>Най - четени</h3>
             <CrispWithNoSSR />
             <RecentlyPosts
               posts={posts?.slice().sort((x, b) => b.likes - x.likes)}

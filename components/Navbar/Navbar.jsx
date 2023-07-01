@@ -138,6 +138,7 @@ const Navbar = ({ category, posts }) => {
                   ))}
             </ul>
           </li>
+
           <li>
             <label for="drop-2" class="toggle">
               Космология +
@@ -234,10 +235,33 @@ const Navbar = ({ category, posts }) => {
               </li>
             </ul>
           </li>
-
           <li>
-            <Link href={"/message"}>Контакти</Link>
+            <label for="drop-3" class="toggle">
+              Völuspá +
+            </label>
+            <a href="#">Völuspá</a>
+            <input type="checkbox" id="drop-1" />
+            <ul>
+              {posts &&
+                posts
+                  ?.filter((p) => p.category === "Voluspa")
+                  .map((post, index) => (
+                    <li className="" key={post.title}>
+                      {!post ? (
+                        "Something went wrong..."
+                      ) : (
+                        <Link
+                          href={"/post/asd[slug]"}
+                          as={`/post/${post.slug.current}`}
+                        >
+                          {post.rowTitle}
+                        </Link>
+                      )}
+                    </li>
+                  ))}
+            </ul>
           </li>
+
           <li>
             <Link href={"/about"}>За сайта</Link>
           </li>

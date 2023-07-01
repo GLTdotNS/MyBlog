@@ -12,13 +12,22 @@ import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";
 
 const PostsComponent = ({ posts }) => {
-  const [pageNumber, setPageNumber] = useState(0);
-  const postPerPage = 7;
-  const pageVisited = pageNumber * postPerPage;
+  const initialPostList = 7; // Number of articles to display initially
+  const incrementInitialPostList = 8;
+  const [hideButton, setHideButton] = useState(false);
+  const [displayPosts, setDisplayPosts] = useState(initialPostList);
+  let flagHideButton = initialPostList;
+  const loadMore = () => {
+    setDisplayPosts(displayPosts + incrementInitialPostList);
+    flagHideButton += incrementInitialPostList;
+    if (flagHideButton >= posts.length) {
+      setHideButton(true);
+    }
+  };
   const router = useRouter();
   const displayPost =
     posts &&
-    posts.slice(pageVisited, pageVisited + postPerPage).map((post, index) => {
+    posts.slice(0, displayPosts).map((post, index) => {
       let wordsCount = post?.description.split(" ");
 
       let minutesToRead = wordsCount.length / 200;
@@ -57,30 +66,30 @@ const PostsComponent = ({ posts }) => {
       );
     });
 
-  const pageCount = posts && Math.ceil(posts.length / postPerPage);
-  const count = 1;
-  const handleChange = ({ selected }) => {
-    setPageNumber(selected);
-  };
-
   return (
     <>
-      {displayPost}
-      <ReactPaginate
-        previousLabel={"<<"}
-        nextLabel={">>"}
-        containerClassName={"paginationBttns"}
-        previousLinkClassName={"previousBttn"}
-        nextLinkClassName={"nextBttn"}
-        disabledClassName={"paginationDisabled"}
-        activeClassName={"paginationActive"}
-        pageRangeDisplayed={3}
-        marginPagesDisplayed={2}
-        pageCount={pageCount}
-        onPageChange={handleChange}
-        renderOnZeroPageCount={null}
-        breakLabel="..."
-      />
+      <div className="band">{displayPost} </div>
+      <div
+        style={{
+          width: "100%",
+          margin: "auto",
+          padding: "5%",
+          position: "relative",
+        }}
+      >
+        {!hideButton ? (
+          <button className="loadmore-btn" onClick={loadMore}>
+            Зареди още{" "}
+          </button>
+        ) : (
+          <button
+            style={{ cursor: "not-allowed", opacity: "0.5" }}
+            className="loadmore-btn"
+          >
+            Изглежда стигнахте до края. &#9785;
+          </button>
+        )}
+      </div>
     </>
   );
 };

@@ -24,7 +24,7 @@ const Contacts = () => {
       company,
       message,
     };
-    setSent(false);
+    setSent(true);
 
     const toastId = toast.loading();
 
@@ -79,7 +79,7 @@ const Contacts = () => {
   return (
     <div
       id="1"
-      className="  wrapper row midcolumn   "
+      className="       "
       style={{ zIndex: "1000000", padding: "5%" }}
     >
       <div className="" style={{ margin: "0 auto !important" }}>
@@ -176,7 +176,6 @@ const Contacts = () => {
                           onChange={(e) => setName(e.target.value)}
                         />
                       </div>
-
                       <div className="mb-3">
                         <label className="form-label" htmlFor="emailAddress">
                           Email
@@ -214,7 +213,6 @@ const Contacts = () => {
                           data-sb-validations="required"
                         ></textarea>
                       </div>
-
                       <div className="d-grid">
                         {!message ||
                         message.trim().length === 0 ||
@@ -227,13 +225,23 @@ const Contacts = () => {
                             Send
                           </button>
                         ) : sent === true ? (
-                          <button className="btn" type="submit">
-                            Submit
+                          <button className="btn slide" type="submit">
+                            Изпрати
                           </button>
                         ) : (
                           "Sending..."
                         )}
                       </div>
+                      <div style={{ color: "black", width: "50%" }}>
+                        <p>
+                          При попълване и изпращане на съобщението , Вие
+                          доброволно се съгласявате с нашата политика за{" "}
+                          <Link href={"/privacy"} style={{ color: "#0099ff" }}>
+                            поверителност
+                          </Link>
+                          .
+                        </p>
+                      </div>{" "}
                     </form>
                   </div>
                 )}

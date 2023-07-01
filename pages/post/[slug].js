@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
 import { ImMenu2 } from "react-icons/im";
 import logo from "../../styles/assets/niffleheim.png";
+import { toast } from "react-hot-toast";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
 import {
   AiOutlineFontSize,
@@ -24,12 +25,14 @@ import {
   ViberShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
+import { HiOutlineLink } from "react-icons/hi";
 import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Comments from "../../components/Blog/BlogPageComponents/Comments";
 import Form from "../../components/Blog/BlogPageComponents/Form";
 import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navbar/Navbar";
+import Image from "next/image";
 
 const block = dynamic(
   () => import("../../components/Blog/single-component/BlockContentComponent"),
@@ -64,6 +67,27 @@ const Post = ({ post, posts }) => {
       center.style.opacity = "0";
       setSettings(false);
     }
+  };
+
+  const copyToClipboard = (text) => {
+    const elem = document.createElement("textarea");
+    elem.value = text;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    toast.success("Копирано в клипборда", {
+      position: "top-center",
+      style: {
+        border: "1px solid #333",
+        padding: "5px",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "wheat",
+        secondary: "blue",
+      },
+    });
   };
   function changeSizeByBtn(name) {
     cont = document.getElementById("container");
@@ -113,7 +137,7 @@ const Post = ({ post, posts }) => {
 
   return (
     <>
-      <aside className="slide">
+      <aside className="">
         <ImMenu2
           onClick={() => {
             const nav = document.getElementById("sideNav");
@@ -123,6 +147,7 @@ const Post = ({ post, posts }) => {
           }}
           id="nav-btn"
         />
+        <Image src={logo} style={{ display: "none" }} />
         <div id="sideNav" className="nav ">
           <ul>
             <div className="">
@@ -217,12 +242,14 @@ const Post = ({ post, posts }) => {
             <hr />
             <div className="btn_wrap" style={{ float: "right" }}>
               <span className="shareSpan">
-                <BsFillShareFill color="blue" />
+                <BsFillShareFill color="#4ba6e7" />
               </span>
               <div className="shareContainer">
                 <FacebookShareButton
                   className="i"
                   url={`https://noncreativeblog.net/post/${post.slug.current}`}
+                  quote={`${post.title}`}
+                  hashtag={post.rowTitle}
                 >
                   <FacebookIcon size={30} color="blue" />
                 </FacebookShareButton>
@@ -242,13 +269,23 @@ const Post = ({ post, posts }) => {
                 >
                   <ViberIcon size={30} />
                 </ViberShareButton>
+                <HiOutlineLink
+                  onClick={() =>
+                    copyToClipboard(
+                      `https://noncreativeblog.net/post/${post.slug.current}`
+                    )
+                  }
+                  className="i"
+                  size={31}
+                  style={{ backgroundColor: "#43e9" }}
+                />
               </div>
             </div>
             <div id="comments">
               <Comments comments={post.comments} />
               <Form _id={post._id} />
               <div className="columns posts">
-                <div id="mayLike" className="title">
+                <div id="suggestions" className="title">
                   <h3 className="p__opensans ">
                     <span>Подобни постове</span>
                   </h3>

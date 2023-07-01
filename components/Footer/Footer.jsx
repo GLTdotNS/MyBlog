@@ -90,7 +90,7 @@ const Footer = () => {
           {" "}
           <span> Noncreativeblog</span>
         </h2>
-        <p className="menu">
+        <p className="">
           <Link href={"/"} legacyBehavior>
             БЛОГ
           </Link>{" "}

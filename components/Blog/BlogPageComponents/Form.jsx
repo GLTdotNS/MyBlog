@@ -25,6 +25,7 @@ export default function Form({ _id }) {
       _id,
       comment,
     };
+    const toastId = toast.loading();
 
     try {
       await fetch("/api/createComment", {
@@ -35,6 +36,7 @@ export default function Form({ _id }) {
         setName("");
         setcomment("");
         setsucces(true);
+        toast.remove(toastId);
       });
     } catch (err) {}
   };
@@ -72,11 +74,37 @@ export default function Form({ _id }) {
             </div>
 
             {name && comment ? (
-              <button className="btn  small" onClick={handleSubmit(onSubmit)}>
+              <button
+                className="loadmore-btn  small"
+                onClick={handleSubmit(onSubmit)}
+              >
                 Публикувай
               </button>
             ) : (
-              ""
+              <button
+                style={{ opacity: "0.4", cursor: "not-allowed" }}
+                className="loadmore-btn  small"
+                onClick={() =>
+                  toast(
+                    "Имате непопълнени полета. Всички полета са задължителни !",
+                    {
+                      position: "bottom-center",
+                      style: {
+                        width: "300px",
+                        height: "100",
+                        padding: "5px",
+                        color: "#713200",
+                      },
+                      iconTheme: {
+                        primary: "wheat",
+                        secondary: "blue",
+                      },
+                    }
+                  )
+                }
+              >
+                Публикувай
+              </button>
             )}
           </div>
         </form>

@@ -29,6 +29,7 @@ nav ul {
   margin: 0 auto;
   list-style: none;
   position: relative;
+  width: 50%;
   z-index: 1000;
 }
 
@@ -80,13 +81,14 @@ nav ul li a:hover {
   background-color: #212121;
 }
 #worlds a {
-  background-color: #212121;
+  background-color: #292f33;
 }
 
 nav ul ul {
   display: none;
   position: absolute;
   top: 60px;
+  z-index: 100000000000;
 }
 
 nav ul li:hover > ul {
@@ -94,7 +96,7 @@ nav ul li:hover > ul {
 }
 
 nav ul ul li {
-  width: 170px;
+  width: 200px;
   float: none;
   display: list-item;
   position: relative;
@@ -103,7 +105,7 @@ nav ul ul li {
 nav ul ul ul li {
   position: relative;
   top: -60px;
-  left: 170px;
+  left: 200px;
 }
 nav ul ul ul {
   width: 30px;
@@ -151,16 +153,26 @@ li > a:only-child:after {
   #sideNav {
     width: 50% !important;
   }
+  .siteLogo {
+    position: absolute;
+    top: 0 !important;
+    right: 0;
+  }
   .search-field {
     min-width: 55% !important;
   }
   nav ul li {
     background: transparent;
   }
+
   nav {
-    margin: 15px !important;
     background-color: #212121;
     padding: 2%;
+    position: absolute;
+    top: 0;
+    margin: 0px !important;
+    z-index: 1000;
+    width: 100%;
     transition: 1s ease;
   }
   nav ul ul ul {
@@ -176,7 +188,6 @@ li > a:only-child:after {
     padding: 0 20px;
     color: #fff;
     font-size: 22px;
-    font-weight: bold;
     line-height: 60px;
     text-decoration: none;
     border: none;
@@ -188,6 +199,7 @@ li > a:only-child:after {
 
   [id^="drop"]:checked + ul {
     display: block;
+    width: 100%;
   }
 
   nav ul li {
@@ -288,7 +300,6 @@ li > a:only-child:after {
   width: 60px;
   height: 45px;
   position: relative;
-  margin: 0px auto;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
   -o-transform: rotate(0deg);
