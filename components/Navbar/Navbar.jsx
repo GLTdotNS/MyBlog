@@ -5,6 +5,11 @@ import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
 import logo from "../../styles/assets/mokey.jpg";
+import { Rubik_Distressed } from "next/font/google";
+const rubik = Rubik_Distressed({
+  weight: "400",
+  subsets: ["cyrillic"],
+});
 const Navbar = ({ category, posts }) => {
   const { scrollY } = useScroll();
   const [hidden, setHidden] = useState(false);
@@ -14,6 +19,7 @@ const Navbar = ({ category, posts }) => {
   const [text, setText] = useState(false);
   const [click, setClick] = useState(false);
   const router = useRouter();
+
   const handleClick = () => {
     setClick(!click);
     const element = document.getElementById("nav-icon3");
@@ -102,7 +108,7 @@ const Navbar = ({ category, posts }) => {
         </label>
 
         <input type="checkbox" id="drop" />
-        <ul class="menu">
+        <ul class={`menu ${rubik.className}`}>
           <li>
             <Link href={"/"}>Блог</Link>
           </li>

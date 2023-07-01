@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
 import { ImMenu2 } from "react-icons/im";
 import logo from "../../styles/assets/niffleheim.png";
-
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
 import {
   AiOutlineFontSize,
