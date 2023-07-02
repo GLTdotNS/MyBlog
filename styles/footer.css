@@ -10,7 +10,7 @@
   font-weight: bold;
   height: 400px;
   font-size: 16px;
-  padding: 50px;
+  padding: 40px;
   z-index: 999 !important;
 }
 
@@ -152,6 +152,8 @@
 @media (max-width: 767px) {
   .footer {
     font-size: 14px;
+    height: auto !important;
+    padding: 15px !important;
   }
   .footer .icons {
     background-color: white;

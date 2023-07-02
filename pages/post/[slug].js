@@ -147,7 +147,7 @@ const Post = ({ post, posts }) => {
           }}
           id="nav-btn"
         />
-        <Image src={logo} style={{ display: "none" }} />
+        <Image src={logo} style={{ display: "none" }} alt={`${post.title}`} />
         <div id="sideNav" className="nav ">
           <ul>
             <div className="">
@@ -159,6 +159,7 @@ const Post = ({ post, posts }) => {
                   width={100}
                   height={100}
                   style={{ borderRadius: "100%" }}
+                  alt={`${post.title}`}
                 />
                 <p>
                   {/* <iframe src={`${post.url}`} allowFullScreen="true" /> */}

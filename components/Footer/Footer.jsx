@@ -50,7 +50,11 @@ const Footer = () => {
             <span>Благодаря ! Очаквайте нови статии съвсем скоро !</span>
           )}
           {!succes ? (
-            <button type="submit" className="btn">
+            <button
+              style={{ backgroundColor: "#212121" }}
+              type="submit"
+              className="loadmore-btn"
+            >
               Абонирай се
             </button>
           ) : (
