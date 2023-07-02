@@ -45,7 +45,7 @@ function MyApp({ Component, pageProps }) {
         "
           key="desc"
         />
-        <script src="http://www.youtube.com/player_api"></script>
+        <script src="https://www.youtube.com/player_api"></script>
       </Head>
       {loading ? (
         <Loading />
