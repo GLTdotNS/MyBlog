@@ -9,6 +9,20 @@ const Index = ({ posts, category }) => {
   );
 };
 export const getStaticProps = async () => {
+  const category = await client.fetch(
+    groq`*[_type == "category"]{
+  _id,
+  slug,
+  title,
+  mainImage{
+    asset->{
+    _id,
+    url
+  }
+}
+
+  }`
+  );
   const query = groq`*[_type == "post"] | order(publishedAt desc)
   {
   title,
@@ -30,21 +44,6 @@ export const getStaticProps = async () => {
 },
 
 }`;
-  const category = await client.fetch(
-    groq`*[_type == "category"]{
-  _id,
-  slug,
-  title,
-  mainImage{
-    asset->{
-    _id,
-    url
-  }
-}
-
-  }`
-  );
-
   const posts = await client.fetch(query);
 
   return {

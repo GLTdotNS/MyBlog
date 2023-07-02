@@ -12,6 +12,8 @@ const Layout = ({ children, posts }) => {
     <main className="main-container row wrapper">
       <header>
         <Navbar posts={posts} />
+
+        <br />
       </header>
       {children}
 

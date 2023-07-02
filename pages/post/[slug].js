@@ -7,12 +7,14 @@ import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
 import { ImMenu2 } from "react-icons/im";
-import logo from "../../styles/assets/niffleheim.png";
+import { FiMusic } from "react-icons/fi";
+import logo from "../../styles/assets/Viking-Feature.webp";
 import { toast } from "react-hot-toast";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
 import {
   AiOutlineFontSize,
   AiOutlineFontColors,
+  AiOutlinePause,
   AiOutlineArrowDown,
 } from "react-icons/ai";
 import Link from "next/link";
@@ -52,8 +54,43 @@ const Post = ({ post, posts }) => {
   const [settings, setSettings] = useState(false);
   const router = useRouter();
   const [dark, setDark] = useState(true);
+  const [pause, setPause] = useState(true);
   let cont;
   let midcolumn;
+  const audioFunction = () => {
+    // https://developers.google.com/youtube/iframe_api_reference
+
+    // global variable for the player
+    var player;
+
+    // this function gets called when API is ready to use
+    function onYouTubePlayerAPIReady() {
+      // create the global player from the specific iframe (#video)
+      player = new YT.Player("video", {
+        videoId: `${post.ID ? post.ID : "Cx-qHlxOW7c"}?enablejsapi=1&html5=1`, // this is the id of the video at youtube (the stuff after "?v=")
+        loop: true,
+        events: {
+          onReady: onPlayerReady,
+        },
+      });
+    }
+
+    function onPlayerReady(event) {
+      // bind events
+      var playButton = document.getElementById("play");
+      playButton.addEventListener("click", function () {
+        player.playVideo();
+        setPause(false);
+      });
+
+      var pauseButton = document.getElementById("pause");
+      pauseButton.addEventListener("click", function () {
+        player.pauseVideo();
+        setPause(true);
+      });
+    }
+    onYouTubePlayerAPIReady();
+  };
 
   const handleSettings = () => {
     const settingMenu = document.getElementById("settingMenu");
@@ -109,30 +146,46 @@ const Post = ({ post, posts }) => {
   function changeColorSchema(name) {
     midcolumn = document.getElementById("postPage");
     const backgroundColor = document.querySelector("body");
+    const aside = document.querySelector("aside");
+    const sideNav = document.getElementById("sideNav");
+
     if (dark) {
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
+      aside.style.backgroundColor = "#faf8f3";
+      sideNav.style.color = "#262626";
+
       localStorage.setItem("dark", 2);
       setDark(!dark);
     } else {
       setDark(!dark);
       midcolumn.style.color = "#ffff";
       backgroundColor.style.backgroundColor = "#262626";
+      aside.style.backgroundColor = "#262626";
+      sideNav.style.color = "#e3e2e2";
+
       localStorage.setItem("dark", 1);
     }
   }
   useEffect(() => {
     midcolumn = document.getElementById("postPage");
     const backgroundColor = document.querySelector("body");
+    const aside = document.querySelector("aside");
+    const sideNav = document.getElementById("sideNav");
     if (localStorage.getItem("dark") == 2) {
       setDark(false);
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
+      aside.style.backgroundColor = "#faf8f3";
+      sideNav.style.color = "#262626";
     } else {
       setDark(true);
       midcolumn.style.color = "#ffff";
       backgroundColor.style.backgroundColor = "#262626";
+      aside.style.backgroundColor = "#262626";
+      sideNav.style.color = "#e3e2e2";
     }
+    audioFunction();
   }, []);
 
   return (
@@ -193,6 +246,32 @@ const Post = ({ post, posts }) => {
             <li>
               <Link href={"/"}>Начало</Link>
             </li>
+            <li id="play">
+              <button
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                  display: pause ? "block" : "none",
+                }}
+              >
+                <FiMusic size={30} color={dark ? "#fff" : "#262626"} />
+              </button>
+            </li>
+            <li>
+              <button
+                style={{
+                  border: "none",
+                  backgroundColor: "transparent",
+                  cursor: "pointer",
+                  display: !pause ? "block" : "none",
+                }}
+                id="pause"
+              >
+                <AiOutlinePause size={30} color={dark ? "#fff" : "#262626"} />
+              </button>
+            </li>
+            <div style={{ display: "none" }} id="video"></div>
           </ul>
         </div>
         <div class="vertical-line"></div>
@@ -212,13 +291,13 @@ const Post = ({ post, posts }) => {
         <div
           className=" postPage "
           style={{
-            height: "20vh",
+            height: "40vh",
 
             backgroundImage: ` linear-gradient(
-    rgba(0, 0, 0, 0.8), 
+    rgba(0, 0, 0, ${dark ? 0.6 : 0.1} ), 
     ${dark ? "#262626" : "#faf8f3"}
     ),
-    url(${urlForImg(post.mainImage.asset.url)})`,
+    url(${logo.src})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             position: "absolute",
@@ -340,6 +419,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   description,
   url,
   slug,
+  ID,
   "name": author->name,
   "categories": categories[]->title,
   rowTitle,

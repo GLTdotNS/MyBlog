@@ -33,6 +33,7 @@ function MyApp({ Component, pageProps }) {
 
     Router.onRouteChangeError = () => NProgress.done();
   }, []);
+
   return (
     <>
       <Head>
@@ -44,12 +45,12 @@ function MyApp({ Component, pageProps }) {
         "
           key="desc"
         />
+        <script src="http://www.youtube.com/player_api"></script>
       </Head>
       {loading ? (
         <Loading />
       ) : (
         <>
-          {" "}
           <Cookies />
           <Toaster />
           <Component {...pageProps} />

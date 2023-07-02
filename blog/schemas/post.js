@@ -70,6 +70,11 @@ export default {
       type: "blockContent",
     },
     {
+      name: "ID",
+      title: "ID",
+      type: "string",
+    },
+    {
       name: "Video",
       title: "Video",
       type: "file",
