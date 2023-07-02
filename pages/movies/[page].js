@@ -3,6 +3,7 @@ import Layout from "../../components/Layout/Layout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { client } from "../../lib/sanityClient";
+import logo from "../../styles/assets/empty.jpg";
 import groq from "groq";
 const movies = ({ data, posts }) => {
   const router = useRouter();
@@ -28,7 +29,7 @@ const movies = ({ data, posts }) => {
         <div className=" ">
           <div className="band">
             {data &&
-              data.results.map((movie, index) => {
+              data.results.slice(0, 19).map((movie, index) => {
                 return (
                   <div className={`item-${index + 1}`} key={movie.name}>
                     <a
@@ -43,18 +44,20 @@ const movies = ({ data, posts }) => {
                       <div
                         class="thumb"
                         style={{
-                          backgroundImage: `url(${`http://image.tmdb.org/t/p/w500/${
-                            movie.backdrop_path
-                              ? movie.backdrop_path
-                              : movie.poster_path
-                          }`})`,
+                          backgroundImage: `url(
+                            
+                            ${
+                              movie.backdrop_path
+                                ? ` http://image.tmdb.org/t/p/w500/${movie.backdrop_path}`
+                                : logo.src
+                            }  )`,
                         }}
                       ></div>
                       <article>
                         <h4>
                           {movie.overview
                             ? movie.overview.slice(0, 150)
-                            : "No title"}
+                            : "Липсващо описание"}
                           ...
                         </h4>
                       </article>
@@ -79,15 +82,14 @@ const movies = ({ data, posts }) => {
 const isServerReq = (req) => !req.url.startsWith("/_next");
 export async function getServerSideProps(context) {
   const { page } = context.params;
-
+  const key = process.env.NEXT_PUBLIC_MOVIE;
   let data;
   const url = `https://api.themoviedb.org/3/search/multi?query=vikings&include_adult=false&language=en-US&page=${page}`;
   const options = {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYzUzODg4YWEyYzhkNmM5MDY0ZTVhZjg3MGI5YjZkZiIsInN1YiI6IjY0YTE2YjcyOGMwYTQ4MDEzYjNkZWE2OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.FF2os7VDydRDKvCYUZmAeA2p-OtxtNCZhZM8Aqv6qyo",
+      Authorization: `Bearer  ${key}`,
     },
   };
   await fetch(url, options, { page })
