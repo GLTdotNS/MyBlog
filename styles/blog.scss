@@ -49,8 +49,8 @@ aside {
   position: fixed;
   float: left;
   width: 15%;
-  padding-left: 3%;
-  padding-top: 30px;
+  padding: 2%;
+
   top: 0;
   bottom: 0;
   background-color: #262626;
@@ -113,7 +113,10 @@ article {
   font-weight: bold;
   color: #f7f7f7;
 }
-
+.showMenu {
+  opacity: 1;
+  transform: translateY(40px);
+}
 @media (max-width: 900px) {
   aside {
     float: left;
@@ -121,9 +124,6 @@ article {
     height: 50px;
   }
 
-  .nav {
-    display: none;
-  }
   #nav-btn {
     height: 40px;
     width: 40px;
@@ -153,16 +153,35 @@ article {
     margin-top: 5%;
   }
   .nav {
+    position: absolute;
     padding: 15px;
-    margin-top: 19px;
-    float: right;
-    background-color: #333;
-    width: 30%;
-    z-index: 1000 !important;
+    opacity: 0;
+    background-color: #111;
+    top: 55px !important;
+    left: 20px;
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 14px 35px 0 rgba(9, 9, 12, 0.4);
+    z-index: 10000;
+    transform: translateY(0px);
+
+    transition: all 200ms linear;
+  }
+  .nav::after {
+    position: absolute;
+    top: -12px;
+    left: 15px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid var(--color);
+    content: "";
+    display: block;
+    z-index: 1000000000;
+    transition: all 200ms linear;
   }
 }
 .search-field {
-  /* this class is for input field, if in your code its different, just substitute the class name '.search-field' */
   padding: 10px 15px;
   width: 35%;
   font-size: 1rem;

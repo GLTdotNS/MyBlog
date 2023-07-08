@@ -47,26 +47,10 @@ const load = dynamic(() => import("../../components/Loading/Loading"), {
 let BlockContent = block;
 let Loading = load;
 const Post = ({ post, posts }) => {
-  const [settings, setSettings] = useState(false);
   const router = useRouter();
   const [dark, setDark] = useState(true);
-  const [pause, setPause] = useState(true);
   let cont;
   let midcolumn;
-
-  const handleSettings = () => {
-    const settingMenu = document.getElementById("settingMenu");
-    const center = document.getElementById("center");
-    if (!settings) {
-      settingMenu.style.height = "200px";
-      center.style.opacity = "1";
-      setSettings(true);
-    } else {
-      settingMenu.style.height = "0px";
-      center.style.opacity = "0";
-      setSettings(false);
-    }
-  };
 
   const copyToClipboard = (text) => {
     const elem = document.createElement("textarea");
@@ -116,7 +100,8 @@ const Post = ({ post, posts }) => {
       backgroundColor.style.backgroundColor = "#faf8f3";
       aside.style.backgroundColor = "#faf8f3";
       sideNav.style.color = "#262626";
-
+      sideNav.style.backgroundColor = "rgb(250, 248, 243)";
+      sideNav.style.setProperty("--color", "rgb(250, 248, 243)");
       localStorage.setItem("dark", 2);
       setDark(!dark);
     } else {
@@ -125,6 +110,8 @@ const Post = ({ post, posts }) => {
       backgroundColor.style.backgroundColor = "#262626";
       aside.style.backgroundColor = "#262626";
       sideNav.style.color = "#e3e2e2";
+      sideNav.style.backgroundColor = "#262626";
+      sideNav.style.setProperty("--color", "#262626");
 
       localStorage.setItem("dark", 1);
     }
@@ -138,29 +125,53 @@ const Post = ({ post, posts }) => {
       setDark(false);
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
-      aside.style.backgroundColor = "#faf8f3";
+      aside.style.backgroundColor = "#faf8f3 !important";
       sideNav.style.color = "#262626";
+      sideNav.style.backgroundColor = "rgb(250, 248, 243)";
+      sideNav.style.setProperty("--color", "rgb(250, 248, 243)");
     } else {
       setDark(true);
       midcolumn.style.color = "#ffff";
       backgroundColor.style.backgroundColor = "#262626";
       aside.style.backgroundColor = "#262626";
       sideNav.style.color = "#e3e2e2";
+      sideNav.style.backgroundColor = "#262626";
+      sideNav.style.setProperty("--color", "#262626");
     }
   }, []);
 
   return (
     <>
       <aside className="">
-        <ImMenu2
-          onClick={() => {
-            const nav = document.getElementById("sideNav");
-            nav.style.display == "block"
-              ? (nav.style.display = "none")
-              : (nav.style.display = "block");
-          }}
-          id="nav-btn"
-        />
+        <label
+          className="hamburger-icon"
+          aria-label="Open navigation menu"
+          htmlFor="drop"
+        >
+          <div
+            className="burger"
+            id="burger"
+            onClick={() => {
+              const element = document.getElementById("burger");
+              const nav = document.getElementById("sideNav");
+
+              if (nav.style.opacity == "1") {
+                nav.style.opacity = "0";
+                nav.style.transform = "translateY(0px)";
+                element.classList.remove("is-active");
+              } else {
+                nav.style.opacity = "1";
+                nav.style.transform = "translateY(40px)";
+                element.classList.add("is-active");
+              }
+            }}
+          >
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+          </div>
+        </label>
+
         <Image src={logo} style={{ display: "none" }} alt={`${post.title}`} />
         <div id="sideNav" className="nav ">
           <ul>

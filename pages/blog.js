@@ -77,7 +77,7 @@ const MainBlogPage = ({ posts, category }) => {
         <div className="rightcolumn">
           <div className="columns ">
             <h3 className={rubik.className}>Най - четени</h3>
-            <CrispWithNoSSR />
+            {/* <CrispWithNoSSR /> */}
             <RecentlyPosts
               posts={posts?.slice().sort((x, b) => b.likes - x.likes)}
             />

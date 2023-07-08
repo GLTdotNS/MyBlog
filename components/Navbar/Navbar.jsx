@@ -22,8 +22,8 @@ const Navbar = ({ category, posts }) => {
 
   const handleClick = () => {
     setClick(!click);
-    const element = document.getElementById("nav-icon3");
-    element.classList.toggle("open");
+    const element = document.getElementById("burger");
+    element.classList.toggle("is-active");
   };
   const handleSearch = (e) => {
     e.preventDefault();
@@ -99,11 +99,10 @@ const Navbar = ({ category, posts }) => {
           aria-label="Open navigation menu"
           htmlFor="drop"
         >
-          <div id="nav-icon3" className="">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <div class="burger" id="burger">
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
+            <span class="burger-line"></span>
           </div>
         </label>
 
