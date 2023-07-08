@@ -5,7 +5,6 @@ import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { FaCopy } from "react-icons/fa";
-import { copyToClipboard } from "../scripts/copyFunction.js";
 
 export const serializers = {
   types: {

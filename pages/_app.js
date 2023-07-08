@@ -17,6 +17,7 @@ import { useState } from "react";
 import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
+import Script from "next/script";
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState();
   NProgress.configure({ showSpinner: false });
@@ -45,7 +46,6 @@ function MyApp({ Component, pageProps }) {
         "
           key="desc"
         />
-        <script src="https://www.youtube.com/player_api"></script>
       </Head>
       {loading ? (
         <Loading />

@@ -1,8 +1,6 @@
 import groq from "groq";
 import { client, urlForImg } from "../../lib/sanityClient";
-import RecentlyPosts from "../../components/Blog/BlogPageComponents/RecentlyPosts";
 import dynamic from "next/dynamic";
-import Categories from "../../components/Blog/BlogPageComponents/Categories";
 import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
@@ -29,11 +27,9 @@ import {
 import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
 import { HiOutlineLink } from "react-icons/hi";
 import Head from "next/head";
-import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Comments from "../../components/Blog/BlogPageComponents/Comments";
 import Form from "../../components/Blog/BlogPageComponents/Form";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navbar/Navbar";
+
 import Image from "next/image";
 
 const block = dynamic(
@@ -57,40 +53,6 @@ const Post = ({ post, posts }) => {
   const [pause, setPause] = useState(true);
   let cont;
   let midcolumn;
-  const audioFunction = () => {
-    // https://developers.google.com/youtube/iframe_api_reference
-
-    // global variable for the player
-    var player;
-
-    // this function gets called when API is ready to use
-    function onYouTubePlayerAPIReady() {
-      // create the global player from the specific iframe (#video)
-      player = new YT.Player("video", {
-        videoId: `${post.ID ? post.ID : "Cx-qHlxOW7c"}?enablejsapi=1&html5=1`, // this is the id of the video at youtube (the stuff after "?v=")
-        loop: true,
-        events: {
-          onReady: onPlayerReady,
-        },
-      });
-    }
-
-    function onPlayerReady(event) {
-      // bind events
-      var playButton = document.getElementById("play");
-      playButton.addEventListener("click", function () {
-        player.playVideo();
-        setPause(false);
-      });
-
-      var pauseButton = document.getElementById("pause");
-      pauseButton.addEventListener("click", function () {
-        player.pauseVideo();
-        setPause(true);
-      });
-    }
-    onYouTubePlayerAPIReady();
-  };
 
   const handleSettings = () => {
     const settingMenu = document.getElementById("settingMenu");
@@ -185,7 +147,6 @@ const Post = ({ post, posts }) => {
       aside.style.backgroundColor = "#262626";
       sideNav.style.color = "#e3e2e2";
     }
-    audioFunction();
   }, []);
 
   return (
@@ -246,31 +207,7 @@ const Post = ({ post, posts }) => {
             <li>
               <Link href={"/"}>Начало</Link>
             </li>
-            <li id="play">
-              <button
-                style={{
-                  border: "none",
-                  backgroundColor: "transparent",
-                  cursor: "pointer",
-                  display: pause ? "block" : "none",
-                }}
-              >
-                <FiMusic size={30} color={dark ? "#fff" : "#262626"} />
-              </button>
-            </li>
-            <li>
-              <button
-                style={{
-                  border: "none",
-                  backgroundColor: "transparent",
-                  cursor: "pointer",
-                  display: !pause ? "block" : "none",
-                }}
-                id="pause"
-              >
-                <AiOutlinePause size={30} color={dark ? "#fff" : "#262626"} />
-              </button>
-            </li>
+
             <div style={{ display: "none" }} id="video"></div>
           </ul>
         </div>
