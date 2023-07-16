@@ -125,7 +125,7 @@ const Post = ({ post, posts }) => {
       setDark(false);
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
-      aside.style.backgroundColor = "#faf8f3 !important";
+      aside.style.backgroundColor = "rgb(250, 248, 243)";
       sideNav.style.color = "#262626";
       sideNav.style.backgroundColor = "rgb(250, 248, 243)";
       sideNav.style.setProperty("--color", "rgb(250, 248, 243)");
