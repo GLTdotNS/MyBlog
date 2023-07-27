@@ -77,7 +77,7 @@ const PostsComponent = ({ posts }) => {
           position: "relative",
         }}
       >
-        {!hideButton ? (
+        {!hideButton || posts.length <= 1 ? (
           <button className="loadmore-btn" onClick={loadMore}>
             Зареди още{" "}
           </button>

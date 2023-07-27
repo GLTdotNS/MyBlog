@@ -262,7 +262,7 @@ const Navbar = ({ category, posts }) => {
           </li>
 
           <li>
-            <Link href={"/about"}>За сайта</Link>
+            <Link href={"/runes"}>Руни</Link>
           </li>
           <li>
             <Link href={"/movies/1"}>Филми</Link>

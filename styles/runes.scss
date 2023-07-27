@@ -1,0 +1,192 @@
+table {
+  display: flex;
+  flex-flow: column nowrap;
+  line-height: 1.25;
+  border: 0;
+  width: 80%;
+  margin: auto;
+}
+
+caption {
+  background-color: #5a5a5a;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #999;
+  caption-side: top;
+  width: 80%;
+  margin: auto;
+}
+
+caption span {
+  font-size: 1.25rem;
+  font-weight: 300;
+  color: silver;
+}
+
+tr {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+td {
+  background-color: #f2f2f2;
+  color: #5a5a5a;
+}
+td:first-child {
+  font-size: 30px;
+  max-width: 180px;
+  font-weight: 800;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+td:nth-child(2) {
+  max-width: 180px;
+}
+td:nth-child(3) {
+  max-width: 500px;
+  font-weight: 800;
+
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+td:nth-child(4) {
+  min-width: 300px;
+
+  font-size: 15px;
+  background-color: #f2f2f2;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+th:first-child,
+th:nth-child(2) {
+  max-width: 165px;
+}
+th:nth-child(3) {
+  max-width: 165px;
+}
+th {
+  font-weight: 700;
+  background-color: rgb(255, 233, 233);
+  color: #666;
+}
+
+th,
+td {
+  display: flex;
+  flex: 1 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 0.1rem;
+  border: 1px solid #bfbfbf;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* This will affect only Chrome browsers 29+
+	* See: http://browserhacks.com/
+	* Hack because 'hyphens: auto;' is supported in Chrome only on Android & Mac 
+	* and word-break 'overrides' hyphens in Firefox
+	*/
+.selector:not(*:root),
+th,
+td {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-all;
+}
+/* Стилове за входния контейнер */
+.input-container {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 20px;
+  margin: auto;
+}
+
+/* Стилове за входния елемент */
+.custom-input {
+  width: 100%;
+  padding: 12px;
+  height: 100px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+/* Стилове за бутона */
+.custom-button {
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.2s;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
+
+/* Стилове за респонзивност на малки устройства */
+@media screen and (max-width: 480px) {
+  .custom-input {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .custom-button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+}
+.center-content {
+  text-align: center;
+}
+.l-container {
+  padding: 1em;
+  max-width: 1024px;
+}
+
+/*--------------------------*\
+	$select
+\*--------------------------*/
+.select-control {
+  border-radius: 0.5rem;
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+}
+
+.select {
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.2em;
+  color: #5a5a5a;
+  background-color: #f2f2f2;
+  cursor: pointer;
+  width: 30%;
+}
+.select:focus {
+  outline: 0.14rem solid #007bff;
+}
+.select__item {
+  padding: 1em;
+  color: #666;
+  background-color: #f3e5f5;
+  text-align: left;
+}
+.select__item:focus {
+  outline: none;
+}

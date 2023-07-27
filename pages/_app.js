@@ -7,6 +7,7 @@ import "../styles/modal.css";
 import "../styles/about.css";
 import "../styles/admin.css";
 import "../styles/cookies.css";
+import "../styles/runes.scss";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";

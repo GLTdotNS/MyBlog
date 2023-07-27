@@ -155,6 +155,15 @@
     height: auto !important;
     padding: 15px !important;
   }
+  table,
+  tr,
+  caption {
+    width: 100% !important;
+  }
+  td,
+  th {
+    min-width: 30px !important;
+  }
   .footer .icons {
     background-color: white;
     color: white !important;
