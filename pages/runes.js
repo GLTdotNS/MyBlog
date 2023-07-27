@@ -6,7 +6,7 @@ import groq from "groq";
 import { BsGithub, BsLinkedin, BsMailbox2, BsFacebook } from "react-icons/bs";
 import Link from "next/link";
 import { Shrikhand, Ubuntu } from "next/font/google";
-
+import { toast } from "react-hot-toast";
 const rubik = Shrikhand({
   weight: "400",
   subsets: ["latin"],
@@ -23,7 +23,26 @@ const Runes = ({ category, posts }) => {
   const [runicSymbol, setRunicSymbol] = useState("Canis Lupus");
   const [displayResult, setDisplayResult] = useState("ᚲᚨᚾᛁᛊ ᛚᚢᛈᚢᛊ");
   const [latinOrEF, setLatinOrEf] = useState("Latin");
-
+  const copyToClipboard = (text) => {
+    const elem = document.createElement("textarea");
+    elem.value = text;
+    document.body.appendChild(elem);
+    elem.select();
+    document.execCommand("copy");
+    document.body.removeChild(elem);
+    toast.success("Копирано в клипборда", {
+      position: "top-center",
+      style: {
+        border: "1px solid #333",
+        padding: "5px",
+        color: "#713200",
+      },
+      iconTheme: {
+        primary: "wheat",
+        secondary: "blue",
+      },
+    });
+  };
   function latinToRunic(runicSymbol) {
     const runicToLatinMap = {
       A: "ᚨ",
@@ -71,13 +90,13 @@ const Runes = ({ category, posts }) => {
       ᚺ: "H",
       ᛁ: "I",
       ᛃ: "J",
-      ᚲ: "K",
+      ᚲ: "C",
       ᛚ: "L",
       ᛗ: "M",
       ᚾ: "N",
       ᛟ: "O",
       ᛈ: "P",
-      ᚲ: "Q",
+      ᚲ: "C",
       ᚱ: "R",
       ᛊ: "S",
       ᛏ: "T",
@@ -115,6 +134,7 @@ const Runes = ({ category, posts }) => {
   return (
     <Layout posts={posts}>
       <Head>
+        <meta name="description" content={`${""}}`} key="desc" />
         <title>
           Най - старата позната протогерманска руническа азбука - Elder Futhark
         </title>
@@ -122,6 +142,31 @@ const Runes = ({ category, posts }) => {
       <div style={{ marginBottom: "20%" }}>
         <div className=" container content-wrapper ">
           {" "}
+          <hr />
+          <div>
+            Протогерманската писменост е една от най - старите познати на
+            човечеството , като първите сведения за нея датират от 160 години
+            преди христа , но за първата руническа азбука се сочи Elder Furthark
+            , която е използвана между 2 и 8 век. Тя е широко разпространена
+            сред германските народи и най - вече в Скандинавия . За произхода и
+            се говори , че Бог Один след като слязъл от дървото на живота
+            Игдрасил получил руни , които му шепнели и надарили с мъдрост.
+            Самата дума руна означава "шепот" / "мистериозен шепот"/. С
+            навлизането на християнството в Европа руните са били изместени от
+            латиницата , но руните са използвани и до днес - за декорация , за
+            изготвянето на амулети , медальони и други украшения . Всяка една от
+            руните има своето значение , както и всяка една от тях отговаря на
+            звук или буква от латинската азбука.
+            <br />В таблицата по - долу можете да се запознаете със Elder
+            Furthark и значението на руните , които съставляват азбуката. В
+            случай , че изпитвате трудност да си преведете стар рунически надпис
+            или искате да превърнете латински бувки в рунически занци , то
+            използвайте нашия{" "}
+            <a style={{ color: "blue" }} href="#conventor">
+              конвентор
+            </a>{" "}
+            .
+          </div>
           <table className={`${rubik.className}`}>
             <caption>
               Руни
@@ -343,6 +388,7 @@ const Runes = ({ category, posts }) => {
               </td>
             </tr>
           </table>
+          <span id="conventor"></span>
           <div
             style={{
               backgroundColor: "#333",
@@ -361,8 +407,15 @@ const Runes = ({ category, posts }) => {
                   id="js-select"
                   onChange={(e) => {
                     setLatinOrEf(e.target.value);
-                    setRunicSymbol(" ");
-                    setDisplayResult("");
+
+                    if (e.target.value == "Latin") {
+                      setDisplayResult("ᚲᚨᚾᛁᛊ ᛚᚢᛈᚢᛊ");
+                      setRunicSymbol("Canis Lupus");
+                    } else {
+                      setRunicSymbol(" ᚲᚨᚾᛁᛊ ᛚᚢᛈᚢᛊ");
+
+                      setDisplayResult("Canis Lupus");
+                    }
                   }}
                 >
                   <option class="select__item" value="Latin">
@@ -375,9 +428,23 @@ const Runes = ({ category, posts }) => {
               </div>
 
               <span style={{ fontSize: "30px" }}>
-                {latinOrEF == "Latin" ? " Elder Furthark" : "Latin"}:{" "}
-                <span style={{ fontSize: "40px", fontWeight: "600" }}>
+                {latinOrEF == "Latin" ? " Elder Furthark" : "Latin"}:
+                <span
+                  style={{
+                    fontSize: "40px",
+                    fontWeight: "600",
+                    color: "#4ba6e7",
+                    borderBottom: "1px solid silver",
+                    boxShadow: "0px 0.4px 0px 0px white",
+                  }}
+                >
                   {displayResult}
+                  <button
+                    style={{ cursor: "pointer", marginLeft: "10px" }}
+                    onClick={() => copyToClipboard(displayResult)}
+                  >
+                    Копирай
+                  </button>
                 </span>
               </span>
             </div>

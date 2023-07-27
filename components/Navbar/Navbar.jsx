@@ -264,9 +264,9 @@ const Navbar = ({ category, posts }) => {
           <li>
             <Link href={"/runes"}>Руни</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href={"/movies/1"}>Филми</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
     </>
