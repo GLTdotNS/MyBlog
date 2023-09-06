@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import image from "../styles/assets/bg1.png";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
 import { BsGithub, BsLinkedin, BsMailbox2, BsFacebook } from "react-icons/bs";

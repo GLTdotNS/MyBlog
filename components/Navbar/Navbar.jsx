@@ -4,7 +4,7 @@ import { motion, AnimatePresence, useScroll } from "framer-motion";
 import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
 import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
-import logo from "../../styles/assets/mokey.jpg";
+import logo from "../../styles/assets/background.jpg";
 import { Rubik_Distressed } from "next/font/google";
 const rubik = Rubik_Distressed({
   weight: "400",
@@ -46,7 +46,7 @@ const Navbar = ({ category, posts }) => {
       <div
         className="bg"
         style={{
-          height: "63vh",
+          height: "70vh",
           width: "100%",
           backgroundSize: "cover",
           backgroundAttachment: "",
