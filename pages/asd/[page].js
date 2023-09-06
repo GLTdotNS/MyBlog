@@ -3,7 +3,6 @@ import Layout from "../../components/Layout/Layout";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { client } from "../../lib/sanityClient";
-import logo from "../../styles/assets/empty.jpg";
 import groq from "groq";
 const movies = ({ data, posts }) => {
   const router = useRouter();
