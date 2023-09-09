@@ -8,6 +8,7 @@ import "../styles/about.css";
 import "../styles/admin.css";
 import "../styles/cookies.css";
 import "../styles/runes.scss";
+import "../styles/gods.css";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";

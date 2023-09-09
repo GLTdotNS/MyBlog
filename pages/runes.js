@@ -133,7 +133,11 @@ const Runes = ({ category, posts }) => {
   return (
     <Layout posts={posts}>
       <Head>
-        <meta name="description" content={`${""}}`} key="desc" />
+        <meta
+          name="description"
+          content={`${"Runes conventor , Scandinavian runes , Norse Runes , Runes , Odin , Valhalla , Elder Furthark"}}`}
+          key="desc"
+        />
         <title>
           Най - старата позната протогерманска руническа азбука - Elder Futhark
         </title>

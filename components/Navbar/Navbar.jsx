@@ -24,6 +24,7 @@ const Navbar = ({ category, posts }) => {
     setClick(!click);
     const element = document.getElementById("burger");
     element.classList.toggle("is-active");
+    const el = document.getElementById("main-container");
   };
   const handleSearch = (e) => {
     e.preventDefault();
@@ -113,14 +114,15 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li id="firstDrop">
             <label for="drop-1" class="toggle">
-              Боговете +
+              Богове & създания{" "}
             </label>
-            <a href="#">Боговете</a>
+            <a href="#">Богове & създания</a>
             <input type="checkbox" id="drop-1" />
             <ul>
               {posts &&
                 posts
                   ?.filter((p) => p.category === "TheGods")
+                  .slice(0, 6)
                   .map((post, index) => (
                     <li className="" key={post.title}>
                       {!post ? (
@@ -135,6 +137,19 @@ const Navbar = ({ category, posts }) => {
                       )}
                     </li>
                   ))}
+              <li>
+                <Link
+                  style={{
+                    fontFamily: "-moz-initial",
+                    fontSize: "15px",
+                    color: "#4ba6e7",
+                  }}
+                  href={"/gods"}
+                >
+                  {" "}
+                  Виж всички
+                </Link>
+              </li>
             </ul>
           </li>
 

@@ -9,7 +9,7 @@ const Layout = ({ children, posts }) => {
   const { scrollYProgress } = useViewportScroll();
 
   return (
-    <main className="main-container row wrapper">
+    <main id="main-container" className="main-container row wrapper">
       <header>
         <Navbar posts={posts} />
 

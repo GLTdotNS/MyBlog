@@ -16,11 +16,11 @@ const PostsComponent = ({ posts }) => {
   const incrementInitialPostList = 8;
   const [hideButton, setHideButton] = useState(false);
   const [displayPosts, setDisplayPosts] = useState(initialPostList);
-  let flagHideButton = initialPostList;
+  const [flagHideButton, setFlagHideButton] = useState(initialPostList);
   const loadMore = () => {
     setDisplayPosts(displayPosts + incrementInitialPostList);
-    flagHideButton += incrementInitialPostList;
-    if (flagHideButton >= posts.length) {
+    setFlagHideButton(flagHideButton + incrementInitialPostList);
+    if (flagHideButton + incrementInitialPostList >= posts.length) {
       setHideButton(true);
     }
   };

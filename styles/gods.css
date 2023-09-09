@@ -1,0 +1,44 @@
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 7px;
+}
+
+.card {
+  width: 400px;
+  height: 200px;
+  margin: auto;
+  cursor: pointer;
+  align-items: center;
+}
+.model-name {
+  position: absolute;
+  width: 40%;
+  padding: 3px;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+.overlay-div {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  transition: 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.channel_scroll_list:hover > .overlay-div {
+  background-color: transparent;
+  z-index: 0;
+}
+.channel_scroll_list:hover > .model-name {
+  background-color: #a10622;
+}
+.channel_scroll_list:hover > .span-styles {
+  background-color: #333;
+}
+@media screen and (max-width: 1000px) {
+  .cards {
+    grid-template-columns: 4fr;
+  }
+}

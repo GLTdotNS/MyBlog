@@ -11,7 +11,6 @@ const About = ({ category, posts }) => {
       <div style={{ marginBottom: "20%" }}>
         <div className=" container content-wrapper ">
           <div className="staffCard draw-border ">
-            <Image className="card__image" src={image} alt="Staff" />
             <h4 className="card__name">Canis Lupus</h4>
             <div
               style={{
