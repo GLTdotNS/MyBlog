@@ -7,7 +7,7 @@ import Link from "next/link";
 import { urlForImg } from "../lib/sanityClient";
 import { client } from "../lib/sanityClient";
 
-const Gods = ({ posts }) => {
+const Recipes = ({ posts }) => {
   return (
     <Layout posts={posts}>
       <div style={{ marginBottom: "20%" }}>
@@ -100,4 +100,4 @@ export const getServerSideProps = async () => {
     props: { posts, category },
   };
 };
-export default Gods;
+export default Recipes;
