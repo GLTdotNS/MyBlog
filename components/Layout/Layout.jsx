@@ -4,10 +4,30 @@ import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { motion, useViewportScroll } from "framer-motion";
 import Head from "next/head";
-
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 const Layout = ({ children, posts }) => {
   const { scrollYProgress } = useViewportScroll();
+  useEffect(() => {
+    let mybutton = document.getElementById("scrollTop");
 
+    window.onscroll = function () {
+      scrollFunction();
+    };
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 700 ||
+        document.documentElement.scrollTop > 700
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+  }, []);
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
   return (
     <main id="main-container" className="main-container row wrapper">
       <header>
@@ -15,6 +35,9 @@ const Layout = ({ children, posts }) => {
 
         <br />
       </header>
+      <button onClick={topFunction} id="scrollTop" title="Go to top">
+        <BsFillArrowUpCircleFill color="#f9b22a" />
+      </button>
       {children}
 
       <motion.div

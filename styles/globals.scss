@@ -342,5 +342,35 @@ textarea {
     transform: translateX(0);
   }
 }
+#scrollTop {
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
 
+  transition: background-color 0.3s, opacity 0.5s, visibility 0.5s;
+
+  z-index: 1000;
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  left: 30px;
+  z-index: 99;
+
+  font-size: 50px;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+  border-radius: 100%;
+}
+
+#scrollTop:hover {
+  background-color: #555;
+}
+
+#scrollTop:active {
+  background-color: #555;
+}
 /*end global*/

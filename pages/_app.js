@@ -20,6 +20,7 @@ import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
 import Script from "next/script";
+import { BsFillArrowUpCircleFill } from "react-icons/bs";
 function MyApp({ Component, pageProps }) {
   const [loading, setLoading] = useState();
   NProgress.configure({ showSpinner: false });
@@ -36,7 +37,27 @@ function MyApp({ Component, pageProps }) {
 
     Router.onRouteChangeError = () => NProgress.done();
   }, []);
+  useEffect(() => {
+    let mybutton = document.getElementById("scrollTop");
 
+    window.onscroll = function () {
+      scrollFunction();
+    };
+    function scrollFunction() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        mybutton.style.display = "block";
+      } else {
+        mybutton.style.display = "none";
+      }
+    }
+  }, []);
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
   return (
     <>
       <Head>
@@ -55,7 +76,11 @@ function MyApp({ Component, pageProps }) {
         <>
           <Cookies />
           <Toaster />
+
           <Component {...pageProps} />
+          <button onClick={topFunction} id="scrollTop" title="Go to top">
+            <BsFillArrowUpCircleFill color="wheat" />
+          </button>
           <Analytics />
         </>
       )}
