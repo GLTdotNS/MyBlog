@@ -69,7 +69,9 @@ const MainBlogPage = ({ posts, category }) => {
         <div className="midcolumn ">
           <div className="">
             <PostsComponent
-              posts={posts?.sort((x, b) => x._createdAt - b._createdAt)}
+              posts={posts
+                ?.filter((x) => x.category != "recipe")
+                .sort((x, b) => x._createdAt - b._createdAt)}
             />
           </div>
           <Cookies />
@@ -79,7 +81,7 @@ const MainBlogPage = ({ posts, category }) => {
             <h3 className={rubik.className}>Най - четени</h3>
             {/* <CrispWithNoSSR /> */}
             <RecentlyPosts
-              posts={posts?.slice().sort((x, b) => b.likes - x.likes)}
+              posts={posts.slice().sort((x, b) => b.likes - x.likes)}
             />
           </div>
         </div>
