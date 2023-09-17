@@ -135,7 +135,7 @@ const Runes = ({ category, posts }) => {
       <Head>
         <meta
           name="description"
-          content={`${"Runes conventor , Scandinavian runes , Norse Runes , Runes , Odin , Valhalla , Elder Furthark"}}`}
+          content={`${"Runes convertor , Scandinavian runes , Norse Runes , Runes , Odin , Valhalla , Elder Furthark"}}`}
           key="desc"
         />
         <title>
@@ -165,8 +165,8 @@ const Runes = ({ category, posts }) => {
             случай , че изпитвате трудност да си преведете стар рунически надпис
             или искате да превърнете латински бувки в рунически занци , то
             използвайте нашия{" "}
-            <a style={{ color: "blue" }} href="#conventor">
-              конвентор
+            <a style={{ color: "blue" }} href="#convertor">
+              конвертор
             </a>{" "}
             .
           </div>
@@ -391,7 +391,7 @@ const Runes = ({ category, posts }) => {
               </td>
             </tr>
           </table>
-          <span id="conventor"></span>
+          <span id="convertor"></span>
           <div
             style={{
               backgroundColor: "#333",
@@ -400,7 +400,7 @@ const Runes = ({ category, posts }) => {
             }}
           >
             <h2 style={{ textAlign: "center", margin: "none !important" }}>
-              Конвентор
+              Конвертор
             </h2>
             <div class="l-container">
               <div class="select-control  box-shadow">
