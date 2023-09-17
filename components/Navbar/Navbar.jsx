@@ -249,7 +249,7 @@ const Navbar = ({ category, posts }) => {
               </li>
             </ul>
           </li>
-          <li>
+          {/* <li>
             <label for="drop-3" class="toggle">
               Völuspá +
             </label>
@@ -274,7 +274,7 @@ const Navbar = ({ category, posts }) => {
                     </li>
                   ))}
             </ul>
-          </li>
+          </li> */}
 
           <li>
             <Link href={"/runes"}>Руни</Link>
