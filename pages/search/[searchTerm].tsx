@@ -8,7 +8,9 @@ import Link from "next/link";
 const Search = ({ posts, allPosts }) => {
   const router = useRouter();
   const { searchTerm } = router.query;
-
+  if (searchTerm === "руни" || searchTerm === "Руни") {
+    router.push("/runes");
+  }
   return (
     <>
       <Layout posts={allPosts}>
@@ -57,7 +59,6 @@ const Search = ({ posts, allPosts }) => {
                   <h4 style={{ color: "red", marginBottom: "20px" }}>
                     Няма намерени
                   </h4>
-
                   <p>Желаната страница не може да бъде намерена.</p>
                   <p>
                     Опитайте се да прецизирате търсенето си или използвайте
