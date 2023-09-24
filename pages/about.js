@@ -33,9 +33,10 @@ const About = ({ category, posts }) => {
                 <br />
                 <blockquote
                   style={{
-                    backgroundColor: "transparent",
-                    borderLeft: "none",
-                    marginBottom: "1px",
+                    width: "100%",
+                    margin: "auto",
+                    padding: "5%",
+                    marginBottom: "1%",
                   }}
                 >
                   <em>
