@@ -29,14 +29,11 @@ export const serializers = {
         return (
           <blockquote
             style={{
-              borderLeft: "1px solid white",
               padding: "1%",
               width: "100%",
               margin: "auto",
               padding: "5%",
-              marginTop: "20%",
-              marginBottom: "10%",
-              backgroundColor: "#333",
+
               fontSize: "20px",
               textAlign: "center",
             }}

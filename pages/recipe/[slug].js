@@ -218,14 +218,23 @@ const Post = ({ post, posts }) => {
               <p>Тема</p>
               <input type="checkbox" onClick={(e) => changeColorSchema()} />
             </li>
+            <div class="vertical-line"></div>
             <li>
-              <Link href={"/"}>Начало</Link>
+              <Link href={"/"}>Блог</Link>
+            </li>
+            <li>
+              <Link href={"/gods"}>Богове & създания</Link>
             </li>
 
+            <li>
+              <Link href={"/recipes"}>Рецепти</Link>
+            </li>
+            <li>
+              <Link href={"/runes"}>Руни</Link>
+            </li>
             <div style={{ display: "none" }} id="video"></div>
           </ul>
         </div>
-        <div class="vertical-line"></div>
       </aside>
 
       <article
