@@ -179,7 +179,7 @@ const Navbar = ({ category, posts }) => {
                     </li>
                   ))}
 
-              <li>
+              {/* <li>
                 <a href="#">VALHALLA</a>
               </li>
               <li>
@@ -187,7 +187,7 @@ const Navbar = ({ category, posts }) => {
               </li>
               <li>
                 <a href="">HLIÐSKJÁLF</a>
-              </li>
+              </li> */}
               <li>
                 <label for="drop-3" class="toggle">
                   Световете +
@@ -215,39 +215,14 @@ const Navbar = ({ category, posts }) => {
                           )}
                         </li>
                       ))}
-
-                  {/* <li>
-                    <a href="#">Asgard</a>
-                  </li>
-                  <li>
-                    <a href="#">Álfheim</a>
-                  </li>
-                  <li>
-                    <a href="#">Niðavellir</a>
-                  </li>
-                  <li>
-                    <a href="#">Jötunheimr</a>
-                  </li>
-                  <li>
-                    <a href="#">Vanaheim</a>
-                  </li>{" "}
-                  <li>
-                    <a href="#">Niflheim</a>
-                  </li>{" "}
-                  <li>
-                    <a href="#">Muspelheim</a>
-                  </li>{" "}
-                  <li>
-                    <a href="#">Hel</a>
-                  </li>{" "} */}
                 </ul>
               </li>
-              <li>
+              {/* <li>
                 <a href="">GINNUNGAGAP</a>
               </li>
               <li>
                 <a href="">FOLKVANG</a>
-              </li>
+              </li> */}
             </ul>
           </li>
           {/* <li>
