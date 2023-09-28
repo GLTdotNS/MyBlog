@@ -17,23 +17,25 @@ const Search = ({ posts, allPosts }) => {
         {posts.filter((x) =>
           x.title.toLowerCase().includes(searchTerm.toString().toLowerCase())
         ).length > 0 ? (
-          <div
-            className="midcolumn "
-            style={{
-              width: "70%",
-              margin: "0 auto",
-              display: "block",
-            }}
-          >
-            <div className="">
-              <h1>
-                Резултати от търсенето съдържащи -{" "}
-                {searchTerm.toString().toLocaleUpperCase()}
-              </h1>
-              <hr></hr>
-              <div className="searchPage">
-                <PostsComponent posts={posts} />
-              </div>{" "}
+          <div className="row">
+            <div
+              className=" "
+              style={{
+                width: "70%",
+                margin: "0 auto",
+                display: "block",
+              }}
+            >
+              <div className="">
+                <h1>
+                  Резултати от търсенето съдържащи -{" "}
+                  {searchTerm.toString().toLocaleUpperCase()}
+                </h1>
+                <hr></hr>
+                <div className="searchPage">
+                  <PostsComponent posts={posts} />
+                </div>{" "}
+              </div>
             </div>
           </div>
         ) : (
@@ -42,7 +44,7 @@ const Search = ({ posts, allPosts }) => {
             style={{ overflow: "hidden", justifyContent: "center" }}
           >
             <div
-              className=""
+              className="midcolumn"
               style={{
                 textAlign: "center",
               }}
