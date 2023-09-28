@@ -135,12 +135,10 @@ const Runes = ({ category, posts }) => {
       <Head>
         <meta
           name="description"
-          content={`${"Runes convertor , Scandinavian runes , Norse Runes , Runes , Odin , Valhalla , Elder Furthark"}}`}
+          content={`${"Руни , Протогерманска азбука , Runes convertor,История на протогермански руни Elder Futhark , Scandinavian runes , Norse Runes , Runes , Odin , Valhalla , Elder Furthark"}}`}
           key="desc"
         />
-        <title>
-          Най - старата позната протогерманска руническа азбука - Elder Futhark
-        </title>
+        <title>Руни / Конвертор</title>
       </Head>
       <div style={{ marginBottom: "20%" }}>
         <div className=" container content-wrapper ">
@@ -150,7 +148,7 @@ const Runes = ({ category, posts }) => {
             Протогерманската писменост е една от най - старите познати на
             човечеството , като първите сведения за нея датират от 160 години
             преди христа , но за първата руническа азбука се сочи Elder Furthark
-            , която е използвана между 2 и 8 век. Тя е широко разпространена
+            , която е използвана между II и VII век. Тя е широко разпространена
             сред германските народи и най - вече в Скандинавия . За произхода и
             се говори , че Бог Один след като слязъл от дървото на живота
             Игдрасил получил руни , които му шепнели и надарили с мъдрост.

@@ -54,7 +54,7 @@ const Navbar = ({ category, posts }) => {
           margin: "auto",
           backgroundImage: ` linear-gradient(
             
-            rgba(0, 0, 0, 0.2), 
+            rgba(0, 0, 0, 0.1), 
             #262626
             ),
             url(${logo.src})`,
@@ -68,6 +68,7 @@ const Navbar = ({ category, posts }) => {
             top: "155px",
             left: "30px",
             right: "30px",
+            color: "#262626",
           }}
           className=" siteLogo"
         >
@@ -114,7 +115,7 @@ const Navbar = ({ category, posts }) => {
           </li>
           <li id="firstDrop">
             <label for="drop-1" class="toggle">
-              Богове & създания{" "}
+              Богове & създания +{" "}
             </label>
             <a href="#">Богове & създания</a>
             <input type="checkbox" id="drop-1" />
