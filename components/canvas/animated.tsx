@@ -2,8 +2,8 @@ import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import CanvasLoader from "../Loader/Loader";
-const Computers = ({ isMobile }) => {
-  const computer = useGLTF("./desktop_pc/scene.gltf");
+const Ring = ({ isMobile }) => {
+  const computer = useGLTF("./ring/scene.gltf");
 
   return (
     <mesh>
@@ -27,7 +27,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
+const RingCanvas = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -66,7 +66,7 @@ const ComputersCanvas = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Computers isMobile={isMobile} />
+        <Ring isMobile={isMobile} />
       </Suspense>
 
       <Preload all />
@@ -74,4 +74,4 @@ const ComputersCanvas = () => {
   );
 };
 
-export default ComputersCanvas;
+export default RingCanvas;

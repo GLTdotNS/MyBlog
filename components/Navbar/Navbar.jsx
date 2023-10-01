@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence, useScroll } from "framer-motion";
-import { RiMenuUnfoldFill, RiCloseCircleLine } from "react-icons/ri";
-import { CgMenuLeftAlt } from "react-icons/cg";
+
 import { useRouter } from "next/router";
 import logo from "../../styles/assets/background.jpg";
 import { Rubik_Distressed } from "next/font/google";
-import Computers from "../canvas/animated";
+import RingCanvas from "../canvas/animated";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],
 });
 const Navbar = ({ category, posts }) => {
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
   const [toggleMenu, setToggleMenu] = useState(false);
   const [showMenu, setshowMenu] = useState(false);
   const [valueToSearch, setValueToSearch] = useState("");
-  const [text, setText] = useState(false);
+
   const [click, setClick] = useState(false);
   const router = useRouter();
 
@@ -75,7 +71,7 @@ const Navbar = ({ category, posts }) => {
         >
           NONCREATIVEBLOG
         </h1>{" "}
-        <Computers />
+        <RingCanvas />
       </div>
       <form class="search-form" onSubmit={handleSearch}>
         <div class="input-group">
