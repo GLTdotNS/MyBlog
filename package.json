@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "@portabletext/react": "^1.0.6",
+    "@react-three/drei": "^9.86.3",
+    "@react-three/fiber": "^8.14.3",
     "@sanity/block-content-to-react": "^3.0.0",
     "@sanity/client": "^3.3.2",
     "@sanity/code-input": "^4.1.0",

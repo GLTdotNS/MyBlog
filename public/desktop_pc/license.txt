@@ -1,0 +1,11 @@
+Model Information:
+* title:	Rune Ring
+* source:	https://sketchfab.com/3d-models/rune-ring-266ccf4f356c45a89fe7e8d344590446
+* author:	Christopher Turner (https://sketchfab.com/TUR17002508)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Rune Ring" (https://sketchfab.com/3d-models/rune-ring-266ccf4f356c45a89fe7e8d344590446) by Christopher Turner (https://sketchfab.com/TUR17002508) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

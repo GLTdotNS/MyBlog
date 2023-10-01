@@ -6,6 +6,7 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { useRouter } from "next/router";
 import logo from "../../styles/assets/background.jpg";
 import { Rubik_Distressed } from "next/font/google";
+import Computers from "../canvas/animated";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],
@@ -74,6 +75,7 @@ const Navbar = ({ category, posts }) => {
         >
           NONCREATIVEBLOG
         </h1>{" "}
+        <Computers />
       </div>
       <form class="search-form" onSubmit={handleSearch}>
         <div class="input-group">
