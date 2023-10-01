@@ -40,7 +40,8 @@
     "react-syntax-highlighter": "^15.5.0",
     "react-youtube": "^10.0.0",
     "sass": "^1.56.1",
-    "sitemap": "^7.1.1"
+    "sitemap": "^7.1.1",
+    "three": "^0.157.0"
   },
   "devDependencies": {
     "@types/react": "18.0.26",
