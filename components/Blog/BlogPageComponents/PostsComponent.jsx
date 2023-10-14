@@ -12,11 +12,12 @@ import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";
 
 const PostsComponent = ({ posts }) => {
-  const initialPostList = 7; // Number of articles to display initially
+  const initialPostList = 7;
   const incrementInitialPostList = 8;
   const [hideButton, setHideButton] = useState(false);
   const [displayPosts, setDisplayPosts] = useState(initialPostList);
   const [flagHideButton, setFlagHideButton] = useState(initialPostList);
+
   const loadMore = () => {
     setDisplayPosts(displayPosts + incrementInitialPostList);
     setFlagHideButton(flagHideButton + incrementInitialPostList);
@@ -77,7 +78,7 @@ const PostsComponent = ({ posts }) => {
           position: "relative",
         }}
       >
-        {!hideButton || posts?.length <= 1 ? (
+        {!hideButton && posts?.length != 1 ? (
           <button className="loadmore-btn" onClick={loadMore}>
             Зареди още{" "}
           </button>

@@ -15,6 +15,6 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/search/[searchTerm].jsx", "pages/search/[searchTerm].jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "pages/search/[searchTerm].jsx", "pages/search/[searchTerm].jsx", "components/canvas/animated.jsx"],
   "exclude": ["node_modules"]
 }
