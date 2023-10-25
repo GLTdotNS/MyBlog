@@ -249,9 +249,9 @@ const Navbar = ({ category, posts }) => {
                   ))}
             </ul>
           </li> */}
-          <li>
+          {/* <li>
             <Link href={"/recipes"}>Рецепти</Link>
-          </li>
+          </li> */}
           <li>
             <Link href={"/runes"}>Руни</Link>
           </li>

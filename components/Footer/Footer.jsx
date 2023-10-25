@@ -36,9 +36,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-left col-md-4 col-sm-6">
         <p className="about">
-          <span>Vilkomen! </span> Harðr er í heimi hǫrðumur mikill, skeggjǫld,
-          skalmǫld, skildir eru klufnir, vindǫld, vargǫld, áðr verǫld steypisk,
-          mun engi maður oðrum pyrma
+          <span>Vilkomen! </span> Ár skal rísa, sá er annars vill <br /> fé eða
+          fjör hafa;
+          <br /> sjaldan liggjandi ulfr <br /> lær of getr né sofandi maðr sigr.
         </p>
         <div className="icons"></div>
       </div>
@@ -112,7 +112,7 @@ const Footer = () => {
             <a>ПОВЕРИТЕЛНОСТ</a>
           </Link>{" "}
         </p>
-        <iframe
+        {/* <iframe
           src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=100094233162463&tabs=timeline&width=340&height=300&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
           width="340"
           height="130"
@@ -121,7 +121,7 @@ const Footer = () => {
           style={{ display: "flex-box" }}
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        ></iframe> */}
         <p className="name"> Designed by Canis Lupus &copy; 2023</p>
       </div>
     </footer>
