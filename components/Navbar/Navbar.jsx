@@ -71,7 +71,7 @@ const Navbar = ({ category, posts }) => {
         >
           NONCREATIVEBLOG
         </h1>{" "}
-        <RingCanvas />
+        {/* <RingCanvas /> */}
       </div>
       <form class="search-form" onSubmit={handleSearch}>
         <div class="input-group">

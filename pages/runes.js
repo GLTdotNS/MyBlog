@@ -42,7 +42,8 @@ const Runes = ({ category, posts }) => {
       },
     });
   };
-  function latinToRunic(runicSymbol) {
+
+  const convertFunctionLatinToEF = (input) => {
     const runicToLatinMap = {
       A: "ᚨ",
       B: "ᛒ",
@@ -60,7 +61,7 @@ const Runes = ({ category, posts }) => {
       N: "ᚾ",
       O: "ᛟ",
       P: "ᛈ",
-      Q: "ᚲ",
+      Q: "ᚳ",
       R: "ᚱ",
       S: "ᛊ",
       T: "ᛏ",
@@ -72,13 +73,28 @@ const Runes = ({ category, posts }) => {
       Z: "ᛉ",
       TH: "ᚦ",
       NG: "ᛝ",
-      " ": "    " + "  ",
+
+      " ": "  ",
     };
 
-    return runicToLatinMap[runicSymbol.toUpperCase()] || runicSymbol;
-  }
-  function runicToLatin(runicSymbol) {
-    const runicToLatinMap = {
+    let result = "";
+    for (let i = 0; i < input.length; i++) {
+      const element = input[i].toUpperCase();
+      let char = runicToLatinMap[element] || element;
+      if (i + 1 < input.length) {
+        const nextTwoChars = input.substr(i, 2).toUpperCase();
+        if (runicToLatinMap[nextTwoChars]) {
+          char = runicToLatinMap[nextTwoChars];
+          i += 2;
+        }
+      }
+      result += char;
+    }
+
+    setDisplayResult(result);
+  };
+  const convertFunctionEFtoLatin = (input) => {
+    const elderToLatinMap = {
       ᚨ: "A",
       ᛒ: "B",
       ᚲ: "C",
@@ -89,47 +105,43 @@ const Runes = ({ category, posts }) => {
       ᚺ: "H",
       ᛁ: "I",
       ᛃ: "J",
-      ᚲ: "C",
-      ᛚ: "L",
+      ᛚ: "K",
       ᛗ: "M",
       ᚾ: "N",
       ᛟ: "O",
       ᛈ: "P",
-      ᚲ: "C",
+      ᚳ: "Q",
       ᚱ: "R",
       ᛊ: "S",
       ᛏ: "T",
       ᚢ: "U",
-      ᚹ: "V",
       ᚹ: "W",
       ᚦ: "X",
       ᛇ: "Y",
       ᛉ: "Z",
+
       ᚦ: "TH",
       ᛝ: "NG",
+      " ": " ",
     };
 
-    return runicToLatinMap[runicSymbol] || runicSymbol;
-  }
+    let result = "";
+    for (let i = 0; i < input.length; i++) {
+      const element = input[i].toUpperCase();
+      let char = elderToLatinMap[element] || element;
+      if (i + 1 < input.length) {
+        const nextTwoChars = input.substr(i, 2).toUpperCase();
+        if (elderToLatinMap[nextTwoChars]) {
+          char = elderToLatinMap[nextTwoChars];
+          i += 2;
+        }
+      }
+      result += char;
+    }
 
-  const converFunctionLatinToEF = () => {
-    let result = "";
-    for (let i = 0; i < runicSymbol.length; i++) {
-      const element = runicSymbol[i];
-      const char = latinToRunic(element);
-      result = result += char;
-    }
     setDisplayResult(result);
   };
-  const converFunctionEFtoLatin = () => {
-    let result = "";
-    for (let i = 0; i < runicSymbol.length; i++) {
-      const element = runicSymbol[i];
-      const char = runicToLatin(element);
-      result = result += char;
-    }
-    setDisplayResult(result);
-  };
+
   return (
     <Layout posts={posts}>
       <Head>
@@ -463,9 +475,9 @@ const Runes = ({ category, posts }) => {
                 class="loadmore-btn"
                 onClick={() => {
                   if (latinOrEF == "Latin") {
-                    converFunctionLatinToEF();
+                    convertFunctionLatinToEF(runicSymbol);
                   } else {
-                    converFunctionEFtoLatin();
+                    convertFunctionEFtoLatin(runicSymbol);
                   }
                 }}
               >
