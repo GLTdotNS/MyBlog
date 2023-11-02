@@ -20,8 +20,10 @@ import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 
 function MyApp({ Component, pageProps }) {
+  const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
   const [loading, setLoading] = useState();
   NProgress.configure({ showSpinner: false });
   useEffect(() => {
@@ -50,13 +52,14 @@ function MyApp({ Component, pageProps }) {
           key="desc"
         />
       </Head>
+
       {loading ? (
         <Loading />
       ) : (
         <>
           <Cookies />
           <Toaster />
-
+          <CrispWithNoSSR />
           <Component {...pageProps} />
 
           <Analytics />

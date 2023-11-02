@@ -255,6 +255,11 @@ const Navbar = ({ category, posts }) => {
           <li>
             <Link href={"/runes"}>Руни</Link>
           </li>
+          <li>
+            <Link href={"https://voluspa.noncreativeblog.net/voluspa"}>
+              Völuspá
+            </Link>
+          </li>
           {/* <li>
             <Link href={"/movies/1"}>Филми</Link>
           </li> */}
