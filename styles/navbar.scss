@@ -11,7 +11,10 @@ nav {
   margin: 0;
   padding: 0;
   margin-top: 15px;
-  z-index: 10000000;
+  z-index: 10000;
+}
+video {
+  z-index: 100000000 !important;
 }
 
 nav:after {
@@ -201,10 +204,6 @@ li > a:only-child:after {
     transition: 0.35s ease;
 
     // Responsive Media Query
-    @media only screen and (min-width: 36rem) {
-      display: none;
-      visibility: hidden;
-    }
 
     &-line {
       position: absolute;

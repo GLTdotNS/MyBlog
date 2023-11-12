@@ -5,7 +5,6 @@ const nextConfig = {
   async headers() {
     return [
       {
-        // matching all API routes
         source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
@@ -25,6 +24,27 @@ const nextConfig = {
   },
   images: {
     domains: ["openweathermap.org"],
+  },
+  webpack: (config, { isServer }) => {
+    // Добавяне на правило за обработка на видео файлове
+    if (!isServer) {
+      config.module.rules.push({
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|mov)(\?.*)?$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              publicPath: "/_next/static/media",
+              outputPath: "static/media",
+              emitFile: true,
+            },
+          },
+        ],
+      });
+    }
+
+    return config;
   },
 };
 

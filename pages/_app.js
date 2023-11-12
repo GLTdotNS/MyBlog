@@ -19,9 +19,8 @@ import { useState } from "react";
 import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
-import Script from "next/script";
 import dynamic from "next/dynamic";
-
+import LoadingVideo from "../components/LoadingVideo/loadingVideo";
 function MyApp({ Component, pageProps }) {
   const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
   const [loading, setLoading] = useState();

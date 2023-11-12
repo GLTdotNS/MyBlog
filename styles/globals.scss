@@ -4,6 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Paytone+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   behavior: smooth;
@@ -14,8 +15,19 @@ html {
   height: 100%;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Quattrocento+Sans);
+body {
+  opacity: 0;
+  animation: fadeIn 1s forwards; /* анимация с продължителност 2 секунди */
+}
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 @mixin position-center($text-align: center) {
   position: absolute;
   top: 0;
@@ -374,3 +386,33 @@ textarea {
   background-color: #555;
 }
 /*end global*/
+/* Вашият стил за LoadingVideo компонента (loadingVideo.css) */
+.loading-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1000;
+  opacity: 1; /* Начална стойност на прозрачност 1 (изцяло видимо) */
+  animation: fadeInOut 2s ease-in-out forwards;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1; /* Започнете с пълна видимост */
+  }
+  20% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0; /* Намалете прозрачността до 0 за изчезване */
+  }
+}

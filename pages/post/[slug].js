@@ -4,24 +4,16 @@ import dynamic from "next/dynamic";
 import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
-import { ImMenu2 } from "react-icons/im";
-import { FiMusic } from "react-icons/fi";
 import logo from "../../styles/assets/Viking-Feature.webp";
 import { toast } from "react-hot-toast";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
-import {
-  AiOutlineFontSize,
-  AiOutlineFontColors,
-  AiOutlinePause,
-  AiOutlineArrowDown,
-} from "react-icons/ai";
+
 import Link from "next/link";
-import Layout from "../../components/Layout/Layout";
+
 import { useEffect, useState } from "react";
 import {
   FacebookShareButton,
   TwitterShareButton,
-  FacebookMessengerShareButton,
   ViberShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
@@ -52,6 +44,28 @@ const Post = ({ post, posts }) => {
   let cont;
   let midcolumn;
 
+  const toggle = () => {
+    const screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+    const element = document.getElementById("burger");
+    const nav = document.getElementById("sideNav");
+    if (screenWidth < 768) {
+      if (nav.style.opacity == "1") {
+        nav.style.opacity = "0";
+        nav.style.visibility = "hidden";
+        nav.style.transform = "translateY(0px)";
+        element.classList.remove("is-active");
+      } else {
+        nav.style.opacity = "1";
+        nav.style.visibility = "visible";
+
+        nav.style.transform = "translateY(40px)";
+        element.classList.add("is-active");
+      }
+    }
+  };
   const copyToClipboard = (text) => {
     const elem = document.createElement("textarea");
     elem.value = text;
@@ -121,6 +135,7 @@ const Post = ({ post, posts }) => {
     const backgroundColor = document.querySelector("body");
     const aside = document.querySelector("aside");
     const sideNav = document.getElementById("sideNav");
+    const element = document.getElementById("burger");
     if (localStorage.getItem("dark") == 2) {
       setDark(false);
       midcolumn.style.color = "#313131";
@@ -138,6 +153,17 @@ const Post = ({ post, posts }) => {
       sideNav.style.backgroundColor = "#262626";
       sideNav.style.setProperty("--color", "#262626");
     }
+    const screenWidth =
+      window.innerWidth ||
+      document.documentElement.clientWidth ||
+      document.body.clientWidth;
+
+    if (screenWidth < 768) {
+      sideNav.style.opacity = "0";
+      sideNav.style.visibility = "hidden";
+      sideNav.style.transform = "translateY(0px)";
+      element.classList.remove("is-active");
+    }
   }, []);
 
   return (
@@ -148,27 +174,7 @@ const Post = ({ post, posts }) => {
           aria-label="Open navigation menu"
           htmlFor="drop"
         >
-          <div
-            className="burger"
-            id="burger"
-            onClick={() => {
-              const element = document.getElementById("burger");
-              const nav = document.getElementById("sideNav");
-
-              if (nav.style.opacity == "1") {
-                nav.style.opacity = "0";
-                nav.style.visibility = "hidden";
-                nav.style.transform = "translateY(0px)";
-                element.classList.remove("is-active");
-              } else {
-                nav.style.opacity = "1";
-                nav.style.visibility = "visible";
-
-                nav.style.transform = "translateY(40px)";
-                element.classList.add("is-active");
-              }
-            }}
-          >
+          <div className="burger" id="burger" onClick={() => toggle()}>
             <span class="burger-line"></span>
             <span class="burger-line"></span>
             <span class="burger-line"></span>
@@ -208,16 +214,17 @@ const Post = ({ post, posts }) => {
             >
               Назад
             </li>
-            <li>
+            <li onClick={() => toggle()}>
               <a href="#comments">Коментари</a>
             </li>
-            <li>
+            <li onClick={() => toggle()}>
               <a href="#suggestions">Подобни постове</a>
             </li>
-            <li>
+            <li onClick={() => toggle()}>
               <p>Тема</p>
               <input type="checkbox" onClick={(e) => changeColorSchema()} />
             </li>
+            <hr style={{ marginTop: "5%" }} />
             <div class="vertical-line"></div>
             <li>
               <Link href={"/"}>Блог</Link>
@@ -226,9 +233,6 @@ const Post = ({ post, posts }) => {
               <Link href={"/gods"}>Богове & създания</Link>
             </li>
 
-            <li>
-              <Link href={"/recipes"}>Рецепти</Link>
-            </li>
             <li>
               <Link href={"/runes"}>Руни</Link>
             </li>
