@@ -1,5 +1,7 @@
 import Image from "next/image";
 import moment from "moment";
+4;
+import logo from "../../../styles/assets/footer-bg.jpg";
 export default function Comments({ comments = [] }) {
   return (
     <div className="initial-post  " style={{ marginTop: "20%" }}>
