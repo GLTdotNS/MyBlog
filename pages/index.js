@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainBlogPage from "./blog";
-import LoadingVideo from "../components/LoadingVideo/loadingVideo";
+// import LoadingVideo from "../components/LoadingVideo/loadingVideo";
 import groq from "groq";
 import { client } from "../lib/sanityClient";
 
