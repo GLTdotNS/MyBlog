@@ -1,4 +1,3 @@
-import logo from "../../../styles/assets/a.jpg";
 import Image from "next/image";
 import moment from "moment";
 export default function Comments({ comments = [] }) {

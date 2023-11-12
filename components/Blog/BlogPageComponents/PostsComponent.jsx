@@ -1,12 +1,10 @@
 import React from "react";
 import moment from "moment";
-import { MdReadMore } from "react-icons/md";
-import { SiEyeglass } from "react-icons/si";
+
 import { urlForImg } from "../../../lib/sanityClient.js";
-import Link from "next/link";
+
 import { useState } from "react";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import ReactPaginate from "react-paginate";
+
 import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";

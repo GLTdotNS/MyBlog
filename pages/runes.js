@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
-import { BsGithub, BsLinkedin, BsMailbox2, BsFacebook } from "react-icons/bs";
-import Link from "next/link";
+
 import { Shrikhand, Ubuntu } from "next/font/google";
 import { toast } from "react-hot-toast";
 const rubik = Shrikhand({

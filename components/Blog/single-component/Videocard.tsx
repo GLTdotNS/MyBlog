@@ -1,9 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Video } from "../../../types";
 import { NextPage } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { HiVolumeOff, HiVolumeUp } from "react-icons/hi";
+
 import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 interface IProps {
   post: Video;

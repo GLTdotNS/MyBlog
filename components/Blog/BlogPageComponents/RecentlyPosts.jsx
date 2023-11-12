@@ -1,7 +1,6 @@
 import moment from "moment";
 import React from "react";
-import Link from "next/link";
-import { urlForImg } from "../../../lib/sanityClient.js";
+
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { useRouter } from "next/router.js";
 const RecentlyPosts = ({ posts }) => {
