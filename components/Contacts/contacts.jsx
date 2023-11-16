@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import Router from "next/router";
 import Layout from "../Layout/Layout";
 import Admin from "../Admin/admin";
+import Widget from "../Cloudflare/Cloudflare";
 const Contacts = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -212,6 +213,7 @@ const Contacts = () => {
                           data-sb-validations="required"
                         ></textarea>
                       </div>
+                      <Widget />
                       <div className="d-grid">
                         {!message ||
                         message.trim().length === 0 ||

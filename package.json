@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@marsidev/react-turnstile": "^0.3.2",
     "@portabletext/react": "^1.0.6",
     "@react-three/drei": "^9.86.3",
     "@react-three/fiber": "^8.14.3",

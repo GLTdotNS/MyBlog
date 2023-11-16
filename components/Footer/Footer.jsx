@@ -1,10 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { BsGithub, BsFacebook } from "react-icons/bs";
-import { TbMessages } from "react-icons/tb";
+
 import Link from "next/link";
-import Admin from "../Admin/admin";
-import Contacts from "../Contacts/contacts";
+
 const Footer = () => {
   const [contact, setContact] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
