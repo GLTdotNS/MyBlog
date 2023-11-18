@@ -256,6 +256,9 @@ const Navbar = ({ category, posts }) => {
             <Link href={"/runes"}>Руни</Link>
           </li>
           <li>
+            <Link href={"/donate"}>Дарение</Link>
+          </li>
+          <li>
             {/* <Link href={"https://voluspa.noncreativeblog.net/voluspa"}>
               Völuspá
             </Link> */}
