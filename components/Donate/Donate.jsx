@@ -19,7 +19,7 @@ const DonateButton = () => {
   }, []);
   return (
     <div>
-      {open && !donateShown ? (
+      {open && donateShown ? (
         <div className="donate-popup">
           <h1
             style={{
