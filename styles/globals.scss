@@ -450,7 +450,7 @@ textarea {
 .donate-popup .donate-button {
   width: 300px;
   height: 50px;
-
+  cursor: pointer;
   color: #000000;
   font-size: 30px;
   font-weight: bold;
@@ -473,8 +473,12 @@ textarea {
   font-weight: bold;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
-
+.donate-logo {
+  font-size: 40px !important;
+  font-family: "Metal Mania", cursive;
+}
 @keyframes button-animation {
   0% {
     transform: translateY(-100px);
@@ -482,5 +486,63 @@ textarea {
 
   100% {
     transform: translateY(0);
+  }
+}
+.donate-newsletter ul {
+  margin-bottom: 16px;
+}
+
+.donate-newsletter ul li {
+  list-style: none;
+  margin-bottom: 8px;
+}
+
+/* Линкове */
+.donate-newsletter {
+  border: none !important;
+  background-color: #555;
+  position: relative;
+}
+.donate-newsletter a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+.donate-newsletter a:hover {
+  text-decoration: underline;
+}
+.donate-newsletter li {
+  list-style: square !important;
+  margin-left: 5%;
+  width: 70%;
+}
+/* Респоснив дизайн */
+
+@media (max-width: 768px) {
+  .donate-newsletter {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  .donate-newsletter h1 {
+    font-size: 30px !important;
+    top: -90px !important;
+    right: 5px !important;
+  }
+
+  .donate-newsletter h2 {
+    font-size: 20px;
+  }
+
+  .donate-newsletter p {
+    margin-bottom: 12px;
+  }
+
+  .donate-newsletter ul {
+    margin-bottom: 12px;
+  }
+
+  .donate-newsletter ul li {
+    margin-bottom: 6px;
   }
 }

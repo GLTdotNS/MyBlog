@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { GrPaypal } from "react-icons/gr";
 
@@ -18,7 +19,7 @@ const DonateButton = () => {
   }, []);
   return (
     <div>
-      {open && donateShown ? (
+      {open && !donateShown ? (
         <div className="donate-popup">
           <h1
             style={{
@@ -64,7 +65,9 @@ const DonateButton = () => {
           </p>
           <br />
           <p>
-            Скандинавската митология е наследство, което трябва да се споделя.
+            <Link style={{ color: "#0099ff" }} href={"/donate"}>
+              Информационен бюлетин за дарителите.
+            </Link>
           </p>
           <br />
           <p id="last-p">
@@ -81,7 +84,7 @@ const DonateButton = () => {
             <GrPaypal color="white" />
           </button>
           <button className="close" onClick={handleClick}>
-            Close
+            Затвори
           </button>
         </div>
       ) : (
