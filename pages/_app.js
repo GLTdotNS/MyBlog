@@ -21,6 +21,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
 import dynamic from "next/dynamic";
 import LoadingVideo from "../components/LoadingVideo/loadingVideo";
+import DonateButton from "../components/Donate/Donate";
 function MyApp({ Component, pageProps }) {
   const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
   const [loading, setLoading] = useState();
@@ -56,6 +57,7 @@ function MyApp({ Component, pageProps }) {
         <Loading />
       ) : (
         <>
+          <DonateButton />
           <Cookies />
           <Toaster />
           <CrispWithNoSSR />

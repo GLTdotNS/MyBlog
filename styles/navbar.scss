@@ -130,7 +130,65 @@ li > a:only-child:after {
     margin-top: 35% !important;
     padding: 0 !important;
   }
+  .donate-popup {
+    position: absolute;
+    top: 0;
+    left: 0%;
+    width: 100%;
+    margin: auto;
+    background-color: #ffff;
+    padding: 5%;
 
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+      Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    z-index: 9999;
+    animation: button-animation 0.5s ease-in-out;
+    border: 4px solid #b0903d;
+    border-radius: 1% !important;
+    font-size: 17px;
+    justify-content: center;
+    align-items: center;
+  }
+  .donate-popup p {
+    color: #262626;
+    width: 100%;
+    margin: auto;
+  }
+  .donate-popup ul {
+    color: #262626;
+    width: 40%;
+    margin: auto;
+  }
+  .donate-popup .donate-button {
+    width: 100px;
+    height: 30px;
+    padding: 1%;
+    color: #000000;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #0099ff;
+  }
+  #last-p {
+    margin-bottom: 15% !important;
+  }
+  .donate-popup .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background-color: transparent;
+    color: #262626;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+  }
   nav ul li li a {
     width: 100%;
     border-bottom: 1px solid rgb(69, 68, 68);

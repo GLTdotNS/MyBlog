@@ -416,3 +416,72 @@ textarea {
     opacity: 0; /* Намалете прозрачността до 0 за изчезване */
   }
 }
+.donate-popup {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  margin: auto;
+  background-color: #ffff;
+  padding: 4%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  z-index: 9999;
+  animation: button-animation 0.5s ease-in-out;
+  border: 4px solid #b0903d;
+  border-radius: 0% 0% 10% 10%;
+  font-size: 17px;
+  justify-content: center;
+  align-items: center;
+}
+.donate-popup p {
+  color: #262626;
+  width: 80%;
+  margin: auto;
+
+  .donate-popup ul {
+    color: #262626;
+    width: 40%;
+    margin: auto;
+  }
+}
+#last-p {
+  margin-bottom: 10% !important;
+}
+.donate-popup .donate-button {
+  width: 300px;
+  height: 50px;
+
+  color: #000000;
+  font-size: 30px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #0099ff;
+}
+
+.donate-popup .close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: transparent;
+  color: #262626;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+}
+
+@keyframes button-animation {
+  0% {
+    transform: translateY(-100px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
