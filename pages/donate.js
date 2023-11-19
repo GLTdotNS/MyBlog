@@ -1,9 +1,11 @@
 import React from "react";
 import Layout from "../components/Layout/Layout";
+import groq from "groq";
+import { client } from "../lib/sanityClient";
 import { BsPinAngleFill } from "react-icons/bs";
-const Donate = () => {
+const Donate = ({ posts }) => {
   return (
-    <Layout>
+    <Layout posts={posts}>
       <div>
         <div className="donate-newsletter midcolumn  container content-wrapper">
           <h2 className="donate-logo">NONCREATIVEBLOG</h2>
@@ -120,6 +122,50 @@ const Donate = () => {
       </div>
     </Layout>
   );
+};
+export const getServerSideProps = async () => {
+  const query = groq`*[_type == "post"] | order(_createdAt desc)
+      {
+      title,
+      slug,
+      "authorImage": author->image,
+      "category": categories[0]->title,
+      "type": categories[1]->title,
+      description,
+      likes,
+      rowTitle,
+  
+      _id,
+      body,
+      publishedAt,
+      mainImage{
+        asset->{
+        _id,
+        url
+      }
+    },
+    
+    }`;
+  const category = await client.fetch(
+    groq`*[_type == "category"]{
+      _id,
+      slug,
+      title,
+      mainImage{
+        asset->{
+        _id,
+        url
+      }
+    }
+    
+      }`
+  );
+
+  const posts = await client.fetch(query);
+
+  return {
+    props: { posts, category },
+  };
 };
 
 export default Donate;
