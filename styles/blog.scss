@@ -550,9 +550,21 @@ hr {
   padding: 5%;
 }
 .post_text p {
-  width: 100%;
   margin: auto;
+  text-align: justify;
+  text-justify: inter-word;
+  margin-bottom: 20px;
 }
+.post_text p {
+  text-align: justify;
+}
+
+.post_text p::after {
+  content: "";
+  display: inline-block;
+  width: 100%;
+}
+
 .post_text iframe {
   margin: 5% 0 5% 0;
   width: 100%;
@@ -566,7 +578,7 @@ hr {
 }
 
 .post_text figure img {
-  width: 100%;
+  width: 80%;
   margin: auto;
   border-radius: 10px;
   background-color: #333;

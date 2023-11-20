@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
       ) : (
         <>
           <DonateButton />
-          <Cookies />
+
           <Toaster />
           <CrispWithNoSSR />
           <Component {...pageProps} />

@@ -14,7 +14,7 @@ const Gods = ({ posts }) => {
           <div className="columns">
             <div className="title" style={{ marginTop: "10px !important" }}>
               <h3 style={{ padding: "5px" }}>
-                <span style={{ padding: "5px", width: "100px" }}>Ааси </span>
+                <span style={{ padding: "5px", width: "100px" }}>Ауси </span>
               </h3>
             </div>
           </div>
