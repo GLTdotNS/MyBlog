@@ -554,17 +554,15 @@ hr {
   text-align: justify;
   text-justify: inter-word;
   margin-bottom: 20px;
-}
-.post_text p {
-  text-align: justify;
+  font-size: 19px;
 }
 
-.post_text p::after {
-  content: "";
-  display: inline-block;
-  width: 100%;
+@media (max-width: 768px) {
+  .post_text p {
+    text-align: left;
+    word-spacing: -0.25px;
+  }
 }
-
 .post_text iframe {
   margin: 5% 0 5% 0;
   width: 100%;
