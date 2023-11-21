@@ -17,39 +17,38 @@ const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
 
 const MainBlogPage = ({ posts, category }) => {
   useEffect(() => {
-    /* common fuctions */
-    function el(selector) {
-      return document.querySelector(selector);
-    }
-    function els(selector) {
-      return document.querySelectorAll(selector);
-    }
-    function on(selector, event, action) {
-      els(selector).forEach((e) => e.addEventListener(event, action));
-    }
-    function cookie(name) {
-      let c = document.cookie
-        .split("; ")
-        .find((cookie) => cookie && cookie.startsWith(name + "="));
-      return c ? c.split("=")[1] : false;
-    }
+    // function el(selector) {
+    //   return document.querySelector(selector);
+    // }
+    // function els(selector) {
+    //   return document.querySelectorAll(selector);
+    // }
+    // function on(selector, event, action) {
+    //   els(selector).forEach((e) => e.addEventListener(event, action));
+    // }
+    // function cookie(name) {
+    //   let c = document.cookie
+    //     .split("; ")
+    //     .find((cookie) => cookie && cookie.startsWith(name + "="));
+    //   return c ? c.split("=")[1] : false;
+    // }
 
-    /* popup button hanler */
-    on(".cookie-popup button", "click", () => {
-      el(".cookie-popup").classList.add("cookie-popup--accepted");
-      localStorage.setItem("accepted", true);
-      document.cookie = `cookie-accepted=Bez cookie ne stava... Nema kak`;
-      el(".nonModal").classList.remove("modal");
-    });
+    // /* popup button hanler */
+    // on(".cookie-popup button", "click", () => {
+    //   el(".cookie-popup").classList.add("cookie-popup--accepted");
+    //   localStorage.setItem("accepted", true);
+    //   document.cookie = `cookie-accepted=Bez cookie ne stava... Nema kak`;
+    //   el(".nonModal").classList.remove("modal");
+    // });
 
-    /* popup init hanler */
-    if (
-      cookie("cookie-accepted") !== "true" &&
-      localStorage.getItem("accepted") !== "true"
-    ) {
-      el(".cookie-popup").classList.add("cookie-popup--not-accepted");
-      el(".nonModal").classList.add("modal");
-    }
+    // /* popup init hanler */
+    // if (
+    //   cookie("cookie-accepted") !== "true" &&
+    //   localStorage.getItem("accepted") !== "true"
+    // ) {
+    //   el(".cookie-popup").classList.add("cookie-popup--not-accepted");
+    //   el(".nonModal").classList.add("modal");
+    // }
 
     document.title = "NONCREATIVEBLOG";
     window.scrollTo(0, 0);
@@ -74,7 +73,6 @@ const MainBlogPage = ({ posts, category }) => {
                 .sort((x, b) => x._createdAt - b._createdAt)}
             />
           </div>
-          <Cookies />
         </div>
         <div className="rightcolumn">
           <div className="columns ">

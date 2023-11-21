@@ -51,7 +51,7 @@ const Post = ({ post, posts }) => {
       document.body.clientWidth;
     const element = document.getElementById("burger");
     const nav = document.getElementById("sideNav");
-    if (screenWidth < 768) {
+    if (screenWidth < 900) {
       if (nav.style.opacity == "1") {
         nav.style.opacity = "0";
         nav.style.visibility = "hidden";

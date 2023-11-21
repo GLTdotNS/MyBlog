@@ -154,6 +154,7 @@ const Post = ({ post, posts }) => {
             onClick={() => {
               const element = document.getElementById("burger");
               const nav = document.getElementById("sideNav");
+              alert();
 
               if (nav.style.opacity == "1") {
                 nav.style.opacity = "0";
