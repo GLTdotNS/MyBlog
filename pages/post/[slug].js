@@ -249,9 +249,9 @@ const Post = ({ post, posts }) => {
             : (nav.style.display = "");
         }}
       >
-        <header>
+        {/* <header>
           <h2 style={{ marginTop: "5%" }}>{post.title}</h2>
-        </header>
+        </header> */}
         <div
           className=" postPage "
           style={{

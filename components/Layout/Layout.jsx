@@ -2,11 +2,11 @@ import React from "react";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
-import { motion, useViewportScroll } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import Head from "next/head";
 import { BsFillArrowUpCircleFill } from "react-icons/bs";
 const Layout = ({ children, posts }) => {
-  const { scrollYProgress } = useViewportScroll();
+  const { scrollYProgress } = useScroll();
   useEffect(() => {
     let mybutton = document.getElementById("scrollTop");
 

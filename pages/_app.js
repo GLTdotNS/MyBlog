@@ -22,6 +22,7 @@ import Cookies from "../components/Cookies/Cookies";
 import dynamic from "next/dynamic";
 import LoadingVideo from "../components/LoadingVideo/loadingVideo";
 import DonateButton from "../components/Donate/Donate";
+import Script from "next/script";
 function MyApp({ Component, pageProps }) {
   const CrispWithNoSSR = dynamic(() => import("../components/crisp"));
   const [loading, setLoading] = useState();
@@ -51,11 +52,11 @@ function MyApp({ Component, pageProps }) {
         "
           key="desc"
         />
-        <script
+        {/* <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4968421479589379"
           crossorigin="anonymous"
-        ></script>
+        ></Script> */}
       </Head>
 
       {loading ? (
