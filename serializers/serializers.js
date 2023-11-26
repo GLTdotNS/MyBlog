@@ -5,7 +5,7 @@ import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
 import { FaCopy } from "react-icons/fa";
-
+import Image from "next/image";
 export const serializers = {
   types: {
     youtube: ({ node }) => {
@@ -13,6 +13,25 @@ export const serializers = {
       const id = getYouTubeId(url);
       return <YouTube videoId={id} />;
     },
+
+    //
+    image: (props) => (
+      <figure>
+        <Image
+          width={100}
+          height={100}
+          src={`https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset._ref
+            .replace("image-", "")
+            .replace("-jpg", "")}.jpg`}
+          alt={props.node.alt}
+        />
+        {props.node.caption ? (
+          <figcaption>{props.node.caption}</figcaption>
+        ) : (
+          ""
+        )}
+      </figure>
+    ),
     block: (props) => {
       const { style = "normal" } = props.node;
 

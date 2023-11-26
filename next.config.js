@@ -23,7 +23,9 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["openweathermap.org"],
+    domains: ["openweathermap.org", "cdn.sanity.io"],
+    allowedExtensions: ["jpg", "jpeg", "png", "gif"],
+    allowedFileNames: ["*.jpg", "*.jpeg", "*.png", "*.gif"],
   },
   webpack: (config, { isServer }) => {
     // Добавяне на правило за обработка на видео файлове
