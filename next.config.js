@@ -24,11 +24,8 @@ const nextConfig = {
   },
   images: {
     domains: ["openweathermap.org", "cdn.sanity.io"],
-    allowedExtensions: ["jpg", "jpeg", "png", "gif"],
-    allowedFileNames: ["*.jpg", "*.jpeg", "*.png", "*.gif"],
   },
   webpack: (config, { isServer }) => {
-    // Добавяне на правило за обработка на видео файлове
     if (!isServer) {
       config.module.rules.push({
         test: /\.(mp4|webm|ogg|mp3|wav|flac|aac|mov)(\?.*)?$/,

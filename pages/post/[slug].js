@@ -10,7 +10,7 @@ import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
 
 import Link from "next/link";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect, useRef } from "react";
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -43,7 +43,7 @@ const Post = ({ post, posts }) => {
   const [dark, setDark] = useState(true);
   let cont;
   let midcolumn;
-
+  const figureCaptionRef = useRef();
   const toggle = () => {
     const screenWidth =
       window.innerWidth ||
@@ -86,29 +86,13 @@ const Post = ({ post, posts }) => {
       },
     });
   };
-  function changeSizeByBtn(name) {
-    cont = document.getElementById("container");
-    switch (name) {
-      case "btn1":
-        cont.style.fontSize = "17px";
-        break;
-      case "btn2":
-        cont.style.fontSize = "20px";
-        break;
-      case "btn3":
-        cont.style.fontSize = "30px";
-        break;
-      default:
-        break;
-    }
-  }
 
-  function changeColorSchema(name) {
+  const changeColorSchema = (name) => {
     midcolumn = document.getElementById("postPage");
     const backgroundColor = document.querySelector("body");
     const aside = document.querySelector("aside");
     const sideNav = document.getElementById("sideNav");
-
+    const figureCaption = document.querySelectorAll("figcaption");
     if (dark) {
       midcolumn.style.color = "#313131";
       backgroundColor.style.backgroundColor = "#faf8f3";
@@ -117,6 +101,8 @@ const Post = ({ post, posts }) => {
       sideNav.style.backgroundColor = "rgb(250, 248, 243)";
       sideNav.style.setProperty("--color", "rgb(250, 248, 243)");
       localStorage.setItem("dark", 2);
+      figureCaption.forEach((i) => (i.style.backgroundColor = "white"));
+      figureCaption.forEach((i) => console.log(i.style.backgroundColor));
       setDark(!dark);
     } else {
       setDark(!dark);
@@ -126,16 +112,23 @@ const Post = ({ post, posts }) => {
       sideNav.style.color = "#e3e2e2";
       sideNav.style.backgroundColor = "#262626";
       sideNav.style.setProperty("--color", "#262626");
-
+      figureCaption.forEach((i) => (i.style.backgroundColor = "#333"));
       localStorage.setItem("dark", 1);
     }
-  }
+  };
   useEffect(() => {
     midcolumn = document.getElementById("postPage");
     const backgroundColor = document.querySelector("body");
     const aside = document.querySelector("aside");
     const sideNav = document.getElementById("sideNav");
     const element = document.getElementById("burger");
+
+    setTimeout(() => {
+      figureCaptionRef.current = document.querySelectorAll("figcaption");
+      figureCaptionRef.current?.forEach(
+        (i) => (i.style.backgroundColor = dark ? "#333" : "white")
+      );
+    }, 100);
     if (localStorage.getItem("dark") == 2) {
       setDark(false);
       midcolumn.style.color = "#313131";
@@ -146,6 +139,7 @@ const Post = ({ post, posts }) => {
       sideNav.style.setProperty("--color", "rgb(250, 248, 243)");
     } else {
       setDark(true);
+
       midcolumn.style.color = "#ffff";
       backgroundColor.style.backgroundColor = "#262626";
       aside.style.backgroundColor = "#262626";
@@ -164,7 +158,7 @@ const Post = ({ post, posts }) => {
       sideNav.style.transform = "translateY(0px)";
       element.classList.remove("is-active");
     }
-  }, []);
+  }, [dark]);
 
   return (
     <>
@@ -175,9 +169,9 @@ const Post = ({ post, posts }) => {
           htmlFor="drop"
         >
           <div className="burger" id="burger" onClick={() => toggle()}>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
-            <span class="burger-line"></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
+            <span className="burger-line"></span>
           </div>
         </label>
 
