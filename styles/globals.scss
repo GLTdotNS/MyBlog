@@ -436,7 +436,8 @@ textarea {
 }
 .donate-popup ul {
   color: #262626;
-  width: 40%;
+  width: 60%;
+  padding: 5%;
   margin: auto;
 }
 #last-p {
@@ -514,6 +515,9 @@ textarea {
 /* Респоснив дизайн */
 
 @media (max-width: 768px) {
+  .donate-button ul {
+    width: 100% !important;
+  }
   .donate-newsletter {
     width: 100%;
     max-width: 500px;
