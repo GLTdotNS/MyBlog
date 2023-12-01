@@ -543,20 +543,14 @@ hr {
   background-color: #636363;
 }
 .post_text p {
-  margin: auto;
   text-align: justify;
-
-  margin-bottom: 10px;
-  font-size: 16px;
-  letter-spacing: 0.1px;
+  font-size: 17px;
+  letter-spacing: 0.4px;
   line-height: 1.4;
   text-align-last: left;
   word-break: break-word;
 }
 
-.post_text {
-  padding: 5%;
-}
 @media (max-width: 768px) {
   .post_text p {
     text-align: start;
