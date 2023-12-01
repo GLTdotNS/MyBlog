@@ -49,12 +49,12 @@ export const serializers = {
           <blockquote
             style={{
               padding: "1%",
-              width: "100%",
+              width: "60%",
               margin: "auto",
               padding: "5%",
 
               fontSize: "20px",
-              textAlign: "center",
+              textAlign: "left",
             }}
           >
             {" "}
