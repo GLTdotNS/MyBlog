@@ -25,6 +25,11 @@ export const serializers = {
             .replace("-jpg", "")}.jpg`}
           alt={props.node.alt}
         />
+        {console.log(
+          `https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset._ref
+            .replace("image-", "")
+            .replace("-jpg", "")}.jpg`
+        )}
         {props.node.caption ? (
           <figcaption>{props.node.caption}</figcaption>
         ) : (

@@ -543,11 +543,14 @@ hr {
   background-color: #636363;
 }
 .post_text p {
-  margin: auto; /* Centers the paragraph horizontally */
-  text-align: justify; /* Justifies the text to fill the available width */
-  margin-bottom: 10px; /* Adds a bottom margin of 20px */
-  font-size: 19px;
-  text-justify: none !important; /* Sets the font size to 19px */
+  margin: auto;
+  text-align: justify;
+  margin-bottom: 10px;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+  text-align-last: left;
+  word-break: break-all;
 }
 
 .post_text {
@@ -1093,19 +1096,21 @@ h2 {
   }
 }
 blockquote {
-  color: black;
-  box-shadow: 2px 3px 20px black, 0 0 60px #8a4d0f inset;
+  color: #333;
+  box-shadow: 2px 3px 20px #333, 0 0 50px #8a4d0f inset;
   background: #fffef0;
-  filter: url(#wavy2);
+  border-radius: 10px;
 }
+
 blockquote:before {
-  color: black;
+  color: #333;
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
-  margin-right: 0.25em;
+  left: 0;
   vertical-align: -0.4em;
 }
+
 blockquote::after {
   color: black;
   content: close-quote;
@@ -1113,7 +1118,10 @@ blockquote::after {
   line-height: 0.1em;
   margin-left: 0.25em;
   vertical-align: -0.6em;
+  margin-top: 10% !important;
+  padding: 5% !important;
 }
+
 blockquote p {
   display: inline;
 }
