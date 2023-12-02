@@ -3,10 +3,11 @@ import PostsComponent from "../components/Blog/BlogPageComponents/PostsComponent
 import RecentlyPosts from "../components/Blog/BlogPageComponents/RecentlyPosts";
 import "react-loading-skeleton/dist/skeleton.css";
 import Layout from "../components/Layout/Layout";
-
+import Image from "next/image";
 import dynamic from "next/dynamic";
 import Cookies from "../components/Cookies/Cookies";
 import { Rubik_Distressed } from "next/font/google";
+import partner from "../styles/assets/1.jpg";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],
@@ -82,6 +83,24 @@ const MainBlogPage = ({ posts, category }) => {
               posts={posts?.slice().sort((x, b) => b.likes - x.likes)}
             />
           </div>
+          {/* <div className="columns">
+            {" "}
+            <h3>Партньори</h3>
+            <hr />
+            <Image
+              style={{ marginRight: "2px" }}
+              src={partner}
+              width={100}
+              height={100}
+            />
+            <Image
+              style={{ marginRight: "2px" }}
+              src={partner}
+              width={100}
+              height={100}
+            />
+            <Image src={partner} width={100} height={100} />
+          </div> */}
         </div>
       </div>
     </Layout>
