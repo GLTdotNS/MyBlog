@@ -54,7 +54,7 @@ const PostsComponent = ({ posts }) => {
               }}
             ></div>
             <article>
-              <h4>{post.description.slice(0, 120)} ...</h4>
+              <h4>{post.description.slice(0, 180)} ...</h4>
               <span>
                 By {post.author} ,{" "}
                 {moment(post.publishedAt).format("YYYY , MMM  DD")}

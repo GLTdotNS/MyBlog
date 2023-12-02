@@ -510,9 +510,8 @@ hr {
   }
 
   .thumb {
-    padding-bottom: 60%;
+    padding-bottom: 80%;
     background-size: cover;
-    background-position: center center;
   }
 }
 
@@ -851,7 +850,7 @@ hr {
   will-change: transform;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  box-shadow: inset 5px 5px 8px #000, inset -2px -2px 4px #636363;
+  box-shadow: inset 1px 1px 1px #333, inset -1px -1px 4px #636363;
 }
 
 .btn_wrap:hover {

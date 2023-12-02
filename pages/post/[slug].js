@@ -252,15 +252,16 @@ const Post = ({ post, posts }) => {
             height: "80vh",
 
             backgroundImage: ` linear-gradient(
-    rgba(0, 0, 0, ${dark ? 0.8 : 0.1} ), 
-    ${dark ? "#262626" : "#faf8f3"}
-    ),
-    url(${urlForImg(post.mainImage.asset.url)})`,
+              rgba(0, 0, 0, ${dark ? 0.8 : 0.4} ), 
+              ${dark ? "#262626" : "#faf8f3"}
+              ),
+              url(${urlForImg(post.mainImage.asset.url)})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100%",
             position: "absolute",
-            top: -10,
+            top: 0,
+            backgroundPosition: " fixed",
           }}
           id="postPage"
         >

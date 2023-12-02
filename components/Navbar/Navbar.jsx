@@ -43,14 +43,14 @@ const Navbar = ({ category, posts }) => {
       <div
         className="bg"
         style={{
-          height: "70vh",
+          height: "80vh",
           width: "100%",
           backgroundSize: "cover",
           backgroundAttachment: "",
           margin: "auto",
           backgroundImage: ` linear-gradient(
             
-            rgba(0, 0, 0, 0.1), 
+            rgba(0, 0, 0, 0.5), 
             #262626
             ),
             url(${logo.src})`,

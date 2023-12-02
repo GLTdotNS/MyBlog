@@ -126,6 +126,11 @@ li > a:only-child:after {
 --------------------------------------------- */
 
 @media all and (max-width: 912px) {
+  .hamburger-icon {
+    width: 50% !important;
+    position: relative;
+  }
+
   .postPage .midcolumn {
     margin-top: 35% !important;
     padding: 0 !important;
@@ -235,7 +240,7 @@ li > a:only-child:after {
   nav {
     background-color: #212121;
     padding: 2%;
-    position: absolute;
+    position: fixed;
     top: 0;
     margin: 0px !important;
     z-index: 1000;
