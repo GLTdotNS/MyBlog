@@ -1008,7 +1008,7 @@ button#dark {
   opacity: 0.3;
 }
 .wrap {
-  width: 640px;
+  max-width: 640px;
   margin: 100px auto;
 }
 
@@ -1091,10 +1091,11 @@ h2 {
   }
 }
 blockquote {
+  margin-top: 2% !important;
   color: #333;
   box-shadow: 2px 3px 20px #333, 0 0 50px #8a4d0f inset;
   background: #fffef0;
-  border-radius: 10px;
+  border-radius: 3px;
 }
 
 blockquote:before {
@@ -1102,12 +1103,11 @@ blockquote:before {
   content: open-quote;
   font-size: 4em;
   line-height: 0.1em;
-  left: 0;
   vertical-align: -0.4em;
 }
 
 blockquote::after {
-  color: black;
+  color: #333;
   content: close-quote;
   font-size: 4em;
   line-height: 0.1em;

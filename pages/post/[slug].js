@@ -128,7 +128,7 @@ const Post = ({ post, posts }) => {
       figureCaptionRef.current?.forEach(
         (i) => (i.style.backgroundColor = dark ? "#333" : "white")
       );
-    }, 100);
+    }, 200);
     if (localStorage.getItem("dark") == 2) {
       setDark(false);
       midcolumn.style.color = "#313131";
@@ -249,17 +249,18 @@ const Post = ({ post, posts }) => {
         <div
           className=" postPage "
           style={{
-            height: "40vh",
+            height: "80vh",
 
             backgroundImage: ` linear-gradient(
-    rgba(0, 0, 0, ${dark ? 0.6 : 0.1} ), 
+    rgba(0, 0, 0, ${dark ? 0.8 : 0.1} ), 
     ${dark ? "#262626" : "#faf8f3"}
     ),
-    url(${logo.src})`,
+    url(${urlForImg(post.mainImage.asset.url)})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            width: "100%",
             position: "absolute",
-            top: 0,
+            top: -10,
           }}
           id="postPage"
         >

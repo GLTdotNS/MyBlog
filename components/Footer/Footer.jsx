@@ -110,7 +110,7 @@ const Footer = () => {
             <a>ПОВЕРИТЕЛНОСТ</a>
           </Link>{" "}
         </p>
-        <iframe
+        {/* <iframe
           src="https://www.facebook.com/plugins/page.php?href=https://www.facebook.com/profile.php?id=100094233162463&tabs=timeline&width=340&height=130&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&hide_cta=true"
           width="340"
           height="130"
@@ -119,7 +119,7 @@ const Footer = () => {
           style={{ display: "flex-box" }}
           allowfullscreen="true"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-        ></iframe>
+        ></iframe> */}
 
         <p className="name"> Designed by Canis Lupus &copy; 2023</p>
       </div>

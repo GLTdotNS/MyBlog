@@ -18,18 +18,14 @@ export const serializers = {
     image: (props) => (
       <figure>
         <Image
-          width={100}
-          height={100}
+          width={300}
+          height={300}
           src={`https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset._ref
             .replace("image-", "")
             .replace("-jpg", "")}.jpg`}
           alt={props.node.alt}
         />
-        {console.log(
-          `https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset._ref
-            .replace("image-", "")
-            .replace("-jpg", "")}.jpg`
-        )}
+
         {props.node.caption ? (
           <figcaption>{props.node.caption}</figcaption>
         ) : (
@@ -53,13 +49,15 @@ export const serializers = {
         return (
           <blockquote
             style={{
-              padding: "1%",
-              width: "60%",
+              position: "relative",
+              display: "block",
+              width: "90%",
               margin: "auto",
               padding: "5%",
-
+              justifyContent: "center",
               fontSize: "20px",
               textAlign: "left",
+              alignItems: "center !important",
             }}
           >
             {" "}
