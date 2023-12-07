@@ -3,12 +3,12 @@ import Layout from "../components/Layout/Layout";
 import groq from "groq";
 import Link from "next/link";
 import { client } from "../lib/sanityClient";
-const About = ({ category, posts }) => {
+const About = ({ posts }) => {
   return (
     <Layout posts={posts}>
       <div style={{ marginBottom: "20%" }}>
         <div className=" container content-wrapper ">
-          <div className="staffCard draw-border ">
+          <div className="staffCard  ">
             <h4 className="card__name">Canis Lupus</h4>
             <div
               style={{
@@ -107,25 +107,10 @@ export const getServerSideProps = async () => {
   },
   
   }`;
-  const category = await client.fetch(
-    groq`*[_type == "category"]{
-    _id,
-    slug,
-    title,
-    mainImage{
-      asset->{
-      _id,
-      url
-    }
-  }
-  
-    }`
-  );
-
   const posts = await client.fetch(query);
 
   return {
-    props: { posts, category },
+    props: { posts },
   };
 };
 

@@ -20,7 +20,7 @@ export const serializers = {
         <Image
           width={300}
           height={300}
-          src={`https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset._ref
+          src={`https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset?._ref
             .replace("image-", "")
             .replace("-jpg", "")}.jpg`}
           alt={props.node.alt}
