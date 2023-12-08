@@ -9,7 +9,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";
 
-const PostsComponent = ({ posts }) => {
+const PostsComponent = ({ posts, button }) => {
   const initialPostList = 7;
   const incrementInitialPostList = 8;
   const [hideButton, setHideButton] = useState(false);
@@ -77,8 +77,13 @@ const PostsComponent = ({ posts }) => {
         }}
       >
         {!hideButton && posts?.length != 1 ? (
-          <button className="loadmore-btn" onClick={loadMore}>
-            Зареди още{" "}
+          <button
+            className="loadmore-btn"
+            onClick={() =>
+              button != "Виж всички" ? loadMore() : router.push("blog")
+            }
+          >
+            {button}
           </button>
         ) : (
           <button

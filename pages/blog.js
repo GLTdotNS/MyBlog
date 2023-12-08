@@ -8,6 +8,8 @@ import dynamic from "next/dynamic";
 import Cookies from "../components/Cookies/Cookies";
 import { Rubik_Distressed } from "next/font/google";
 import partner from "../styles/assets/1.jpg";
+import { client } from "../lib/sanityClient";
+import groq from "groq";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],
@@ -69,6 +71,7 @@ const MainBlogPage = ({ posts, category }) => {
         <div className="midcolumn ">
           <div className="">
             <PostsComponent
+              button={"Зареди още"}
               posts={posts
                 ?.filter((x) => x.category != "recipe")
                 .sort((x, b) => x._createdAt - b._createdAt)}
@@ -108,3 +111,44 @@ const MainBlogPage = ({ posts, category }) => {
 };
 
 export default MainBlogPage;
+export const getStaticProps = async () => {
+  const category = await client.fetch(
+    groq`*[_type == "category"]{
+      _id,
+      slug,
+      title,
+      mainImage{
+        asset->{
+          _id,
+          url
+        }
+      }
+    }`
+  );
+
+  const query = groq`*[_type == "post"] | order(publishedAt desc) {
+    title,
+    slug,
+    "authorImage": author->image,
+    "category": categories[0]->title,
+    description,
+    "author": author->name,
+    likes,
+    rowTitle,
+    _id,
+    body,
+    publishedAt,
+    mainImage{
+      asset->{
+        _id,
+        url
+      }
+    }
+  }`;
+
+  const posts = await client.fetch(query);
+
+  return {
+    props: { posts, category },
+  };
+};
