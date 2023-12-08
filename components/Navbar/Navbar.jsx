@@ -255,6 +255,12 @@ const Navbar = ({ category, posts }) => {
             <Link href={"/runes"}>Руни</Link>
           </li>
           <li>
+            <Link href={"/sagas"}>Саги</Link>
+          </li>
+          {/* <li>
+            <Link href={"/donate"}>Скандинавия</Link>
+          </li> */}
+          <li>
             <Link href={"/donate"}>Дарение</Link>
           </li>
           <li>

@@ -17,7 +17,7 @@ html {
 
 body {
   opacity: 0;
-  animation: fadeIn 1s forwards; /* анимация с продължителност 2 секунди */
+  animation: fadeIn 1s forwards;
 }
 
 @keyframes fadeIn {
@@ -518,6 +518,18 @@ textarea {
   .donate-button ul {
     width: 100% !important;
   }
+  .sagas .user-popup {
+    width: 100% !important;
+    height: 100vh !important;
+  }
+  .sagas img {
+    width: 100% !important;
+    float: right !important;
+    border: none !important;
+  }
+  #floatLeft {
+    float: none !important;
+  }
   .donate-newsletter {
     width: 100%;
     max-width: 500px;
@@ -544,4 +556,36 @@ textarea {
   .donate-newsletter ul li {
     margin-bottom: 6px;
   }
+}
+.user-popup {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: fixed;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+  padding: 15px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  z-index: 100000;
+
+  animation: fadeIn 1s forwards;
+  overflow: auto !important;
+}
+
+.user-info {
+  margin-bottom: 15px;
+}
+.user-popup img {
+  width: 100%;
+  height: 300px;
+}
+.user-popup-button {
+  background-color: #09f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
 }

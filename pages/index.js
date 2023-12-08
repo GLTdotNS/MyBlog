@@ -100,7 +100,7 @@ export const getStaticProps = async () => {
           url
         }
       }
-    }[0...7]`;
+    }`;
 
   const posts = await client.fetch(query);
 
