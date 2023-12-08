@@ -33,7 +33,7 @@ const Search = ({ posts, allPosts }) => {
                 </h1>
                 <hr></hr>
                 <div className="searchPage">
-                  <PostsComponent posts={posts} />
+                  <PostsComponent button={"Виж всички"} posts={posts} />
                 </div>{" "}
               </div>
             </div>
