@@ -7,7 +7,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Cookies from "../components/Cookies/Cookies";
 import { Rubik_Distressed } from "next/font/google";
-import partner from "../styles/assets/1.jpg";
+
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 const rubik = Rubik_Distressed({
