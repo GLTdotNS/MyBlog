@@ -2,7 +2,7 @@ import "../styles/globals.scss";
 import "../styles/navbar.scss";
 import "../styles/blog.scss";
 import "../styles/footer.css";
-
+import "../styles/landingPage.scss";
 import "../styles/modal.css";
 import "../styles/about.css";
 import "../styles/admin.css";
