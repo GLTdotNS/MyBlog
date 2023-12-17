@@ -4,7 +4,8 @@ import moment from "moment";
 import { urlForImg } from "../../../lib/sanityClient.js";
 
 import { useState } from "react";
-
+import { MdOutlineTimer } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";
@@ -52,9 +53,42 @@ const PostsComponent = ({ posts, button }) => {
               style={{
                 backgroundImage: `url(${urlForImg(post.mainImage.asset.url)})`,
               }}
-            ></div>
+            >
+              <span
+                style={{
+                  marginLeft: "5%",
+                  marginTop: 23,
+                  fontSize: "12px",
+                  color: "#4ba6e7",
+                  backgroundColor: "#333",
+                  padding: "2px",
+                  borderRadius: "3px",
+                }}
+              >
+                <MdOutlineTimer size={10} />{" "}
+                {` ${minutesToRead.toFixed()} ${
+                  minutesToRead.toFixed() > 1 ? "минути" : "минутa"
+                }`}
+              </span>
+              <span
+                style={{
+                  marginLeft: "5%",
+                  marginTop: 23,
+                  fontSize: "12px",
+                  color: "#4ba6e7",
+                  backgroundColor: "#333",
+                  padding: "2px",
+                  borderRadius: "3px",
+                }}
+              >
+                <FaEye size={10} /> {` ${post.likes} пъти`}
+              </span>
+            </div>
             <article>
-              <h4>{post.description.slice(0, 180)} ...</h4>
+              <h4>
+                {post.description.slice(0, 180)} ...{" "}
+                <span style={{ color: "#f9b22a", float: "" }}>Виж повече</span>
+              </h4>
               <span>
                 By {post.author} ,{" "}
                 {moment(post.publishedAt).format("YYYY , MMM  DD")}
