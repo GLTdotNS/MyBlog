@@ -255,7 +255,7 @@ const Post = ({ post, posts }) => {
               rgba(0, 0, 0, ${dark ? 0.8 : 0.4} ), 
               ${dark ? "#262626" : "#faf8f3"}
               ),
-              url(${urlForImg(post.mainImage.asset.url)})`,
+              url(${logo.src})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100%",
