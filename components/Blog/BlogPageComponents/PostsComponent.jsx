@@ -101,6 +101,22 @@ const PostsComponent = ({ posts, button }) => {
 
   return (
     <>
+      <div
+        className="columns"
+        style={{
+          margin: "auto",
+          textAlign: "center",
+          marginBottom: "2%",
+        }}
+      >
+        <div className="title">
+          <h3 style={{ padding: "5px", width: "95%" }}>
+            <span style={{ padding: "5px", width: "100px" }}>
+              Последно добавени{" "}
+            </span>
+          </h3>
+        </div>
+      </div>
       <div className="band">{displayPost} </div>
       <div
         style={{
