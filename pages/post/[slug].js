@@ -4,9 +4,10 @@ import dynamic from "next/dynamic";
 import moment from "moment";
 import { useRouter } from "next/router";
 import { MdDateRange, MdClose } from "react-icons/md";
-import logo from "../../styles/assets/Viking-Feature.webp";
+import bg from "../../styles/assets/Viking-Feature.webp";
 import { toast } from "react-hot-toast";
 import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
+import logo from "../../styles/assets/grayscale_transparent.png";
 
 import Link from "next/link";
 
@@ -174,7 +175,9 @@ const Post = ({ post, posts }) => {
             <span className="burger-line"></span>
           </div>
         </label>
-
+        <span id="siteLogo" className="siteLogo">
+          <Image width={80} height={40} src={logo} />
+        </span>
         <Image src={logo} style={{ display: "none" }} alt={`${post.title}`} />
         <div id="sideNav" className="nav ">
           <ul>
@@ -230,6 +233,7 @@ const Post = ({ post, posts }) => {
             <li>
               <Link href={"/runes"}>Руни</Link>
             </li>
+
             <div style={{ display: "none" }} id="video"></div>
           </ul>
         </div>
@@ -255,7 +259,7 @@ const Post = ({ post, posts }) => {
               rgba(0, 0, 0, ${dark ? 0.8 : 0.4} ), 
               ${dark ? "#262626" : "#faf8f3"}
               ),
-              url(${logo.src})`,
+              url(${bg.src})`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             width: "100%",

@@ -8,8 +8,47 @@ import Link from "next/link";
 const Search = ({ posts, allPosts }) => {
   const router = useRouter();
   const { searchTerm } = router.query;
-  if (searchTerm === "руни" || searchTerm === "Руни") {
-    router.push("/runes");
+  if (
+    searchTerm === "руни" ||
+    searchTerm === "Руни" ||
+    searchTerm === "runes" ||
+    searchTerm === "Runes"
+  ) {
+    return (
+      <Layout posts={allPosts}>
+        {" "}
+        <div
+          className="row"
+          style={{ overflow: "hidden", justifyContent: "center" }}
+        >
+          <div
+            className="midcolumn"
+            style={{
+              textAlign: "center",
+            }}
+          >
+            <div style={{ backgroundColor: "" }}>
+              <div id="blurBackground" style={{ marginTop: "5%" }}></div>
+              <div
+                className="initial-post"
+                style={{ display: "block", margin: "0 auto" }}
+              >
+                <h2 style={{ marginBottom: "20px" }}>
+                  Резултати от търсенето съдържащи - {searchTerm}….
+                </h2>
+
+                <br />
+                <p>
+                  <Link style={{ color: "blue" }} href={"/"}>
+                    Може би имахте предвид тази страница
+                  </Link>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Layout>
+    );
   }
   return (
     <>

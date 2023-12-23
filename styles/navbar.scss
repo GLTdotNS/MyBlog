@@ -228,7 +228,7 @@ li > a:only-child:after {
   .siteLogo {
     position: absolute;
     top: 0 !important;
-    right: 0;
+    right: 0 !important;
   }
   .search-field {
     min-width: 55% !important;
@@ -239,7 +239,7 @@ li > a:only-child:after {
 
   nav {
     background-color: #212121;
-    padding: 2%;
+    padding: 3%;
     position: absolute;
 
     top: 0;
@@ -247,6 +247,9 @@ li > a:only-child:after {
     z-index: 1000;
     width: 100%;
     transition: 1s ease;
+  }
+  #siteLogo {
+    display: block !important;
   }
   nav ul ul ul {
     width: 100%;

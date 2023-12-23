@@ -257,6 +257,10 @@ img {
     border-color: wheat;
   }
 }
+#siteLogo {
+  display: none;
+}
+
 @media screen and (max-width: 991px) {
   .is-home-main {
     width: 100% !important;
@@ -264,6 +268,7 @@ img {
     margin: auto;
     margin-top: 10%;
   }
+
   .siteLogo {
     font-size: 35px;
   }

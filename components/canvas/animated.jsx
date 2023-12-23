@@ -9,7 +9,7 @@ const Ring = ({ isMobile }) => {
     <mesh>
       <hemisphereLight intensity={95} groundColor="black" />
       <spotLight
-        position={[-20, 50, 10]}
+        position={[-30, 50, 10]}
         angle={0.52}
         penumbra={1}
         intensity={0}
@@ -19,7 +19,7 @@ const Ring = ({ isMobile }) => {
       <pointLight intensity={1} />
       <primitive
         object={computer.scene}
-        scale={isMobile ? 7 : 5.9}
+        scale={isMobile ? 5 : 5.2}
         position={isMobile ? [0, -0.1, -0.15] : [0, -0.25, 0.2]}
         rotation={[-0.01, -0.2, -0.1, -0.1]}
       />
@@ -56,7 +56,7 @@ const RingCanvas = () => {
       frameloop="demand"
       shadows
       dpr={[1, 2]}
-      camera={{ position: [20, 3, 5], fov: 15 }}
+      camera={{ position: [5, 3, 5], fov: 15 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <Suspense fallback={<CanvasLoader />}>

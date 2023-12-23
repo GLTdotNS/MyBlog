@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 import { useRouter } from "next/router";
-import logo from "../../styles/assets/background.jpg";
+import bg from "../../styles/assets/background.jpg";
+import logo from "../../styles/assets/grayscale_transparent.png";
 import { Rubik_Distressed } from "next/font/google";
+import RingCanvas from "../canvas/animated";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],
@@ -53,7 +55,7 @@ const Navbar = ({ category, posts }) => {
             rgba(0, 0, 0, 0.5), 
             #262626
             ),
-            url(${logo.src})`,
+            url(${bg.src})`,
           backgroundRepeat: "no-repeat",
         }}
       >
@@ -70,7 +72,6 @@ const Navbar = ({ category, posts }) => {
         >
           NONCREATIVEBLOG
         </h1>{" "}
-        {/* <RingCanvas /> */}
       </div>
       <form class="search-form" onSubmit={handleSearch}>
         <div class="input-group">
@@ -104,7 +105,9 @@ const Navbar = ({ category, posts }) => {
             <span class="burger-line"></span>
           </div>
         </label>
-
+        <span id="siteLogo" className="siteLogo">
+          <Image width={80} height={40} src={logo} />
+        </span>
         <input type="checkbox" id="drop" />
         <ul class={`menu ${rubik.className}`}>
           <li>
