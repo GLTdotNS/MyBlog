@@ -235,7 +235,6 @@ const Runes = ({ category, posts }) => {
                   - Тъй речени са на Високия Словата...
                 </p>
               </div>
-              <RingCanvas />
               Руни
               <br />
               <span>
