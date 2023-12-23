@@ -2,7 +2,7 @@ import React from "react";
 import { useRouter } from "next/router";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Layout from "../../components/Layout/Layout";
-import { client } from "../../lib/sanityClient";
+import { client, urlForImg } from "../../lib/sanityClient";
 import groq from "groq";
 import Link from "next/link";
 const Search = ({ posts, allPosts }) => {
@@ -33,7 +33,33 @@ const Search = ({ posts, allPosts }) => {
                 </h1>
                 <hr></hr>
                 <div className="searchPage">
-                  <PostsComponent button={"Виж всички"} posts={posts} />
+                  <div className="cards" style={{ marginTop: "2%" }}>
+                    {posts &&
+                      posts.map((post, index) => (
+                        <Link
+                          key={post.slug.current}
+                          legacyBehavior
+                          className="ps card"
+                          href="/post/[slug]"
+                          as={`/post/${post.slug.current}`}
+                        >
+                          <div
+                            style={{ color: "white", position: "relative" }}
+                            className={` channel_scroll_list`}
+                          >
+                            <p className=" model-name">{post.rowTitle}</p>
+
+                            <img
+                              width={"100%"}
+                              height={"100%"}
+                              src={`${urlForImg(post.mainImage.asset.url)}`}
+                              alt={`${post.title}`}
+                            />
+                            <div className="overlay-div"></div>
+                          </div>
+                        </Link>
+                      ))}
+                  </div>
                 </div>{" "}
               </div>
             </div>

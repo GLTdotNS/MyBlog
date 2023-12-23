@@ -470,10 +470,6 @@ hr {
   grid-template-rows: auto;
   grid-gap: 20px;
 
-  @media (min-width: 30em) {
-    grid-template-columns: 1fr 1fr;
-  }
-
   @media (min-width: 60em) {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -484,7 +480,7 @@ hr {
   text-decoration: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
-  padding: 2%;
+  padding: 0%;
   cursor: pointer;
   flex-direction: column;
   height: 100%;
@@ -492,11 +488,11 @@ hr {
   position: relative;
   top: 0;
   transition: all 0.2s ease-in;
-
+  font-size: 16px;
   &:hover {
     top: -15px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
-    background-color: #333;
+    background-color: rgba(0, 0, 0, 0.2);
     color: #c5c5c7;
   }
 
@@ -792,6 +788,8 @@ hr {
   width: 90%;
   margin: auto;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   padding: 2%;
 }
 .sentBtn {

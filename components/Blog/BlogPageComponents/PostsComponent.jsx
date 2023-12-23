@@ -47,7 +47,7 @@ const PostsComponent = ({ posts, button }) => {
               updateReaders(post) && router.push(`/post/${post.slug.current}`)
             }
           >
-            <h3 style={{ color: "#999" }}>{post.title}</h3>
+            <h3 style={{ color: "#999", padding: "2%" }}>{post.title}</h3>
             <div
               class="thumb"
               style={{

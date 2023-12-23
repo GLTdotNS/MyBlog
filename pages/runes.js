@@ -104,7 +104,8 @@ const Runes = ({ category, posts }) => {
       ᚺ: "H",
       ᛁ: "I",
       ᛃ: "J",
-      ᛚ: "K",
+
+      ᛚ: "L",
       ᛗ: "M",
       ᚾ: "N",
       ᛟ: "O",

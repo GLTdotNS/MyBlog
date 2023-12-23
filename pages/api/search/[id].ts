@@ -13,6 +13,7 @@ export default async function handler(
         slug,
         "authorImage": author->image,
         description,
+        rowTitle,
         body,
         publishedAt,
         mainImage{
