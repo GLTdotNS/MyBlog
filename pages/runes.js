@@ -21,6 +21,7 @@ const Runes = ({ category, posts }) => {
   const [runicSymbol, setRunicSymbol] = useState("Canis Lupus");
   const [displayResult, setDisplayResult] = useState("ᚲᚨᚾᛁᛊ ᛚᚢᛈᚢᛊ");
   const [latinOrEF, setLatinOrEf] = useState("Latin");
+  const [modalOpen, setModalOpen] = useState(false);
   const copyToClipboard = (text) => {
     const elem = document.createElement("textarea");
     elem.value = text;
@@ -153,7 +154,9 @@ const Runes = ({ category, posts }) => {
         <title>Руни / Конвертор</title>
       </Head>
       <div style={{ marginBottom: "20%", padding: "5%" }}>
-        <div className=" container content-wrapper ">
+        <div
+          className={`container content-wrapper ${modalOpen ? "modal" : ""}`}
+        >
           {" "}
           <hr /> Протогерманската писменост е една от най-старите познати на
           човечеството, като първите сведения за нея датират от 160 години преди
@@ -169,28 +172,59 @@ const Runes = ({ category, posts }) => {
           значение, както и всяка една от тях отговаря на звук или буква от
           латинската азбука.
           <br />
-          <figure style={{ textAlign: "center" }}>
+          <figure
+            style={{ textAlign: "center" }}
+            className={modalOpen ? "modal" : ""}
+          >
             <Image
-              width={300}
-              height={300}
-              src={`https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Bj%C3%B6rketorpsstenen_runor.jpg/1280px-Bj%C3%B6rketorpsstenen_runor.jpg`}
+              width={modalOpen ? 1000 : 400}
+              height={modalOpen ? 1000 : 300}
+              src={`https://upload.wikimedia.org/wikipedia/commons/c/c1/Kylverstenen_1383.jpg`}
+              onClick={() => setModalOpen(true)}
+              style={{
+                width: modalOpen ? "70%" : "",
+                height: modalOpen ? "100%" : "",
+              }}
             />
+            {!modalOpen && (
+              <figcaption
+                style={{ background: "#333", width: "400px", margin: "auto" }}
+              >
+                Камъкът Kylver, включен в каталога на Rundata като рунически
+                надпис G 88, е шведски рунически камък, датиращ от около 400г.
+                сл.Хр. Той се отличава с това, че на него са изписани всички
+                руни от Elder Futhark.
+              </figcaption>
+            )}
+            {modalOpen ? (
+              <button
+                onClick={() => setModalOpen(false)}
+                style={{
+                  position: "absolute",
+                  top: "25px",
 
-            <figcaption
-              style={{ background: "#333", width: "300px", margin: "auto" }}
-            >
-              Björketorp рунен камък намиращ се в Блекинге, Швеция
-            </figcaption>
+                  left: "15px",
+                  zIndex: 100000,
+                  border: "none",
+                  backgroundColor: "rgba(0,0,0,0.4)",
+                  padding: "12px",
+                  color: "white",
+                  fontSize: "20px",
+                  borderRadius: "100%",
+                }}
+              >
+                X
+              </button>
+            ) : (
+              ""
+            )}
           </figure>
           <br />В таблицата по - долу можете да се запознаете със Elder Futhark
           и значението на руните, които съставляват азбуката. Руните са
           комплексни знаци използвани за гадаене, пречистване и лечение. Трудно
           би могло да се опише тяхното значение, както и да се преведат. Въпреки
           това, ако ви е интересно как изглежда името Ви изписано с руни, то
-          може да използвате нашия
-          <a style={{ color: "blue" }} href="#convertor">
-            конвертор
-          </a>
+          може да използвате нашия конвертор.
           <p
             style={{
               color: "yellow",

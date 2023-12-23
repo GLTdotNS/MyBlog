@@ -56,12 +56,13 @@ const Post = ({ post, posts }) => {
       if (nav.style.opacity == "1") {
         nav.style.opacity = "0";
         nav.style.visibility = "hidden";
+        nav.style.pointerEvents = "none";
         nav.style.transform = "translateY(0px)";
         element.classList.remove("is-active");
       } else {
         nav.style.opacity = "1";
         nav.style.visibility = "visible";
-
+        nav.style.pointerEvents = "auto";
         nav.style.transform = "translateY(40px)";
         element.classList.add("is-active");
       }
