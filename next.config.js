@@ -23,7 +23,7 @@ const nextConfig = {
     ];
   },
   images: {
-    domains: ["openweathermap.org", "cdn.sanity.io"],
+    domains: ["openweathermap.org", "cdn.sanity.io", "upload.wikimedia.org"],
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
