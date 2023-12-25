@@ -179,7 +179,7 @@ const Post = ({ post, posts }) => {
         <span id="siteLogo" className="siteLogo">
           <Image width={80} height={40} src={logo} />
         </span>
-        <Image src={logo} style={{ display: "none" }} alt={`${post.title}`} />
+        <Image src={bg} style={{ display: "none" }} alt={`${post.title}`} />
         <div id="sideNav" className="nav ">
           <ul>
             <div className="">
