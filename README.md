@@ -12,7 +12,7 @@ I created my own blog using Next.js 13, and CSS/SCSS. This blog gives me complet
 
 - Light/dark mode toggle in post section
 - Comment section
-- Shareble content
+- Shareable content
 - Subscribe option
 - Search bar for easy navigation
 - Donate campaign 
