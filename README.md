@@ -18,7 +18,7 @@ You can see my intentions for its development.
 - Shareable content
 - Subscribe option
 - Search bar for easy navigation
-- [@CDonate campaign](https://www.noncreativeblog.net/donate)
+- [@Donate campaign](https://www.noncreativeblog.net/donate)
 - Runes convertor options - Elder Futhark to Latin letters and Latin letters to Elder Futhark
 
 
