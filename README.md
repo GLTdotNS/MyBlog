@@ -22,31 +22,6 @@ You can see my intentions for its development.
 
 
 
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/GLTdotNS/MyBlog
-```
-
-Go to the project directory
-
-```bash
-  cd project-directory
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run dev
-```
 
 
 ## What will i do in the future ?
@@ -73,6 +48,34 @@ This is not just a blog. This will be an educational platform on this topic. I a
 ## Authors
 
 - [@Canis Lupus](https://github.com/GLTdotNS)
+  
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/GLTdotNS/MyBlog
+```
+
+Go to the project directory
+
+```bash
+  cd project-directory
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
 
 ## Demo
 
