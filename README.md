@@ -1,8 +1,17 @@
-Simple blog system made with love.
+# NONCREATIVEBLOG
 
-Written in NextJS 13.0.4
 
-Framework - https://nextjs.org
-CMS - https://www.sanity.io
-Hosted on - https://vercel.com
-Blog - https://www.noncreativeblog.net
+I created my own blog using Next.js 13, and CSS/SCSS. This blog gives me complete freedom for customization and allows visitors to explore my information and ideas in their own web environment without using off-the-shelf platforms.
+
+![Logo](https://i.ibb.co/Pt049yr/FullLogo.jpg)
+
+## Demo
+
+https://www.noncreativeblog.net/
+
+## Features
+
+- Light/dark mode toggle in post section
+- Comment section
+- Shareble content
+- 
