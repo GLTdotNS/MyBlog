@@ -24,7 +24,7 @@ User features:
 Author features:
 - [@Donate campaign](https://www.noncreativeblog.net/donate)
 - Chat support. I can be close to my readers.
-- Subscribe option. I can share my new articles adn features with users.
+- Subscribe option. I can share my new articles adn features with them(the users).
 - [@Email ](https://www.noncreativeblog.net/message). I am looking for partners and everyone can reach me out through my website.
 
 
