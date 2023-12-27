@@ -33,7 +33,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd project-derectory
+  cd project-directory
 ```
 
 Install dependencies
@@ -53,6 +53,15 @@ Start the server
 
 Performance improvement, add new features like - reyplying on comments,user signin option and so on. 
 
+## Tech Stack
+
+**Client:** NextJS, CSS/SCSS
+
+**Server:** Serverless framework
+
+**Database:** CMS for easy content managing Sanity.io
+
+**Hosting:** Vercel
 
 ## Authors
 
