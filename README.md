@@ -12,15 +12,20 @@ You can see my intentions for its development.
 
 
 ## Features
-
+    
+User features:
 - Light/dark mode toggle in post section
-- Comment section
+- Comment section for every post
 - Shareable content
-- Subscribe option
-- Search bar for easy navigation
-- [@Donate campaign](https://www.noncreativeblog.net/donate)
 - Runes convertor options - Elder Futhark to Latin letters and Latin letters to Elder Futhark
+- Search bar for easy navigation
 
+
+Author features:
+- [@Donate campaign](https://www.noncreativeblog.net/donate)
+- Chat support. I can be close to my readers.
+- Subscribe option. I can share my new articles adn features with users.
+- [@Email ](https://www.noncreativeblog.net/message). I am looking for partners and everyone can reach me out through my website.
 
 
 
