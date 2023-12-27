@@ -7,9 +7,6 @@ I created my own blog using Next.js 13, and CSS/SCSS. This blog gives me complet
 ![Logo](https://i.ibb.co/Pt049yr/FullLogo.jpg)
 
 
-## Demo
-
-https://www.noncreativeblog.net/
 
 ## Features
 
