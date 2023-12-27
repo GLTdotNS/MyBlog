@@ -16,4 +16,48 @@ https://www.noncreativeblog.net/
 - Light/dark mode toggle in post section
 - Comment section
 - Shareble content
-- 
+- Subscribe option
+- Search bar for easy navigation
+- Donate campaign 
+
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/GLTdotNS/MyBlog
+```
+
+Go to the project directory
+
+```bash
+  cd project-derectory
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+
+## TO-DO
+
+Performance improvement, add new features like - reyplying on comments,user signin option and so on. 
+
+
+## Authors
+
+- [@Canis Lupus](https://github.com/GLTdotNS)
+
+## Demo
+
+https://www.noncreativeblog.net/
