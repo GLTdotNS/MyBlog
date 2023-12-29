@@ -20,7 +20,7 @@ import Loading from "../components/Loading/Loading";
 import { Analytics } from "@vercel/analytics/react";
 import Cookies from "../components/Cookies/Cookies";
 import dynamic from "next/dynamic";
-import LoadingVideo from "../components/LoadingVideo/loadingVideo";
+
 import DonateButton from "../components/Donate/Donate";
 import Script from "next/script";
 function MyApp({ Component, pageProps }) {
@@ -52,11 +52,6 @@ function MyApp({ Component, pageProps }) {
         "
           key="desc"
         />
-        {/* <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4968421479589379"
-          crossorigin="anonymous"
-        ></Script> */}
       </Head>
 
       {loading ? (
