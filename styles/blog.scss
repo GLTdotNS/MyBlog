@@ -824,16 +824,6 @@ hr {
 }
 
 /*sharebutton logic*/
-.shareContainer {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-pack: distribute;
-  justify-content: space-around;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
 
 .btn_wrap {
   position: relative;
@@ -848,14 +838,16 @@ hr {
   align-items: center;
   overflow: hidden;
   cursor: pointer;
-  width: 200px;
   height: 50px;
+  width: 50px;
   margin-top: 5%;
+  margin-right: 12px;
   padding: 0 18px;
   will-change: transform;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
-  box-shadow: inset 1px 1px 1px #333, inset -1px -1px 4px #636363;
+  width: 150px;
+  height: 80px;
 }
 
 .btn_wrap:hover {
@@ -865,7 +857,7 @@ hr {
 
 .i {
   opacity: 0;
-  padding: 2px !important;
+
   margin-left: 10px;
   will-change: transform;
   -webkit-transform: scale(0.1);
@@ -879,6 +871,7 @@ hr {
   transition-delay: 0.1s;
   -webkit-transform: translateX(-280px);
   transform: translateX(-280px);
+  background-color: #333;
 }
 
 .btn_wrap:hover .i {
@@ -1032,7 +1025,7 @@ button#dark {
   }
   label {
     width: 100%;
-    background-color: #4ba6e7;
+    background-color: #333;
     display: block;
     color: #fff;
     padding: 5px;
