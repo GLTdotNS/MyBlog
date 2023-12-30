@@ -134,9 +134,9 @@ li > a:only-child:after {
     padding-left: 5% !important;
     font-size: 15px;
     margin-bottom: 5% !important;
-    padding-top: 2px !important;
+
     background: linear-gradient(#262626, #333, rgb(0, 0, 0, 0.03));
-    top: -5px !important;
+    top: 10px !important;
     right: 0 !important;
     padding-bottom: 0;
   }
@@ -225,7 +225,7 @@ li > a:only-child:after {
     margin-top: 50%;
   }
   article header {
-    margin-top: 15% !important;
+    margin-top: 0% !important;
     z-index: 1 !important;
   }
   html {
