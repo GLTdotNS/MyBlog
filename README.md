@@ -39,7 +39,7 @@ First of all, I will improve the quality of this site.
 
 This is not just a blog. This will be an educational platform on this topic. I am currently developing a mobile app and the option to read the epic poem Voluspa(Codex Regius), which option will be part of the Noncreativeblog ecosystem.
 
-![Logo](https://media.canva.com/1/image-resize/1/681_700_100_PNG_F/czM6Ly9tZWRpYS1wcml2YXRlLmNhbnZhLmNvbS9GcWUtZy9NQUYyV0NGcWUtZy8xL3AucG5n?osig=AAAAAAAAAAAAAAAAAAAAALi4duOw0SQwfzGwKZPYJoTHikhnlhVv9td95Wn6nHCA&exp=1703705045&x-canva-quality=screen&csig=AAAAAAAAAAAAAAAAAAAAAAzvtHKJZdKrXpkiNd34jJrPSWoAmQX0Zm2yx4HGkFKr)
+![Logo](https://i.ibb.co/bJ1kF8T/schema.png)
 
 ## Tech Stack
 
