@@ -134,7 +134,11 @@ li > a:only-child:after {
     padding-left: 5% !important;
     font-size: 15px;
     margin-bottom: 5% !important;
-    padding-top: 0 !important;
+    padding-top: 2px !important;
+    background: linear-gradient(#262626, #333, rgb(0, 0, 0, 0.03));
+    top: -5px !important;
+    right: 0 !important;
+    padding-bottom: 0;
   }
   .postPage .midcolumn {
     margin-top: 35% !important;
