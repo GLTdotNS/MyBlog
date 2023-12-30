@@ -125,12 +125,17 @@ li > a:only-child:after {
 /* Media Queries
 --------------------------------------------- */
 
-@media all and (max-width: 912px) {
+@media all and (max-width: 940px) {
   .hamburger-icon {
     width: 50% !important;
     position: relative;
   }
-
+  article header {
+    padding-left: 5% !important;
+    font-size: 15px;
+    margin-bottom: 5% !important;
+    padding-top: 0 !important;
+  }
   .postPage .midcolumn {
     margin-top: 35% !important;
     padding: 0 !important;
