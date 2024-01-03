@@ -58,7 +58,7 @@ function MyApp({ Component, pageProps }) {
         <Loading />
       ) : (
         <>
-          <DonateButton />
+          {/* <DonateButton /> */}
           <Toaster />
           <CrispWithNoSSR />
           <Component {...pageProps} />
