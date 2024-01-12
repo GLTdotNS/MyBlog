@@ -54,7 +54,7 @@ aside {
   top: 0;
   bottom: 0;
   background-color: #262626;
-  z-index: 99 !important;
+  z-index: 10 !important;
 }
 .nav ul {
   list-style: none;
@@ -609,7 +609,6 @@ hr {
   width: 75%;
   border-left: 1px solid #333;
   margin-left: auto !important;
-  z-index: 10;
 }
 
 .postPage .midcolumn {
@@ -1127,8 +1126,13 @@ blockquote p {
   z-index: 100000000;
 }
 
-.loading-video video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.rules li {
+  margin-top: 2%;
+
+  font-weight: bolder;
+}
+.rules p {
+  margin-top: 10px;
+  font-weight: 300;
+  color: #e3e2e2;
 }

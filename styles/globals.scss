@@ -125,26 +125,25 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
-/* width */
 ::-webkit-scrollbar {
-  width: 15px;
+  width: 12px;
   background-color: black;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px #457b9d;
   border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background-color: #333;
 
   border-radius: 10px;
 }
+.user-popup::-webkit-scrollbar-thumb {
+  background-color: #555 !important;
+}
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background-color: #457b9d;
 }
@@ -511,20 +510,63 @@ textarea {
   margin-left: 5%;
   width: 70%;
 }
-/* Респоснив дизайн */
 
+.user-popup {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #333;
+
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.9);
+  z-index: 100000;
+  padding: 5%;
+  animation: fadeIn 1s forwards;
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.user-info {
+  margin-bottom: 15px;
+}
+.user-popup img {
+  width: 100%;
+  height: 400px;
+  margin: auto;
+}
+.user-popup-button {
+  background-color: #09f;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+  margin-top: 10px;
+}
 @media (max-width: 768px) {
   .donate-button ul {
     width: 100% !important;
   }
-  .sagas .user-popup {
+  .user-popup {
     width: 100% !important;
     height: 100vh !important;
+    z-index: 1000 !important;
+    overflow-y: scroll !important;
+    padding: 8% !important;
+    padding-bottom: 15% !important;
   }
+  .user-popup img {
+    width: 100%;
+    height: 300px;
+  }
+
   .sagas img {
     width: 100% !important;
     float: right !important;
     border: none !important;
+    z-index: 10000000000 !important;
   }
   #floatLeft {
     float: none !important;
@@ -555,36 +597,4 @@ textarea {
   .donate-newsletter ul li {
     margin-bottom: 6px;
   }
-}
-.user-popup {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #333;
-  padding: 15px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  z-index: 100000;
-
-  animation: fadeIn 1s forwards;
-  overflow: auto !important;
-}
-
-.user-info {
-  margin-bottom: 15px;
-}
-.user-popup img {
-  width: 100%;
-  height: 300px;
-}
-.user-popup-button {
-  background-color: #09f;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  float: right;
-  margin-top: 10px;
 }

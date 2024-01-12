@@ -2,14 +2,18 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
+import Rules from "../../Rules/Rules";
 import Admin from "../../Admin/admin";
+import { AiOutlineFileProtect } from "react-icons/ai";
+import { useStateContext } from "../../../Context/stateContext";
+
 export default function Form({ _id }) {
   const [succes, setsucces] = useState(false);
   const router = useRouter();
 
   const [name, setName] = useState("");
   const [comment, setcomment] = useState("");
-
+  const { isPopupOpen, setPopupOpen } = useStateContext();
   const { handleSubmit } = useForm();
 
   const refreshData = async (e) => {
@@ -71,8 +75,15 @@ export default function Form({ _id }) {
                   placeholder="Коментар..."
                 ></textarea>
               </div>
+              <p
+                style={{ cursor: "pointer", textDecoration: "underline" }}
+                onClick={() => setPopupOpen(!isPopupOpen)}
+              >
+                Правила за коментиращите{" "}
+                <AiOutlineFileProtect color="#8B8000" size={20} />
+              </p>
             </div>
-
+            {isPopupOpen && <Rules />}
             {name && comment ? (
               <button
                 className="loadmore-btn  small"

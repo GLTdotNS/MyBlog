@@ -9,6 +9,7 @@ import "../styles/admin.css";
 import "../styles/cookies.css";
 import "../styles/runes.scss";
 import "../styles/gods.css";
+import { StateContext } from "../Context/stateContext";
 import { Toaster } from "react-hot-toast";
 import Router from "next/router";
 import "nprogress/nprogress.css";
@@ -59,11 +60,13 @@ function MyApp({ Component, pageProps }) {
       ) : (
         <>
           {/* <DonateButton /> */}
-          <Toaster />
-          <CrispWithNoSSR />
-          <Component {...pageProps} />
-
-          <Analytics />
+          <StateContext>
+            {" "}
+            <Toaster />
+            <CrispWithNoSSR />
+            <Component {...pageProps} />
+            <Analytics />
+          </StateContext>
         </>
       )}
     </>
