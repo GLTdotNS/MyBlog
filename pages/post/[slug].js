@@ -190,8 +190,8 @@ const Post = ({ post, posts }) => {
 
                 <img
                   src={urlForImg(post.authorImage.asset)}
-                  width={100}
-                  height={100}
+                  width={180}
+                  height={180}
                   style={{ borderRadius: "100%" }}
                   alt={`${post.title}`}
                 />
