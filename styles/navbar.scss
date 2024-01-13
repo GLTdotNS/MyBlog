@@ -232,7 +232,9 @@ li > a:only-child:after {
     scroll-behavior: auto;
   }
   #sideNav {
-    width: 50% !important;
+    width: 60% !important;
+    top: 30px !important;
+    left: 0px !important;
   }
   .siteLogo {
     position: absolute;
