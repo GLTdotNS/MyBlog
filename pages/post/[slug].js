@@ -164,6 +164,7 @@ const Post = ({ post, posts }) => {
 
   return (
     <>
+      <Image src={bg} style={{ display: "none" }} alt={`${post.title}`} />
       <aside className="">
         <label
           className="hamburger-icon"
@@ -176,10 +177,11 @@ const Post = ({ post, posts }) => {
             <span className="burger-line"></span>
           </div>
         </label>
+
         <span id="siteLogo" className="siteLogo">
           <Image width={80} height={40} src={logo} />
         </span>
-        <Image src={bg} style={{ display: "none" }} alt={`${post.title}`} />
+
         <div id="sideNav" className="nav ">
           <ul>
             <div className="">
