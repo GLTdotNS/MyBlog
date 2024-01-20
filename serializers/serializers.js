@@ -22,14 +22,16 @@ export const serializers = {
           <figure
             style={{
               textAlign: "center",
-              textAlign: "center",
+              textAlign: "left",
               alignItems: "center",
+              border: !modalOpen ? "1px solid #b0903d" : "",
+              padding: "6px",
             }}
             className={modalOpen ? "modal-content" : ""}
           >
             <Image
               width={modalOpen ? 1000 : 400}
-              height={modalOpen ? 500 : 300}
+              height={modalOpen ? 1 : 300}
               style={{ cursor: "pointer" }}
               src={`https://cdn.sanity.io/images/6kqgsbl2/production/${props.node.asset?._ref
                 .replace("image-", "")
@@ -48,7 +50,7 @@ export const serializers = {
               onClick={() => setModalOpen(false)}
               style={{
                 position: "absolute",
-                top: "55px",
+                top: "35px",
 
                 left: "15px",
                 zIndex: 100000,
