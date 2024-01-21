@@ -24,7 +24,7 @@ export const serializers = {
               textAlign: "center",
               textAlign: "left",
               alignItems: "center",
-              border: !modalOpen ? "1px solid #b0903d" : "",
+              border: !modalOpen ? "1px solid rgb(51, 51, 51)" : "",
               padding: "6px",
             }}
             className={modalOpen ? "modal-content" : ""}
