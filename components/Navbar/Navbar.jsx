@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import bg from "../../styles/assets/background.jpg";
+import bg from "../../styles/assets/forest.png";
 import logo from "../../styles/assets/grayscale_transparent.png";
 import { Rubik_Distressed } from "next/font/google";
 import RingCanvas from "../canvas/animated";
@@ -58,21 +58,7 @@ const Navbar = ({ category, posts }) => {
             url(${bg.src})`,
           backgroundRepeat: "no-repeat",
         }}
-      >
-        <h1
-          style={{
-            textAlign: "center",
-            position: "absolute",
-            top: "155px",
-            left: "30px",
-            right: "30px",
-            color: "#262626",
-          }}
-          className=" siteLogo"
-        >
-          NONCREATIVEBLOG
-        </h1>{" "}
-      </div>
+      ></div>
       <form class="search-form" onSubmit={handleSearch}>
         <div class="input-group">
           <div class="input-group2">
@@ -105,9 +91,7 @@ const Navbar = ({ category, posts }) => {
             <span class="burger-line"></span>
           </div>
         </label>
-        <span id="siteLogo" className="siteLogo">
-          <Image width={80} height={40} src={logo} />
-        </span>
+
         <input type="checkbox" id="drop" />
         <ul class={`menu ${rubik.className}`}>
           <li>

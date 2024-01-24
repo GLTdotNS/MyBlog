@@ -218,8 +218,10 @@ li > a:only-child:after {
     top: 30px !important;
   }
   .bg {
-    background-size: cover;
-    height: 35vh !important;
+    background-size: min(100%, 100vw) !important;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 45vh !important;
   }
   .postPage .post_text {
     margin-top: 50%;
@@ -433,6 +435,14 @@ li > a:only-child:after {
   }
 }
 
+@media screen and (max-width: 600px) {
+  .bg {
+    background-size: min(100%, 100vw) !important;
+    background-position: top;
+    background-repeat: no-repeat;
+    height: 25vh !important;
+  }
+}
 #menu-open,
 #menu-close {
   color: inherit;
