@@ -188,17 +188,19 @@ const Post = ({ post, posts }) => {
               <div>
                 <br />
 
-                <img
-                  src={urlForImg(post.authorImage.asset)}
-                  width={130}
-                  height={130}
-                  style={{ borderRadius: "100%" }}
-                  alt={`${post.title}`}
-                />
-                <p>
-                  {/* <iframe src={`${post.url}`} allowFullScreen="true" /> */}
-                  <BsPencilSquare />: {post.name}
-                </p>
+                <Link href={`/authors/${post.authorSlug.current}`}>
+                  <img
+                    src={urlForImg(post.authorImage.asset)}
+                    width={130}
+                    height={130}
+                    style={{ borderRadius: "100%" }}
+                    alt={`${post.title}`}
+                  />
+                  <p>
+                    {/* <iframe src={`${post.url}`} allowFullScreen="true" /> */}
+                    <BsPencilSquare />: {post.name}
+                  </p>
+                </Link>
                 <h4>
                   <MdDateRange />:{" "}
                   {post.publishedAt
@@ -294,7 +296,7 @@ const Post = ({ post, posts }) => {
 
           <div className="midcolumn boxShadow " id="mid">
             <div className="post_text " id="postContainer">
-              <BlockContent post={post} />
+              <BlockContent post={post.body} />
             </div>
 
             <hr />
@@ -398,6 +400,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   url,
   slug,
   ID,
+  "authorSlug": author->slug,
   "name": author->name,
   "categories": categories[]->title,
   rowTitle,
@@ -466,7 +469,7 @@ export async function getStaticProps(context) {
   "category": categories[0]->title,
   rowTitle,
   description,
- 
+
   body,
   publishedAt,
   mainImage{

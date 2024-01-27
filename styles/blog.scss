@@ -1,3 +1,27 @@
+.social-media-cover {
+  position: relative;
+  border-radius: 5% 5% 0 0;
+  width: 100%;
+}
+
+.cover-image {
+  width: 100%;
+  height: auto;
+  border-radius: 10% 10% 0 0;
+}
+
+.profile-image {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #333;
+}
+.profile-info {
+  position: relative;
+  padding: 5%;
+}
+
 #nav-btn {
   height: 40px;
   position: absolute;

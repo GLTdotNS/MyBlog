@@ -126,6 +126,12 @@ li > a:only-child:after {
 --------------------------------------------- */
 
 @media all and (max-width: 940px) {
+  .author-div {
+    width: 100% !important;
+  }
+  .profile-info {
+    padding: 8%;
+  }
   .hamburger-icon {
     width: 50% !important;
     position: relative;

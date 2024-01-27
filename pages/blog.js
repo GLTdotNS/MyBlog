@@ -7,7 +7,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Cookies from "../components/Cookies/Cookies";
 import { Rubik_Distressed } from "next/font/google";
-
+import Link from "next/link";
 import { client } from "../lib/sanityClient";
 import groq from "groq";
 const rubik = Rubik_Distressed({
@@ -18,7 +18,7 @@ const CrispWithNoSSR = dynamic(() => import("../components/Chat/chat"), {
   ssr: false,
 });
 
-const MainBlogPage = ({ posts, category }) => {
+const MainBlogPage = ({ posts, category, authors }) => {
   useEffect(() => {
     // function el(selector) {
     //   return document.querySelector(selector);
@@ -75,6 +75,7 @@ const MainBlogPage = ({ posts, category }) => {
               posts={posts
                 ?.filter((x) => x.category != "recipe")
                 .sort((x, b) => x._createdAt - b._createdAt)}
+              info={"Последно добавени"}
             />
           </div>
         </div>
@@ -85,6 +86,24 @@ const MainBlogPage = ({ posts, category }) => {
             <RecentlyPosts
               posts={posts?.slice().sort((x, b) => b.likes - x.likes)}
             />
+          </div>
+          <div className="columns">
+            {" "}
+            <h3>Автори</h3>
+            <hr />
+            <ul className="section">
+              {" "}
+              {authors.map((a) => (
+                <li>
+                  {" "}
+                  <Link href={`/authors/${a.slug.current}`}>
+                    {" "}
+                    {a.name}
+                  </Link> ({" "}
+                  {posts.filter((x) => x.author?._ref === a._id).length} статии)
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
@@ -107,6 +126,20 @@ export const getStaticProps = async () => {
       }
     }`
   );
+  const authors = await client.fetch(
+    groq`*[_type == "author"]{
+      _id,
+      slug,
+      name,
+      _id,
+      mainImage{
+        asset->{
+          _id,
+          url
+        }
+      }
+    }`
+  );
 
   const query = groq`*[_type == "post"] | order(publishedAt desc) {
     title,
@@ -114,7 +147,8 @@ export const getStaticProps = async () => {
     "authorImage": author->image,
     "category": categories[0]->title,
     description,
-    "author": author->name,
+    author,
+    "authorName": author->name,
     likes,
     rowTitle,
     _id,
@@ -131,6 +165,6 @@ export const getStaticProps = async () => {
   const posts = await client.fetch(query);
 
   return {
-    props: { posts, category },
+    props: { posts, category, authors },
   };
 };

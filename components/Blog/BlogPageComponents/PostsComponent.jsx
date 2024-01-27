@@ -10,7 +10,7 @@ import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";
 
-const PostsComponent = ({ posts, button }) => {
+const PostsComponent = ({ posts, button, info }) => {
   const initialPostList = 7;
   const incrementInitialPostList = 8;
   const [hideButton, setHideButton] = useState(false);
@@ -90,7 +90,7 @@ const PostsComponent = ({ posts, button }) => {
                 <span style={{ color: "#f9b22a", float: "" }}>Виж повече</span>
               </h4>
               <span>
-                By {post.author} ,{" "}
+                By {post.authorName} ,{" "}
                 {moment(post.publishedAt).format("YYYY , MMM  DD")}
               </span>
             </article>
@@ -111,9 +111,7 @@ const PostsComponent = ({ posts, button }) => {
       >
         <div className="title">
           <h3 style={{ padding: "5px", width: "95%" }}>
-            <span style={{ padding: "5px", width: "100px" }}>
-              Последно добавени{" "}
-            </span>
+            <span style={{ padding: "5px", width: "100px" }}>{info}</span>
           </h3>
         </div>
       </div>
