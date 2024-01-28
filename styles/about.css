@@ -101,8 +101,8 @@ i {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  background-color: #282828;
+  box-shadow: 1px 1px 3px 1px #333;
+  background-color: #252423;
   transition: 0.3s;
 }
 
