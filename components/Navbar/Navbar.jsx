@@ -247,9 +247,31 @@ const Navbar = ({ category, posts }) => {
           {/* <li>
             <Link href={"/donate"}>Скандинавия</Link>
           </li> */}
+          <li id="firstDrop">
+            <label for="drop-4" class="toggle">
+              Автори +
+            </label>
+            <a href="#">Автори</a>
+            <input type="checkbox" id="drop-4" />
+            <ul>
+              <li className="">
+                <Link href={"/authors/aegir-sverrisson"}>Ægir Sverrisson </Link>
+              </li>
+              <li className="">
+                <Link href={"/authors/bleeding-lycoris"}>
+                  Bleeding Lycoris{" "}
+                </Link>
+              </li>
+
+              <li className="">
+                <Link href={"/authors/georgi-tonkov"}>Георги Тонков</Link>
+              </li>
+            </ul>
+          </li>
           <li>
             <Link href={"/donate"}>Дарение</Link>
           </li>
+
           <li>
             {/* <Link href={"https://voluspa.noncreativeblog.net/voluspa"}>
               Völuspá

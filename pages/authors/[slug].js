@@ -1,6 +1,6 @@
 import { client, urlForImg } from "../../lib/sanityClient";
 import dynamic from "next/dynamic";
-import cover from "../../styles/assets/mywebd.png";
+import cover from "../../styles/assets/banner.png";
 import Layout from "../../components/Layout/Layout";
 import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
@@ -41,12 +41,12 @@ const Authors = ({ authors, author, posts }) => {
                 />{" "}
                 <img
                   src={urlForImg(author.image.asset)}
-                  width={130}
-                  height={130}
+                  width={120}
+                  height={120}
                   className="profile-image"
                   style={{
                     borderRadius: "4%",
-                    marginTop: "3%",
+                    marginTop: "5%",
                     marginBottom: "2%",
                   }}
                   alt={`${author.name}`}
