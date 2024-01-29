@@ -97,7 +97,7 @@ const Authors = ({ authors, author, posts }) => {
               className="author-div"
               style={{ width: "70%", margin: "auto" }}
             >
-              {author.name !== "Георги Тонков" ? (
+              {author.name !== "adf " ? (
                 <p style={{ textAlign: "center" }}>Няма налична информация</p>
               ) : (
                 <BlockContent post={author.bio} />
