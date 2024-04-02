@@ -59,7 +59,7 @@ function MyApp({ Component, pageProps }) {
         <Loading />
       ) : (
         <>
-          {/* <DonateButton /> */}
+          <DonateButton />
           <StateContext>
             {" "}
             <Toaster />

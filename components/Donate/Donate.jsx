@@ -30,35 +30,42 @@ const DonateButton = () => {
             width={"50%"}
             height={"50%"}
             style={{ border: "1px solid #b0903d" }}
-            src="https://www.realsimple.com/thmb/BXQ5TqR_M8ubEwyRhB3AXeRNQb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/new-years-inspirational-quotes-GettyImages-1678757305-76337765cd0644aaa7169ebd7669a632.jpg"
+            src="https://voluspa.noncreativeblog.net/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvoluspa.0c3d8755.png&w=2048&q=75"
             alt=""
           />
           <p style={{ width: "70%", textAlign: "left " }}>
-            За много години !
             <br />
             <br />
-            NONCREATIVEBLOG желае на своите читатели, една прекрасна 2024 година
-            изпълнена с прекрасни моменти. Бъдете здрави и успешни !
-            {/* <button
-              onClick={() => router.push("/post/koleda")}
+            Предсказанието на Пророчицата“ (Völuspá) е първата едѝческа
+            поема-песен, включена в сборника Codex regius (Царска книга) на
+            &quot;Старата Ѐда&quot; и втората, която се представя на българския
+            читател в двуезична преводна форма от преводачите Яна Чанкова и
+            А̀йгир Свѐрисон след &quot;Тъй речени са на Високия словата…&quot;,
+            излязла от печат през 2012 г. Кодексът съдържа 10 митологични поеми
+            и 19 героически песни, разделени на три цикъла и съставлява т.нар.
+            &quot;Стара Ѐда&quot; или &quot;Поетическа Ѐда&quot;.
+            <button
+              onClick={() =>
+                router.push("https://voluspa.noncreativeblog.net/")
+              }
               style={{
                 marginTop: "5%",
               }}
               className="loadmore-btn "
             >
-              Прочети статията
-            </button> */}
+              Чети онлайн
+            </button>
             <br />
             <br />
             <br />
-            <em>
-              Има само два начина да изживееш живота си. Единият е да живееш
-              така, като че ли не съществуват чудеса, а другият – сякаш всяко
-              нещо е чудо.
+            <strong>
+              NONCREATIVEBLOG насърчава четенето на книгите в техния печатен
+              вариант, като по този начин изразява признание към интелектуалния
+              труд на авторите.
               <br />
               <br />
-              <strong>- Алберт Айнщайн</strong>
-            </em>
+              <strong>Георги Тонков</strong>
+            </strong>
           </p>
 
           <button className="close" onClick={handleClick}>
