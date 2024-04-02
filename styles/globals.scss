@@ -491,7 +491,6 @@ textarea {
   margin-bottom: 8px;
 }
 
-/* Линкове */
 .donate-newsletter {
   border: none !important;
   background-color: #555;
@@ -549,6 +548,13 @@ textarea {
 @media (max-width: 768px) {
   .donate-button ul {
     width: 100% !important;
+  }
+  .donate-popup p {
+    width: 100% !important;
+  }
+  .donate-popup img {
+    width: 100% !important;
+    margin-top: 12%;
   }
   #profilePage {
     margin-top: 10% !important;
