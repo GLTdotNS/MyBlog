@@ -3,8 +3,7 @@ import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import { useEffect, useState } from "react";
 import { motion, useScroll } from "framer-motion";
-import Head from "next/head";
-import { BsFillArrowUpCircleFill } from "react-icons/bs";
+import { BsFillArrowUpCircleFill } from "react-icons/bs/index";
 const Layout = ({ children, posts }) => {
   const { scrollYProgress } = useScroll();
   useEffect(() => {

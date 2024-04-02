@@ -5,7 +5,7 @@ import Layout from "../../components/Layout/Layout";
 import Head from "next/head";
 import PostsComponent from "../../components/Blog/BlogPageComponents/PostsComponent";
 import Image from "next/image";
-import { IoArrowBackSharp } from "react-icons/io5";
+import { IoArrowBackSharp } from "react-icons/io5/index";
 import { useRouter } from "next/router";
 
 const block = dynamic(
@@ -95,12 +95,16 @@ const Authors = ({ authors, author, posts }) => {
 
             <div
               className="author-div"
-              style={{ width: "70%", margin: "auto" }}
+              style={{ width: "70%", margin: "auto", padding: "2%" }}
             >
-              {author.name !== "adf " ? (
+              {author.name !== "Георги Тонков" ? (
                 <p style={{ textAlign: "center" }}>Няма налична информация</p>
               ) : (
-                <BlockContent post={author.bio} />
+                <>
+                  <h2>Лична информация</h2>
+                  <br />
+                  <BlockContent post={author.bio} />
+                </>
               )}
             </div>
             <div style={{ marginTop: "5%" }}>

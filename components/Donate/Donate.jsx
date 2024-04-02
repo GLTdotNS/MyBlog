@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { GrPaypal } from "react-icons/gr";
 
 const DonateButton = () => {
   const [open, setOpen] = useState(true);

@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 import bg from "../../styles/assets/forest.png";
-import logo from "../../styles/assets/grayscale_transparent.png";
 import { Rubik_Distressed } from "next/font/google";
-import RingCanvas from "../canvas/animated";
 const rubik = Rubik_Distressed({
   weight: "400",
   subsets: ["cyrillic"],

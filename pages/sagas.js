@@ -6,6 +6,7 @@ import Image from "next/image";
 import edda from "../styles/assets/eddacover.jpg";
 import voluspa from "../styles/assets/voluspa.png";
 import UserPopup from "../components/ComingSoon/CommingSoon";
+  import Link from "next/link";
 const Sagas = ({ posts }) => {
   const [clicked, setclicked] = useState(false);
   return (
@@ -135,15 +136,15 @@ const Sagas = ({ posts }) => {
                   на преводачите.
                 </p>
               </div>
-              {clicked && <UserPopup />}
-              {!clicked && (
-                <button
-                  className="loadmore-btn"
-                  onClick={() => setclicked(true)}
-                >
-                  Чети онлайн
-                </button>
-              )}
+
+              <button
+                className="loadmore-btn"
+                onClick={() =>
+                  window.open("https://voluspa.noncreativeblog.net/")
+                }
+              >
+                Чети онлайн
+              </button>
             </div>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import { useRouter } from "next/router";
 import Rules from "../../Rules/Rules";
 import Admin from "../../Admin/admin";
-import { AiOutlineFileProtect } from "react-icons/ai";
+import { AiOutlineFileProtect } from "react-icons/ai/index";
 import { useStateContext } from "../../../Context/stateContext";
 
 export default function Form({ _id }) {

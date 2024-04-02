@@ -2,16 +2,15 @@ import React from "react";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
 import { client } from "../lib/sanityClient";
-import { BsPinAngleFill } from "react-icons/bs";
 const Donate = ({ posts }) => {
   return (
     <Layout posts={posts}>
       <div>
         <div className="donate-newsletter midcolumn  container content-wrapper">
           <h2 className="donate-logo">NONCREATIVEBLOG</h2>
-          <h1 style={{ position: "absolute", top: "-52px", right: "35px" }}>
-            <BsPinAngleFill color={"yellow"} />
-          </h1>
+          <h1
+            style={{ position: "absolute", top: "-52px", right: "35px" }}
+          ></h1>
           <hr />
           <p>
             Както знаете, сайтът , който поддържам, е един от най-добрите по

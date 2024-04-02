@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import Link from "next/link";
 import toast from "react-hot-toast";
 import Router from "next/router";
-import Layout from "../Layout/Layout";
 import Admin from "../Admin/admin";
 import Widget from "../Cloudflare/Cloudflare";
 const Contacts = () => {

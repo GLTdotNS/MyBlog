@@ -4,7 +4,7 @@ import SyntaxHighlighter from "react-syntax-highlighter";
 import getYouTubeId from "get-youtube-id";
 import YouTube from "react-youtube";
 import { vs2015 } from "react-syntax-highlighter/dist/esm/styles/hljs";
-import { FaCopy } from "react-icons/fa";
+import { FaCopy } from "react-icons/fa/index";
 import Image from "next/image";
 import { useState } from "react";
 export const serializers = {

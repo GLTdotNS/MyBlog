@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Layout from "../components/Layout/Layout";
 import groq from "groq";
-import RingCanvas from "../components/canvas/animated";
+
 import { Shrikhand, Ubuntu } from "next/font/google";
 import { toast } from "react-hot-toast";
 const rubik = Shrikhand({

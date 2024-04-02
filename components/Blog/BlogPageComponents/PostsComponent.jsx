@@ -4,8 +4,8 @@ import moment from "moment";
 import { urlForImg } from "../../../lib/sanityClient.js";
 
 import { useState } from "react";
-import { MdOutlineTimer } from "react-icons/md";
-import { FaEye } from "react-icons/fa";
+import { MdOutlineTimer } from "react-icons/md/index";
+import { FaEye } from "react-icons/fa/index";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useRouter } from "next/router.js";
 import { client } from "../../../lib/sanityClient.js";

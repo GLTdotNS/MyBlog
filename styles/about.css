@@ -97,7 +97,6 @@ i {
 }
 
 .staffCard {
-  border-radius: 10% 10% 0 0;
   display: flex;
   flex-direction: column;
   align-items: center;

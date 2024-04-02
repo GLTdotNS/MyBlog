@@ -1,7 +1,7 @@
 import moment from "moment";
 import React from "react";
 
-import { HiOutlineExternalLink } from "react-icons/hi";
+import { HiOutlineExternalLink } from "react-icons/hi/index";
 import { useRouter } from "next/router.js";
 const RecentlyPosts = ({ posts }) => {
   const router = useRouter();

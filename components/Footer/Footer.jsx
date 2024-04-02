@@ -4,8 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 
 const Footer = () => {
-  const [contact, setContact] = useState(false);
-  const [errorMsg, setErrorMsg] = useState("");
   const [succes, setsucces] = useState(false);
   const subscribe = async (e) => {
     e.preventDefault();

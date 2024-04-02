@@ -3,10 +3,10 @@ import { client, urlForImg } from "../../lib/sanityClient";
 import dynamic from "next/dynamic";
 import moment from "moment";
 import { useRouter } from "next/router";
-import { MdDateRange, MdClose } from "react-icons/md";
+import { MdDateRange, MdClose } from "react-icons/md/index";
 import bg from "../../styles/assets/fenrir.jpg";
 import { toast } from "react-hot-toast";
-import { BsPencilSquare, BsFillShareFill } from "react-icons/bs";
+import { BsPencilSquare, BsFillShareFill } from "react-icons/bs/index";
 import logo from "../../styles/assets/grayscale_transparent.png";
 
 import Link from "next/link";
@@ -18,7 +18,7 @@ import {
   ViberShareButton,
 } from "react-share";
 import { FacebookIcon, TwitterIcon, ViberIcon } from "react-share";
-import { HiOutlineLink } from "react-icons/hi";
+import { HiOutlineLink } from "react-icons/hi/index";
 import Head from "next/head";
 import Comments from "../../components/Blog/BlogPageComponents/Comments";
 import Form from "../../components/Blog/BlogPageComponents/Form";

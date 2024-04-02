@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { Video } from "../../../types";
 import { NextPage } from "next";
 
-import { BsFillPlayFill, BsFillPauseFill } from "react-icons/bs";
 interface IProps {
   post: Video;
 }
@@ -31,22 +30,6 @@ const VideoCard: NextPage<IProps> = ({ post }) => {
       className="video-card"
     >
       <video loop ref={videoRef} src={post.Video.asset.url}></video>
-
-      {isHover && (
-        <div>
-          {isPlaying ? (
-            <button onClick={onVideoPress} className="buttons">
-              {" "}
-              <BsFillPauseFill />
-            </button>
-          ) : (
-            <button onClick={onVideoPress} className="buttons">
-              {" "}
-              <BsFillPlayFill />
-            </button>
-          )}
-        </div>
-      )}
     </div>
   );
 };
