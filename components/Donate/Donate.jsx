@@ -28,11 +28,16 @@ const DonateButton = () => {
             fontSize: "15px",
           }}
         >
-          <Image
-            width={""}
-            height={""}
-            style={{ textAlign: "center", border: "1px solid #b0903d" }}
-            src={image}
+          <img
+            width={300}
+            height={300}
+            style={{
+              width: "60%",
+              height: "50%",
+              textAlign: "center",
+              border: "1px solid #b0903d",
+            }}
+            src={image.src}
             alt=""
           />
           <p style={{ width: "70%", textAlign: "left " }}>
