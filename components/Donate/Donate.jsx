@@ -1,7 +1,8 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
+import image from "../../styles/assets/dmytro.webp";
+import Image from "next/image";
 const DonateButton = () => {
   const [open, setOpen] = useState(true);
   const [donateShown, setDonateShown] = useState(false);
@@ -21,30 +22,30 @@ const DonateButton = () => {
     <div>
       {open && donateShown ? (
         <div
-          className="donate-popup"
+          className="donate-popup "
           style={{
             textAlign: "center",
+            fontSize: "15px",
           }}
         >
-          <img
-            width={"50%"}
-            height={"50%"}
-            style={{ border: "1px solid #b0903d" }}
-            src="https://voluspa.noncreativeblog.net/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fvoluspa.0c3d8755.png&w=2048&q=75"
+          <Image
+            width={""}
+            height={""}
+            style={{ textAlign: "center", border: "1px solid #b0903d" }}
+            src={image}
             alt=""
           />
           <p style={{ width: "70%", textAlign: "left " }}>
             <br />
             <br />
-            Предсказанието на Пророчицата“ (Völuspá) е първата едѝческа
-            поема-песен, включена в сборника Codex regius (Царска книга) на
-            &quot;Старата Ѐда&quot; и втората, която се представя на българския
-            читател в двуезична преводна форма от преводачите Яна Чанкова и
-            А̀йгир Свѐрисон след &quot;Тъй речени са на Високия словата…&quot;,
-            излязла от печат през 2012 г. Кодексът съдържа 10 митологични поеми
-            и 19 героически песни, разделени на три цикъла и съставлява т.нар.
-            &quot;Стара Ѐда&quot; или &quot;Поетическа Ѐда&quot;.
-            <button
+            Подкрепете малкия боец Дмитро!{" "}
+            <a
+              style={{ color: "blue", width: "50%" }}
+              href="https://pavelandreev.bg/campaign/pomosht-za-dmytro"
+            >
+              https://pavelandreev.bg/campaign/pomosht-za-dmytro
+            </a>
+            {/* <button
               onClick={() =>
                 router.push("https://voluspa.noncreativeblog.net/")
               }
@@ -54,14 +55,16 @@ const DonateButton = () => {
               className="loadmore-btn "
             >
               Чети онлайн
-            </button>
+            </button> */}
             <br />
             <br />
             <br />
             <strong>
-              NONCREATIVEBLOG насърчава четенето на книгите в техния печатен
-              вариант, като по този начин изразява признание към интелектуалния
-              труд на авторите.
+              NONCREATIVEBLOG се ангажира с каузата на малкия Дмитро, който
+              страда от мултифокална епилепсия и се нуждае от спешна мозъчна
+              операция. Моля, помогнете ни да съберем нужните средства за
+              неговото лечение. Вашата подкрепа е от съществено значение за
+              Дмитро .
               <br />
               <br />
               <strong>Георги Тонков</strong>
