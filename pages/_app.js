@@ -1,4 +1,4 @@
-import "../styles/globals.css";
+import "../styles/globals.scss";
 import "../styles/navbar.scss";
 import "../styles/blog.scss";
 import "../styles/footer.css";
