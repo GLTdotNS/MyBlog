@@ -1,7 +1,6 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import image from "../../styles/assets/dmytro.webp";
 import Image from "next/image";
 const DonateButton = () => {
   const [open, setOpen] = useState(true);
@@ -37,7 +36,7 @@ const DonateButton = () => {
               textAlign: "center",
               border: "1px solid #b0903d",
             }}
-            src={image.src}
+            src={""}
             alt=""
           />
           <p style={{ width: "70%", textAlign: "left " }}>
